@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$!{table.comment}列表</title>
+    <link href="\${rc.contextPath}/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="\${rc.contextPath}/css/plugins/bootstrap-table/bootstrap-table.min.css" rel="stylesheet">
+    <link href="\${rc.contextPath}/css/animate.css" rel="stylesheet">
+</head>
+
+
+<body class="gray-bg">
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="col-sm-12">
+        <div class="ibox">
+            <div class="ibox-body">
+
+                <div id="exampleToolbar" role="group">
+                    #foreach($field in ${table.fields})
+                        <label style="margin-left: 10px;">
+                            ${field.comment}：
+                            <input type="text" class="form-filter input-sm _search" name="${field.propertyName}">
+                        </label>
+                    #end
+
+                    <label style="margin-left: 10px;">
+                        <button class="btn btn-success" onclick="re_load()">
+                            <i class="fa fa-search" aria-hidden="true"></i>查询
+                        </button>
+                        <button type="button" class="btn  btn-primary" onclick="reset()">
+                            <i class="fa fa-circle-thin" aria-hidden="true"></i>重置
+                        </button>
+                        <button type="button" class="btn  btn-danger" onclick="batch_remove()">
+                            <i class="fa fa-trash" aria-hidden="true"></i>删除
+                        </button>
+
+                       <a href="${url}detail/create">
+                           <button type="button" class="btn btn-info">
+                               <i class="fa fa-trash" aria-hidden="true"></i>添加
+                           </button>
+                       </a>
+                    </label>
+
+                </div>
+
+                <table id="exampleTable" data-mobile-responsive="true">
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap table -->
+<script src="/${rc.contextPath}/js/plugins/bootstrap-table/bootstrap-table.min.js"></script>
+<script src="/${rc.contextPath}/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js"></script>
+<script src="/${rc.contextPath}/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js"></script>
+
+<script src="/${rc.contextPath}/js/slife/datatable.js"></script>
+<script type="text/javascript">
+    function getcolumns() {
+        var c = [
+            {
+                checkbox: true
+            },
+            {
+                field: 'id', // 列字段名
+                title: '序号' // 列标题
+            },
+            #foreach($field in ${table.fields})
+            {
+                field: ${field.propertyName},
+                title: ${field.comment}
+            },
+            #end
+            {
+                title: '操作',
+                field: 'id',
+                align: 'center',
+                formatter: function (value, row, index) {
+                    return dt_delete_button(row);
+                }
+            }];
+
+        return c;
+    }
+
+    load_data( getcolumns(), {"id": "desc"});
+
+
+</script>
+</body>
+</html>
