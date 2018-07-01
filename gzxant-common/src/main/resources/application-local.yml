@@ -4,6 +4,10 @@ spring:
   freemarker:
     cache: false
   datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/gzxant_lease_car?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: gzxant
+    password: gzxant1804
     druid:
       validationQuery: SELECT 1
       initialSize: 10
@@ -18,7 +22,8 @@ spring:
       poolPreparedStatements: true
       maxOpenPreparedStatements: 100
   redis:
-    host: localhost
+    database: 0
+    host: 192.168.1.200
     port: 6379
     password: 123456
     pool:
@@ -26,4 +31,3 @@ spring:
       max-wait: -1
       max-idle: 18
       min-idle: 0
-    timeout: 0
