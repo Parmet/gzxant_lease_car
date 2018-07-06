@@ -20,8 +20,6 @@ public class CustomerInfoCertificate extends DataEntity<CustomerInfoCertificate>
 
     private static final long serialVersionUID = 1L;
 
-	@TableField("update_id")
-	private Long updateId;
     /**
      * Type of this certificate
      */

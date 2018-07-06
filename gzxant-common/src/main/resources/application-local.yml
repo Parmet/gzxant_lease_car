@@ -6,8 +6,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/gzxant_lease_car?useUnicode=true&characterEncoding=utf8&useSSL=false
-    username: gzxant
-    password: gzxant1804
+    username: root
+    password: root
     druid:
       validationQuery: SELECT 1
       initialSize: 10

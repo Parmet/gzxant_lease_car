@@ -2,6 +2,7 @@ package com.gzxant.controller.customer.info.certificate;
 
 import java.util.List;
 
+import com.gzxant.service.ISysDictService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +37,8 @@ import io.swagger.annotations.ApiOperation;
 public class CustomerInfoCertificateController extends BaseController {
 	@Autowired
 	private ICustomerInfoCertificateService customerInfoCertificateService;
+	@Autowired
+	private ISysDictService iSysDictService;
 
 	@ApiOperation(value = "进入Certificate table列表界面", notes = "进入Certificate table列表界面")
 	@GetMapping(value = "")
@@ -48,6 +51,12 @@ public class CustomerInfoCertificateController extends BaseController {
 	public String detail(@PathVariable("action") String action, Model model) {
 		model.addAttribute("action", action);
 		return "/customer/info/certificate/detail";
+	}
+
+	@GetMapping(value = "/insert")
+	public String insert(Model model){
+		model.addAttribute("typeList",iSysDictService.getDictTree("CertificateType"));
+		return "/customer/info/certificate/insert";
 	}
 
 	@ApiOperation(value = "获取Certificate table列表数据", notes = "获取Certificate table列表数据:使用约定的DataTable")

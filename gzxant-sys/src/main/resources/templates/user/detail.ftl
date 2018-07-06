@@ -15,10 +15,6 @@
                                     <div class="img_box" id="imgBox">
                                         <img id="imgshowdiv" style="width: 60px" src="${sysUser.photo}"
                                              onerror="javascript:errimg()" class="img_file img-rounded"/>
-
-                                    <#--          <div class="img_edit_box">
-                                                  <a class="img_desr" href="javascript:doDeleteImg()">删除</a>
-                                              </div>-->
                                     </div>
                                 </div>
                             </div>
@@ -200,33 +196,6 @@
     function errimg() {
         $("#photo").val("${rc.contextPath}/img/log9.png");
         $("#imgshowdiv").attr('src', "${rc.contextPath}/img/log9.png");
-    }
-
-    /**
-     * 删除头像
-     */
-    function doDeleteImg() {
-        var name = $("#photo").val();
-        layer.confirm('确定要删除头像吗？', {
-            btn: ['确定', '取消']
-        }, function () {
-            $.ajax({
-                url: url + "delete/photo",
-                type: "POST",
-                data: {
-                    'name': name
-                },
-                success: function (r) {
-                    if (r.code == 200) {
-                        errimg();
-
-                    } else {
-                        layer.msg(r.error);
-                    }
-                }
-            });
-        })
-
     }
 
     var select = $(".select").select2();
