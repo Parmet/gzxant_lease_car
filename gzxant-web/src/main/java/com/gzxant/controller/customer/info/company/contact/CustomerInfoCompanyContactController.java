@@ -40,7 +40,7 @@ public class CustomerInfoCompanyContactController extends BaseController {
 	@ApiOperation(value = "进入列表界面", notes = "进入列表界面")
 	@GetMapping(value = "")
 	public String list(Model model) {
-		return "/customer/info/company/contact/list";
+		return "/customer/info/company/contact/list.ftl";
 	}
 
 	@ApiOperation(value = "进入编辑界面", notes = "进入编辑界面")

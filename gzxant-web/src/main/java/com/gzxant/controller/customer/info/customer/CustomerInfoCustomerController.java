@@ -1,17 +1,20 @@
 package com.gzxant.controller.customer.info.customer;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import com.gzxant.entity.customer.info.certificate.CustomerInfoCertificate;
+import com.gzxant.service.ISysDictService;
+import com.gzxant.service.customer.info.certificate.ICustomerInfoCertificateService;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import com.gzxant.annotation.SLog;
 import com.gzxant.base.entity.ReturnDTO;
@@ -36,6 +39,19 @@ import io.swagger.annotations.ApiOperation;
 public class CustomerInfoCustomerController extends BaseController {
 	@Autowired
 	private ICustomerInfoCustomerService customerInfoCustomerService;
+	@Autowired
+	private ISysDictService iSysDictService;
+	@Autowired
+	private ICustomerInfoCertificateService iCustomerInfoCertificateService;
+
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		// this binder is for successfully transfer from String to Date
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dateFormat.setLenient(true);
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}
+
 
 	@ApiOperation(value = "进入Customer's information列表界面", notes = "进入Customer's information列表界面")
 	@GetMapping(value = "")
@@ -50,6 +66,16 @@ public class CustomerInfoCustomerController extends BaseController {
 		return "/customer/info/customer/detail";
 	}
 
+	@ApiOperation(value = "进入Customer's information创建界面", notes = "进入Customer's information创建界面")
+	@GetMapping("/create")
+	public String create(Model model){
+		model.addAttribute("typeList",iSysDictService.getDictTree("CertificateType"));
+		model.addAttribute("statusList",iSysDictService.getDictTree("CustomerStatus"));
+		model.addAttribute("capabilityList",iSysDictService.getDictTree("DriveCapability"));
+		model.addAttribute("genderList",iSysDictService.getDictTree("sex"));
+		return "/customer/info/customer/insert";
+	}
+
 	@ApiOperation(value = "获取Customer's information列表数据", notes = "获取Customer's information列表数据:使用约定的DataTable")
 	@PostMapping(value = "/list")
 	@ResponseBody
@@ -60,8 +86,14 @@ public class CustomerInfoCustomerController extends BaseController {
 	@ApiOperation(value = "添加Customer's information", notes = "添加Customer's information")
 	@PostMapping(value = "/create")
 	@ResponseBody
-	public ReturnDTO create(CustomerInfoCustomer param) {
-		customerInfoCustomerService.insert(param);
+	public ReturnDTO create(CustomerInfoCustomer customer, CustomerInfoCertificate certificate) {
+		// insert certificate first then wired the certificate id to the customer
+		iCustomerInfoCertificateService.insert(certificate);
+
+		// wire the id
+		customer.setCertificateId(certificate.getId());
+		// store the customer into database
+		customerInfoCustomerService.insert(customer);
 		return ReturnDTOUtil.success();
 	}
 

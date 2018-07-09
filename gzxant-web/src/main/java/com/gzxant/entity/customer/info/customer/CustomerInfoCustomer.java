@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.gzxant.base.entity.DataEntity;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * <p>
  * Customer's information
@@ -19,11 +21,12 @@ public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
 
     private static final long serialVersionUID = 1L;
 
-	@TableField("update_id")
-	private Long updateId;
+
+//    TODO: Add backend validation.
     /**
      * Name of the customer
      */
+    @NotNull(message = "姓名不能为空")
 	private String name;
     /**
      * Gender of the customer

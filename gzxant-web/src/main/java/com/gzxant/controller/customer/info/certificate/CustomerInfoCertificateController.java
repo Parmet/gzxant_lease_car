@@ -41,6 +41,7 @@ public class CustomerInfoCertificateController extends BaseController {
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
+        // this binder is for successfully transfer from String to Date
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(true);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
@@ -50,7 +51,7 @@ public class CustomerInfoCertificateController extends BaseController {
 	@ApiOperation(value = "进入Certificate table列表界面", notes = "进入Certificate table列表界面")
 	@GetMapping(value = "")
 	public String list(Model model) {
-		return "/customer/info/certificate/list";
+		return "/customer/info/certificate/list.ftl";
 	}
 
 	@ApiOperation(value = "进入Certificate table编辑界面", notes = "进入Certificate table编辑界面")
