@@ -1,18 +1,17 @@
 package com.gzxant.controller.customer.info.certificate;
 
+import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import com.gzxant.service.ISysDictService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 
 import com.gzxant.annotation.SLog;
 import com.gzxant.base.entity.ReturnDTO;
@@ -39,6 +38,14 @@ public class CustomerInfoCertificateController extends BaseController {
 	private ICustomerInfoCertificateService customerInfoCertificateService;
 	@Autowired
 	private ISysDictService iSysDictService;
+
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		dateFormat.setLenient(true);
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}
+
 
 	@ApiOperation(value = "进入Certificate table列表界面", notes = "进入Certificate table列表界面")
 	@GetMapping(value = "")
@@ -67,7 +74,7 @@ public class CustomerInfoCertificateController extends BaseController {
 	}
 
 	@ApiOperation(value = "添加Certificate table", notes = "添加Certificate table")
-	@PostMapping(value = "/create")
+	@PostMapping(value = "/")
 	@ResponseBody
 	public ReturnDTO create(CustomerInfoCertificate param) {
 		customerInfoCertificateService.insert(param);

@@ -7,6 +7,7 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">查询条件</h3>
                         </div>
+                        <#-- TODO: bind new search criteria -->
                         <div class="panel-body">
                             <div class="row">
 
