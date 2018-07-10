@@ -69,7 +69,11 @@ public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
      */
 	@TableField("emergency_contact_tel")
 	private String emergencyContactTel;
-
+	/**
+	 * Relationship between customer and the emergency contact.
+	 */
+	@TableField("emergency_contact_relationship")
+	private String emergencyContactRelationship;
 
 	public Long getUpdateId() {
 		return updateId;
@@ -159,6 +163,14 @@ public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
 		this.emergencyContactTel = emergencyContactTel;
 	}
 
+	public String getEmergencyContactRelationship() {
+		return emergencyContactRelationship;
+	}
+
+	public void setEmergencyContactRelationship(String emergencyContactRelationship) {
+		this.emergencyContactRelationship = emergencyContactRelationship;
+	}
+
 	@Override
 	protected Serializable pkVal() {
 		return this.id;
@@ -178,6 +190,7 @@ public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
 			", email=" + email +
 			", emergencyContact=" + emergencyContact +
 			", emergencyContactTel=" + emergencyContactTel +
+			", emergencyContactRelationship=" + emergencyContactRelationship +
 			"}";
 	}
 }

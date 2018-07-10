@@ -154,6 +154,14 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="col-sm-3 control-label">与紧急联络人的关系：<span class="required">*</span></label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" name="emergencyContactRelationship"
+                                       value="" placeholder="请填写与紧急联络人的关系" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-sm-3 control-label">备注：<span class="required">*</span></label>
                             <div class="col-sm-8">
                                 <input type="text" class="form-control" name="remark"

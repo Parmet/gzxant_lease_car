@@ -7,10 +7,9 @@
                         <div class="panel-heading">
                             <h3 class="panel-title">查询条件</h3>
                         </div>
-                    <#-- TODO: bind new search criteria -->
+                        <#-- TODO: bind new search criteria -->
                         <div class="panel-body">
                             <div class="row">
-
 
                                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
                                     <label for="nameInput" class="control-label">用户名称：</label>
@@ -60,16 +59,16 @@
                 title: 'id' // 列标题
             },
             {
-                field: 'type',
-                title: '登陆名'
+                field: 'name',
+                title: '姓名'
             },
             {
-                field: 'number',
-                title: '邮箱'
+                field: 'gender',
+                title: '性别'
             },
             {
-                field: 'issueDate',
-                title: '电话'
+                field: 'email',
+                title: '邮件'
             },
             // {
             //     field: 'validityPeriod',
@@ -106,8 +105,4 @@
     }
 
     load_data( getcolumns(), {"createDate": "desc"});
-
-    function dt_explort_buttont() {
-        location.href=url + "excel";
-    }
 </script>
