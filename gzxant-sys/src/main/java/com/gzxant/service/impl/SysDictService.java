@@ -1,6 +1,8 @@
 package com.gzxant.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.util.Lists;
@@ -189,4 +191,23 @@ public class SysDictService extends BaseService<SysDictDao, SysDict> implements 
         return jts;
     }
 
+    @Override
+    public Map<String, Map<String, List<SysDict>>> getDictMapByMap(Map<String, String> keyToJkey) {
+        // Store the dict mapping that would need
+        Map<String, List<SysDict>> dictMap = new HashMap<>();
+
+        // do the query for all the needed mapping
+        for(Map.Entry<String, String> entry : keyToJkey.entrySet()) {
+            // put the dict list into dict map
+            dictMap.put(entry.getKey(), this.getDictTree(entry.getValue()));
+
+        }
+
+        // construct the big dict map
+        Map<String, Map<String, List<SysDict>>>  mp = new HashMap<>();
+        mp.put("dict",dictMap);
+
+        // return the final dict map
+        return mp;
+    }
 }

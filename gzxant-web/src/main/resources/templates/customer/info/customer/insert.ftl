@@ -48,10 +48,10 @@
                         <div class="form-group">
 
                             <label class="col-sm-3 control-label">证件图片：<span class="required">*</span></label>
-                        <#-- photo location input -->
+                            <#-- photo location input -->
                             <input type="hidden" name="attachment" value="${sysUser.photo}" id="photo"/>
 
-                        <#-- drop zone area -->
+                            <#-- drop zone area -->
                             <div class="col-sm-4">
                                 <div id="mydropzone" class="dropzone"></div>
                             </div>
@@ -239,15 +239,15 @@
                 required: true
             },
             email:{
-                required: true，
+                required: true,
                 email:true
             },
             emergencyContact:{
                 required: true
             },
             emergencyContactTel:{
-                required: true，
-                isMobile:true，
+                required: true,
+                isMobile:true,
             },
             type:{
                 required: true,
