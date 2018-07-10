@@ -7,6 +7,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import com.baomidou.mybatisplus.mapper.Condition;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.gzxant.entity.customer.info.certificate.CustomerInfoCertificate;
 import com.gzxant.service.ISysDictService;
@@ -50,6 +52,18 @@ public class CustomerInfoCustomerController extends BaseController {
 	@Autowired
 	private ICustomerInfoCertificateService iCustomerInfoCertificateService;
 
+
+	private Map getReturnMap(Map basicMap){
+		// Fetch dict information dependency then inject it into basic map.
+		basicMap.putAll(iSysDictService.getDictMapByMap( new HashMap<String, String>(){{
+			put("driveCapability", "DriveCapability");
+			put("emergencyContactRelationship", "EmergencyContactRelationship");
+			put("status", "CustomerStatus");
+		}}));
+		return basicMap;
+	}
+
+
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		// this binder is for successfully transfer from String to Date
@@ -63,7 +77,10 @@ public class CustomerInfoCustomerController extends BaseController {
 	 * @return Request status
 	 */
 	@PostMapping("")
-	public ReturnDTO create(){
+	public ReturnDTO create(@RequestBody @Valid CustomerInfoCustomer customer){
+		// create the entity into database
+		customerInfoCustomerService.insertOrUpdate(customer);
+		// return the successful code.
 		return ReturnDTOUtil.success();
 	}
 
@@ -74,49 +91,39 @@ public class CustomerInfoCustomerController extends BaseController {
 	@GetMapping("")
 	public Map get(@RequestParam(value = "page",defaultValue = "1") int page,
 				   @RequestParam(value = "page_size",defaultValue = "10") int pageSize ){
-		Map mp = new HashMap();
+		Map returnMap = new HashMap();
 		// put the customer's list
-		mp.put("customers",
+		returnMap.put("customers",
 					customerInfoCustomerService.selectPage(
 						new Page(page,pageSize)
 					).getRecords()
 		);
 
-//		complex code:
-//		Map dictMap = new HashMap();
-//		dictMap.put("driveCapability",iSysDictService.getDictTree("DriveCapability")) ;
-//		dictMap.put("emergencyContactRelationship",iSysDictService.getDictTree("EmergencyContactRelationship")) ;
-//		dictMap.put("status",iSysDictService.getDictTree("CustomerStatus")) ;
-//		mp.put("dict",dictMap);
 
-
-		// simplify code
-		mp.putAll(iSysDictService.getDictMapByMap( new HashMap<String, String>(){{
-			put("driveCapability","DriveCapability");
-			put("emergencyContactRelationship","EmergencyContactRelationship");
-			put("status","CustomerStatus");
-		}}));
-		return mp;
+		return this.getReturnMap(returnMap);
 	}
 
 	/**
 	 * Read the correspond customer
 	 * @param id id of the customer
-	 * @return request status
+	 * @return return entity with dict information.
 	 */
 	@GetMapping("/{id}")
-	public CustomerInfoCustomer get(@PathVariable("id") Long id ){
-		return customerInfoCustomerService.selectById(id);
+	public Map get(@PathVariable("id") Long id ){
+		Map returnMap = new HashMap();
+		returnMap.put("customer", customerInfoCustomerService.selectById(id));
+		return this.getReturnMap(returnMap);
 	}
 
 	/**
 	 * update the correspond customer
 	 * @return request status
 	 */
-	@PutMapping("/{id}")
-	public ReturnDTO update(@PathVariable("id") Long id, @Valid CustomerInfoCustomer customer){
+	@PutMapping("")
+	public ReturnDTO update(@RequestBody @Valid CustomerInfoCustomer customer){
 		// call update by id and store the new customer's information
-		customerInfoCustomerService.updateById(customer);
+        System.out.println(customer.toString());
+		customerInfoCustomerService.update(customer, Condition.create().eq("id", customer.getId()));
 		return  ReturnDTOUtil.success();
 	}
 
