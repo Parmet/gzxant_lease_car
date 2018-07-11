@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="gzxant-api" />
         <module name="gzxant-web" />
         <module name="slife-code" />
         <module name="slife-common" />
@@ -14,6 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="gzxant-api" target="1.8" />
       <module name="gzxant-web" target="1.8" />
       <module name="gzxant_lease_car" target="1.8" />
       <module name="slife-code" target="1.8" />

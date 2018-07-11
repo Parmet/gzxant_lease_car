@@ -48,6 +48,7 @@
 
         <!-- boot启动类模板  port:8081 -->
         <module>gzxant-web</module>
+        <module>gzxant-api</module>
     </modules>
 
     <!--全局依赖-->
