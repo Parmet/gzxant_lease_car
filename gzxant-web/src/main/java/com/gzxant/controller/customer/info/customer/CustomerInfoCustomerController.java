@@ -49,8 +49,7 @@ public class CustomerInfoCustomerController extends BaseController {
 	private ICustomerInfoCustomerService customerInfoCustomerService;
 	@Autowired
 	private ISysDictService iSysDictService;
-	@Autowired
-	private ICustomerInfoCertificateService iCustomerInfoCertificateService;
+
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {

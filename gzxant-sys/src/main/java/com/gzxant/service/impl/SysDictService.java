@@ -191,23 +191,37 @@ public class SysDictService extends BaseService<SysDictDao, SysDict> implements 
         return jts;
     }
 
+    /**
+     * Compress the return map, only contain the required jkey to jvalue pair.
+     * @param keyToJkey A map from entity's key to jkey.
+     * @return
+     */
     @Override
-    public Map<String, Map<String, List<SysDict>>> getDictMapByMap(Map<String, String> keyToJkey) {
+    public Map<String, Object> getDictMapByMap(Map<String, String> keyToJkey) {
         // Store the dict mapping that would need
-        Map<String, List<SysDict>> dictMap = new HashMap<>();
+        Map<String, Map<String, String>> dictMap = new HashMap<>();
 
         // do the query for all the needed mapping
         for(Map.Entry<String, String> entry : keyToJkey.entrySet()) {
+            // construct an empty list
+            Map<String, String> mp = new HashMap<>();
+
+            for (SysDict each :
+                    this.getDictTree(entry.getValue())) {
+                // put the key value pair in this map
+                mp.put(each.getJkey(),each.getJvalue());
+            }
+
             // put the dict list into dict map
-            dictMap.put(entry.getKey(), this.getDictTree(entry.getValue()));
+            dictMap.put(entry.getKey(),mp);
 
         }
 
-        // construct the big dict map
-        Map<String, Map<String, List<SysDict>>>  mp = new HashMap<>();
-        mp.put("dict",dictMap);
+        // construct the return map
+        Map <String, Object>returnMap = new HashMap<>();
+        returnMap.put("dict",dictMap);
 
         // return the final dict map
-        return mp;
+        return returnMap;
     }
 }

@@ -37,7 +37,7 @@ public interface ISysDictService extends IBaseService<SysDict> {
      * @param keyToJkey A map from entity's key to jkey.
      * @return A mapping of dict's jkey to it's value
      */
-    Map<String, Map<String,List<SysDict>>> getDictMapByMap(Map<String,String> keyToJkey);
+    Map<String,Object>getDictMapByMap(Map<String,String> keyToJkey);
 
     PCAjaxVO delete(Long id);
 
