@@ -1,6 +1,5 @@
 package com.gzxant.service.impl;
 
-import org.junit.Test;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
