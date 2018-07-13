@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
-
+  
                     <form class="form-horizontal form-bordered" id="gzxantForm" >
                         <input type="hidden" name="id" value="${carSet.id}"/>
                         <input type="hidden" name="photo" value="${carSet.photo}" id="photo"/>

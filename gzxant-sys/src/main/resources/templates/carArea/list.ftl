@@ -1,7 +1,7 @@
 <div class="wrapper wrapper-content animated fadeInRight">
         <div class="col-sm-12">
             <div class="ibox">
-                <div class="ibox-body">
+                <div class="ibox-body">  
                     <div id="exampleToolbar" role="group">
                         <div class="panel panel-default">
                             <div class="panel-heading">
