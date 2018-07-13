@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotations.TableField;
 public abstract class CarEntity <T extends Model> extends DataEntity<T> {
 
 	private static final long serialVersionUID = 1L;
-	
+	  
 	/**
 	 * 车系名称
 	 */
