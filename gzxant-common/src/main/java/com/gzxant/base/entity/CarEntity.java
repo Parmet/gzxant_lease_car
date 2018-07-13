@@ -14,7 +14,7 @@ public abstract class CarEntity <T extends Model> extends DataEntity<T> {
 	protected String carTrainName;
 	 
 	/**
-	 * 车型名称   
+	 * 车型名称     
 	 */
 	@TableField(value ="car_size_name")
 	protected String carSizeName;
