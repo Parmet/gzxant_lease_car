@@ -4,10 +4,10 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.gzxant.base.entity.BaseEntity;
+import com.gzxant.base.entity.DataEntity;
 
 @TableName("car_area")
-public class CarArea extends BaseEntity<CarArea>{
+public class CarArea extends DataEntity<CarArea>{
 
 	private static final long serialVersionUID = 1L;
 

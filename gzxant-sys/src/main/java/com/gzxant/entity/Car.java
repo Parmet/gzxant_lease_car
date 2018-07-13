@@ -13,134 +13,192 @@ public class Car extends CarEntity<Car>{
 	private static final long serialVersionUID = 1L;
 	
 	/**
-	 * 服务城市
-	 */
-	@TableField(value ="service_city")
-	private String serviceCity;
-	
-	/**
 	 * 车牌号码 
 	 */
 	@TableField(value ="car_number")
 	private String carNumber;
 	
 	/**
-	 * 车场
+	 * 车辆类型
 	 */
-	@TableField(value ="car_park")
-	private String carPark;
+	@TableField(value ="vehicle_type")
+	private String vehicleType;
 	
 	/**
-	 * 网店
+	 * 租赁类型
 	 */
-	@TableField(value ="online_store")
-	private String onlineStore;
+	@TableField(value ="lease_type")
+	private String leaseType;
 	
 	/**
-	 * 车辆颜色
+	 * 资产状态
 	 */
-	@TableField(value ="car_color")
-	private String carColor;
+	@TableField(value ="assets_state")
+	private String assetsState;
 	
 	/**
-	 * 车辆全名
+	 * 使用组织
 	 */
-	@TableField(value ="car_name")
-	private String carName;
+	@TableField(value ="used_organization")
+	private String usedOrganization;
 	
 	/**
-	 * 所属城市
+	 * 所在车区
 	 */
-	@TableField(value ="belong_city")
-	private String belongCity;
+	@TableField(value ="where_car_area")
+	private String whereCarArea;
 	
 	/**
-	 * 续航里程
+	 * 购买日期
 	 */
-	private String mileage;
+	@TableField(value ="buy_date")
+	private Date buyDate;
 	
 	/**
-	 * 发动机号
+	 * 资产编号
 	 */
-	@TableField(value ="motor_number")
-	private String motorNumber;
+	@TableField(value ="assets_number")
+	private String assetsNumber;
 	
 	/**
-	 * 保险到期时间
+	 * 资产所属
 	 */
-	@TableField(value ="insurance_date")
-	private Date insuranceDate;
+	@TableField(value ="assets_belong")
+	private String assetsBelong;
 	
 	/**
-	 * 年检时间
+	 * 邮箱地址
+	 */	
+	private String email;
+	
+	/**
+	 * 客户状态
 	 */
-	@TableField(value ="annual_survey_date")
-	private Date annualSurveyDate;
+	@TableField(value ="customer_state")
+	private String customerState;
 	
 	/**
 	 * 车架号
 	 */
-	private String vin;
+	@TableField(value ="frame_number")
+	private String frameNumber;
 	
 	/**
-	 * 车龄
+	 * 发动机号
 	 */
-	@TableField(value ="car_age")
-	private Integer carAge;
+	@TableField(value ="engine_number")
+	private String engine_number;
 	
 	/**
-	 * SN
+	 * 机电编号
 	 */
-	private Long sn;
+	@TableField(value ="e_m_number")
+	private String EMNumber;
 	
 	/**
-	 * Code
+	 * 颜色
 	 */
-	private String code;
+	private String color;
 	
 	/**
-	 * 机车类型
+	 * 出厂日期
 	 */
-	@TableField(value ="ecar_type")
-	private String ecarType;
+	@TableField(value ="production_date")
+	private Date productionDate;
 	
 	/**
-	 * 车辆来源
+	 * 年审日期
 	 */
-	@TableField(value ="car_source")
-	private String carSource;
+	@TableField(value ="annual_trial_date")
+	private Date annualTrialDate;
 	
 	/**
-	 * 蓝牙模式
+	 * 首付
 	 */
-	@TableField(value ="bluetooth_mode")
-	private boolean bluetoothMode;
+	@TableField(value ="down_payments")
+	private Integer downPayments;
 	
 	/**
-	 * 寻车模式
+	 * 押金
 	 */
-	@TableField(value ="find_car_type")
-	private boolean findCarType;
+	private Integer deposit;
 	
 	/**
-	 * 百公里油耗
+	 * 期数
 	 */
-	@TableField(value ="oil_wear")
-	private Integer oilWear;
+	@TableField(value ="periods_number")
+	private Integer periodsNumber;
 	
-	public String getServiceCity() {
-		return serviceCity;
-	}
+	/**
+	 * 总额
+	 */
+	private Integer total;
 
-
-	public void setServiceCity(String serviceCity) {
-		this.serviceCity = serviceCity;
-	}
-
+	/**
+	 * 登记号码
+	 */
+	@TableField(value ="registration_number")
+	private String registrationNumber;
+	
+	/**
+	 * 登记证登记日期
+	 */
+	@TableField(value ="registration_date")
+	private Date registrationDeta;
+	
+	/**
+	 * 登记证发证日期
+	 */
+	@TableField(value ="registration_certificate_date")
+	private Date registrationCertificateDate;
+	
+	/**
+	 * 上牌日期
+	 */
+	@TableField(value ="on_cards_date")
+	private Date onCardsDate;
+	
+	/**
+	 * 行驶注册日期
+	 */
+	@TableField(value ="d_l_r_date")
+	private Date dLRDate;
+	
+	/**
+	 * 行驶注册日期
+	 */
+	@TableField(value ="d_l_c_date")
+	private Date dLCDate;
+	
+	/**
+	 * 发票号
+	 */
+	@TableField(value ="invoice_number")
+	private String invoiceNumber;
+	
+	/**
+	 * 发票日期
+	 */
+	@TableField(value ="invoice_date")
+	private Date invoiceDate;
+	
+	/**
+	 * 证件类型
+	 */
+	@TableField(value ="document_type")
+	private String documentType;
+	
+	/**
+	 * 附件
+	 */
+	private String enclosure;
+	
+	
 	
 	public String getCarNumber() {
 		return carNumber;
 	}
+
 
 
 	public void setCarNumber(String carNumber) {
@@ -148,184 +206,366 @@ public class Car extends CarEntity<Car>{
 	}
 
 
-	public String getCarPark() {
-		return carPark;
+
+	public String getVehicleType() {
+		return vehicleType;
 	}
 
 
-	public void setCarPark(String carPark) {
-		this.carPark = carPark;
+
+	public void setVehicleType(String vehicleType) {
+		this.vehicleType = vehicleType;
 	}
 
 
-	public String getOnlineStore() {
-		return onlineStore;
+
+	public String getLeaseType() {
+		return leaseType;
 	}
 
 
-	public void setOnlineStore(String onlineStore) {
-		this.onlineStore = onlineStore;
+
+	public void setLeaseType(String leaseType) {
+		this.leaseType = leaseType;
 	}
 
 
-	public String getCarColor() {
-		return carColor;
+
+	public String getAssetsState() {
+		return assetsState;
 	}
 
 
-	public void setCarColor(String carColor) {
-		this.carColor = carColor;
+
+	public void setAssetsState(String assetsState) {
+		this.assetsState = assetsState;
 	}
 
 
-	public String getCarName() {
-		return carName;
+
+	public String getUsedOrganization() {
+		return usedOrganization;
 	}
 
 
-	public void setCarName(String carName) {
-		this.carName = carName;
+
+	public void setUsedOrganization(String usedOrganization) {
+		this.usedOrganization = usedOrganization;
 	}
 
 
-	public String getBelongCity() {
-		return belongCity;
+
+	public String getWhereCarArea() {
+		return whereCarArea;
 	}
 
 
-	public void setBelongCity(String belongCity) {
-		this.belongCity = belongCity;
+
+	public void setWhereCarArea(String whereCarArea) {
+		this.whereCarArea = whereCarArea;
 	}
 
 
-	public String getMileage() {
-		return mileage;
+
+	public Date getBuyDate() {
+		return buyDate;
 	}
 
 
-	public void setMileage(String mileage) {
-		this.mileage = mileage;
+
+	public void setBuyDate(Date buyDate) {
+		this.buyDate = buyDate;
 	}
 
 
-	public String getMotorNumber() {
-		return motorNumber;
+
+	public String getAssetsNumber() {
+		return assetsNumber;
 	}
 
 
-	public void setMotorNumber(String motorNumber) {
-		this.motorNumber = motorNumber;
+
+	public void setAssetsNumber(String assetsNumber) {
+		this.assetsNumber = assetsNumber;
 	}
 
 
-	public Date getInsuranceDate() {
-		return insuranceDate;
+
+	public String getAssetsBelong() {
+		return assetsBelong;
 	}
 
 
-	public void setInsuranceDate(Date insuranceDate) {
-		this.insuranceDate = insuranceDate;
+
+	public void setAssetsBelong(String assetsBelong) {
+		this.assetsBelong = assetsBelong;
 	}
 
 
-	public Date getAnnualSurveyDate() {
-		return annualSurveyDate;
+
+	public String getEmail() {
+		return email;
 	}
 
 
-	public void setAnnualSurveyDate(Date annualSurveyDate) {
-		this.annualSurveyDate = annualSurveyDate;
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 
-	public String getVin() {
-		return vin;
+
+	public String getCustomerState() {
+		return customerState;
 	}
 
 
-	public void setVin(String vin) {
-		this.vin = vin;
+
+	public void setCustomerState(String customerState) {
+		this.customerState = customerState;
 	}
 
 
-	public Integer getCarAge() {
-		return carAge;
+
+	public String getFrameNumber() {
+		return frameNumber;
 	}
 
 
-	public void setCarAge(Integer carAge) {
-		this.carAge = carAge;
+
+	public void setFrameNumber(String frameNumber) {
+		this.frameNumber = frameNumber;
 	}
 
 
-	public Long getSn() {
-		return sn;
+
+	public String getEngine_number() {
+		return engine_number;
 	}
 
 
-	public void setSn(Long sn) {
-		this.sn = sn;
+
+	public void setEngine_number(String engine_number) {
+		this.engine_number = engine_number;
 	}
 
 
-	public String getCode() {
-		return code;
+
+	public String getEMNumber() {
+		return EMNumber;
 	}
 
 
-	public void setCode(String code) {
-		this.code = code;
+
+	public void setEMNumber(String eMNumber) {
+		EMNumber = eMNumber;
 	}
 
 
-	public String getEcarType() {
-		return ecarType;
+
+	public String getColor() {
+		return color;
 	}
 
 
-	public void setEcarType(String ecarType) {
-		this.ecarType = ecarType;
+
+	public void setColor(String color) {
+		this.color = color;
 	}
 
 
-	public String getCarSource() {
-		return carSource;
+
+	public Date getProductionDate() {
+		return productionDate;
 	}
 
 
-	public void setCarSource(String carSource) {
-		this.carSource = carSource;
+
+	public void setProductionDate(Date productionDate) {
+		this.productionDate = productionDate;
 	}
 
 
-	public boolean isBluetoothMode() {
-		return bluetoothMode;
+
+	public Date getAnnualTrialDate() {
+		return annualTrialDate;
 	}
 
 
-	public void setBluetoothMode(boolean bluetoothMode) {
-		this.bluetoothMode = bluetoothMode;
+
+	public void setAnnualTrialDate(Date annualTrialDate) {
+		this.annualTrialDate = annualTrialDate;
 	}
 
 
-	public boolean isFindCarType() {
-		return findCarType;
+
+	public Integer getDownPayments() {
+		return downPayments;
 	}
 
 
-	public void setFindCarType(boolean findCarType) {
-		this.findCarType = findCarType;
+
+	public void setDownPayments(Integer downPayments) {
+		this.downPayments = downPayments;
 	}
 
 
-	public Integer getOilWear() {
-		return oilWear;
+
+	public Integer getDeposit() {
+		return deposit;
 	}
 
 
-	public void setOilWear(Integer oilWear) {
-		this.oilWear = oilWear;
+
+	public void setDeposit(Integer deposit) {
+		this.deposit = deposit;
 	}
+
+
+
+	public Integer getPeriodsNumber() {
+		return periodsNumber;
+	}
+
+
+
+	public void setPeriodsNumber(Integer periodsNumber) {
+		this.periodsNumber = periodsNumber;
+	}
+
+
+
+	public Integer getTotal() {
+		return total;
+	}
+
+
+
+	public void setTotal(Integer total) {
+		this.total = total;
+	}
+
+
+
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
+
+
+
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+
+
+
+	public Date getRegistrationDeta() {
+		return registrationDeta;
+	}
+
+
+
+	public void setRegistrationDeta(Date registrationDeta) {
+		this.registrationDeta = registrationDeta;
+	}
+
+
+
+	public Date getRegistrationCertificateDate() {
+		return registrationCertificateDate;
+	}
+
+
+
+	public void setRegistrationCertificateDate(Date registrationCertificateDate) {
+		this.registrationCertificateDate = registrationCertificateDate;
+	}
+
+
+
+	public Date getOnCardsDate() {
+		return onCardsDate;
+	}
+
+
+
+	public void setOnCardsDate(Date onCardsDate) {
+		this.onCardsDate = onCardsDate;
+	}
+
+
+
+	public Date getdLRDate() {
+		return dLRDate;
+	}
+
+
+
+	public void setdLRDate(Date dLRDate) {
+		this.dLRDate = dLRDate;
+	}
+
+
+
+	public Date getdLCDate() {
+		return dLCDate;
+	}
+
+
+
+	public void setdLCDate(Date dLCDate) {
+		this.dLCDate = dLCDate;
+	}
+
+
+
+	public String getInvoiceNumber() {
+		return invoiceNumber;
+	}
+
+
+
+	public void setInvoiceNumber(String invoiceNumber) {
+		this.invoiceNumber = invoiceNumber;
+	}
+
+
+
+	public Date getInvoiceDate() {
+		return invoiceDate;
+	}
+
+
+
+	public void setInvoiceDate(Date invoiceDate) {
+		this.invoiceDate = invoiceDate;
+	}
+
+
+
+	public String getDocumentType() {
+		return documentType;
+	}
+
+
+
+	public void setDocumentType(String documentType) {
+		this.documentType = documentType;
+	}
+
+
+
+	public String getEnclosure() {
+		return enclosure;
+	}
+
+
+
+	public void setEnclosure(String enclosure) {
+		this.enclosure = enclosure;
+	}
+
+
 
 	@Override
 	protected Serializable pkVal() {
