@@ -1,9 +1,11 @@
 package com.gzxant.controller.car;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,11 +26,13 @@ import com.gzxant.base.controller.BaseController;
 import com.gzxant.base.entity.ReturnDTO;
 import com.gzxant.base.vo.DataTable;
 import com.gzxant.entity.Car;
+import com.gzxant.entity.SysUser;
 import com.gzxant.enums.CarSizeNameEnums;
 import com.gzxant.enums.CarTrainNameEnums;
 import com.gzxant.enums.CityNameEnums;
 import com.gzxant.enums.HttpCodeEnum;
 import com.gzxant.exception.SlifeException;
+import com.gzxant.service.ICarAreaService;
 import com.gzxant.service.ICarService;
 import com.gzxant.util.ReturnDTOUtil;
 
@@ -45,17 +49,55 @@ public class CarController extends BaseController {
 	
     @Autowired
     private ICarService carService;
+    
+    @Autowired
+    private ICarAreaService carAreaService;
 	
     @RequiresPermissions("car:list")
     @SLog("进入汽车列表界面")
     @ApiOperation(value = "进入用户列表界面", notes = "进入用户列表界面")
     @GetMapping(value = "")
     public String list(Model model, HttpServletRequest request) {
+        model.addAttribute("carAreaList", carAreaService.selectList(null));
         model.addAttribute("url", request.getContextPath() + "/car/list/");
-        model.addAttribute("cityName", CityNameEnums.values());
-        model.addAttribute("trainName", CarTrainNameEnums.values());
-        model.addAttribute("sizeName", CarSizeNameEnums.values());
+        model.addAttribute("carList", carService.selectList(null));
         return "car/list";
+    }
+    
+    /**
+     * 对车场数据分页显示
+     *
+     * @param dt
+     * @param request
+     * @return
+     */
+    @SLog("车辆管理导出数据")
+    @ApiOperation(value = "导出数据")
+    @GetMapping(value = "/leadingOut")
+    public void leadingOut(HttpServletResponse response) throws Exception  {
+    	 List<Car> cars = carService.selectList(null);
+
+         //导出数据
+         String excelTitle = "车辆管理列表";
+         String[] headerTitle = new String[]{"id", "年审日期", "资产所属", "资产编号", "资产状态", "购买日期", "车牌号", "颜色"};
+         List<String[]> arrayList = new ArrayList<>();
+         arrayList.add(headerTitle); //列头
+         if (null != cars && cars.size() > 0) {
+             for (Car car : cars) {
+                 arrayList.add(
+                         new String[]{
+                        		 car.getId().toString(),
+                        		 car.getAnnualTrialDate(),
+                        		 car.getAssetsBelong(),
+                        		 car.getAssetsNumber(),
+                                 car.getAssetsState(),
+                                 car.getBuyDate(),
+                                 car.getCarNumber(),
+                                 car.getColor()
+                         });
+             }
+         }
+         ExceptInfo(response, excelTitle, arrayList);
     }
     
     /**

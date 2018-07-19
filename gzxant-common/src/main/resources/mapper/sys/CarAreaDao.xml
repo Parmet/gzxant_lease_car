@@ -21,10 +21,10 @@
         <id property="id" column="id"></id>
         <result property="remark" column="su_remark"></result>
         <result property="delFlag" column="del_flag"></result>    
-        <result property="belongCity" column="belong_city"></result>
-        <result property="contactPerson" column="contact_person"></result>
-        <result property="contactNumber" column="contact_number"></result>
+        <result property="belongOrganization" column="belong_organization"></result>
+        <result property="address" column="address"></result>
         <result property="carAreaName" column="car_area_name"></result>
+        
     </resultMap>
 
 </mapper>

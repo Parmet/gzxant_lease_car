@@ -10,21 +10,22 @@
                             <div class="panel-body">
                                 <div class="row">
                                 	 <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
-                                        <label for="nameInput" class="control-label">所属城市：</label>
-                                        <select class="form-filter form-control _search" id="nameInput" name="search_like_belong_city">
+                                        <label for="nameInput" class="control-label">所属组织：</label>
+                                        <select class="form-filter form-control _search" id="nameInput" name="search_like_belong_organization">
 		                                    <option value = "">请选择</option>
-                                        	<#list cityName as name>
-		                                        <option value="${name}">${name}</option>
+                                        	<#list carAreaList as carArea>
+		                                        <option value="${carArea.belongOrganization}">${carArea.belongOrganization}</option>
 		                                    </#list>
                                         </select>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
-                                        <label for="nameInput" class="control-label">联系人：</label>
-                                        <input type="text" class="form-filter form-control _search" id="nameInput" name="search_like_contact_person"  />
-                                    </div>
-                                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
-                                        <label for="nameInput" class="control-label">车区名：</label>
-                                        <input type="text" class="form-filter form-control _search" id="nameInput" name="search_like_car_area_name"  />
+                                        <label for="nameInput" class="control-label">车区名称：</label>
+                                        <select class="form-filter form-control _search" id="nameInput" name="search_like_car_area_name">
+		                                    <option value = "">请选择</option>
+                                        	<#list carAreaList as carArea>
+		                                        <option value="${carArea.carAreaName}">${carArea.carAreaName}</option>
+		                                    </#list>
+                                        </select>                                        
                                     </div>
                                 </div>
                             </div>
@@ -64,20 +65,16 @@
                 title: 'id' // 列标题
             },
             {
-                field: 'belongCity',
-                title: '所属城市'
+                field: 'belongOrganization',
+                title: '所属组织'
             },
             {
                 field: 'carAreaName',
-                title: '车区名'
+                title: '车区名称'
             },
             {
-                field: 'contactPerson',
-                title: '联系人'
-            },
-            {
-                field: 'contactNumber',
-                title: '联系号码'
+                field: 'address',
+                title: '地址'
             },
 			{
                 title: '操作',

@@ -54,8 +54,27 @@ public class CarAreaController extends BaseController {
     @GetMapping(value = "")
     public String list(Model model, HttpServletRequest request) {
         model.addAttribute("url", request.getContextPath() + "/car/area/");
-        model.addAttribute("cityName", CityNameEnums.values());
+        DataTable dt = new DataTable();
+        dt.setPageNumber(0);
+        dt.setPageSize(10);
+        model.addAttribute("carAreaList", carAreaService.pageSearch(dt).getRows());
         return "carArea/list";
+    }
+    
+    /**
+     * 对车场数据分页显示
+     *
+     * @param dt
+     * @param request
+     * @return
+     */
+    @SLog("车场导出数据")
+    @ApiOperation(value = "导出数据")
+    @GetMapping(value = "/leadingOut")
+    @ResponseBody
+    public String leadingOut(@RequestBody DataTable dt, ServletRequest request) {
+    	System.out.println("导入数据");
+    	return "success";
     }
     
     /**

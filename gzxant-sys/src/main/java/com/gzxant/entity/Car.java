@@ -1,14 +1,13 @@
 package com.gzxant.entity;
 
 import java.io.Serializable;
-import java.sql.Date;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.gzxant.base.entity.CarEntity;
+import com.gzxant.base.entity.DataEntity;
 
 @TableName("car")
-public class Car extends CarEntity<Car>{
+public class Car extends DataEntity<Car>{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -19,7 +18,7 @@ public class Car extends CarEntity<Car>{
 	private String carNumber;
 	
 	/**
-	 * 车辆类型
+	 * 车辆型号
 	 */
 	@TableField(value ="vehicle_type")
 	private String vehicleType;
@@ -52,7 +51,7 @@ public class Car extends CarEntity<Car>{
 	 * 购买日期
 	 */
 	@TableField(value ="buy_date")
-	private Date buyDate;
+	private String buyDate;
 	
 	/**
 	 * 资产编号
@@ -87,7 +86,7 @@ public class Car extends CarEntity<Car>{
 	 * 发动机号
 	 */
 	@TableField(value ="engine_number")
-	private String engine_number;
+	private String engineNumber;
 	
 	/**
 	 * 机电编号
@@ -104,13 +103,13 @@ public class Car extends CarEntity<Car>{
 	 * 出厂日期
 	 */
 	@TableField(value ="production_date")
-	private Date productionDate;
+	private String productionDate;
 	
 	/**
 	 * 年审日期
 	 */
 	@TableField(value ="annual_trial_date")
-	private Date annualTrialDate;
+	private String annualTrialDate;
 	
 	/**
 	 * 首付
@@ -144,31 +143,37 @@ public class Car extends CarEntity<Car>{
 	 * 登记证登记日期
 	 */
 	@TableField(value ="registration_date")
-	private Date registrationDeta;
+	private String registrationDeta;
 	
 	/**
 	 * 登记证发证日期
 	 */
 	@TableField(value ="registration_certificate_date")
-	private Date registrationCertificateDate;
+	private String registrationCertificateDate;
 	
 	/**
 	 * 上牌日期
 	 */
 	@TableField(value ="on_cards_date")
-	private Date onCardsDate;
+	private String onCardsDate;
+	
+	/**
+	 * 上牌日期
+	 */
+	@TableField(value ="driving_license_number")
+	private String drivingLicenseNumber;
 	
 	/**
 	 * 行驶注册日期
 	 */
 	@TableField(value ="d_l_r_date")
-	private Date dLRDate;
+	private String DLRDate;
 	
 	/**
-	 * 行驶注册日期
+	 * 行驶发证日期
 	 */
 	@TableField(value ="d_l_c_date")
-	private Date dLCDate;
+	private String DLCDate;
 	
 	/**
 	 * 发票号
@@ -180,7 +185,7 @@ public class Car extends CarEntity<Car>{
 	 * 发票日期
 	 */
 	@TableField(value ="invoice_date")
-	private Date invoiceDate;
+	private String invoiceDate;
 	
 	/**
 	 * 证件类型
@@ -267,13 +272,13 @@ public class Car extends CarEntity<Car>{
 
 
 
-	public Date getBuyDate() {
+	public String getBuyDate() {
 		return buyDate;
 	}
 
 
 
-	public void setBuyDate(Date buyDate) {
+	public void setBuyDate(String buyDate) {
 		this.buyDate = buyDate;
 	}
 
@@ -339,14 +344,14 @@ public class Car extends CarEntity<Car>{
 
 
 
-	public String getEngine_number() {
-		return engine_number;
+	public String getEngineNumber() {
+		return engineNumber;
 	}
 
 
 
-	public void setEngine_number(String engine_number) {
-		this.engine_number = engine_number;
+	public void setEngineNumber(String engineNumber) {
+		this.engineNumber = engineNumber;
 	}
 
 
@@ -375,25 +380,25 @@ public class Car extends CarEntity<Car>{
 
 
 
-	public Date getProductionDate() {
+	public String getProductionDate() {
 		return productionDate;
 	}
 
 
 
-	public void setProductionDate(Date productionDate) {
+	public void setProductionDate(String productionDate) {
 		this.productionDate = productionDate;
 	}
 
 
 
-	public Date getAnnualTrialDate() {
+	public String getAnnualTrialDate() {
 		return annualTrialDate;
 	}
 
 
 
-	public void setAnnualTrialDate(Date annualTrialDate) {
+	public void setAnnualTrialDate(String annualTrialDate) {
 		this.annualTrialDate = annualTrialDate;
 	}
 
@@ -459,63 +464,42 @@ public class Car extends CarEntity<Car>{
 
 
 
-	public Date getRegistrationDeta() {
+	public String getRegistrationDeta() {
 		return registrationDeta;
 	}
 
 
 
-	public void setRegistrationDeta(Date registrationDeta) {
+	public void setRegistrationDeta(String registrationDeta) {
 		this.registrationDeta = registrationDeta;
 	}
 
 
 
-	public Date getRegistrationCertificateDate() {
+	public String getRegistrationCertificateDate() {
 		return registrationCertificateDate;
 	}
 
 
 
-	public void setRegistrationCertificateDate(Date registrationCertificateDate) {
+	public void setRegistrationCertificateDate(String registrationCertificateDate) {
 		this.registrationCertificateDate = registrationCertificateDate;
 	}
 
 
 
-	public Date getOnCardsDate() {
+	public String getOnCardsDate() {
 		return onCardsDate;
 	}
 
 
 
-	public void setOnCardsDate(Date onCardsDate) {
+	public void setOnCardsDate(String onCardsDate) {
 		this.onCardsDate = onCardsDate;
 	}
 
 
 
-	public Date getdLRDate() {
-		return dLRDate;
-	}
-
-
-
-	public void setdLRDate(Date dLRDate) {
-		this.dLRDate = dLRDate;
-	}
-
-
-
-	public Date getdLCDate() {
-		return dLCDate;
-	}
-
-
-
-	public void setdLCDate(Date dLCDate) {
-		this.dLCDate = dLCDate;
-	}
 
 
 
@@ -531,13 +515,13 @@ public class Car extends CarEntity<Car>{
 
 
 
-	public Date getInvoiceDate() {
+	public String getInvoiceDate() {
 		return invoiceDate;
 	}
 
 
 
-	public void setInvoiceDate(Date invoiceDate) {
+	public void setInvoiceDate(String invoiceDate) {
 		this.invoiceDate = invoiceDate;
 	}
 
@@ -563,6 +547,42 @@ public class Car extends CarEntity<Car>{
 
 	public void setEnclosure(String enclosure) {
 		this.enclosure = enclosure;
+	}
+
+
+
+	public String getDLRDate() {
+		return DLRDate;
+	}
+
+
+
+	public void setDLRDate(String DLRDate) {
+		DLRDate = DLRDate;
+	}
+
+
+
+	public String getDLCDate() {
+		return DLCDate;
+	}
+
+
+
+	public void setDLCDate(String DLCDate) {
+		DLCDate = DLCDate;
+	}
+
+
+
+	public String getDrivingLicenseNumber() {
+		return drivingLicenseNumber;
+	}
+
+
+
+	public void setDrivingLicenseNumber(String drivingLicenseNumber) {
+		this.drivingLicenseNumber = drivingLicenseNumber;
 	}
 
 

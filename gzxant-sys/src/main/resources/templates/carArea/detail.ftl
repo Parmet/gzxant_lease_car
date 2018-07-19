@@ -8,33 +8,23 @@
                         <input type="hidden" name="id" value="${carArea.id}"/>
                         
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">所属城市<span class="required">*</span></label>
-                            <div class="col-sm-4">
-                                <select class="form-filter form-control _search" id="belongCity" name="belongCity" value="${car.belongCity}">
-                                	<option value = "">请选择</option>
-                                    <#list cityName as name>
-                                        <option value="${name}">${name}</option>
-                                    </#list>                                	
-                                </select>                    	
-                            </div>
-                            <label class="col-sm-2 control-label">车区名<span class="required">*</span></label>
+                            <label class="col-sm-2 control-label">车区名称<span class="required">*</span></label>
                             <div class="col-sm-4">
                                 <input name="carAreaName" type="text" class="form-control" value="${carArea.carAreaName}"
-                                       placeholder="车区名">                       	
+                                       placeholder="填写车区名称">                  	
+                            </div>
+                            <label class="col-sm-2 control-label">所属组织<span class="required">*</span></label>
+                            <div class="col-sm-4">
+                                <input name="belongOrganization" type="text" class="form-control" value="${carArea.belongOrganization}"
+                                       placeholder="填写所属组织">                       	
                             </div>
                         </div>
                         
                         <div class="form-group">
-                            <label class="col-sm-2 control-label">联系人<span class="required">*</span></label>
+                            <label class="col-sm-2 control-label">地址<span class="required">*</span></label>
                             <div class="col-sm-4">
-                                <input name="contactPerson" type="text" class="form-control" value="${carArea.contactPerson}"
-                                       placeholder="联系人">                       	
-                            </div>
-                            
-                            <label class="col-sm-2 control-label">联系电话<span class="required">*</span></label>
-                            <div class="col-sm-4">
-                                <input name="contactNumber" type="text" class="form-control" value="${carArea.contactNumber}"
-                                       placeholder="联系电话">                       	
+                                <input name="address" type="text" class="form-control" value="${carArea.address}"
+                                       placeholder="填写地址">                       	
                             </div>
                         </div>
 

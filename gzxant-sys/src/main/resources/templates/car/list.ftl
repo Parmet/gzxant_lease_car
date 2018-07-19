@@ -9,58 +9,53 @@
                             </div>    
                             <div class="panel-body">
                                 <div class="row">
-
-                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
-                                        <label for="nameInput" class="control-label">所属城市：</label>
-                                        <select class="form-filter form-control _search" id="nameInput" name="search_like_belong_city">
-		                                    <option value = "">请选择</option>
-                                        	<#list cityName as name>
-		                                        <option value="${name}">${name}</option>
-		                                    </#list>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
-                                        <label for="nameInput" class="control-label">服务城市：</label>
-                                        <select class=" form-control _search" id="nameInput" name="search_like_service_city">
-		                                    <option value = "">请选择</option>
-                                        	<#list cityName as name>
-		                                        <option value="${name}">${name}</option>
-		                                    </#list>
-                                        </select>
-                                    </div>
-                                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
-                                        <label for="nameInput" class="control-label">车系名称：</label>
-                                        <select class="form-filter form-control _search" id="nameInput" name="search_like_car_train_name">
-		                                    <option value = "">请选择</option>
-                                        	<#list trainName as name>
-		                                        <option value="${name}">${name}</option>
-		                                    </#list>
-                                        </select>
-                                    </div>
                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
                                         <label for="nameInput" class="control-label">车牌号：</label>
                                         <input type="text" class="form-filter form-control _search" id="nameInput" name="search_like_car_number"  />
                                     </div>
+                                    
                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
-                                        <label for="nameInput" class="control-label">车辆状态：</label>
-                                        <select class="form-filter form-control _search" id="nameInput" name="search_eq">
-                                        	<option>全部</option>
-                                        	<option>可用</option>
-                                        	<option>已租</option>
-                                        	<option>任务中</option>
-                                        	<option>可用(待分配)</option>
-                                        	<option>维修中</option>
-                                        	<option>已禁用</option>
+                                        <label for="nameInput" class="control-label">车辆类型：</label>
+                                        <select class=" form-control _search" id="nameInput" name="search_like_vehicle_type">
+		                                    <option value = "">请选择</option>
+                                        	<#list carList as car>
+		                                        <option value="${car.vehicleType}">${car.vehicleType}</option>
+		                                    </#list>
+                                        </select>
+                                    </div>
+                                   <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+                                        <label for="nameInput" class="control-label">资产状态：</label>
+                                        <select class="form-filter form-control _search" id="nameInput" name="search_eq_assets_state">
+		                                    <option value = "">请选择</option>
+		                                    <option value = "在库">在库</option>
+		                                    <option value = "已租">已租</option>
+		                                    <option value = "维修">维修</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+                                        <label for="nameInput" class="control-label">使用组织：</label>
+                                        <select class="form-filter form-control _search" id="nameInput" name="search_eq_used_organization">
+                                        	<option value = "">请选择</option>
+                                        	<#list carAreaList as carArea>
+		                                        <option value="${carArea.belongOrganization}">${carArea.belongOrganization}</option>
+		                                    </#list>
                                         </select>
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
-                                        <label for="nameInput" class="control-label">限号：</label>
-                                        <select class="form-filter form-control _search" id="nameInput" name="search_eq">
-                                        	<option value="">全部</option>
-                                        	<option value="有">有</option>
-                                        	<option value="无">无</option>
+                                        <label for="nameInput" class="control-label">所在车区：</label>
+                                        <select class="form-filter form-control _search" id="nameInput" name="search_eq_where_car_area">
+                                            <option value = "">请选择</option>
+                                        	<#list carAreaList as carArea>
+		                                        <option value="${carArea.carAreaName}">${carArea.carAreaName}</option>
+		                                    </#list>
                                         </select>
                                         
+                                    </div>
+                                    
+                                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 form-group">
+                                        <label for="nameInput" class="control-label">购买日期：</label>
+										<input type="date" class="form-filter form-control _search" id="nameInput" name="search_like_buy_date"  />
                                     </div>
                                 </div>
                             </div>
@@ -76,6 +71,9 @@
                                 </button>
                                 <button type="button" class="btn btn-info" onclick="dt_insert()">
                                     <i class="fa fa-plus-square" aria-hidden="true"></i> 添加
+                                </button>
+                                <button type="button" class="btn btn-info" onclick="leading_out()">
+                                    <i class="fa fa-file-excel-o" aria-hidden="true"></i> 导出数据
                                 </button>
                             </div>
                         </div>
@@ -102,60 +100,44 @@
                 title: 'id' // 列标题
             },
             {
-                field: 'serviceCity',
-                title: '服务城市'
+                field: 'leaseType',
+                title: '租赁类型'
+            },
+            {
+                field: 'assetsState',
+                title: '资产状态 '
             },
             {
                 field: 'carNumber',
-                title: '车牌号码 '
+                title: '车牌号'
             },
             {
-                field: 'carPark',
-                title: '车场'
+                field: 'assetsBelong',
+                title: '资产所属'
             },
             {
-                field: 'onlineStore',
-                title: '网点'
+                field: 'usedOrganization',
+                title: '使用组织'
             },
             {
-                field: 'carColor',
-                title: '车辆颜色'
+                field: 'whereCarArea',
+                title: '所属车区'
             },
             {
-                field: 'carName',
-                title: '车辆全名'
+                field: 'vehicleType',
+                title: '车辆型号'
             },
             {
-                field: 'belongCity',
-                title: '所属城市'
+                field: 'email',
+                title: '邮箱地址'
             },
             {
-                field: 'mileage',
-                title: '续航里程'
+                field: 'customerState',
+                title: '客户状态'
             },
             {
-                field: 'motorNumber',
-                title: '发动机号'
-            },
-            {
-                field: 'insuranceDate',
-                title: '保险到期时间'
-            },
-            {
-                field: 'annualSurveyDate',
-                title: '年检时间'
-            },
-            {
-                field: 'vin',
-                title: '车架号'
-            },
-            {
-                field: 'carAge',
-                title: '车龄'
-            },
-            {
-                field: 'sn',
-                title: 'SN'
+                field: 'remark',
+                title: '备注'
             },
 			{
                 title: '操作',
