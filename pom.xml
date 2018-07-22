@@ -48,6 +48,7 @@
 
         <!-- boot启动类模板  port:8081 -->
         <module>gzxant-web</module>
+        <module>gzxant-operation</module>
     </modules>
 
     <!--全局依赖-->
@@ -239,6 +240,12 @@
                 <version>${gzxant.version}</version>
             </dependency>
 
+			<dependency>
+                <groupId>com.gzxant</groupId>
+                <artifactId>gzxant-operation</artifactId>
+                <version>${gzxant.version}</version>
+            </dependency>
+			
             <dependency>
                 <groupId>com.gzxant</groupId>
                 <artifactId>gzxant-log</artifactId>

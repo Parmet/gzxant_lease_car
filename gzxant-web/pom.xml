@@ -43,12 +43,17 @@
             <groupId>com.gzxant</groupId>
             <artifactId>gzxant-log</artifactId>
         </dependency>
+
+		<dependency>
+            <groupId>com.gzxant</groupId>
+            <artifactId>gzxant-operation</artifactId>
+        </dependency>
         
         <dependency>
             <groupId>com.gzxant</groupId>
             <artifactId>gzxant-sys</artifactId>
         </dependency>
-
+		
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
