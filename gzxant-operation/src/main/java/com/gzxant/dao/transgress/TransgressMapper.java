@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Options;
+import org.apache.ibatis.annotations.Result;
+import org.apache.ibatis.annotations.Results;
 import org.apache.ibatis.annotations.Select;
 
 import com.gzxant.controller.vo.TransgressVo;
@@ -17,43 +19,52 @@ public interface TransgressMapper {
 			" when ",
 			"</if>",
 			/*  资产公司  */
-			"<if test=' asset_company != null and asset_company != \"\" '>",
-			" and asset_company LIKE CONCAT('%',#{asset_company},'%') ",
+			"<if test=' assetCompany != null and assetCompany != \"\" '>",
+			" and asset_company LIKE CONCAT('%',#{assetCompany},'%') ",
 			"</if>",
 			/*  经营公司 */
-			"<if test=' operate_company != null and operate_company != \"\" '>",
-			" and operate_company LIKE CONCAT('%',#{operate_company},'%') ",
+			"<if test=' operateCompany != null and operateCompany != \"\" '>",
+			" and operate_company LIKE CONCAT('%',#{operateCompany},'%') ",
 			"</if>",
 			/*  客户 */
 			"<if test=' customer != null and customer != \"\" '>",
 			" and customer LIKE CONCAT('%',#{customer},'%') ",
 			"</if>",
 			/*  车牌号 */
-			"<if test=' plate_num != null and plate_num != \"\" '>",
-			" and plate_num LIKE CONCAT('%',#{plate_num},'%') ",
+			"<if test=' plateNum != null and plateNum != \"\" '>",
+			" and plate_num LIKE CONCAT('%',#{plateNum},'%') ",
 			"</if>",
 			/*  状态 */
 			"<if test=' status != null and status != \"\" '>",
 			" and status = #{status} ",
 			"</if>",
 			/*  违章时间开始 */
-			"<if test=' tg_time_status != null and tg_time_status != \"\" '>",
-			" and plate_num &gt;= #{tg_time_status} ",
+			"<if test=' tgTimeStatus != null and tgTimeStatus != \"\" '>",
+			" and plate_num &gt;= #{tgTimeStatus} ",
 			"</if>",
 			/*  违章时间结束 */
-			"<if test=' tg_time_end != null and tg_time_end != \"\" '>",
-			" and plate_num &lt;= #{tg_time_end} ",
+			"<if test=' tgTimeEnd != null and tgTimeEnd != \"\" '>",
+			" and plate_num &lt;= #{tgTimeEnd} ",
 			"</if>",
 			/*  处理时间开始 */
-			"<if test=' update_time_status != null and update_time_status != \"\" '>",
-			" and update_time &gt;= #{update_time_status} ",
+			"<if test=' updateTimeStatus != null and updateTimeStatus != \"\" '>",
+			" and update_time &gt;= #{updateTimeStatus} ",
 			"</if>",
 			/*  处理时间结束 */
-			"<if test=' update_time_end != null and update_time_end != \"\" '>",
-			" and update_time &lt;= #{update_time_end} ",
+			"<if test=' updateTimeEnd != null and updateTimeEnd != \"\" '>",
+			" and update_time &lt;= #{updateTimeEnd} ",
 			"</if>",
 			"order by query_time",
 			"</script>"})
+	@Results({
+		@Result(property = "plateNum", column = "plate_num"),
+		@Result(property = "assetCompany", column = "asset_company"),
+		@Result(property = "operateCompany", column = "operate_company"),
+		@Result(property = "tgTime", column = "tg_time"),
+		@Result(property = "tgNum", column = "tg_num"),
+		@Result(property = "queryTime", column = "query_time"),
+		@Result(property = "updateTime", column = "update_time")
+	})
 	List<Transgress> query(TransgressVo tgVo);
 
 	@Insert("insert into oper_transgress(user_id,plate_num,type,brand,deduction,"

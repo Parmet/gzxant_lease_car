@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -67,26 +66,26 @@ public class TransgressController {
 					for (int i = 1; i < lists.size(); i++) {
 						List<Object> list = lists.get(i);
 						Transgress tg = new Transgress();
-						tg.setPlate_num(util.getFormat(String.valueOf(list.get(0))));
+						tg.setPlateNum(util.getFormat(String.valueOf(list.get(0))));
 						tg.setType(util.getFormat(String.valueOf(list.get(1))));
 						tg.setBrand(util.getFormat(String.valueOf(list.get(2))));
 						tg.setDeduction(util.getFormats(Integer.parseInt(String.valueOf(list.get(3)))));
 						tg.setFine(util.getFormats(Integer.parseInt(String.valueOf(list.get(4)))));
-						tg.setAsset_company(util.getFormat(String.valueOf(list.get(5))));
-						tg.setOperate_company(util.getFormat(String.valueOf(list.get(6))));
+						tg.setAssetCompany(util.getFormat(String.valueOf(list.get(5))));
+						tg.setOperateCompany(util.getFormat(String.valueOf(list.get(6))));
 						tg.setCustomer(util.getFormat(String.valueOf(list.get(7))));
-						tg.setTg_time(util.getDate(String.valueOf(list.get(8))));
+						tg.setTgTime(util.getDate(String.valueOf(list.get(8))));
 						tg.setPlace(util.getFormat(String.valueOf(list.get(9))));
 						tg.setReason(util.getFormat(String.valueOf(list.get(10))));
 						tg.setDepartment(util.getFormat(String.valueOf(list.get(11))));
 						String t1 = util.getFormat(String.valueOf(list.get(12)));
 						tg.setCommisson("是".equals(t1));
 						tg.setCode(util.getFormats(Integer.parseInt(String.valueOf(list.get(13)))));
-						tg.setTg_num(util.getFormats(Integer.parseInt(String.valueOf(list.get(14)))));
+						tg.setTgNum(util.getFormats(Integer.parseInt(String.valueOf(list.get(14)))));
 						String t2 = util.getFormat(String.valueOf(list.get(15)));
 						tg.setStatus("已处理".equals(t2));
-						tg.setQuery_time(util.getDate(String.valueOf(list.get(16))));
-						tg.setUpdate_time(util.getDate(String.valueOf(list.get(17))));
+						tg.setQueryTime(util.getDate(String.valueOf(list.get(16))));
+						tg.setUpdateTime(util.getDate(String.valueOf(list.get(17))));
 						tgService.add(tg);
 					}
 					return ResponseEntity.ok(null);
@@ -120,24 +119,24 @@ public class TransgressController {
 		if (tgList.isEmpty()) {
 			for (int i = 0; i < tgList.size(); i++) {
 				Transgress tg = tgList.get(i);
-				content[i][0] = tg.getPlate_num();
+				content[i][0] = tg.getPlateNum();
 				content[i][1] = tg.getType();
 				content[i][2] = tg.getBrand();
 				content[i][3] = tg.getDeduction().toString();
 				content[i][4] = tg.getFine().toString();
-				content[i][5] = tg.getAsset_company();
-				content[i][6] = tg.getOperate_company();
+				content[i][5] = tg.getAssetCompany();
+				content[i][6] = tg.getOperateCompany();
 				content[i][7] = tg.getCustomer();
-				content[i][8] = format.format(tg.getTg_time());
+				content[i][8] = format.format(tg.getTgTime());
 				content[i][9] = tg.getPlace();
 				content[i][10] = tg.getReason();
 				content[i][11] = tg.getDepartment();
 				content[i][12] = tg.getCommisson() ? "是" : "否";
 				content[i][13] = tg.getCode().toString();
-				content[i][14] = tg.getTg_num().toString();
+				content[i][14] = tg.getTgNum().toString();
 				content[i][15] = tg.getStatus() ? "已处理" : "未处理";
-				content[i][16] = format.format(tg.getQuery_time());
-				content[i][17] = format.format(tg.getUpdate_time());
+				content[i][16] = format.format(tg.getQueryTime());
+				content[i][17] = format.format(tg.getUpdateTime());
 			}
 		}
 		try {
