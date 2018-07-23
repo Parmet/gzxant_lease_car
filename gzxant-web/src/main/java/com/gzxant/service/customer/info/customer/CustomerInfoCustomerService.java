@@ -1,7 +1,6 @@
 package com.gzxant.service.customer.info.customer;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.mapper.Wrapper;
 import com.gzxant.base.vo.DataTable;
 import com.gzxant.util.ConvertUtil;
 import com.gzxant.dto.CustomerDTO;
@@ -12,7 +11,7 @@ import com.gzxant.exception.LeaseCatException;
 import com.gzxant.service.customer.info.certificate.ICustomerInfoCertificateService;
 import com.gzxant.util.DateUtils;
 import com.gzxant.util.StringUtils;
-import com.gzxant.vo.CustomerVO;
+import com.gzxant.vo.CustomerDetailVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,6 +33,8 @@ import java.util.Map;
  *
  * @author tecty
  * @since 2018-07-05
+ * @author Fatal
+ * @date 218-07-21
  */
 @Service
 @Transactional(readOnly = true, rollbackFor = Exception.class)
@@ -44,9 +45,20 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
     private ICustomerInfoCertificateService certificateService;
 
     /**
+     * 导出数据
+     */
+    @Override
+    public List<CustomerDTO> selectList() {
+        //查询所有数据
+        List<CustomerInfoCustomer> customers = selectList(new EntityWrapper<>());
+        List<CustomerDTO> customerDTOS = ConvertUtil.convert(customers);
+        return customerDTOS;
+    }
+
+    /**
      * 分页查询
      */
-    public DataTable<CustomerDTO> pageSearchDto(DataTable<CustomerInfoCustomer> dt) {
+    public DataTable<CustomerDTO> pageSearchDTO(DataTable<CustomerInfoCustomer> dt) {
 
         DataTable<CustomerInfoCustomer> customerDataTable = super.pageSearch(dt);
         List<CustomerInfoCustomer> rows = customerDataTable.getRows();
@@ -66,33 +78,33 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
     }
 
 
-    public CustomerVO selectById(String id) {
+    public CustomerDetailVO selectById(String id) {
         CustomerInfoCustomer customer = null;
-        CustomerVO customerVO = new CustomerVO();
+        CustomerDetailVO customerDetailVO = new CustomerDetailVO();
         if (id != null) {
             customer = super.selectById(id);
-            BeanUtils.copyProperties(customer, customerVO);
+            BeanUtils.copyProperties(customer, customerDetailVO);
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("customer_id", id);
             List<CustomerInfoCertificate> certificates = certificateService.selectByMap(map);
             for (CustomerInfoCertificate certificate: certificates) {
-                if (CertificatesStatusEnum.IDENTITY.getMessage().equals(certificate.getType())) {
-                    customerVO.setiIssueDate(DateUtils.getDateTime("yyyy-MM-dd",certificate.getIssueDate()));
-                    customerVO.setiValidityPeriod(DateUtils.getDateTime("yyyy-MM-dd",certificate.getValidityPeriod()));
-                    customerVO.setIdentityImageUrl(certificate.getAttachmentUrl());
-                    customerVO.setsIdentityImageUrl(certificate.getsAttachmentUrl());
+                if (CertificatesStatusEnum.IDENTITY.getCode().equals(certificate.getType())) {
+                    customerDetailVO.setiIssueDate(DateUtils.getDateTime("yyyy-MM-dd",certificate.getIssueDate()));
+                    customerDetailVO.setiValidityPeriod(DateUtils.getDateTime("yyyy-MM-dd",certificate.getValidityPeriod()));
+                    customerDetailVO.setIdentityImageUrl(certificate.getAttachmentUrl());
+                    customerDetailVO.setsIdentityImageUrl(certificate.getsAttachmentUrl());
                     continue;
                 }
-                if (CertificatesStatusEnum.DRIVE.getMessage().equals(certificate.getType())) {
-                    customerVO.setdIssueDate(DateUtils.getDateTime("yyyy-MM-dd",certificate.getIssueDate()));
-                    customerVO.setdValidityPeriod(DateUtils.getDateTime("yyyy-MM-dd",certificate.getValidityPeriod()));
-                    customerVO.setDriveImageUrl(certificate.getAttachmentUrl());
-                    customerVO.setsDriveImageUrl(certificate.getsAttachmentUrl());
+                if (CertificatesStatusEnum.DRIVE.getCode().equals(certificate.getType())) {
+                    customerDetailVO.setdIssueDate(DateUtils.getDateTime("yyyy-MM-dd",certificate.getIssueDate()));
+                    customerDetailVO.setdValidityPeriod(DateUtils.getDateTime("yyyy-MM-dd",certificate.getValidityPeriod()));
+                    customerDetailVO.setDriveImageUrl(certificate.getAttachmentUrl());
+                    customerDetailVO.setsDriveImageUrl(certificate.getsAttachmentUrl());
                     continue;
                 }
             }
         }
-        return customerVO;
+        return customerDetailVO;
     }
 
     /**
@@ -116,18 +128,18 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
 
     @Override
     @Transactional
-    public void insertOrUpdate(CustomerVO customerVO) {
+    public void insertOrUpdate(CustomerDetailVO customerDetailVO) {
 
-        if (customerVO == null) {
+        if (customerDetailVO == null) {
             throw new LeaseCatException(LeaseCarEnum.CUSTOMER_ADD_FAIL);
         }
 
         boolean flag = false;       //false:insert; true:update;
-        if (!StringUtils.isEmpty(customerVO.getId())) {
+        if (!StringUtils.isEmpty(customerDetailVO.getId())) {
             flag = true;
         }
 
-        List list = ConvertUtil.convert(customerVO);
+        List list = ConvertUtil.convert(customerDetailVO);
         String customerId = "";
         final String customerIdf = customerId;
         for (Object o : list) {
@@ -145,7 +157,6 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
                     certificateService.insert(certificate);
                 } else {
                     EntityWrapper<CustomerInfoCertificate> ew = new EntityWrapper<>();
-//                    ew.where("customer_id={0},type={1}",customerId,certificate.getType());
                     ew.where("customer_id={0}",customerId).and("type={0}",certificate.getType());
                     certificateService.update(certificate, ew);
                 }
@@ -153,4 +164,6 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
             }
         }
     }
+
+
 }

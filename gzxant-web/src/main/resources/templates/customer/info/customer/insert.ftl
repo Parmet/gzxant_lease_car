@@ -168,6 +168,7 @@
                                                 <#list contactList as c>
                                                     <option value="${c.jkey}" <#if c.jkey==customer.emergencyContactRelationship>selected</#if>>${c.jvalue}</option>
                                                 </#list>
+                                                <option value="">自定义</option>
                                             </select>
                                         </div>
                                     </div>

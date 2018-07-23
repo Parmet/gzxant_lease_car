@@ -15,6 +15,8 @@ import com.gzxant.base.entity.DataEntity;
  *
  * @author tecty
  * @since 2018-07-05
+ * @author Fatal
+ * @date 218-07-21
  */
 @TableName("customer_info_certificate")
 public class CustomerInfoCertificate extends DataEntity<CustomerInfoCertificate> {

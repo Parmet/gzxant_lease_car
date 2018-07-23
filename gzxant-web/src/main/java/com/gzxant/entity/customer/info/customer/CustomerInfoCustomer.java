@@ -22,6 +22,8 @@ import javax.validation.constraints.NotNull;
  *
  * @author tecty
  * @since 2018-07-05
+ * @author Fatal
+ * @date 218-07-21
  */
 @TableName("customer_info_customer")
 //public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
@@ -31,7 +33,6 @@ public class CustomerInfoCustomer extends Model<CustomerInfoCustomer> {
 
     @TableId(value = "ID", type = IdType.UUID)
     private String id;
-
 
 	/** 创建者 */
 	@TableField(value = "create_id", fill = FieldFill.INSERT)

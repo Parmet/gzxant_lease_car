@@ -81,5 +81,4 @@ public class CustomerDTO {
     public String getCustomerId() {
         return id.substring(0,10) + "...";
     }
-
 }

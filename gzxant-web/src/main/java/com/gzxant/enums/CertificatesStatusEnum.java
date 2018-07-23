@@ -6,18 +6,18 @@ package com.gzxant.enums;
  */
 public enum CertificatesStatusEnum {
 
-    IDENTITY(0,"身份证"),
-    DRIVE(1,"驾驶证");
+    IDENTITY("0","身份证"),
+    DRIVE("1","驾驶证");
 
-    private Integer code;
+    private String code;
     private String message;
 
-    CertificatesStatusEnum(Integer code, String message) {
+    CertificatesStatusEnum(String code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    public Integer getCode() {
+    public String getCode() {
         return code;
     }
 

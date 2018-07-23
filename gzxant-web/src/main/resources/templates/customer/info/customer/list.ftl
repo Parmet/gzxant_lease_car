@@ -49,8 +49,8 @@
                             <button type="button" class="btn btn-info" onclick="dt_insert()">
                                 <i class="fa fa-plus-square" aria-hidden="true"></i> 添加
                             </button>
-                            <button type="button" class="btn btn-info" onclick="export_data()">
-                                <i class="fa fa-plus-square" aria-hidden="true"></i> 导出
+                            <button type="button" class="btn btn-success" onclick="doExport()">
+                                <i class="glyphicon glyphicon-export" aria-hidden="true"></i> 导出数据
                             </button>
                         </div>
                     </div>
@@ -64,6 +64,10 @@
 </div>
 
 <script type="text/javascript">
+
+    function doExport() {
+        window.location.href = url + "exportXls";
+    }
 
     function getcolumns() {
         var c = [
