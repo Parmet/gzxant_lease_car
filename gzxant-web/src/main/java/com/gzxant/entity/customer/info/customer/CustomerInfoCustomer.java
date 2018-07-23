@@ -1,10 +1,17 @@
 package com.gzxant.entity.customer.info.customer;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableName;
-import com.gzxant.base.entity.DataEntity;
+import com.baomidou.mybatisplus.enums.FieldFill;
+import com.baomidou.mybatisplus.enums.IdType;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.NotNull;
 
@@ -17,71 +24,79 @@ import javax.validation.constraints.NotNull;
  * @since 2018-07-05
  */
 @TableName("customer_info_customer")
-public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
+//public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
+public class CustomerInfoCustomer extends Model<CustomerInfoCustomer> {
 
     private static final long serialVersionUID = 1L;
 
+    @TableId(value = "ID", type = IdType.UUID)
+    private String id;
 
-//    TODO: Add backend validation.
-    /**
-     * Name of the customer
-     */
-    @NotNull(message = "姓名不能为空")
+
+	/** 创建者 */
+	@TableField(value = "create_id", fill = FieldFill.INSERT)
+	protected Long createId;
+
+	/** 创建日期 */
+	@TableField(value = "create_date", fill = FieldFill.INSERT)
+	protected Date createDate;
+
+	/** 更新者 */
+	@TableField(value = "update_id", fill = FieldFill.INSERT_UPDATE)
+	protected Long updateId;
+
+	/** 更新日期 */
+	@TableField(value = "update_date", fill = FieldFill.INSERT_UPDATE)
+	protected Date updateDate;
+
+	/** 删除标记（Y：正常；N：删除；A：审核；） */
+	@TableField(value = "del_flag")
+	protected String delFlag;
+
+	/** 备注 */
+	protected String remark;
+
+	/** Name of the customer */
 	private String name;
-    /**
-     * Gender of the customer
-     */
+
+    /** Gender of the customer */
 	private String gender;
-    /**
-     * Telephone of the customer.
-     */
+
+    /** Telephone of the customer. */
 	private String tel;
-    /**
-     * Foreign key to certificate table.
-     */
-	@TableField("certificate_id")
-	private Long certificateId;
-    /**
-     * Whether this customer is blocked.
-     */
+
+    /** Whether this customer is blocked. */
 	private String status;
-    /**
-     * Address of the customer.
-     */
+
+    /** Address of the customer. */
 	private String address;
-    /**
-     * What's premitted to drive for this customer.
-     */
+
+    /** What's premitted to drive for this customer. */
 	@TableField("drive_capability")
 	private String driveCapability;
-    /**
-     * Email address of the customer.
 
-     */
+    /** Email address of the customer. */
 	private String email;
-    /**
-     * Name of emergency contact.
-     */
+
+    /** Name of emergency contact. */
 	@TableField("emergency_contact")
 	private String emergencyContact;
-    /**
-     * contact of the emergency contact.
-     */
+
+    /** contact of the emergency contact. */
 	@TableField("emergency_contact_tel")
 	private String emergencyContactTel;
-	/**
-	 * Relationship between customer and the emergency contact.
-	 */
+
+	/** Relationship between customer and the emergency contact. */
 	@TableField("emergency_contact_relationship")
 	private String emergencyContactRelationship;
 
-	public Long getUpdateId() {
-		return updateId;
-	}
+	/** 身份证号码 */
+	@TableField(value = "identity_card")
+	private String identityNumber;
 
-	public void setUpdateId(Long updateId) {
-		this.updateId = updateId;
-	}
+	/** 驾驶证号码 */
+	@TableField(value = "drive_card")
+	private String driveNumber;
 
 	public String getName() {
 		return name;
@@ -105,14 +120,6 @@ public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
 
 	public void setTel(String tel) {
 		this.tel = tel;
-	}
-
-	public Long getCertificateId() {
-		return certificateId;
-	}
-
-	public void setCertificateId(Long certificateId) {
-		this.certificateId = certificateId;
 	}
 
 	public String getStatus() {
@@ -176,14 +183,89 @@ public class CustomerInfoCustomer extends DataEntity<CustomerInfoCustomer> {
 		return this.id;
 	}
 
+	public String getIdentityNumber() {
+		return identityNumber;
+	}
+
+	public void setIdentityNumber(String identityNumber) {
+		this.identityNumber = identityNumber;
+	}
+
+	public String getDriveNumber() {
+		return driveNumber;
+	}
+
+	public void setDriveNumber(String driveNumber) {
+		this.driveNumber = driveNumber;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public Long getCreateId() {
+		return createId;
+	}
+
+	public void setCreateId(Long createId) {
+		this.createId = createId;
+	}
+
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+	public Date getCreateDate() {
+		return createDate;
+	}
+
+	public void setCreateDate(Date createDate) {
+		this.createDate = createDate;
+	}
+
+	public Long getUpdateId() {
+		return updateId;
+	}
+
+	public void setUpdateId(Long updateId) {
+		this.updateId = updateId;
+	}
+
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+	public Date getUpdateDate() {
+		return updateDate;
+	}
+
+	public void setUpdateDate(Date updateDate) {
+		this.updateDate = updateDate;
+	}
+
+	@JsonIgnore
+	@Length(min = 1, max = 1)
+	public String getDelFlag() {
+		return delFlag;
+	}
+
+	public void setDelFlag(String delFlag) {
+		this.delFlag = delFlag;
+	}
+
+	@Length(min = 0, max = 500, message = "备注信息长度必须介于 1 和 500 之间")
+	public String getRemark() {
+		return remark;
+	}
+
+	public void setRemark(String remark) {
+		this.remark = remark;
+	}
+
 	@Override
 	public String toString() {
 		return "CustomerInfoCustomer{" +
-			"updateId=" + updateId +
 			", name=" + name +
 			", gender=" + gender +
 			", tel=" + tel +
-			", certificateId=" + certificateId +
 			", status=" + status +
 			", address=" + address +
 			", driveCapability=" + driveCapability +

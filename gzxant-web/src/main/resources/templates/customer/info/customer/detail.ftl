@@ -1,1 +1,0 @@
-detail page for customer info

@@ -5,6 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
+import com.baomidou.mybatisplus.enums.FieldFill;
 import com.gzxant.base.entity.DataEntity;
 
 /**
@@ -38,10 +39,19 @@ public class CustomerInfoCertificate extends DataEntity<CustomerInfoCertificate>
      */
 	@TableField("validity_period")
 	private Date validityPeriod;
+
+	@TableField(value = "s_attachment_url", fill = FieldFill.INSERT_UPDATE)
+	private String sAttachmentUrl;
+
     /**
-     * The upload attachment's location
+     * The upload attachment's url
      */
-	private String attachment;
+	@TableField(value = "attachment_url", fill = FieldFill.INSERT_UPDATE)
+	private String attachmentUrl;
+
+	/** 客户 */
+	@TableField(value = "customer_id", fill = FieldFill.INSERT_UPDATE)
+	private String customerId;
 
 
 	public Long getUpdateId() {
@@ -80,32 +90,50 @@ public class CustomerInfoCertificate extends DataEntity<CustomerInfoCertificate>
 		return validityPeriod;
 	}
 
+
 	public void setValidityPeriod(Date validityPeriod) {
 		this.validityPeriod = validityPeriod;
 	}
 
-	public String getAttachment() {
-		return attachment;
-	}
-
-	public void setAttachment(String attachment) {
-		this.attachment = attachment;
-	}
 
 	@Override
 	protected Serializable pkVal() {
 		return this.id;
 	}
 
+	public String getAttachmentUrl() {
+		return attachmentUrl;
+	}
+
+	public void setAttachmentUrl(String attachmentUrl) {
+		this.attachmentUrl = attachmentUrl;
+	}
+
+	public String getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(String customerId) {
+		this.customerId = customerId;
+	}
+
+	public String getsAttachmentUrl() {
+		return sAttachmentUrl;
+	}
+
+	public void setsAttachmentUrl(String sAttachmentUrl) {
+		this.sAttachmentUrl = sAttachmentUrl;
+	}
+
 	@Override
 	public String toString() {
 		return "CustomerInfoCertificate{" +
-			"updateId=" + updateId +
-			", type=" + type +
-			", number=" + number +
-			", issueDate=" + issueDate +
-			", validityPeriod=" + validityPeriod +
-			", attachment=" + attachment +
-			"}";
+				"type='" + type + '\'' +
+				", number='" + number + '\'' +
+				", issueDate=" + issueDate +
+				", validityPeriod=" + validityPeriod +
+				", attachmentUrl='" + attachmentUrl + '\'' +
+				", customerId='" + customerId + '\'' +
+				'}';
 	}
 }

@@ -1,3 +1,8 @@
+<style>
+    .bootstrap-table .table {
+        width: 1450px;
+    }
+</style>
 <div class="wrapper wrapper-content animated fadeInRight">
     <div class="col-sm-12">
         <div class="ibox">
@@ -11,13 +16,21 @@
                         <div class="panel-body">
                             <div class="row">
 
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label for="nameInput" class="control-label">用户名称：</label>
-                                    <input type="text" class="form-filter form-control _search"  name="search_like_login_name"  />
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label for="id" class="control-label">客户编号：</label>
+                                    <input type="text" class="form-filter form-control _search"  name="search_like_id"  />
                                 </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 form-group">
-                                    <label for="nameInput" class="control-label">手机号码：</label>
-                                    <input type="text" class="form-filter form-control _search"  name="search_like_mobile"  />
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label for="name" class="control-label">姓名：</label>
+                                    <input type="text" class="form-filter form-control _search"  name="search_like_name"  />
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label for="identityCard" class="control-label">身份证号码：</label>
+                                    <input type="text" class="form-filter form-control _search"  name="search_like_identity_card"  />
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 form-group">
+                                    <label for="tel" class="control-label">手机号码：</label>
+                                    <input type="text" class="form-filter form-control _search"  name="search_like_tel"  />
                                 </div>
 
                             </div>
@@ -35,6 +48,9 @@
                             </button>
                             <button type="button" class="btn btn-info" onclick="dt_insert()">
                                 <i class="fa fa-plus-square" aria-hidden="true"></i> 添加
+                            </button>
+                            <button type="button" class="btn btn-info" onclick="export_data()">
+                                <i class="fa fa-plus-square" aria-hidden="true"></i> 导出
                             </button>
                         </div>
                     </div>
@@ -55,46 +71,44 @@
                 checkbox: true
             },
             {
-                field: 'id', // 列字段名
-                title: 'id' // 列标题
+                field: 'customerId', // 列字段名
+                title: '客户编码', // 列标题
+                width: 140
             },
             {
                 field: 'name',
-                title: '姓名'
+                title: '姓名',
+                width: 100
             },
             {
                 field: 'gender',
-                title: '性别'
+                title: '性别',
+                width: 80
             },
             {
-                field: 'email',
-                title: '邮件'
+                field: 'tel',
+                title: '联系方式',
+                width: 120
             },
-            // {
-            //     field: 'validityPeriod',
-            //     title: '手机'
-            // },
-            // {
-            //     field: 'remark',
-            //     title: '描述'
-            // },
-            //
-            // {
-            //     field : 'loginFlag',
-            //     title : '状态',
-            //     align : 'center',
-            //     formatter : function(value, row, index) {
-            //         if (value == 'Y') {
-            //             return '<span class="label label-primary">正常</span>';
-            //         } else if (value == 'N') {
-            //             return '<span class="label label-danger">禁用</span>';
-            //         }
-            //     }
-            // },
+            {
+                field: 'identityNumber',
+                title: '身份证号码',
+                width: 170
+            },
+            {
+                field: 'driveNumber',
+                title: '驾驶证号码',
+                width: 170
+            },
+            {
+                field: 'address',
+                title: '地址'
+            },
             {
                 title: '操作',
                 field: 'id',
                 align: 'center',
+                width: 140,
                 formatter: function (value, row, index) {
 
                     return dt_edit_button(row)+dt_detail_button(row)+dt_delete_button(row);

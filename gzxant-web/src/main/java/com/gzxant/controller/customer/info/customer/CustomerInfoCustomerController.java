@@ -7,22 +7,30 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.baomidou.mybatisplus.mapper.Condition;
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.baomidou.mybatisplus.plugins.Page;
+import com.baomidou.mybatisplus.mapper.Wrapper;
+import com.gzxant.annotation.SLog;
+import com.gzxant.dto.CustomerDTO;
 import com.gzxant.entity.customer.info.certificate.CustomerInfoCertificate;
+import com.gzxant.enums.CertificatesStatusEnum;
+import com.gzxant.enums.LeaseCarEnum;
+import com.gzxant.exception.LeaseCatException;
 import com.gzxant.service.ISysDictService;
 import com.gzxant.service.customer.info.certificate.ICustomerInfoCertificateService;
-import com.sun.org.apache.regexp.internal.REUtil;
-import com.sun.org.apache.xpath.internal.operations.Mod;
+import com.gzxant.util.DateUtils;
+import com.gzxant.util.StringUtils;
+import com.gzxant.vo.CustomerVO;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 
-import com.gzxant.annotation.SLog;
 import com.gzxant.base.entity.ReturnDTO;
 import com.gzxant.base.vo.DataTable;
 import com.gzxant.service.customer.info.customer.ICustomerInfoCustomerService;
@@ -32,6 +40,7 @@ import com.gzxant.base.controller.BaseController;
 
 import io.swagger.annotations.ApiOperation;
 
+import javax.servlet.ServletRequest;
 import javax.validation.Valid;
 
 /**
@@ -42,94 +51,112 @@ import javax.validation.Valid;
  * @author tecty
  * @since 2018-07-05
  */
-@RestController
+@Controller
 @RequestMapping("/customer/info/customer")
 public class CustomerInfoCustomerController extends BaseController {
+
 	@Autowired
-	private ICustomerInfoCustomerService customerInfoCustomerService;
+	private ICustomerInfoCustomerService customerService;
 	@Autowired
 	private ISysDictService iSysDictService;
 
-
-	@InitBinder
+	/*@InitBinder
 	public void initBinder(WebDataBinder binder) {
-		// this binder is for successfully transfer from String to Date
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		dateFormat.setLenient(true);
 		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, true));
+	}*/
+
+	@ApiOperation(value = "进入用户信息列表界面", notes = "进入用户信息列表界面")
+	@GetMapping(value = "")
+	public String list(@RequestParam(value = "page",defaultValue = "1") int page,
+					   @RequestParam(value = "page_size",defaultValue = "10") int pageSize) {
+		return "customer/info/customer/list";
 	}
 
-	private Map<String,Object> getReturnMap(Map<String, Object> basicMap){
-		// Fetch dict information dependency then inject it into basic map.
-		basicMap.putAll(iSysDictService.getDictMapByMap( new HashMap<String, String>(){{
-			put("driveCapability", "DriveCapability");
-			put("emergencyContactRelationship", "EmergencyContactRelationship");
-			put("status", "CustomerStatus");
-		}}));
-		return basicMap;
+	@ApiOperation(value = "获取用户信息列表数据", notes = "获取用户信息列表数据:使用约定的DataTable")
+	@PostMapping(value = "/list")
+	@ResponseBody
+	public DataTable<CustomerDTO> list(@RequestBody DataTable<CustomerInfoCustomer> dt) {
+		return customerService.pageSearchDto(dt);
 	}
 
-	/**
-	 * Create new customer
-	 * @return Request status
-	 */
-	@PostMapping("")
-	public ReturnDTO create(@RequestBody @Valid CustomerInfoCustomer customer){
-		// create the entity into database
-		customerInfoCustomerService.insertOrUpdate(customer);
-		// return the successful code.
+	@ApiOperation(value = "进入添加用户信息页面", notes = "进入添加用户信息页面")
+	@GetMapping(value = "/insert")
+	public String toInsertPage(Model model) {
+
+		model.addAttribute("action","insert");
+		//字典查询
+		model.addAttribute("genderList", iSysDictService.getDictTree("sex"));
+		model.addAttribute("statusList", iSysDictService.getDictTree("CustomerStatus"));
+		model.addAttribute("capabilityList", iSysDictService.getDictTree("DriveCapability"));
+		model.addAttribute("contactList", iSysDictService.getDictTree("EmergencyContactRelationship"));
+		return "customer/info/customer/insert";
+	}
+
+	@ApiOperation(value = "进入编辑用户信息页面", notes = "进入编辑用户信息页面")
+	@GetMapping(value = "/update/{id}")
+	public String toUpdatePage(@PathVariable("id") String id, Model model) {
+
+		model.addAttribute("action","insert");
+		//字典查询
+		model.addAttribute("genderList", iSysDictService.getDictTree("sex"));
+		model.addAttribute("statusList", iSysDictService.getDictTree("CustomerStatus"));
+		model.addAttribute("capabilityList", iSysDictService.getDictTree("DriveCapability"));
+		model.addAttribute("contactList", iSysDictService.getDictTree("EmergencyContactRelationship"));
+		CustomerVO customerVO = null;
+		if (id != null) {
+            customerVO = customerService.selectById(id);
+			model.addAttribute("customer", customerVO);
+		} else {
+			throw new LeaseCatException(LeaseCarEnum.CUSTOMER_ADD_PAGE_ECHO_FAIL);
+		}
+		return "customer/info/customer/insert";
+	}
+
+
+    @ApiOperation(value = "进入用户详情信息页面", notes = "进入用户详情信息页面")
+    @GetMapping(value = "/detail/{id}")
+    public String toDetailPage(@PathVariable("id") String id, Model model) {
+
+        model.addAttribute("action","detail");
+        //字典查询
+        model.addAttribute("genderList", iSysDictService.getDictTree("sex"));
+        model.addAttribute("statusList", iSysDictService.getDictTree("CustomerStatus"));
+        model.addAttribute("capabilityList", iSysDictService.getDictTree("DriveCapability"));
+        model.addAttribute("contactList", iSysDictService.getDictTree("EmergencyContactRelationship"));
+        CustomerVO customerVO = null;
+        if (id != null) {
+            customerVO = customerService.selectById(id);
+            model.addAttribute("customer", customerVO);
+        } else {
+            throw new LeaseCatException(LeaseCarEnum.CUSTOMER_ADD_PAGE_ECHO_FAIL);
+        }
+        return "customer/info/customer/insert";
+    }
+
+	@ApiOperation(value = "添加/编辑用户信息", notes = "添加/编辑用户信息")
+	@PostMapping(value = "/insert")
+	@ResponseBody
+	public ReturnDTO create(@Valid CustomerVO customerVO, BindingResult result){
+		if (result.hasErrors()) {
+			throw new LeaseCatException(result.getFieldError().getDefaultMessage());
+		}
+		customerService.insertOrUpdate(customerVO);
 		return ReturnDTOUtil.success();
 	}
 
-	/**
-	 * Read customers
-	 * @return List of customer
-	 */
-	@GetMapping("")
-	public Map get(@RequestParam(value = "page",defaultValue = "1") int page,
-				   @RequestParam(value = "page_size",defaultValue = "10") int pageSize ){
-		Map<String,Object> returnMap = new HashMap<>();
-		// put the customer's list
-		returnMap.put("customers",
-					customerInfoCustomerService.selectPage(
-						new Page<CustomerInfoCustomer>(page,pageSize)
-					).getRecords()
-		);
+    @SLog("批量删除用户")
+    @ApiOperation(value = "批量删除用户", notes = "批量删除用户")
+    @PostMapping(value = "/delete")
+    @ResponseBody
+    public ReturnDTO delete(@RequestParam("ids") List<String> ids, ServletRequest request) {
+        boolean success = customerService.deleteBatchIds(ids);
+        if (success) {
+            return ReturnDTOUtil.success();
+        }
+        return ReturnDTOUtil.fail();
 
-		return getReturnMap(returnMap);
-	}
+    }
 
-	/**
-	 * Read the correspond customer
-	 * @param id id of the customer
-	 * @return return entity with dict information.
-	 */
-	@GetMapping("/{id}")
-	public Map get(@PathVariable("id") Long id ){
-		Map<String,Object> returnMap = new HashMap<>();
-		// get an empty instance
-		returnMap.put("customer", customerInfoCustomerService.selectById(id));
-		return this.getReturnMap(returnMap);
-	}
-
-	/**
-	 * update the correspond customer
-	 * @return request status
-	 */
-	@PutMapping("")
-	public ReturnDTO update(@RequestBody @Valid CustomerInfoCustomer customer){
-		// call update by id and store the new customer's information
-		customerInfoCustomerService.updateById(customer);
-		return  ReturnDTOUtil.success();
-	}
-
-	/**
-	 * Delete the correspond customer by id.
-	 * @return request status.
-	 */
-	@DeleteMapping("/{id}")
-	public ReturnDTO delete(@PathVariable("id") Long id){
-		customerInfoCustomerService.deleteById(id);
-		return ReturnDTOUtil.success();
-	}
 }

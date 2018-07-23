@@ -4,7 +4,7 @@ server:
 
 spring:
   profiles:
-    active: local
+    active: dev
   aop:
     proxy-target-class: true
   freemarker:
@@ -17,6 +17,13 @@ spring:
       template_exception_handler: ignore
     request-context-attribute: rc
     charset: UTF-8
+
+  #定义图片上传的最大限制
+  http:
+    multipart:
+      max-file-size: 100Mb
+      max-request-size: 1000Mb
+
 
 sitemesh:
   contentPath: /*
