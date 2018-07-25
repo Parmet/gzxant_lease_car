@@ -200,13 +200,9 @@ public class CustomerController extends BaseController {
     @PostMapping(value = "/delete")
     @ResponseBody
     public ReturnDTO delete(@RequestParam("ids") List<String> ids, ServletRequest request) {
-		try {
-			customerService.deleteTheBatchIds(ids);
-			return ReturnDTOUtil.success();
-		} catch (Exception e) {
-			e.printStackTrace();
-			return ReturnDTOUtil.fail();
-		}
+		///TODO
+		customerService.deleteTheBatchIds(ids);
+		return ReturnDTOUtil.success();
     }
 
 }

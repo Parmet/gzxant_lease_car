@@ -88,7 +88,7 @@ public class CustomerInfoCompanyContactController extends BaseController {
 	}
 
 	@ApiOperation(value = "进入修改联系人信息页面", notes = "进入修改联系人信息页面")
-	@GetMapping(value = "/{id}/update/{id}")
+	@GetMapping(value = "/{companyId}/update/{id}")
 	public String toUpdatePage(@PathVariable("id") Long id, Model model) {
 		CustomerInfoCompanyContact contact = contactService.selectById(id);
 		model.addAttribute("contact", contact);
