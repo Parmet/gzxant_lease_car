@@ -11,13 +11,12 @@ import com.baomidou.mybatisplus.enums.FieldFill;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.gzxant.constant.Global;
 import org.hibernate.validator.constraints.Length;
-
-import javax.validation.constraints.NotNull;
 
 /**
  * <p>
- * Customer's information
+ * CustomerDTO's information
  * </p>
  *
  * @author tecty
@@ -30,6 +29,11 @@ import javax.validation.constraints.NotNull;
 public class CustomerInfoCustomer extends Model<CustomerInfoCustomer> {
 
     private static final long serialVersionUID = 1L;
+
+    public CustomerInfoCustomer() {
+    	super();
+		this.delFlag = Global.DEL_FLAG_NORMAL;
+	}
 
     @TableId(value = "ID", type = IdType.UUID)
     private String id;

@@ -1,6 +1,7 @@
 package com.gzxant.enums;
 
 /**
+ * 证件枚举
  * @author: Fatal
  * @date: 2018/7/22 0022 10:47
  */

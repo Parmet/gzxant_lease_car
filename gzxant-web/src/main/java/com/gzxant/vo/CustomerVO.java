@@ -5,7 +5,7 @@ package com.gzxant.vo;
  * @author: Fatal
  * @date: 2018/7/23 0023 15:23
  */
-public class CustomerVO {
+public class CustomerVO extends EntityVO {
 
     private String id;
 

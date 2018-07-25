@@ -37,7 +37,7 @@ import javax.validation.Valid;
 
 /**
  * <p>
- *     Customer 控制器
+ *     CustomerDTO 控制器
  * </p>
  *
  * @author Fatal
@@ -127,7 +127,7 @@ public class CustomerController extends BaseController {
 	@ResponseBody
 	public DataTable<CustomerVO> list(@RequestBody DataTable<CustomerInfoCustomer> dt) {
 		DataTable<CustomerDTO> customerDTODataTable = customerService.pageSearchDTO(dt);
-		return ConvertUtil.convert(customerDTODataTable);
+		return ConvertUtil.convertCustomerDDT2VDT(customerDTODataTable);
 	}
 
 	@ApiOperation(value = "进入添加用户信息页面", notes = "进入添加用户信息页面")
@@ -200,12 +200,13 @@ public class CustomerController extends BaseController {
     @PostMapping(value = "/delete")
     @ResponseBody
     public ReturnDTO delete(@RequestParam("ids") List<String> ids, ServletRequest request) {
-        boolean success = customerService.deleteBatchIds(ids);
-        if (success) {
-            return ReturnDTOUtil.success();
-        }
-        return ReturnDTOUtil.fail();
-
+		try {
+			customerService.deleteTheBatchIds(ids);
+			return ReturnDTOUtil.success();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ReturnDTOUtil.fail();
+		}
     }
 
 }

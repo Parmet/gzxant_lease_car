@@ -15,10 +15,10 @@
         visibility: hidden;
     }
 </style>
+
+<!-------------------- 日期控件样式 ---------------------->
 <link href="${rc.contextPath}/css/font-awesome.css?v=4.4.0" rel="stylesheet">
 <link href="${rc.contextPath}/css/animate.css" rel="stylesheet">
-<link href="${rc.contextPath}/css/animate.css" rel="stylesheet">
-<!-- layerDate plugin javascript -->
 <script src="${rc.contextPath}/js/plugins/layer/laydate/laydate.js"></script>
 <script>
     //外部js调用
@@ -39,7 +39,7 @@
         event: 'focus'
     });
 </script>
-
+<!-------------------- end ---------------------->
 
 <link href="${rc.contextPath}/css/plugins/dropzone/dropzone.css" rel="stylesheet">
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -140,7 +140,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-sm-3 control-label">邮件地址：<span class="required">*</span></label>
+                                        <label class="col-sm-3 control-label">邮箱地址：<span class="required">*</span></label>
                                         <div class="col-sm-8">
                                             <input type="text" class="form-control" name="email"
                                                    value="${customer.email}" placeholder="输入客户邮件地址"/>
@@ -226,7 +226,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">发证日期：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input id="iIssueDate" value="${customer.iIssueDate}" type="text" class="laydate-icon form-control layer-date" name="iIssueDate">
+                                            <input id="iIssueDate" value="${customer.iIssueDate}" type="text" readonly class="laydate-icon form-control layer-date" name="iIssueDate">
                                         </div>
                                     </div>
 
@@ -234,7 +234,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">有效期至：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input id="iValidityPeriod" value="${customer.iValidityPeriod}" type="text" class="laydate-icon form-control layer-date" name="iValidityPeriod">
+                                            <input id="iValidityPeriod" value="${customer.iValidityPeriod}" type="text" readonly class="laydate-icon form-control layer-date" name="iValidityPeriod">
                                         </div>
                                     </div>
 
@@ -293,13 +293,13 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">发证日期：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input id="dIssueDate" type="text" value="${customer.dIssueDate}" class="laydate-icon form-control layer-date" name="dIssueDate">
+                                            <input id="dIssueDate" type="text" value="${customer.dIssueDate}" readonly class="laydate-icon form-control layer-date" name="dIssueDate">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">有效期至：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input id="dValidityPeriod" type="text" value="${customer.dValidityPeriod}" class="laydate-icon form-control layer-date" name="dValidityPeriod">
+                                            <input id="dValidityPeriod" type="text" value="${customer.dValidityPeriod}" readonly class="laydate-icon form-control layer-date" name="dValidityPeriod">
                                         </div>
                                     </div>
                                     <div class="form-horizontal form-bordered operate">
@@ -318,7 +318,7 @@
                                                 下一页
                                             </#if>
                                         </button>
-                                        <!-- nextIsDrive -->
+                                        <!-- nextIsSave -->
                                         <a id="nextIsSave" href="#save" data-toggle="tab" class="btn btn-success"></a>
                                     </div>
                                 </div>
@@ -360,6 +360,8 @@
 <script src="${rc.contextPath}/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 <#-- import the dropzone to support file upload -->
 <script src="${rc.contextPath}/js/plugins/dropzone/dropzone.min.js"></script>
+<!-- 引入身份证校验插件 -->
+<script src="${rc.contextPath}/js/identity.js"></script>
 <script type="text/javascript">
 
     // startup the datepicker
@@ -392,6 +394,11 @@
         var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
         return this.optional(element) || (length == 11 && mobile.test(value));
     }, "请正确填写您的手机号码");
+
+    $.validator.addMethod("isIdCardNo", function (value, element){
+        return this.optional(element) || IdCardValidate(value);
+    },"请正确输入您的身份证号码");
+
     // $.validator.addMethod("isTel", function(value, element) {
     //     var length = value.length;
     //     var phone = /(^(\d{3,4}-)?\d{6,8}$)|(^(\d{3,4}-)?\d{6,8}(-\d{1,5})?$)|(\d{11})/;
@@ -470,7 +477,8 @@
                 isMobile:true,
             },
             identityNumber:{
-                required: true
+                required: true,
+                isIdCardNo: true
             },
             iIssueDate:{
                 required: true
@@ -485,7 +493,8 @@
                 required: true
             },
             driveNumber:{
-                required: true
+                required: true,
+                isIdCardNo: true
             },
             dIssueDate:{
                 required: true
@@ -525,6 +534,9 @@
             sDriveImageUrl:"请上传客户的证件照片",
         }*/
     });
+
+
+
 
 
     // --------------------------图片上传-------------------------------------------------- //

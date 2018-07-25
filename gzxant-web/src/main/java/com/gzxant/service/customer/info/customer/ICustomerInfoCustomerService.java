@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * <p>
- * Customer's information 服务类
+ * CustomerDTO's information 服务类
  * </p>
  *
  * @author tecty
@@ -25,9 +25,9 @@ public interface ICustomerInfoCustomerService extends IBaseService<CustomerInfoC
 
     public CustomerDetailVO selectById(String id);
 
-    boolean deleteTheBatchIds(List<? extends Serializable> list);
+    public void deleteTheBatchIds(List<? extends Serializable> list);
 
     public void insertOrUpdate(CustomerDetailVO customerDetailVO);
 
-    List<CustomerDTO> selectList();
+    public List<CustomerDTO> selectList();
 }

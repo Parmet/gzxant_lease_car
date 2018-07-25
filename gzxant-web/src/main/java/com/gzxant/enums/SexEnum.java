@@ -1,6 +1,7 @@
 package com.gzxant.enums;
 
 /**
+ * 性别枚举
  * @author: Fatal
  * @date: 2018/7/22 0022 21:22
  */
@@ -12,6 +13,8 @@ public enum SexEnum {
     private String code;
 
     private String message;
+
+    SexEnum(){};
 
     SexEnum(String code, String message) {
         this.code = code;

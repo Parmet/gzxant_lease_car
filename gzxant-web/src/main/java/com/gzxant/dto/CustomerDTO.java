@@ -2,9 +2,9 @@ package com.gzxant.dto;
 
 /**
  * @author: Fatal
- * @date: 2018/7/20 0020 22:02
+ * @date: 2018/7/24 0024 0:01
  */
-public class CustomerDTO {
+public class CustomerDTO extends EntityDTO {
 
     private String id;
 
@@ -81,4 +81,5 @@ public class CustomerDTO {
     public String getCustomerId() {
         return id.substring(0,10) + "...";
     }
+
 }

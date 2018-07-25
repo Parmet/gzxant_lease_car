@@ -1,19 +1,25 @@
 package com.gzxant.controller.customer.info.company.contact;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import com.gzxant.constant.SearchParam;
+import com.gzxant.dto.ContactDTO;
+import com.gzxant.entity.SysCompany;
+import com.gzxant.enums.LeaseCarEnum;
+import com.gzxant.exception.LeaseCatException;
+import com.gzxant.service.ISysCompanyService;
+import com.gzxant.service.customer.info.company.ICustomerInfoCompanyService;
+import com.gzxant.util.ConvertUtil;
+import com.gzxant.vo.CompanyVO;
+import com.gzxant.vo.ContactVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.*;
 
-import com.gzxant.annotation.SLog;
 import com.gzxant.base.entity.ReturnDTO;
 import com.gzxant.base.vo.DataTable;
 import com.gzxant.service.customer.info.company.contact.ICustomerInfoCompanyContactService;
@@ -22,6 +28,9 @@ import com.gzxant.util.ReturnDTOUtil;
 import com.gzxant.base.controller.BaseController;
 
 import io.swagger.annotations.ApiOperation;
+
+import javax.servlet.ServletRequest;
+import javax.validation.Valid;
 
 /**
  * <p>
@@ -34,54 +43,87 @@ import io.swagger.annotations.ApiOperation;
 @Controller
 @RequestMapping("/customer/info/company/contact")
 public class CustomerInfoCompanyContactController extends BaseController {
+
 	@Autowired
-	private ICustomerInfoCompanyContactService customerInfoCompanyContactService;
+	private ICustomerInfoCompanyService companyService;
+
+	@Autowired
+	private ICustomerInfoCompanyContactService contactService;
+
+	@Autowired
+	private ISysCompanyService iSysCompanyService;
+
+	private final String COMPANY_ID = "company_id";
+
+	private final String DEFAULT_NAME = "暂无默认值";
 
 	@ApiOperation(value = "进入列表界面", notes = "进入列表界面")
-	@GetMapping(value = "")
-	public String list(Model model) {
-		return "/customer/info/company/contact/list.ftl";
-	}
-
-	@ApiOperation(value = "进入编辑界面", notes = "进入编辑界面")
-	@GetMapping(value = "/detail/{action}")
-	public String detail(@PathVariable("action") String action, Model model) {
-		model.addAttribute("action", action);
-		return "/customer/info/company/contact/detail";
+	@GetMapping(value = "/{id}")
+	public String list(@PathVariable("id") Long id, String flag, Model model) {
+		model.addAttribute("id",id);
+		model.addAttribute("flag", flag);
+		CompanyVO companyVO = companyService.selectById(id);
+		Map<String, Object> map = new HashMap<>();
+		map.put("enterpriseNumber", companyVO.getEnterpriseNumber());
+		map.put("name", companyVO.getName());
+		model.addAttribute("company",map);
+		return "customer/info/company/contact/list";
 	}
 
 	@ApiOperation(value = "获取列表数据", notes = "获取列表数据:使用约定的DataTable")
-	@PostMapping(value = "/list")
+	@PostMapping(value = "/{id}/list")
 	@ResponseBody
-	public DataTable<CustomerInfoCompanyContact> list(@RequestBody DataTable<CustomerInfoCompanyContact> dt) {
-		return customerInfoCompanyContactService.pageSearch(dt);
-	}
-
-	@ApiOperation(value = "添加", notes = "添加")
-	@PostMapping(value = "/create")
-	@ResponseBody
-	public ReturnDTO create(CustomerInfoCompanyContact param) {
-		customerInfoCompanyContactService.insert(param);
-		return ReturnDTOUtil.success();
-	}
-
-	@ApiOperation(value = "编辑", notes = "编辑")
-	@PostMapping(value = "/update")
-	@ResponseBody
-	public ReturnDTO update(CustomerInfoCompanyContact param) {
-		customerInfoCompanyContactService.updateById(param);
-		return ReturnDTOUtil.success();
-	}
-
-	@SLog("批量删除")
-	@ApiOperation(value = "批量删除", notes = "批量删除")
-	@PostMapping(value = "/delete")
-	@ResponseBody
-	public ReturnDTO delete(@RequestParam("ids") List<Long> ids) {
-		boolean success = customerInfoCompanyContactService.deleteBatchIds(ids);
-		if (success) {
-			return ReturnDTOUtil.success();
+	public DataTable<ContactVO> list(@PathVariable("id")Long id,@RequestBody DataTable<CustomerInfoCompanyContact> dt) {
+		if (id == null) {
+			throw new LeaseCatException(LeaseCarEnum.CONTACT_SHOW_FAIL_WITH_ID_IS_NULL);
 		}
-		return ReturnDTOUtil.fail();
+		dt.getSearchParams().put(SearchParam.SEARCH_EQ + COMPANY_ID, id);
+		DataTable<ContactDTO> contactDTODataTable = contactService.pageSearchDTO(dt);
+		DataTable<ContactVO> contactVODataTable = ConvertUtil.convertContactDDT2VDT(contactDTODataTable);
+		List<ContactVO> rows = contactVODataTable.getRows();
+ 		return contactVODataTable;
+	}
+
+	@ApiOperation(value = "进入添加联系人信息页面", notes = "进入添加联系人信息页面")
+	@GetMapping(value = "/{companyId}/insert")
+	public String toInsertPage(@PathVariable("companyId") Long companyId, Model model) {
+		model.addAttribute("id", companyId);
+		model.addAttribute("action","insert");
+		return "customer/info/company/contact/insert";
+	}
+
+	@ApiOperation(value = "进入修改联系人信息页面", notes = "进入修改联系人信息页面")
+	@GetMapping(value = "/{id}/update/{id}")
+	public String toUpdatePage(@PathVariable("id") Long id, Model model) {
+		CustomerInfoCompanyContact contact = contactService.selectById(id);
+		model.addAttribute("contact", contact);
+		model.addAttribute("action","insert");
+		return "customer/info/company/contact/insert";
+	}
+
+	@ApiOperation(value = "添加/编辑联系人信息", notes = "添加/编辑联系人信息")
+	@PostMapping(value = "/insert")
+	@ResponseBody
+	public ReturnDTO create(@Valid ContactVO contactVO, BindingResult result){
+		if (result.hasErrors()) {
+			throw new LeaseCatException(result.getFieldError().getDefaultMessage());
+		}
+		ContactDTO contactDTO = ConvertUtil.convert(contactVO);
+		contactService.insertOrUpdate(contactDTO);
+		return ReturnDTOUtil.success();
+	}
+
+
+	@ApiOperation(value = "批量删除用户", notes = "批量删除用户")
+	@PostMapping(value = "/{id}/delete")
+	@ResponseBody
+	public ReturnDTO delete(@RequestParam("ids") List<Long> ids, ServletRequest request) {
+		try {
+			contactService.deleteTheBatchIds(ids);
+			return ReturnDTOUtil.success();
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ReturnDTOUtil.fail();
+		}
 	}
 }

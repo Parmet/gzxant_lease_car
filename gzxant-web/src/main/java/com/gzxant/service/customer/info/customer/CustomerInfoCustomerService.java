@@ -2,8 +2,9 @@ package com.gzxant.service.customer.info.customer;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.gzxant.base.vo.DataTable;
-import com.gzxant.util.ConvertUtil;
+import com.gzxant.constant.Global;
 import com.gzxant.dto.CustomerDTO;
+import com.gzxant.util.ConvertUtil;
 import com.gzxant.entity.customer.info.certificate.CustomerInfoCertificate;
 import com.gzxant.enums.CertificatesStatusEnum;
 import com.gzxant.enums.LeaseCarEnum;
@@ -28,7 +29,7 @@ import java.util.Map;
 
 /**
  * <p>
- * Customer's information 服务实现类
+ * CustomerDTO's information 服务实现类
  * </p>
  *
  * @author tecty
@@ -50,7 +51,9 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
     @Override
     public List<CustomerDTO> selectList() {
         //查询所有数据
-        List<CustomerInfoCustomer> customers = selectList(new EntityWrapper<>());
+        EntityWrapper<CustomerInfoCustomer> ew = new EntityWrapper<>();
+            ew.where("del_flag", Global.DEL_FLAG_NORMAL);
+        List<CustomerInfoCustomer> customers = selectList(ew);
         List<CustomerDTO> customerDTOS = ConvertUtil.convert(customers);
         return customerDTOS;
     }
@@ -59,7 +62,7 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
      * 分页查询
      */
     public DataTable<CustomerDTO> pageSearchDTO(DataTable<CustomerInfoCustomer> dt) {
-
+        dt.getSearchParams().put("search_like_del_flag",Global.DEL_FLAG_NORMAL);
         DataTable<CustomerInfoCustomer> customerDataTable = super.pageSearch(dt);
         List<CustomerInfoCustomer> rows = customerDataTable.getRows();
 
@@ -108,22 +111,29 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
     }
 
     /**
-     * 批量删除
+     * 批量删除 该删除标记
      */
     @Override
-    public boolean deleteTheBatchIds(List<? extends Serializable> list) {
+    @Transactional
+    public void deleteTheBatchIds(List<? extends Serializable> list) {
         if (list != null) {
-            super.deleteBatchIds(list);
+            for (Serializable id : list) {
+                CustomerInfoCustomer customer = new CustomerInfoCustomer();
+                customer.setId((String) id);
+                customer.setDelFlag(Global.DEL_FLAG_DELETE);
+                updateById(customer);
+            }
             //把每个id对于的证件信息删除
             for (Serializable id : list) {
-                Map<String, Object> map = new HashMap<String, Object>();
-                map.put("customer_id",id);
-                certificateService.deleteByMap(map);
+                CustomerInfoCertificate certificate = new CustomerInfoCertificate();
+                certificate.setDelFlag(Global.DEL_FLAG_DELETE);
+                EntityWrapper<CustomerInfoCertificate> ew = new EntityWrapper<>();
+                ew.where("customer_id={0}",id);
+                certificateService.update(certificate, ew);
             }
         } else {
             throw new LeaseCatException(LeaseCarEnum.PLEASE_SELECT_THE_DATA);
         }
-        return false;
     }
 
     @Override
@@ -131,7 +141,7 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
     public void insertOrUpdate(CustomerDetailVO customerDetailVO) {
 
         if (customerDetailVO == null) {
-            throw new LeaseCatException(LeaseCarEnum.CUSTOMER_ADD_FAIL);
+            throw new LeaseCatException(LeaseCarEnum.CUSTOMER_OR_UPDATE_ADD_FAIL);
         }
 
         boolean flag = false;       //false:insert; true:update;

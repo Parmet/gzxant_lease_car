@@ -42,17 +42,17 @@ public class CustomerInfoCertificate extends DataEntity<CustomerInfoCertificate>
 	@TableField("validity_period")
 	private Date validityPeriod;
 
-	@TableField(value = "s_attachment_url", fill = FieldFill.INSERT_UPDATE)
+	@TableField(value = "s_attachment_url")
 	private String sAttachmentUrl;
 
     /**
      * The upload attachment's url
      */
-	@TableField(value = "attachment_url", fill = FieldFill.INSERT_UPDATE)
+	@TableField(value = "attachment_url")
 	private String attachmentUrl;
 
 	/** 客户 */
-	@TableField(value = "customer_id", fill = FieldFill.INSERT_UPDATE)
+	@TableField(value = "customer_id")
 	private String customerId;
 
 

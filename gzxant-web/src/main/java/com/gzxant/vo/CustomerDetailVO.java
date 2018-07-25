@@ -11,7 +11,7 @@ import java.util.Date;
  * @author: Fatal
  * @date: 2018/7/21 0021 13:44
  */
-public class CustomerDetailVO {
+public class CustomerDetailVO extends EntityVO {
 
     private String id;
 
