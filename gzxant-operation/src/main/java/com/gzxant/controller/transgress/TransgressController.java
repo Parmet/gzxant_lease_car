@@ -47,6 +47,7 @@ public class TransgressController {
 	}
 
 	// 导入
+	@ResponseBody
 	@RequestMapping(value = "/input", method = RequestMethod.POST)
 	public ResponseEntity<Void> input(MultipartFile myFile, HttpServletResponse res) {
 		List<String> errorList = new ArrayList<String>();
@@ -100,6 +101,7 @@ public class TransgressController {
 	}
 
 	// 导出
+	@ResponseBody
 	@RequestMapping(value = "/output", method = RequestMethod.POST)
 	public ResponseEntity<Void> output(HttpServletRequest request, HttpServletResponse response,
 			@RequestParam("tgVo") TransgressVo tgVo) {

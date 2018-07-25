@@ -67,13 +67,13 @@ public interface TransgressMapper {
 	})
 	List<Transgress> query(TransgressVo tgVo);
 
-	@Insert("insert into oper_transgress(user_id,plate_num,type,brand,deduction,"
+	@Insert("insert into oper_transgress(plate_num,type,brand,deduction,"
 			+"fine,asset_company,operate_company,customer,tg_time,place,reason,"
 			+"department,commisson,code,tg_num,status,query_time,update_time) values("
-			+"#{user_id},#{plate_num},#{type},#{brand},#{deduction},"
-			+"#{fine},#{asset_company},#{operate_company},#{customer},#{tg_time},#{place},"
-			+"#{reason},#{department},#{commisson},#{code},#{tg_num},#{status},"
-			+"#{query_time},#{update_time})")
+			+"#{plateNum},#{type},#{brand},#{deduction},"
+			+"#{fine},#{assetCompany},#{operateCompany},#{customer},#{tgTime},#{place},"
+			+"#{reason},#{department},#{commisson},#{code},#{tgNum},#{status},"
+			+"#{queryTime},#{updateTime})")
 	@Options(useGeneratedKeys = true, keyProperty = "id")
 	void add(Transgress tg);
 
