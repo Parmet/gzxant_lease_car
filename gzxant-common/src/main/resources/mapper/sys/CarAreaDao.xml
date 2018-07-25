@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gzxant.dao.CarAreaDao">
+
+    <sql id="base_select">
+        SELECT * FROM car_area c
+    </sql>
+    
+	<!-- 根据id查找对应的车辆设置对象信息 -->
+	<select id="selectCarAreaInfoById" parameterType="long" resultType="carArea">
+        <include refid="base_select"></include> where c.id = #{id}
+    </select>
+
+	<!-- 查询所有车辆设置对象信息列表 -->
+	<select id="selectAllCarAreaInfo" resultType="carArea">
+        <include refid="base_select"></include>
+    </select>
+
+    <resultMap id="selectAllCarAreaInfo" type="carArea">
+        <id property="id" column="id"></id>
+        <result property="remark" column="su_remark"></result>
+        <result property="delFlag" column="del_flag"></result>    
+        <result property="belongOrganization" column="belong_organization"></result>
+        <result property="address" column="address"></result>
+        <result property="carAreaName" column="car_area_name"></result>
+        
+    </resultMap>
+
+</mapper>
