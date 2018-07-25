@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gzxant-code" />
+        <module name="gzxant-common" />
+        <module name="gzxant-log" />
+        <module name="gzxant-operation" />
+        <module name="gzxant-sys" />
+        <module name="gzxant-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="gzxant-api" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a220b96a-8afa-4365-8e38-354d02bd36a9" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gzxant-api/gzxant-api.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/controller/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/service/IBaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/service/IBaseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/plus/SysMetaObjectHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/plus/SysMetaObjectHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/sitemesh/WebSiteMeshFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/sitemesh/WebSiteMeshFilter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/PathUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/PathUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/shiro/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/shiro/ShiroConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysConfigController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysConfigController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysDictService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysDictService.class" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/gzxant-web/target/" />
+    <ignored path="$PROJECT_DIR$/gzxant-sys/target/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/gzxant-log/target/" />
+    <ignored path="$PROJECT_DIR$/gzxant-api/target/" />
+    <ignored path="$PROJECT_DIR$/gzxant-common/target/" />
+    <ignored path="$PROJECT_DIR$/gzxant-code/target/" />
+    <ignored path="$PROJECT_DIR$/gzxant-operation/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="gzxant_lease_car" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/application.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomerInfoCustomerController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/customer/CustomerInfoCustomerController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+              <folding>
+                <element signature="e#1504#1505#0" expanded="true" />
+                <element signature="e#1548#1549#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>form.js</find>
+      <find>logger</find>
+      <find>CUSTOMER_OR_</find>
+      <find>DateUtils</find>
+      <find>driveImgshowdiv</find>
+      <find>imgshowdiv</find>
+      <find>drive_photo</find>
+      <find>Length</find>
+      <find>id=&quot;name&quot;</find>
+      <find>dt_edit_button</find>
+      <find>nextIsContact</find>
+      <find>abbreviation</find>
+      <find>checkCompany</find>
+      <find>////</find>
+      <find>fa-remove</find>
+      <find>book</find>
+      <find>添加</find>
+      <find>loca</find>
+      <find>&lt;T&gt;</find>
+      <find>@requestBody</find>
+      <find>Condition.create().</find>
+      <find>?id?</find>
+      <find>alert()</find>
+      <find>company</find>
+      <find>dt.getSearchParams().put</find>
+      <find>dt.getSearchParams()</find>
+      <find>DEFAULT_NAME</find>
+      <find>DEL_FLAG</find>
+      <find>ew.where(DEL_FLAG</find>
+      <find>convertContactDTO2VO</find>
+    </findStrings>
+    <dirStrings>
+      <dir>E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\java\com\gzxant\controller\customer</dir>
+      <dir>E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\resources\templates</dir>
+      <dir>E:\Documents\GitHub\gzxant_lease_car\gzxant-common</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/gzxant-sys/src/main/resources/templates/user/detail.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/converter/ConvertUtil.java" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/resources/application-local.yml" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/gzxantform.js" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/CustomerVo.java" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/util/FileUtils.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/customer/CustomerInfoCustomerController.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/customer/list.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/static/customer/info/identity.js" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/customer/info/customer/CustomerInfoCustomer.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/customer/info/certificate/CustomerInfoCertificate.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/EntityVO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/CustomerVO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/CustomerDetailVO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/EntityDTO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/CustomerDTO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/Customer.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/customer/insert.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/identity.js" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/customer/info/company/CustomerInfoCompany.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/CompanyDTO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/customer/ICustomerInfoCustomerService.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/CertificatesStatusEnum.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/SexEnum.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/CategoryEnum.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/PropertyEnum.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/CustomerStatusEnum.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/contact/list.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/service/impl/BaseService.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/datatable.js" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/LeaseCarEnum.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/ContactDTO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/company/contact/insert.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/customer/info/company/contact/CustomerInfoCompanyContact.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/ContactVO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/CompanyVO.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/company/contact/ICustomerInfoCompanyContactService.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/company/insert.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/company/list.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/company/contact/list.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/company/export.properties" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/company/ICustomerInfoCompanyService.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/customer/CustomerInfoCustomerService.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/company/CustomerInfoCompanyService.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/company/contact/CustomerInfoCompanyContactService.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/company/CustomerInfoCompanyController.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/customer/CustomerController.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/util/ConvertUtil.java" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/company/contact/CustomerInfoCompanyContactController.java" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/config/sitemesh/WebSiteMeshFilter.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\specialized software\Maven\repository" />
+        <option name="mavenHome" value="D:/specialized software/Maven/apache-maven-3.3.9" />
+        <option name="userSettingsFile" value="D:\specialized software\Maven\apache-maven-3.3.9\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="width" value="1366" />
+    <option name="height" value="768" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="defau&#9;FILE&#9;file://E:/Documents/GitHub/gzxant_lease_car/gzxant-common/src/main/resources/templates/layouts/default.ftl&#10;webmes&#9;PSI&#9;JAVA://com.gzxant.config.sitemesh.WebSiteMeshFilter&#10;gzxantForm&#9;FILE&#9;file://E:/Documents/GitHub/gzxant_lease_car/gzxant-common/src/main/resources/static/js/gzxant/gzxantform.js" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\resources\templates\customer\info\company" />
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-common\src\main\resources\static\js" />
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\resources\templates" />
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\resources\static\customer\info" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\resources\templates\customer\info\company\contact" />
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\resources\templates\customer\info\contact" />
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-common\src\main\resources\static\js" />
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\resources\templates\customer\info\company" />
+      <recent name="E:\Documents\GitHub\gzxant_lease_car\gzxant-web\src\main\resources\templates\customer\info" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="WebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="gzxant-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gzxant.WebApplication" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG">
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a220b96a-8afa-4365-8e38-354d02bd36a9" name="Default" comment="" />
+      <created>1532085735090</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532085735090</updated>
+      <workItem from="1532085739837" duration="11757000" />
+      <workItem from="1532135422661" duration="20727000" />
+      <workItem from="1532164332198" duration="15557000" />
+      <workItem from="1532222277080" duration="45566000" />
+      <workItem from="1532299025784" duration="3141000" />
+      <workItem from="1532307764795" duration="44881000" />
+      <workItem from="1532391124583" duration="53755000" />
+      <workItem from="1532482282264" duration="37423000" />
+      <workItem from="1532526369680" duration="812000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="233619000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" visible="true" weight="0.3289689" />
+      <window_info anchor="right" id="Maven Projects" order="0" />
+      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info id="Designer" order="0" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info id="Structure" order="6" sideWeight="0.5040917" side_tool="true" weight="0.23827533" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49924356" weight="0.2536825" />
+      <window_info anchor="bottom" id="TODO" order="13" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.22094926" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info id="Image Layers" order="1" />
+      <window_info anchor="bottom" id="Java Enterprise" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49924356" weight="0.25040916" />
+      <window_info anchor="bottom" id="Spring" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.3289689" />
+      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49014086" visible="true" weight="0.25189108" />
+      <window_info anchor="right" id="Bean Validation" order="5" />
+      <window_info id="Web" order="4" sideWeight="0.5040917" side_tool="true" weight="0.23827533" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info id="Favorites" order="3" sideWeight="0.50985914" side_tool="true" weight="0.19288956" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.24962178" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.3289689" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Designer" order="0" />
+      <window_info anchor="right" id="Palette" order="6" />
+      <window_info anchor="bottom" id="Spring" order="0" />
+      <window_info id="Image Layers" order="1" />
+      <window_info anchor="bottom" id="Run" order="9" sideWeight="0.49924356" weight="0.25040916" />
+      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" sideWeight="0.50985914" side_tool="true" weight="0.19288956" />
+      <window_info anchor="bottom" id="Terminal" order="1" weight="0.3289689" />
+      <window_info id="Capture Tool" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50075644" side_tool="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Messages" order="2" weight="0.22094926" />
+      <window_info anchor="bottom" id="TODO" order="13" weight="0.3289689" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.24962178" />
+      <window_info anchor="bottom" id="Java Enterprise" order="3" />
+      <window_info anchor="bottom" id="Database Changes" order="4" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="0" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49014086" visible="true" weight="0.24810892" />
+      <window_info anchor="right" id="Database" order="2" />
+      <window_info anchor="bottom" id="Message" order="6" />
+      <window_info id="Web" order="4" sideWeight="0.5040917" side_tool="true" weight="0.23827533" />
+      <window_info anchor="right" id="Palette&#9;" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="4" />
+      <window_info id="Structure" order="6" sideWeight="0.5040917" side_tool="true" weight="0.23827533" />
+      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="7" weight="0.3289689" />
+      <window_info anchor="right" id="Bean Validation" order="5" />
+      <window_info anchor="bottom" id="Debug" order="10" weight="0.28150573" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/company/contact/CustomerInfoCompanyContactController.java</url>
+          <line>83</line>
+          <properties />
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="134" />
+    </breakpoint-manager>
+  </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="watch">
+      <expression>
+        <expression-string>k.startsWith(cnd) &amp;&amp; null != v &amp;&amp; v.toString().length() &gt; 0</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>idLoadCnd(SearchParam.SEARCH_EQ, k, v)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>k.startsWith(cnd) &amp;&amp; null != v &amp;&amp; v.toString().length() &gt; 0;</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>iSysCompanyService.selectByMap(map)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>iSysCompanyService.selectByMap(map);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>response.getHeader(&quot;content-disposition&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>response.getHeader(&quot;&quot;)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>customerInfoCustomerService.pageSearchDto(dt);</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/application-local.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="21" lean-forward="true" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/customer/info/company/CustomerInfoCompany.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1292">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/gzxantform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/gzxant.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/vo/DataTable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/dao/BaseDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/specialized software/Maven/repository/com/baomidou/mybatis-plus/2.1.0/mybatis-plus-2.1.0.jar!/com/baomidou/mybatisplus/service/IService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-895">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/service/IBaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/specialized software/Maven/repository/com/baomidou/mybatis-plus/2.1.0/mybatis-plus-2.1.0.jar!/com/baomidou/mybatisplus/enums/SqlLike.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="12" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/constant/SearchParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/specialized software/Maven/repository/com/baomidou/mybatis-plus/2.1.0/mybatis-plus-2.1.0.jar!/com/baomidou/mybatisplus/mapper/Condition.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/service/impl/BaseService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="117">
+          <caret line="76" column="33" selection-start-line="76" selection-start-column="33" selection-end-line="76" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/customer/list.ftl" />
+    <entry file="jar://D:/specialized software/Maven/repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/bind/annotation/PathVariable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="17" column="18" selection-start-line="17" selection-start-column="18" selection-end-line="17" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/datatable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="238" column="9" selection-start-line="238" selection-start-column="9" selection-end-line="238" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/customer/ICustomerInfoCustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="21" column="36" lean-forward="true" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/util/ReturnDTOUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding>
+            <element signature="e#455#456#0" expanded="true" />
+            <element signature="e#529#530#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/specialized software/Maven/repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="123" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dao/customer/info/company/contact/CustomerInfoCompanyContactDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="13" column="22" lean-forward="true" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/ContactVO.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/company/contact/insert.ftl" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/ContactDTO.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-log/src/main/java/com/gzxant/aspect/SLogAspect.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="42" column="18" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/company/list.ftl" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/company/contact/list.ftl" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/company/export.porperties" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/company/export.properties" />
+    <entry file="jar://D:/specialized software/Maven/repository/com/baomidou/mybatis-plus/2.1.0/mybatis-plus-2.1.0.jar!/com/baomidou/mybatisplus/service/impl/ServiceImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="358" column="19" selection-start-line="358" selection-start-column="19" selection-end-line="358" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/CompanyVO.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/company/ICustomerInfoCompanyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="30" column="42" lean-forward="true" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/company/contact/ICustomerInfoCompanyContactService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/customer/info/company/insert.ftl" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/company/CustomerInfoCompanyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="121" column="77" selection-start-line="121" selection-start-column="77" selection-end-line="121" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/company/contact/CustomerInfoCompanyContactService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="40" column="74" selection-start-line="40" selection-start-column="74" selection-end-line="40" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/company/CustomerInfoCompanyController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="632">
+          <caret line="160" column="58" selection-start-line="160" selection-start-column="58" selection-end-line="160" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/entity/BaseEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="25" column="22" lean-forward="true" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/CategoryEnum.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/LeaseCarEnum.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/exception/LeaseCatException.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/customer/info/customer/CustomerInfoCustomer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/CustomerDetailVO.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/customer/info/customer/CustomerInfoCustomerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/plugins/iTable/iTable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1862">
+          <caret line="104" column="34" lean-forward="true" selection-start-line="104" selection-start-column="34" selection-end-line="104" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/templates/layouts/default.ftl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="7182">
+          <caret line="378" column="31" selection-start-line="378" selection-start-column="31" selection-end-line="378" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/customer/CustomerController.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/util/ConvertUtil.java" />
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/customer/info/company/contact/CustomerInfoCompanyContact.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/company/contact/CustomerInfoCompanyContactController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="60" column="35" selection-start-line="60" selection-start-column="35" selection-end-line="60" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/config/sitemesh/WebSiteMeshFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="40" column="54" lean-forward="true" selection-start-line="40" selection-start-column="54" selection-end-line="40" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="17" lean-forward="true" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/customer/CustomerInfoCustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="83" column="9" lean-forward="true" selection-start-line="83" selection-start-column="9" selection-end-line="83" selection-end-column="9" />
+          <folding>
+            <element signature="e#1504#1505#0" expanded="true" />
+            <element signature="e#1548#1549#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
