@@ -38,7 +38,7 @@ public class CustomerInfoCompanyContactService extends BaseService<CustomerInfoC
         DataTable<CustomerInfoCompanyContact> contactDataTable = super.pageSearch(dt);
         DataTable<ContactDTO> contactDTODataTable = null;
         try {
-            contactDTODataTable = ConvertUtil.convertContactDT2DDT(contactDataTable);
+            contactDTODataTable = ConvertUtil.convertEntityDT2ContactDTODT(contactDataTable);
             if (contactDataTable == null) {
                 throw new LeaseCatException(LeaseCarEnum.CONTACT_SHOW_FAIL_WITH_CONVERT_FAIL);
             }

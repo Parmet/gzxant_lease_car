@@ -27,4 +27,6 @@ public interface ICustomerInfoCompanyService extends IBaseService<CustomerInfoCo
     public CompanyVO selectById(Long id);
 
     public void deleteTheBatchIds(List<? extends Serializable> list);
+
+    public List<CompanyDTO>  selectList();
 }

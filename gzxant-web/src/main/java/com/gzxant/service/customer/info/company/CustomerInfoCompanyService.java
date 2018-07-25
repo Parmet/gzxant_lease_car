@@ -1,7 +1,9 @@
 package com.gzxant.service.customer.info.company;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.gzxant.base.vo.DataTable;
 import com.gzxant.constant.Global;
+import com.gzxant.constant.SearchParam;
 import com.gzxant.dto.CompanyDTO;
 import com.gzxant.entity.SysCompany;
 import com.gzxant.enums.LeaseCarEnum;
@@ -21,7 +23,9 @@ import com.gzxant.service.customer.info.company.ICustomerInfoCompanyService;
 import com.gzxant.base.service.impl.BaseService;
 
 import java.io.Serializable;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>
@@ -47,7 +51,7 @@ public class CustomerInfoCompanyService extends BaseService<CustomerInfoCompanyD
         DataTable<CustomerInfoCompany> companyDataTable = super.pageSearch(dt);
         List<CustomerInfoCompany> rows = companyDataTable.getRows();
         if (rows != null && rows.size() != 0) {
-            List<CompanyDTO> companyDTOS = ConvertUtil.convertCompanysToDTOS(rows);
+            List<CompanyDTO> companyDTOS = ConvertUtil.convertEntitys2CompanyDTOS(rows);
             for (CompanyDTO companyDTO : companyDTOS) {
                 SysCompany sysCompany = iSysCompanyService.selectById(companyDTO.getBelongsto());
                 companyDTO.setBelongsto(sysCompany.getName());
@@ -106,4 +110,18 @@ public class CustomerInfoCompanyService extends BaseService<CustomerInfoCompanyD
             }
         }
     }
+
+    /**
+     * 导出数据
+     */
+    @Override
+    public List<CompanyDTO> selectList() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("del_flag", Global.DEL_FLAG_NORMAL);
+        List<CustomerInfoCompany> companies = selectByMap(map);
+        List<CompanyDTO> companyDTOS = ConvertUtil.convertEntitys2CompanyDTOS(companies);
+        return companyDTOS;
+    }
+
+
 }

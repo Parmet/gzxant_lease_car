@@ -51,10 +51,10 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
     @Override
     public List<CustomerDTO> selectList() {
         //查询所有数据
-        EntityWrapper<CustomerInfoCustomer> ew = new EntityWrapper<>();
-            ew.where("del_flag", Global.DEL_FLAG_NORMAL);
-        List<CustomerInfoCustomer> customers = selectList(ew);
-        List<CustomerDTO> customerDTOS = ConvertUtil.convert(customers);
+        Map<String, Object> map = new HashMap<>();
+        map.put("del_flag", Global.DEL_FLAG_NORMAL);
+        List<CustomerInfoCustomer> customers = selectByMap(map);
+        List<CustomerDTO> customerDTOS = ConvertUtil.convertEntitys2CustomerDTOS(customers);
         return customerDTOS;
     }
 
@@ -66,7 +66,7 @@ public class CustomerInfoCustomerService extends BaseService<CustomerInfoCustome
         DataTable<CustomerInfoCustomer> customerDataTable = super.pageSearch(dt);
         List<CustomerInfoCustomer> rows = customerDataTable.getRows();
 
-        List<CustomerDTO> customerDTOS = ConvertUtil.convert(rows);
+        List<CustomerDTO> customerDTOS = ConvertUtil.convertEntitys2CustomerDTOS(rows);
 
         //封装数据
         DataTable<CustomerDTO> customerDtoDataTable = new DataTable<>();

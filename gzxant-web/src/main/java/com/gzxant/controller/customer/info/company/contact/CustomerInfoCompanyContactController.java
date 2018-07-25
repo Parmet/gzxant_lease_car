@@ -6,10 +6,8 @@ import java.util.Map;
 
 import com.gzxant.constant.SearchParam;
 import com.gzxant.dto.ContactDTO;
-import com.gzxant.entity.SysCompany;
 import com.gzxant.enums.LeaseCarEnum;
 import com.gzxant.exception.LeaseCatException;
-import com.gzxant.service.ISysCompanyService;
 import com.gzxant.service.customer.info.company.ICustomerInfoCompanyService;
 import com.gzxant.util.ConvertUtil;
 import com.gzxant.vo.CompanyVO;
@@ -50,12 +48,9 @@ public class CustomerInfoCompanyContactController extends BaseController {
 	@Autowired
 	private ICustomerInfoCompanyContactService contactService;
 
-	@Autowired
-	private ISysCompanyService iSysCompanyService;
-
 	private final String COMPANY_ID = "company_id";
-
 	private final String DEFAULT_NAME = "暂无默认值";
+
 
 	@ApiOperation(value = "进入列表界面", notes = "进入列表界面")
 	@GetMapping(value = "/{id}")
@@ -79,7 +74,7 @@ public class CustomerInfoCompanyContactController extends BaseController {
 		}
 		dt.getSearchParams().put(SearchParam.SEARCH_EQ + COMPANY_ID, id);
 		DataTable<ContactDTO> contactDTODataTable = contactService.pageSearchDTO(dt);
-		DataTable<ContactVO> contactVODataTable = ConvertUtil.convertContactDDT2VDT(contactDTODataTable);
+		DataTable<ContactVO> contactVODataTable = ConvertUtil.convertContactDTODT2ContactVODT(contactDTODataTable);
 		List<ContactVO> rows = contactVODataTable.getRows();
  		return contactVODataTable;
 	}

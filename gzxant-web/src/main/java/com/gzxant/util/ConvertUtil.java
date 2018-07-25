@@ -29,7 +29,10 @@ import java.util.stream.Collectors;
  */
 public class ConvertUtil {
 
-    public static CustomerDTO convert(CustomerInfoCustomer customer){
+    /** Entity 2 DTO */
+
+    /** Customer 2 CustomerDTO */
+    public static CustomerDTO convertEntity2DTO(CustomerInfoCustomer customer){
         CustomerDTO customerDTO = new CustomerDTO();
         try {
             BeanUtils.copyProperties(customer,customerDTO);
@@ -47,7 +50,8 @@ public class ConvertUtil {
         return customerDTO;
     }
 
-    public static ContactDTO convert(CustomerInfoCompanyContact contact) {
+    /** Contact 2 CustomerDTO */
+    public static ContactDTO convertEntity2DTO(CustomerInfoCompanyContact contact) {
         ContactDTO contactDTO = new ContactDTO();
         try {
             BeanUtils.copyProperties(contact, contactDTO);
@@ -57,17 +61,54 @@ public class ConvertUtil {
         return contactDTO;
     }
 
-    public static CustomerInfoCompanyContact convert(ContactDTO contactDTO) {
-        CustomerInfoCompanyContact contact = new CustomerInfoCompanyContact();
+    /** Company 2 CustomerDTO */
+    public static CompanyDTO convertEntity2DTO(CustomerInfoCompany company) {
+        CompanyDTO companyDTO = new CompanyDTO();
         try {
-            BeanUtils.copyProperties(contactDTO, contact);
-        } catch (BeansException e) {
+            BeanUtils.copyProperties(company, companyDTO);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        return contact;
+        return companyDTO;
     }
 
-    public static CustomerVO convert(CustomerDTO customerDTO) {
+    /** Customers 2 CustomerDTOS */
+    public static List<CustomerDTO> convertEntitys2CustomerDTOS(List<CustomerInfoCustomer> customers) {
+        List<CustomerDTO> customerDTOS = customers.stream()
+                .map(e -> convertEntity2DTO(e))
+                .collect(Collectors.toList());
+        return customerDTOS;
+    }
+
+    /** Companys 2 CustomerDTOS */
+    public static List<CompanyDTO> convertEntitys2CompanyDTOS(List<CustomerInfoCompany> companies) {
+        return companies.stream()
+                .map(e -> convertEntity2DTO(e))
+                .collect(Collectors.toList());
+    }
+
+    /** Contacts 2 CustomerDTOS */
+    public static List<ContactDTO> convertEntitys2ContactDTOS(List<CustomerInfoCompanyContact> contacts) {
+        List<ContactDTO> list = contacts.stream()
+                .map(e -> convertEntity2DTO(e))
+                .collect(Collectors.toList());
+        return list;
+    }
+
+    /** DataTable -> contact 2 ContactDTO */
+    public static DataTable<ContactDTO> convertEntityDT2ContactDTODT(DataTable<CustomerInfoCompanyContact> contactDataTable) {
+        DataTable<ContactDTO> contactDTODataTable = new DataTable<>();
+        List<CustomerInfoCompanyContact> rows = contactDataTable.getRows();
+        List<ContactDTO> contactDTOS = convertEntitys2ContactDTOS(rows);
+        contactDTODataTable.setRows(contactDTOS);
+        return contactDTODataTable;
+    }
+
+
+    /** DTO 2 VO */
+
+    /** CustomerDTO 2 CustomerVO */
+    public static CustomerVO convertDTO2VO(CustomerDTO customerDTO) {
         CustomerVO customerVO = new CustomerVO();
         try {
             BeanUtils.copyProperties(customerDTO,customerVO);
@@ -77,17 +118,8 @@ public class ConvertUtil {
         return customerVO;
     }
 
-    public static ContactDTO convert(ContactVO contactVO) {
-        ContactDTO contactDTO = new ContactDTO();
-        try {
-            BeanUtils.copyProperties(contactVO, contactDTO);
-        } catch (BeansException e) {
-            e.printStackTrace();
-        }
-        return contactDTO;
-    }
-
-    public static ContactVO convertContactDTO2VO(ContactDTO contactDTO) {
+    /** ContactDTO 2 ContactVO */
+    public static ContactVO convertDTO2VO(ContactDTO contactDTO) {
         ContactVO contactVO = new ContactVO();
         try {
             BeanUtils.copyProperties(contactDTO, contactVO);
@@ -97,7 +129,8 @@ public class ConvertUtil {
         return contactVO;
     }
 
-    public static CompanyVO convert(CompanyDTO companyDTO) {
+    /** CompanyDTO 2 CompanyVO */
+    public static CompanyVO convertDTO2VO(CompanyDTO companyDTO) {
         CompanyVO companyVO = new CompanyVO();
         try {
             BeanUtils.copyProperties(companyDTO, companyVO);
@@ -111,56 +144,37 @@ public class ConvertUtil {
         return companyVO;
     }
 
-    public static List<CustomerDTO> convert(List<CustomerInfoCustomer> customers) {
-        List<CustomerDTO> customerDTOS = customers.stream()
-                .map(e -> convert(e))
-                .collect(Collectors.toList());
-        return customerDTOS;
-    }
-
-    public static CompanyDTO convertCompanyToDTO(CustomerInfoCompany company) {
-        CompanyDTO companyDTO = new CompanyDTO();
-        try {
-            BeanUtils.copyProperties(company, companyDTO);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return companyDTO;
-    }
-
-    public static List<CompanyDTO> convertCompanysToDTOS(List<CustomerInfoCompany> companies) {
-        return companies.stream()
-                .map(e -> convertCompanyToDTO(e))
-                .collect(Collectors.toList());
-    }
-
-    public static List<ContactDTO> convertContactsToDTOS(List<CustomerInfoCompanyContact> contacts) {
-        List<ContactDTO> list = contacts.stream()
-                .map(e -> convert(e))
-                .collect(Collectors.toList());
-        return list;
-    }
-
-
-    public static List<CustomerVO> convertCustomerDTOToCustomerVO(List<CustomerDTO> customerDTOS) {
+    /** CustomerDTOS 2 CustomerVOS */
+    public static List<CustomerVO> convertCustomerDTOS2CustomerVOS(List<CustomerDTO> customerDTOS) {
         List<CustomerVO> list = customerDTOS.stream()
-                .map(e -> convert(e))
+                .map(e -> convertDTO2VO(e))
                 .collect(Collectors.toList());
         return list;
     }
 
-    public static List<CompanyVO> convertCompanyDTOToCompanyVO(List<CompanyDTO> companyDTOS) {
+    /** CompanyDTOS 2 CompanyVOS */
+    public static List<CompanyVO> convertCompanyDTOS2CompanyVOS(List<CompanyDTO> companyDTOS) {
         List<CompanyVO> list = companyDTOS.stream()
-                .map(e -> convert(e))
+                .map(e -> convertDTO2VO(e))
                 .collect(Collectors.toList());
         return list;
     }
 
-    public static List<ContactVO> convertContactDTO2VO(List<ContactDTO> contactDTOS) {
+    /** ContactDTOS 2 ContactVO */
+    public static List<ContactVO> convertContactDTOS2ContactVOS(List<ContactDTO> contactDTOS) {
         List<ContactVO> list = contactDTOS.stream()
-                .map(e -> convertContactDTO2VO(e))
+                .map(e -> convertDTO2VO(e))
                 .collect(Collectors.toList());
         return list;
+    }
+
+    /** DataTable -> ContactDTO 2 ContactVO */
+    public static DataTable<ContactVO> convertContactDTODT2ContactVODT(DataTable<ContactDTO> dtoDateTable) {
+        DataTable<ContactVO> contactVODataTable = new DataTable<>();
+        List<ContactDTO> rows = dtoDateTable.getRows();
+        List<ContactVO> contactVOS = convertContactDTOS2ContactVOS(rows);
+        contactVODataTable.setRows(contactVOS);
+        return contactVODataTable;
     }
 
     /**
@@ -168,37 +182,21 @@ public class ConvertUtil {
      * @param dtoDateTable
      * @return
      */
-    public static DataTable<CustomerVO> convertCustomerDDT2VDT(DataTable<CustomerDTO> dtoDateTable) {
+    public static DataTable<CustomerVO> convertCustomerDTODT2CustomerVODT(DataTable<CustomerDTO> dtoDateTable) {
         List<CustomerDTO> rows = dtoDateTable.getRows();
-        List<CustomerVO> customerVOS = convertCustomerDTOToCustomerVO(rows);
+        List<CustomerVO> customerVOS = convertCustomerDTOS2CustomerVOS(rows);
         DataTable<CustomerVO> voDataTable = new DataTable<>();
         BeanUtils.copyProperties(dtoDateTable,voDataTable);
         voDataTable.setRows(customerVOS);
         return voDataTable;
     }
 
-    public static DataTable<ContactDTO> convertContactDT2DDT(DataTable<CustomerInfoCompanyContact> contactDataTable) {
-        DataTable<ContactDTO> contactDTODataTable = new DataTable<>();
-        List<CustomerInfoCompanyContact> rows = contactDataTable.getRows();
-        List<ContactDTO> contactDTOS = convertContactsToDTOS(rows);
-        contactDTODataTable.setRows(contactDTOS);
-        return contactDTODataTable;
-    }
-
-
-    public static DataTable<ContactVO> convertContactDDT2VDT(DataTable<ContactDTO> dtoDateTable) {
-        DataTable<ContactVO> contactVODataTable = new DataTable<>();
-        List<ContactDTO> rows = dtoDateTable.getRows();
-        List<ContactVO> contactVOS = convertContactDTO2VO(rows);
-        contactVODataTable.setRows(contactVOS);
-        return contactVODataTable;
-    }
-
-    public static DataTable<CompanyVO> convertCompanyDTOToCompanyVO(DataTable<CompanyDTO> dtoDateTable) {
+    /** DataTable CompanyDTO 2 CompanyVO */
+    public static DataTable<CompanyVO> convertCompanyDTODT2CompanyVODT(DataTable<CompanyDTO> dtoDateTable) {
         DataTable<CompanyVO> voDataTable = new DataTable<>();
         if (dtoDateTable != null) {
             List<CompanyDTO> rows = dtoDateTable.getRows();
-            List<CompanyVO> vos = convertCompanyDTOToCompanyVO(rows);
+            List<CompanyVO> vos = convertCompanyDTOS2CompanyVOS(rows);
             BeanUtils.copyProperties(dtoDateTable, voDataTable);
 
             voDataTable.setRows(vos);
@@ -206,6 +204,32 @@ public class ConvertUtil {
         return voDataTable;
     }
 
+
+    /** VO 2 DTO */
+
+    /** ContactVO 2 ContactDTO */
+    public static ContactDTO convert(ContactVO contactVO) {
+        ContactDTO contactDTO = new ContactDTO();
+        try {
+            BeanUtils.copyProperties(contactVO, contactDTO);
+        } catch (BeansException e) {
+            e.printStackTrace();
+        }
+        return contactDTO;
+    }
+
+    /** DTO 2 Entity */
+
+    /** ContactDTO 2 Contact */
+    public static CustomerInfoCompanyContact convert(ContactDTO contactDTO) {
+        CustomerInfoCompanyContact contact = new CustomerInfoCompanyContact();
+        try {
+            BeanUtils.copyProperties(contactDTO, contact);
+        } catch (BeansException e) {
+            e.printStackTrace();
+        }
+        return contact;
+    }
 
 
     /**

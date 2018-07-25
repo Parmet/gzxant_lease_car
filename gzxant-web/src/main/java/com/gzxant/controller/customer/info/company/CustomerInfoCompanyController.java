@@ -5,12 +5,18 @@ import java.util.List;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.gzxant.dto.CompanyDTO;
+import com.gzxant.dto.CustomerDTO;
 import com.gzxant.entity.SysCompany;
+import com.gzxant.entity.customer.info.company.contact.CustomerInfoCompanyContact;
 import com.gzxant.exception.LeaseCatException;
 import com.gzxant.service.ISysCompanyService;
 import com.gzxant.service.ISysDictService;
 import com.gzxant.util.ConvertUtil;
+import com.gzxant.util.FileUtils;
 import com.gzxant.vo.CompanyVO;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +41,10 @@ import com.gzxant.base.controller.BaseController;
 
 import io.swagger.annotations.ApiOperation;
 
+import javax.servlet.ServletOutputStream;
 import javax.servlet.ServletRequest;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 /**
@@ -61,6 +70,83 @@ public class CustomerInfoCompanyController extends BaseController {
 	@Autowired
 	private ISysCompanyService iSysCompanyService;
 
+	private final String COMPANY_DATA = "企业信息";
+	private final String ENTERPRISE_NUMBER = "企业编码";
+	private final String NAME = "公司名称";
+	private final String ABBREVIATION = "简称";
+	private final String PROPERTY = "公司性质";
+	private final String CATEGORY = "公司类别";
+	private final String ADDRESS = "所属组织";
+	private final String REGISTERED_CAPITAL = "公司地址";
+	private final String REMARK = "注册资金";
+	private final String REGISTERED_DATE = "注册日期";
+	private final String LEGAL_REPRESENTATIVE = "法人代表";
+	private final String EMAIL = "邮箱地址";
+	private final String LICENSE_NUMBER = "营业执照号";
+	private final String STATUS = "客户状态";
+
+
+	@GetMapping("/exportXls")
+	public String exportXls(HttpServletRequest request,
+							HttpServletResponse response) throws Exception {
+		//查询所有数据
+		List<CompanyDTO> companyDTOS = companyService.selectList();
+		List<CompanyVO> vos = ConvertUtil.convertCompanyDTOS2CompanyVOS(companyDTOS);
+
+		//在内存中创建一个excel文件
+		HSSFWorkbook workbook = new HSSFWorkbook();
+		//创建一个标签页
+		HSSFSheet sheet = workbook.createSheet(COMPANY_DATA);
+		//创建标题行
+		HSSFRow headRow = sheet.createRow(0);
+		headRow.createCell(0).setCellValue(ENTERPRISE_NUMBER);
+		headRow.createCell(1).setCellValue(NAME);
+		headRow.createCell(2).setCellValue(ABBREVIATION);
+		headRow.createCell(3).setCellValue(PROPERTY);
+		headRow.createCell(4).setCellValue(CATEGORY);
+		headRow.createCell(5).setCellValue(ADDRESS);
+		headRow.createCell(6).setCellValue(REGISTERED_CAPITAL);
+		headRow.createCell(7).setCellValue(REMARK);
+		headRow.createCell(8).setCellValue(REGISTERED_DATE);
+		headRow.createCell(9).setCellValue(LEGAL_REPRESENTATIVE);
+		headRow.createCell(10).setCellValue(EMAIL);
+		headRow.createCell(11).setCellValue(LICENSE_NUMBER);
+		headRow.createCell(12).setCellValue(STATUS);
+
+		for (CompanyVO companyVO : vos) {
+			HSSFRow dataRow = sheet.createRow(sheet.getLastRowNum() + 1);
+			dataRow.createCell(0).setCellValue(companyVO.getId());
+			dataRow.createCell(1).setCellValue(companyVO.getName());
+			dataRow.createCell(2).setCellValue(companyVO.getAbbreviation());
+			dataRow.createCell(3).setCellValue(companyVO.getProperty());
+			dataRow.createCell(4).setCellValue(companyVO.getCategory());
+			dataRow.createCell(5).setCellValue(companyVO.getAddress());
+			dataRow.createCell(6).setCellValue(companyVO.getRegisteredCapital());
+			dataRow.createCell(7).setCellValue(companyVO.getRemark());
+			dataRow.createCell(8).setCellValue(companyVO.getRegisteredDate());
+			dataRow.createCell(9).setCellValue(companyVO.getLegalRepresentative());
+			dataRow.createCell(10).setCellValue(companyVO.getEmail());
+			dataRow.createCell(11).setCellValue(companyVO.getLicenseNumber());
+			dataRow.createCell(12).setCellValue(companyVO.getStatus());
+		}
+
+		//使用输出流进行文件下载（一个流、两个头）
+		String filename = COMPANY_DATA + ".xls";
+		String mimeType = request.getServletContext().getMimeType(filename);
+		ServletOutputStream out = response.getOutputStream();
+		response.setContentType(mimeType);
+		response.setCharacterEncoding("utf-8");
+
+		//获得客户端浏览器类型
+		String agent = request.getHeader("User-Agent");
+		filename = FileUtils.encodeDownloadFilename(filename, agent);
+		response.setHeader("content-disposition", "attachment;filename=" + filename);
+
+		workbook.write(out);
+		return null;
+	}
+
+
 	@ApiOperation(value = "进入列表界面", notes = "进入列表界面")
 	@GetMapping(value = "")
 	public String list(Model model) {
@@ -72,7 +158,7 @@ public class CustomerInfoCompanyController extends BaseController {
 	@ResponseBody
 	public DataTable<CompanyVO> list(@RequestBody DataTable<CustomerInfoCompany> dt) {
 		DataTable<CompanyDTO> companyDTODataTable = companyService.pageSearchDTO(dt);
-		return ConvertUtil.convertCompanyDTOToCompanyVO(companyDTODataTable);
+		return ConvertUtil.convertCompanyDTODT2CompanyVODT(companyDTODataTable);
 	}
 
 	@ApiOperation(value = "进入添加公司信息界面", notes = "进入添加公司信息界面")

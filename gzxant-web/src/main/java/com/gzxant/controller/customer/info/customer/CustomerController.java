@@ -127,7 +127,7 @@ public class CustomerController extends BaseController {
 	@ResponseBody
 	public DataTable<CustomerVO> list(@RequestBody DataTable<CustomerInfoCustomer> dt) {
 		DataTable<CustomerDTO> customerDTODataTable = customerService.pageSearchDTO(dt);
-		return ConvertUtil.convertCustomerDDT2VDT(customerDTODataTable);
+		return ConvertUtil.convertCustomerDTODT2CustomerVODT(customerDTODataTable);
 	}
 
 	@ApiOperation(value = "进入添加用户信息页面", notes = "进入添加用户信息页面")
