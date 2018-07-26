@@ -11,7 +11,6 @@ import com.gzxant.enums.LeaseCarEnum;
 import com.gzxant.exception.LeaseCatException;
 import com.gzxant.service.customer.info.certificate.ICustomerInfoCertificateService;
 import com.gzxant.util.DateUtils;
-import com.gzxant.util.StringUtils;
 import com.gzxant.vo.CustomerDetailVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +20,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.gzxant.entity.customer.info.customer.CustomerInfoCustomer;
 import com.gzxant.dao.customer.info.customer.CustomerInfoCustomerDao;
 import com.gzxant.base.service.impl.BaseService;
+import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
 import java.util.HashMap;
