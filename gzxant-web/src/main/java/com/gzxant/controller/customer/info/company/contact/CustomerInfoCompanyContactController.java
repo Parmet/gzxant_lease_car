@@ -113,12 +113,10 @@ public class CustomerInfoCompanyContactController extends BaseController {
 	@PostMapping(value = "/{id}/delete")
 	@ResponseBody
 	public ReturnDTO delete(@RequestParam("ids") List<Long> ids, ServletRequest request) {
-		try {
-			contactService.deleteTheBatchIds(ids);
-			return ReturnDTOUtil.success();
-		} catch (Exception e) {
-			e.printStackTrace();
+		if (ids == null || ids.size() == 0) {
 			return ReturnDTOUtil.fail();
 		}
+		contactService.deleteTheBatchIds(ids);
+		return ReturnDTOUtil.success();
 	}
 }
