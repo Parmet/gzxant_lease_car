@@ -6,10 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="gzxant-api" />
         <module name="gzxant-code" />
         <module name="gzxant-common" />
         <module name="gzxant-log" />
+        <module name="gzxant-operation" />
         <module name="gzxant-sys" />
         <module name="gzxant-web" />
       </profile>
@@ -19,6 +19,7 @@
       <module name="gzxant-code" target="1.8" />
       <module name="gzxant-common" target="1.8" />
       <module name="gzxant-log" target="1.8" />
+      <module name="gzxant-operation" target="1.8" />
       <module name="gzxant-sys" target="1.8" />
       <module name="gzxant-web" target="1.8" />
       <module name="gzxant_lease_car" target="1.8" />
