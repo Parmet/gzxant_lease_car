@@ -104,7 +104,7 @@ public class TransgressController {
 	@ResponseBody
 	@RequestMapping(value = "/output", method = RequestMethod.POST)
 	public ResponseEntity<Void> output(HttpServletRequest request, HttpServletResponse response,
-			@RequestParam("tgVo") TransgressVo tgVo) {
+			@RequestParam(value="tgVo",required=false) TransgressVo tgVo) {
 
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 

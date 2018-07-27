@@ -14,10 +14,7 @@ import com.gzxant.entity.transgress.Transgress;
 public interface TransgressMapper {
 	
 	@Select({"<script>",
-			"select * from oper_transgress ",
-			"<if test=' tgVo != null'>",
-			" when ",
-			"</if>",
+			"select * from oper_transgress where 1=1 ",
 			/*  资产公司  */
 			"<if test=' assetCompany != null and assetCompany != \"\" '>",
 			" and asset_company LIKE CONCAT('%',#{assetCompany},'%') ",
@@ -39,16 +36,16 @@ public interface TransgressMapper {
 			" and status = #{status} ",
 			"</if>",
 			/*  违章时间开始 */
-			"<if test=' tgTimeStatus != null and tgTimeStatus != \"\" '>",
-			" and plate_num &gt;= #{tgTimeStatus} ",
+			"<if test=' tgTimeStart != null and tgTimeStart != \"\" '>",
+			" and plate_num &gt;= #{tgTimeStart} ",
 			"</if>",
 			/*  违章时间结束 */
 			"<if test=' tgTimeEnd != null and tgTimeEnd != \"\" '>",
 			" and plate_num &lt;= #{tgTimeEnd} ",
 			"</if>",
 			/*  处理时间开始 */
-			"<if test=' updateTimeStatus != null and updateTimeStatus != \"\" '>",
-			" and update_time &gt;= #{updateTimeStatus} ",
+			"<if test=' updateTimeStart != null and updateTimeStart != \"\" '>",
+			" and update_time &gt;= #{updateTimeStart} ",
 			"</if>",
 			/*  处理时间结束 */
 			"<if test=' updateTimeEnd != null and updateTimeEnd != \"\" '>",

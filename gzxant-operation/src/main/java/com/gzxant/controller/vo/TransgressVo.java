@@ -6,14 +6,15 @@ public class TransgressVo {
 	
 	private int id;                    		   //id
 	private String plateNum;           	       //车牌号
-	private int assetCompany;        	  	   //资产公司
-	private int operateCompany;        	       //经营公司
+	private String assetCompany;        	   //资产公司
+	private String operateCompany;        	   //经营公司
 	private String customer;        	 	   //客户
-	private Date tgTimeStatus;                 //违章时间开始
+	private Date tgTimeStart;                  //违章时间开始
 	private Date tgTimeEnd;                    //违章时间结束
 	private Boolean status;        	 	   	   //状态:   1:已处理，0:未处理
-	private Date updateTimeStatus;             //处理时间开始
+	private Date updateTimeStart;              //处理时间开始
 	private Date updateTimeEnd;                //处理时间结束
+	
 	
 	public int getId() {
 		return id;
@@ -27,16 +28,16 @@ public class TransgressVo {
 	public void setPlateNum(String plateNum) {
 		this.plateNum = plateNum;
 	}
-	public int getAssetCompany() {
+	public String getAssetCompany() {
 		return assetCompany;
 	}
-	public void setAssetCompany(int assetCompany) {
+	public void setAssetCompany(String assetCompany) {
 		this.assetCompany = assetCompany;
 	}
-	public int getOperateCompany() {
+	public String getOperateCompany() {
 		return operateCompany;
 	}
-	public void setOperateCompany(int operateCompany) {
+	public void setOperateCompany(String operateCompany) {
 		this.operateCompany = operateCompany;
 	}
 	public String getCustomer() {
@@ -45,11 +46,11 @@ public class TransgressVo {
 	public void setCustomer(String customer) {
 		this.customer = customer;
 	}
-	public Date getTgTimeStatus() {
-		return tgTimeStatus;
+	public Date getTgTimeStart() {
+		return tgTimeStart;
 	}
-	public void setTgTimeStatus(Date tgTimeStatus) {
-		this.tgTimeStatus = tgTimeStatus;
+	public void setTgTimeStart(Date tgTimeStart) {
+		this.tgTimeStart = tgTimeStart;
 	}
 	public Date getTgTimeEnd() {
 		return tgTimeEnd;
@@ -63,11 +64,11 @@ public class TransgressVo {
 	public void setStatus(Boolean status) {
 		this.status = status;
 	}
-	public Date getUpdateTimeStatus() {
-		return updateTimeStatus;
+	public Date getUpdateTimeStart() {
+		return updateTimeStart;
 	}
-	public void setUpdateTimeStatus(Date updateTimeStatus) {
-		this.updateTimeStatus = updateTimeStatus;
+	public void setUpdateTimeStart(Date updateTimeStart) {
+		this.updateTimeStart = updateTimeStart;
 	}
 	public Date getUpdateTimeEnd() {
 		return updateTimeEnd;
@@ -76,5 +77,5 @@ public class TransgressVo {
 		this.updateTimeEnd = updateTimeEnd;
 	}
 	
-
+	
 }
