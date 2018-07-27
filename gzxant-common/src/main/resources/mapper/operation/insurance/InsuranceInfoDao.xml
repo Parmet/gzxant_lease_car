@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gzxant.dao.insurance.InsuranceInfoDao">
+	<select id="queryInsuranceListPage" parameterType="com.gzxant.dto.InsuranceEO" resultType="com.gzxant.vo.InsuranceVo">
+		select 
+		i.*, 
+		c.assets_belong,
+		case
+		when c.assets_state=0 then '已租'
+		when c.assets_state=1 then '未租'
+		end as assets_state,
+		c.vehicle_type
+		from operation_insurance_info i
+		left join car c on i.carNo=c.car_number
+		where i.isDelete = 0
+		<if test="assets_belong != null and assets_belong != ''">
+			and c.assets_belong=#{assets_belong}
+		</if>
+		<if test="carType != null and carType != ''">
+			and c.vehicle_type=#{carType}
+		</if>
+		<if test="carNo != null and carNo != ''">
+			and i.carNo=#{carNo}
+		</if>
+		<if test="insuranceNo != null and insuranceNo != ''">
+			and i.insuranceNo=#{insuranceNo}
+		</if>
+		<if test="workDate != null">
+			<![CDATA[ and i.workDate >= #{workDate} ]]>
+		</if>
+		<if test="expiryDate != null">
+			<![CDATA[ and i.expiryDate <= #{expiryDate} ]]>
+		</if>
+		<if test="distanceExpiryDay != null">
+			<![CDATA[ and i.expiryDate=DATE_ADD(DATE_FORMAT(NOW(),'%Y-%m-%d'), INTERVAL ${distanceExpiryDay} DAY) ]]>
+		</if>
+		<if test="status != null">
+			<if test="status == 0">
+				<![CDATA[ and i.expiryDate < DATE_FORMAT(NOW(),'%Y-%m-%d') ]]> 
+			</if>
+			<if test="status == 1">
+				<![CDATA[ and i.workDate <= DATE_FORMAT(NOW(),'%Y-%m-%d') and DATE_FORMAT(NOW(),'%Y-%m-%d') <= i.expiryDate ]]> 
+			</if>
+		</if>
+		order by i.createTime
+		limit #{start},#{pageSize}
+	</select>
+	
+	<select id="queryInsuranceListPageTotal" parameterType="com.gzxant.dto.InsuranceEO" resultType="Long">
+		select count(*) from operation_insurance_info i
+		left join car c on i.carNo=c.car_number
+		where i.isDelete = 0
+		<if test="assets_belong != null and assets_belong != ''">
+			and c.assets_belong=#{assets_belong}
+		</if>
+		<if test="carType != null and carType != ''">
+			and c.vehicle_type=#{carType}
+		</if>
+		<if test="carNo != null and carNo != ''">
+			and i.carNo=#{carNo}
+		</if>
+		<if test="insuranceNo != null and insuranceNo != ''">
+			and i.insuranceNo=#{insuranceNo}
+		</if>
+		<if test="workDate != null">
+			<![CDATA[ and i.workDate >= #{workDate} ]]>
+		</if>
+		<if test="expiryDate != null">
+			<![CDATA[ and i.expiryDate <= #{expiryDate} ]]>
+		</if>
+		<if test="distanceExpiryDay != null">
+			<![CDATA[ and i.expiryDate=DATE_ADD(DATE_FORMAT(NOW(),'%Y-%m-%d'), INTERVAL ${distanceExpiryDay} DAY) ]]>
+		</if>
+		<if test="status != null">
+			<if test="status == 0">
+				<![CDATA[ and i.expiryDate < DATE_FORMAT(NOW(),'%Y-%m-%d') ]]> 
+			</if>
+			<if test="status == 1">
+				<![CDATA[ and i.workDate <= DATE_FORMAT(NOW(),'%Y-%m-%d') and DATE_FORMAT(NOW(),'%Y-%m-%d') <= i.expiryDate ]]> 
+			</if>
+		</if>
+	</select>
+	
+	<select id="queryInsuranceInfo" resultType="com.gzxant.vo.InsuranceVo">
+		select * from operation_insurance_info where code=#{code} and isDelete = 0
+	</select>
+	
+	<select id="queryInsuranceSpecies" resultType="com.gzxant.entity.insurance.InsuranceSpecies">
+		select * from operation_insurance_species where code=#{code} and isDelete = 0
+	</select>
+	
+	<select id="queryInsuranceFile" resultType="com.gzxant.entity.insurance.InsuranceFile">
+		select * from operation_insurance_file where code=#{code} and isDelete = 0
+	</select>
+	
+	<insert id="insertInsuranceInfo" parameterType="com.gzxant.entity.insurance.InsuranceInfo">
+		insert into operation_insurance_info (code,carNo,buyOrganization,insuranceNo,insuranceType,insuranceCompany,carAgeLimit,
+		insuranceCommissioner,insuranceTotalAmount,workDate,expiryDate,claimsTel,agentName,createTime,updateTime)
+		values 
+		(#{code},#{carNo},#{buyOrganization},#{insuranceNo},#{insuranceType},#{insuranceCompany},#{carAgeLimit},
+		#{insuranceCommissioner},#{insuranceTotalAmount},#{workDate},#{expiryDate},#{claimsTel},#{agentName},#{createTime},#{updateTime})
+	</insert>
+	
+	<insert id="insertInsuranceSpecies" parameterType="com.gzxant.entity.insurance.InsuranceSpecies">
+		insert into operation_insurance_species (code,insuranceItem,rate,insuredAmount,insurancePremium,createTime,updateTime,operator)
+		values 
+		(#{code},#{insuranceItem},#{rate},#{insuredAmount},#{insurancePremium},#{createTime},#{updateTime},#{operator})
+	</insert>
+	
+	<insert id="insertInsuranceFile" parameterType="com.gzxant.entity.insurance.InsuranceFile">
+		insert into operation_insurance_file (code,fileName,fileUrl)
+		values 
+		(#{code},#{fileName},#{fileUrl})
+	</insert>
+	
+	<update id="updateInsuranceInfo" parameterType="com.gzxant.entity.insurance.InsuranceInfo">
+		update operation_insurance_info
+		<set>
+			<if test="carNo != null">
+				carNo=#{carNo},
+			</if>
+			<if test="buyOrganization != null">
+				buyOrganization=#{buyOrganization},
+			</if>
+			<if test="insuranceNo != null">
+				insuranceNo=#{insuranceNo},
+			</if>
+			<if test="insuranceType != null">
+				insuranceType=#{insuranceType},
+			</if>
+			<if test="insuranceCompany != null">
+				insuranceCompany=#{insuranceCompany},
+			</if>
+			<if test="carAgeLimit != null">
+				carAgeLimit=#{carAgeLimit},
+			</if>
+			<if test="insuranceCommissioner != null">
+				insuranceCommissioner=#{insuranceCommissioner},
+			</if>
+			<if test="insuranceTotalAmount != null">
+				insuranceTotalAmount=#{insuranceTotalAmount},
+			</if>
+			<if test="workDate != null">
+				workDate=#{workDate},
+			</if>
+			<if test="expiryDate != null">
+				expiryDate=#{expiryDate},
+			</if>
+			<if test="claimsTel != null">
+				claimsTel=#{claimsTel},
+			</if>
+			<if test="agentName != null">
+				agentName=#{agentName},
+			</if>
+			<if test="createTime != null">
+				createTime=#{createTime},
+			</if>
+			<if test="updateTime != null">
+				updateTime=#{updateTime},
+			</if>
+			<if test="operator != null">
+				operator=#{operator},
+			</if>
+			<if test="isDelete != null">
+				isDelete=#{isDelete},
+			</if>
+		</set>
+		where code=#{code}
+	</update>
+	
+	<update id="deleteInsuranceInfo">
+		update operation_insurance_into set isDelete=1 where code=#{code}
+	</update>
+	
+	<update id="deleteInsuranceSpecies">
+		update operation_insurance_species set isDelete=1 where code=#{code}
+	</update>
+	
+	<update id="deleteInsuranceFile">
+		update operation_insurance_file set isDelete=1 where code=#{code}
+	</update>
+</mapper>
