@@ -131,7 +131,7 @@ public class AccidentController {
  	
  	// 导出
  	@ResponseBody
- 	@RequestMapping(value = "/output", method = RequestMethod.POST)
+ 	@RequestMapping(value = "/output", method = RequestMethod.GET)
  	public ResponseEntity<Void> output(HttpServletRequest request, HttpServletResponse response,
  			@RequestParam(value="aVo",required=false) AccidentVo aVo) {
 
@@ -144,7 +144,7 @@ public class AccidentController {
  				"我方经济损失", "我方医疗费用", "三者经济损失","三者医疗费用","已赔付金额","事故等级",
  				"处理状态","事故处理进度","备注" };
  		// excel文件名
- 		String fileName = "违章管理表" + System.currentTimeMillis() + ".xls";
+ 		String fileName = "违章管理表" + format.format(System.currentTimeMillis()) + ".xls";
  		// sheet名
  		String sheetName = "违章管理表";
  		String[][] content = new String[aList.size()][title.length];
