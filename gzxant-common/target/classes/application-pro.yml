@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 attach_path: /gzxant/attach/
 
 spring:
@@ -29,3 +30,36 @@ spring:
       max-wait: -1
       max-idle: 18
       min-idle: 0
+=======
+attach_path: /gzxant/attach/
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://120.78.177.54:3306/gzxant_lease_car?useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: gzxant
+    password: gzxant1804
+    druid:
+      validationQuery: SELECT 1
+      initialSize: 10
+      minIdle: 10
+      maxActive: 200
+      minEvictableIdleTimeMillis: 180000
+      testOnBorrow: false
+      testWhileIdle: true
+      removeAbandoned: true
+      removeAbandonedTimeout: 1800
+      logAbandoned: true
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 100
+  redis:
+    database: 0
+    host: 192.168.1.200
+    port: 6379
+    password: 123456
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 18
+      min-idle: 0
+>>>>>>> CustomerInfo

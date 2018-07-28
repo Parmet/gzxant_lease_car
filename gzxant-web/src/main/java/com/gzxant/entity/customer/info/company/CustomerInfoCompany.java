@@ -14,68 +14,92 @@ import com.gzxant.base.entity.DataEntity;
  *
  * @author tecty
  * @since 2018-07-05
+ * @author Fatal
+ * @date 2018-07-23
  */
 @TableName("customer_info_company")
 public class CustomerInfoCompany extends DataEntity<CustomerInfoCompany> {
 
     private static final long serialVersionUID = 1L;
 
-	@TableField("update_id")
-	private Long updateId;
     /**
-     * The name of the company.
+     * 公司名称
      */
 	private String name;
+	/**
+	 * 企业编号
+	 */
+	@TableField(value = "enterprise_number")
+	private String enterpriseNumber;
     /**
-     * The abbreviation of the company name.
+     * 简称
      */
 	private String abbreviation;
     /**
-     * Type of the company.
+     * 公司性质
      */
 	private String property;
     /**
-     * Which category this company belong.
+     * 公司类别
      */
 	private String category;
     /**
-     * Location of the company.
+     * 公司地址
      */
 	private String address;
     /**
-     * The capital it registered to become a company.
+     * 注册资金
      */
 	@TableField("registered_capital")
 	private String registeredCapital;
     /**
-     * The date this company registered.
+     * 注册日期
      */
 	@TableField("registered_date")
 	private Date registeredDate;
-    /**
-     * Name of the legal representative.
+	/**
+	 * 客户状态
+	 */
+	private String status;
+
+	/**
+     * 法人代表
      */
 	@TableField("legal_representative")
 	private String legalRepresentative;
     /**
-     * email of this company.
+     * 邮箱地址
      */
 	private String email;
     /**
-     * license number after registration.
+     * 营业执照号
      */
 	@TableField("license_number")
 	private String licenseNumber;
-    /**
-     * file location of the attachment.
-     */
-	private String attachment;
-    /**
-     * contact's uuid.
-     */
-	@TableField("contact_id")
-	private Integer contactId;
 
+	/**
+	 * 缩略图
+	 */
+	@TableField(value = "s_attachment_url")
+	private String sAttachmentUrl;
+
+
+	/**
+     * 附件
+     */
+    @TableField(value = "attachment_url")
+	private String attachmentUrl;
+
+	/** 所属组织 */
+	private String belongsto;
+
+	public String getsAttachmentUrl() {
+		return sAttachmentUrl;
+	}
+
+	public void setsAttachmentUrl(String sAttachmentUrl) {
+		this.sAttachmentUrl = sAttachmentUrl;
+	}
 
 	public Long getUpdateId() {
 		return updateId;
@@ -165,20 +189,28 @@ public class CustomerInfoCompany extends DataEntity<CustomerInfoCompany> {
 		this.licenseNumber = licenseNumber;
 	}
 
-	public String getAttachment() {
-		return attachment;
+	public String getAttachmentUrl() {
+		return this.attachmentUrl;
 	}
 
-	public void setAttachment(String attachment) {
-		this.attachment = attachment;
+	public void setAttachmentUrl(String attachmentUrl) {
+		this.attachmentUrl = attachmentUrl;
 	}
 
-	public Integer getContactId() {
-		return contactId;
+	public String getBelongsto() {
+		return belongsto;
 	}
 
-	public void setContactId(Integer contactId) {
-		this.contactId = contactId;
+	public void setBelongsto(String belongsto) {
+		this.belongsto = belongsto;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	@Override
@@ -186,22 +218,11 @@ public class CustomerInfoCompany extends DataEntity<CustomerInfoCompany> {
 		return this.id;
 	}
 
-	@Override
-	public String toString() {
-		return "CustomerInfoCompany{" +
-			"updateId=" + updateId +
-			", name=" + name +
-			", abbreviation=" + abbreviation +
-			", property=" + property +
-			", category=" + category +
-			", address=" + address +
-			", registeredCapital=" + registeredCapital +
-			", registeredDate=" + registeredDate +
-			", legalRepresentative=" + legalRepresentative +
-			", email=" + email +
-			", licenseNumber=" + licenseNumber +
-			", attachment=" + attachment +
-			", contactId=" + contactId +
-			"}";
+	public String getEnterpriseNumber() {
+		return enterpriseNumber;
+	}
+
+	public void setEnterpriseNumber(String enterpriseNumber) {
+		this.enterpriseNumber = enterpriseNumber;
 	}
 }

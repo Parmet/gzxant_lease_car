@@ -1,6 +1,8 @@
 package com.gzxant.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import org.assertj.core.util.Lists;
@@ -189,4 +191,37 @@ public class SysDictService extends BaseService<SysDictDao, SysDict> implements 
         return jts;
     }
 
+    /**
+     * Compress the return map, only contain the required jkey to jvalue pair.
+     * @param keyToJkey A map from entity's key to jkey.
+     * @return
+     */
+    @Override
+    public Map<String, Object> getDictMapByMap(Map<String, String> keyToJkey) {
+        // Store the dict mapping that would need
+        Map<String, Map<String, String>> dictMap = new HashMap<>();
+
+        // do the query for all the needed mapping
+        for(Map.Entry<String, String> entry : keyToJkey.entrySet()) {
+            // construct an empty list
+            Map<String, String> mp = new HashMap<>();
+
+            for (SysDict each :
+                    this.getDictTree(entry.getValue())) {
+                // put the key value pair in this map
+                mp.put(each.getJkey(),each.getJvalue());
+            }
+
+            // put the dict list into dict map
+            dictMap.put(entry.getKey(),mp);
+
+        }
+
+        // construct the return map
+        Map <String, Object>returnMap = new HashMap<>();
+        returnMap.put("dict",dictMap);
+
+        // return the final dict map
+        return returnMap;
+    }
 }

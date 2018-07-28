@@ -3,6 +3,8 @@ package com.gzxant.base.service;
 import com.baomidou.mybatisplus.service.IService;
 import com.gzxant.base.vo.DataTable;
 
+import java.util.List;
+
 /**
  *
  * @author chen
@@ -21,5 +23,6 @@ public interface IBaseService<T> extends IService<T>{
      * @return
      */
     DataTable<T> pageSearch(DataTable<T> dt);
+
 
  }

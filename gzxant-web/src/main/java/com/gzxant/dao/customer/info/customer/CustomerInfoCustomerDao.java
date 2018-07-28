@@ -5,7 +5,7 @@ import com.gzxant.base.dao.CrudDao;
 
 /**
  * <p>
-  * Customer's information Mapper 接口
+  * CustomerDTO's information Mapper 接口
  * </p>
  *
  * @author tecty
