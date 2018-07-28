@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 server:
   port: 8081
   context-path: /gzxant/web
@@ -38,10 +37,10 @@ management:
 logging.level.project.user.UserClient: DEBUG
 
 mybatis:
-  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml
+  mapper-locations: classpath:mapper/**/*.xml
   type-aliases-package: com.gzxant.entity
 mybatis-plus:
-  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml
+  mapper-locations: classpath:mapper/**/*.xml
   type-aliases-package: com.gzxant.entity
   global-config:
     id-type: 2
@@ -57,63 +56,3 @@ mybatis-plus:
 security:
   basic:
     enabled: false
-=======
-server:
-  port: 8081
-  context-path: /gzxant/web
-
-spring:
-  profiles:
-    active: dev
-  aop:
-    proxy-target-class: true
-  freemarker:
-    template-loader-path: classpath:/templates/
-    prefer-file-system-access: false
-    settings:
-      template_update_delay: 0
-      classic_compatible: true
-      number_format: 0.######
-      template_exception_handler: ignore
-    request-context-attribute: rc
-    charset: UTF-8
-
-  #定义图片上传的最大限制
-  http:
-    multipart:
-      max-file-size: 100Mb
-      max-request-size: 1000Mb
-
-
-sitemesh:
-  contentPath: /*
-  decoratorPath: classpath:/layouts/default.jsp
-  excludedPaths: /js/*,/assets/*,/css/*
-
-management:
-  security:
-    enabled: false
-
-logging.level.project.user.UserClient: DEBUG
-
-mybatis:
-  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml
-  type-aliases-package: com.gzxant.entity
-mybatis-plus:
-  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml
-  type-aliases-package: com.gzxant.entity
-  global-config:
-    id-type: 2
-    field-strategy: 2
-    auto-set-db-type: true
-    db-column-underline: true
-    refresh-mapper: true
-    metaObjectHandler: com.gzxant.config.plus.SysMetaObjectHandler
-  configuration:
-    map-underscore-to-camel-case: true
-    cache-enabled: false
-
-security:
-  basic:
-    enabled: false
->>>>>>> CustomerInfo

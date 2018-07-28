@@ -9,26 +9,21 @@
         <module name="gzxant-code" />
         <module name="gzxant-common" />
         <module name="gzxant-log" />
-<<<<<<< HEAD
-=======
         <module name="gzxant-operation" />
->>>>>>> CustomerInfo
         <module name="gzxant-sys" />
         <module name="gzxant-web" />
       </profile>
     </annotationProcessing>
-<<<<<<< HEAD
-=======
-    <bytecodeTargetLevel>
-      <module name="gzxant-api" target="1.8" />
-      <module name="gzxant-code" target="1.8" />
-      <module name="gzxant-common" target="1.8" />
-      <module name="gzxant-log" target="1.8" />
-      <module name="gzxant-operation" target="1.8" />
-      <module name="gzxant-sys" target="1.8" />
-      <module name="gzxant-web" target="1.8" />
-      <module name="gzxant_lease_car" target="1.8" />
-    </bytecodeTargetLevel>
->>>>>>> CustomerInfo
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="gzxant-code" options="-parameters" />
+      <module name="gzxant-common" options="-parameters" />
+      <module name="gzxant-log" options="-parameters" />
+      <module name="gzxant-operation" options="-parameters" />
+      <module name="gzxant-sys" options="-parameters" />
+      <module name="gzxant-web" options="-parameters" />
+      <module name="gzxant_lease_car" options="-parameters" />
+    </option>
   </component>
 </project>
