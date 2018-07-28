@@ -33,18 +33,18 @@ public class CodeGenerate {
 
 	// --------------变动参数区 start------------------------------------------
 	/* === 表名 === */
-	private static String[] tableNames = {"equipment_province_food_safety"}; //, "shop_order_goods", "shop_order_pay"
+	private static String[] tableNames = {"customer_info_company_contact"}; //, "shop_order_goods", "shop_order_pay"
 	/* === 开发者 === */
-	public static String author = "mojinsheng";
+	public static String author = "tecty";
 	/* === 输出目标项目，为空则生成在当前项目中 === */
-	public static String targetProject = "gzxant-equipment-manage";
+	public static String targetProject = "gzxant-web";
 	/* === 准备生成文件["controller", "service", "dao", "entity", "xml"] === */
 	public static List<String> beGenerateFile = new ArrayList<>(
 			Arrays.asList("controller", "service", "dao", "entity", "xml"));
 	// --------------变动参数区 end------------------------------------------
 
 	// --------------数据源配置区 start------------------------------------------
-	public static String url = "jdbc:mysql://192.168.1.200:3306/gzxant_equipment?useUnicode=true&characterEncoding=utf8&useSSL=false";
+	public static String url = "jdbc:mysql://192.168.1.200:3306/gzxant_lease_car?useUnicode=true&characterEncoding=utf8&useSSL=false";
 	public static String name = "gzxant";
 	public static String passWord = "gzxant1804";
 	public static String driver = "com.mysql.jdbc.Driver";

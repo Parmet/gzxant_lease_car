@@ -108,8 +108,6 @@ public class ShiroConfig {
 
 
 
-
-
     /**
      * cookie对象;
      * @return

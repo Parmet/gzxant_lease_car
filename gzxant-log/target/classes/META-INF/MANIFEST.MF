@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: gzxant-log
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: Administrator
+Implementation-Vendor-Id: com.gzxant
+Build-Jdk: 1.8.0_60
+Implementation-URL: http://projects.spring.io/spring-boot/gzxant_lease
+ _car/gzxant-log/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

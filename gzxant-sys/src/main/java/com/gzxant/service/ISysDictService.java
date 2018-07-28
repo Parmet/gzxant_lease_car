@@ -1,6 +1,7 @@
 package com.gzxant.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.gzxant.base.service.IBaseService;
 import com.gzxant.base.vo.JsTree;
@@ -30,6 +31,13 @@ public interface ISysDictService extends IBaseService<SysDict> {
      * @return
      */
     List<SysDict> getSub(String jkey);
+
+    /**
+     * REST support: get a mapping of all related key values.
+     * @param keyToJkey A map from entity's key to jkey.
+     * @return A mapping of dict's jkey to it's value
+     */
+    Map<String,Object>getDictMapByMap(Map<String,String> keyToJkey);
 
     PCAjaxVO delete(Long id);
 
