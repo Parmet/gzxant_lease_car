@@ -8,10 +8,7 @@
     .operate {
         text-align: center;
     }
-    #returnCustomer, #returnIdentity {
-        margin-right: 10px;
-    }
-    #nextIsSave, #nextIsDrive, #nextIsIdentity {
+    #nextIsSave, #nextIsEnclosure, #nextIsCost {
         visibility: hidden;
     }
 </style>
@@ -43,21 +40,21 @@
             <div class="ibox float-e-margins" >
                 <div class="ibox-content">
                     <ul id="myTab" class="nav nav-tabs">
-                        <li id="customertab" class="active">
-                            <a href="#customer" data-toggle="tab">
-                            <#--<a>-->
+                        <li id="trailertab" class="active">
+                            <#--<a href="#trailer" data-toggle="tab">-->
+                            <a>
                                 基本信息
                             </a>
                         </li>
-                        <li id="identitytab">
-                            <a href="#identity" data-toggle="tab">
-                            <#--<a>-->
+                        <li id="costtab">
+                            <#--<a href="#cost" data-toggle="tab">-->
+                            <a>
                                 费用信息
                             </a>
                         </li>
-                        <li id="drivetab">
-                            <a href="#drive" data-toggle="tab">
-                            <#--<a>-->
+                        <li id="enclosuretab">
+                            <#--<a href="#enclosure" data-toggle="tab">-->
+                            <a>
                                 附件信息
                             </a>
                         </li>
@@ -66,15 +63,15 @@
 
 
                     <div id="myTabContent" class="tab-content">
-                        <!-- customer tab -->
-                        <div class="tab-pane fade in active" id="customer">
+                        <!-- trailer tab -->
+                        <div class="tab-pane fade in active" id="trailer">
                             <div class="form-horizontal form-bordered">
                                 <form class="form-horizontal form-bordered" id="gzxantForm">
                                     <input type="hidden" id="id" name="id" value="${trailer.id}"/>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">⻋牌号：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="carNumber" maxlength="18"
+                                            <input type="text" class="form-control" name="carNumber" maxlength="18" <#if action=="detail">readonly</#if>
                                                    value="${trailer.carNumber}" placeholder="输入⻋牌号"/>
                                         </div>
                                     </div>
@@ -107,14 +104,14 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">执行人：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="executor" maxlength="4"
+                                            <input type="text" class="form-control" name="executor" maxlength="4" <#if action=="detail">readonly</#if>
                                                    value="${trailer.executor}" placeholder="输入执行人"/>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">地点：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="place"
+                                            <input type="text" class="form-control" name="place" <#if action=="detail">readonly</#if>
                                                    value="${trailer.place}" placeholder="输入客户地址"/>
                                         </div>
                                     </div>
@@ -122,7 +119,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">执行时间：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input id="trailerDate" value="${trailer.time}" type="text"
+                                            <input id="trailerDate" value="${trailer.time}" type="text" <#if action=="detail">readonly</#if>
                                                    class="laydate-icon form-control layer-date" name="date">
                                         </div>
                                     </div>
@@ -142,27 +139,26 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">拖车费用：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="cost"
+                                            <input type="text" class="form-control" name="cost" <#if action=="detail">readonly</#if>
                                                    value="${trailer.cost}" placeholder="输入拖车费用" />
                                         </div>
                                     </div>
                                 </form>
-                                <!-- nextIsIdentity -->
                                 <div class="form-horizontal form-bordered operate">
-                                    <button type="button" onclick="checkCustomer()" class="btn btn-success">
+                                    <button type="button" onclick="checkTrailer()" class="btn btn-success">
                                     <#if action != "detail">
                                         保存
                                        <#else>
                                        下一页
                                    </#if>
                                     </button>
-                                    <a id="nextIsIdentity" href="#identity" data-toggle="tab" class="btn btn-success"></a>
+                                    <a id="nextIsCost" href="#cost" data-toggle="tab" class="btn btn-success"></a>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- identity tab -->
-                        <div class="tab-pane fade" id="identity">
+                        <!-- cost tab -->
+                        <div class="tab-pane fade" id="cost">
                             <div class="form-horizontal form-bordered">
                                 <#if action != "detail">
                                     <div id="exampleToolbar" role="group">
@@ -183,26 +179,26 @@
 
                                 <!-- 费用列表 -->
                                 <div class="form-horizontal form-bordered operate">
-                                    <!-- returnCustomer -->
-                                    <button type="button" onclick="checkIdentity()" class="btn btn-success">
+                                    <button type="button" onclick="checkCost()" class="btn btn-success">
                                         <#if action != "detail">
                                             保存
                                         <#else>
                                             下一页
                                         </#if>
                                     </button>
-                                    <!-- nextIsDrive  -->
-                                    <a id="nextIsDrive" href="#drive" data-toggle="tab" class="btn btn-success"></a>
+                                    <!-- nextIsEnclosure  -->
+                                    <a id="nextIsEnclosure" href="#enclosure" data-toggle="tab" class="btn btn-success"></a>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- drive tab -->
-                        <div class="tab-pane fade" id="drive">
+                        <!-- enclosure tab -->
+                        <div class="tab-pane fade" id="enclosure">
                             <div class="form-horizontal form-bordered">
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">证件图片：<span class="required">*</span></label>
                                     <form id="enclosureForm">
+                                        <input id="enclosureId" name="id" type="hidden" value="value="${enclosure.id}">
                                         <input type="hidden" name="url" id="photo"
                                                value="${enclosure.url}"/>
                                         <input type="hidden" name="thumbnail" id="s_photo"
@@ -225,7 +221,7 @@
                                     </#if>
                                 </div>
                                 <div class="form-horizontal form-bordered operate">
-                                    <button type="button" onclick="checkDrive()" class="btn btn-success">
+                                    <button type="button" onclick="checkEnclosure()" class="btn btn-success">
                                         <#if action != "detail">
                                             完成
                                         <#else>
@@ -264,6 +260,10 @@
     }
 
     function dt_update(id) {
+        if (url.endsWith("cost/")) {
+            url = clearUrl(url);
+        }
+        url += "cost/";
         alert("url = " + url + "  id = " + id);
         dt_action("编辑", "update/" + id);
     }
@@ -309,26 +309,8 @@
         $("#imgShowdiv").attr('src', "${rc.contextPath}/img/log9.png");
     }
 
-    // 手机号码验证
-    $.validator.addMethod("isMobile", function(value, element) {
-        var length = value.length;
-        var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
-        return this.optional(element) || (length == 11 && mobile.test(value));
-    }, "请正确填写您的手机号码");
-
-    $.validator.addMethod("isIdCardNo", function (value, element){
-        return this.optional(element) || IdCardValidate(value);
-    },"请正确输入您的身份证号码");
-
-    // $.validator.addMethod("isTel", function(value, element) {
-    //     var length = value.length;
-    //     var phone = /(^(\d{3,4}-)?\d{6,8}$)|(^(\d{3,4}-)?\d{6,8}(-\d{1,5})?$)|(\d{11})/;
-    //     return this.optional(element) || (phone.test(value));
-    // }, "请填写正确的固定电话");//可以自定义默认提示信息
-
-
     //  ---------------------   通过点击下一步来判断，如果校验成功，则用js去触发a标签的点击事件（a标签用来跳转标签页的）    ---------------------
-    function checkDrive() {
+    function checkEnclosure() {
         <#if action != "detail">
         var img = $("#photo").val();
         if (img == "") {
@@ -366,18 +348,18 @@
             window.location.href = "http://localhost:8081/gzxant/web/trailer";
         </#if>
     }
-    function checkIdentity() {
+    function checkCost() {
         <#if action != "detail">
             url = clearUrl(url);
             if (info_validate.valid()) {
                 // alert("身份证信息校验通过");
-                document.getElementById("nextIsDrive").click();
+                document.getElementById("nextIsEnclosure").click();
             }
         <#else>
-            document.getElementById("nextIsDrive").click();
+            document.getElementById("nextIsEnclosure").click();
         </#if>
     }
-    function checkCustomer() {
+    function checkTrailer() {
         <#if action != "detail">
             if (info_validate.valid()) {
                 if (url.endsWith("tupdate/")) {
@@ -404,7 +386,7 @@
                             $("input[name='id']").val(data.message);
                             $("input[name='entityId']").val(data.message);
                             load_data( getcolumns(), {"createDate": "desc"}, data.message);
-                            document.getElementById("nextIsIdentity").click();
+                            document.getElementById("nextIsCost").click();
                         } else {
                             layer.alert(data.error);
                         }
@@ -413,7 +395,7 @@
                 });
             }
         <#else>
-            document.getElementById("nextIsIdentity").click();
+            document.getElementById("nextIsCost").click();
             if (url.endsWith("tdetail/")) {
                 url = clearUrl(url);
             }
@@ -486,7 +468,7 @@
                 this.on('success', function (uploadimfo, result) {
                     console.info(result);
                     $("#"+id).val(result.message[0].url);
-                    $("#s_"+id).val(result.message[0].s_url);   //缩略图       s_identity_photo
+                    $("#s_"+id).val(result.message[0].s_url);   //缩略图       s_cost_photo
                     $("#"+imgdivid).attr('src', "${rc.contextPath}${sysUser.photo}");
                     layer.alert('上传成功');
                 });
@@ -513,29 +495,17 @@
 </script>
 <script type="text/javascript">
     $(function() {
-        $("#nextIsIdentity").click(function() {
-            $("#identitytab").prop("class","active");
-            $("#customertab").removeAttrs("class");
+        $("#nextIsCost").click(function() {
+            $("#costtab").prop("class","active");
+            $("#trailertab").removeAttrs("class");
         });
-        $("#nextIsDrive").click(function() {
-            $("#drivetab").prop("class","active");
-            $("#identitytab").removeAttrs("class");
+        $("#nextIsEnclosure").click(function() {
+            $("#enclosuretab").prop("class","active");
+            $("#costtab").removeAttrs("class");
         });
         $("#nextIsSave").click(function() {
             $("#savetab").prop("class","active");
-            $("#drivetab").removeAttrs("class");
-        });
-        $("#returnCustomer").click(function() {
-            $("#identitytab").removeAttrs("class");
-            $("#customertab").prop("class","active");
-        });
-        $("#returnIdentity").click(function() {
-            $("#drivetab").removeAttrs("class");
-            $("#identitytab").prop("class","active");
-        });
-        $("#returnDrive").click(function() {
-            $("#savetab").removeAttrs("class");
-            $("#drivetab").prop("class","active");
+            $("#enclosuretab").removeAttrs("class");
         });
     });
 

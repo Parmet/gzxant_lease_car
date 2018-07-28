@@ -20,33 +20,33 @@ public class TrailerDTO {
     private Long id;
 
     /** 车牌号 */
-    @NotNull
+    @NotNull(message = "车牌号 不能为空")
     @Length(min = 0, max = 18, message = "车牌号长度必须介于1和18之间")
     private String carNumber;
 
     /** 类型 */
-    @NotNull
+    @NotNull(message = "类型不能为空")
     private String type;
 
     /** 车辆所属 引用 */
-    @NotNull
+    @NotNull(message = "车辆所属引用不能为空")
     private Long belongstoId;
 
     /** 执行人 */
-    @NotNull
+    @NotNull(message = "执行人 不能为空")
     @Length(min = 0, max = 4, message = "执行人姓名必须介于1和4之间")
     private String executor;
 
     /** 地址 */
-    @NotNull
+    @NotNull(message = "地址 不能为空")
     private String place;
 
     /** 执行时间 */
-    @NotNull
+    @NotNull(message = "时间 不能为空")
     private Date date;
 
     /** 状态 字典 未处理 已拖车 已缴费 */
-    @NotNull
+    @NotNull(message = "状态 不能为空")
     private String status;
 
     public Long getId() {

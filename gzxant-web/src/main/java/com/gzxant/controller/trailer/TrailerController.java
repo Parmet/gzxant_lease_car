@@ -178,7 +178,7 @@ public class TrailerController {
         if (result.hasErrors()) {
             throw new LeaseCatException(result.getFieldError().getDefaultMessage());
         }
-        enclosureService.insert(enclosure);
+        enclosureService.insertOrUpdate(enclosure);
         return ReturnDTOUtil.success();
     }
 

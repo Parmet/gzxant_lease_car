@@ -17,19 +17,20 @@ public class CostInfoDTO {
 
     private Long id;
 
-    @NotNull
+    /** 类型 */
+    @NotNull(message = "类型 不能为空")
     private String type;
 
     /** 编号 */
-    @NotNull
+    @NotNull(message = "编号 不能为空")
     private String trailerId;
 
     /** 费用 */
-    @NotNull
+    @NotNull(message = "费用 不能为空")
     private BigDecimal cost;
 
     /** 日期 */
-    @NotNull
+    @NotNull(message = "日期 不能为空")
     private String date;
 
 

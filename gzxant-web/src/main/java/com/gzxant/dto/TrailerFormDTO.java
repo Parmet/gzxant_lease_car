@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class TrailerFormDTO extends TrailerDTO {
 
     /** 拖车费用 */
-    @NotNull
+    @NotNull(message = "拖车费用 不能为空")
     private BigDecimal cost;
 
     private String time;
