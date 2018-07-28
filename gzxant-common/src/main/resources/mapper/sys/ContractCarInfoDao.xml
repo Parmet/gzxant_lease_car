@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gzxant.dao.ContractCarInfoDao">
+
+    <sql id="base_select">
+        SELECT * FROM contractcarinfo c
+    </sql>
+    
+	<!-- 根据id查找对应的汽车信息 -->
+	<select id="selectContractCarInfoById" parameterType="long" resultType="contractCarInfo">
+        <include refid="base_select"></include> where c.id = #{id}
+    </select>
+
+	<!-- 查询所有汽车信息列表 -->
+	<select id="queryContractCarBycontractId" parameterType="long" resultType="contractCarInfo">
+        <include refid="base_select"></include> where c.contract_id = #{contractId}
+    </select>
+    
+    
+	<!-- 查询所有汽车信息列表 -->
+	<select id="selectAllContractCarInfo" resultType="contractCarInfo">
+        <include refid="base_select"></include>
+    </select>
+    
+    
+    
+    
+    <resultMap id="selectAllContractCarInfo" type="contractCarInfo">
+        <id property="id" column="id"></id>
+        <result property="remark" column="su_remark"></result>
+        <result property="delFlag" column="del_flag"></result>      
+        <result property="vehicleType" column="vehicle_type"></result>
+        <result property="number" column="number"></result>
+        <result property="price" column="price"></result>
+        <result property="totalPrice" column="total_price"></result>
+        <result property="contractId" column="contract_id"></result>
+        <result property="remark1" column="remark1"></result>
+    </resultMap>
+
+</mapper>
