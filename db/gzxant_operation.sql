@@ -45,15 +45,9 @@ CREATE TABLE `oper_accident` (
 `reimbursement_cost`  int(255) NULL DEFAULT NULL COMMENT '已赔付费用' ,
 `grade`  int(1) NULL DEFAULT NULL COMMENT '事故等级' ,
 `status`  int(1) NULL DEFAULT NULL COMMENT '处理状态' ,
-`
-oper_nature`  int(1) NULL DEFAULT NULL COMMENT '事故性质' ,
+`oper_nature`  int(1) NULL DEFAULT NULL ,
 `schedule`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '事故处理进度' ,
 `remake`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '备注' ,
 `attachment_path`  varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '事故附件信息' ,
 PRIMARY KEY (`id`)
-)
-ENGINE=InnoDB
-DEFAULT CHARACTER SET=utf8 COLLATE=utf8_general_ci
-AUTO_INCREMENT=1
-ROW_FORMAT=COMPACT
-;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

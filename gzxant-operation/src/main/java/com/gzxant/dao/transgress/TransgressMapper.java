@@ -51,7 +51,7 @@ public interface TransgressMapper {
 			"<if test=' updateTimeEnd != null and updateTimeEnd != \"\" '>",
 			" and update_time &lt;= #{updateTimeEnd} ",
 			"</if>",
-			"order by query_time",
+			"order by query_time desc",
 			"</script>"})
 	@Results({
 		@Result(property = "plateNum", column = "plate_num"),

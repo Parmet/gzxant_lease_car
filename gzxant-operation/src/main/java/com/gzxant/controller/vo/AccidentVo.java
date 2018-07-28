@@ -7,8 +7,8 @@ public class AccidentVo {
 	private String userUnit;			//所属组织|使用单位
 	private String modelNum;			//车型号
 	private String plateNum;			//车牌号
-	private int grade;					//事故等级
-	private int status;					//处理状态
+	private Integer grade;				//事故等级
+	private Integer status;				//处理状态
 	private Date accidentTimeStart;		//事故日期开始
 	private Date accidentTimeEnd;		//事故日期结束
 	
@@ -31,16 +31,16 @@ public class AccidentVo {
 	public void setPlateNum(String plateNum) {
 		this.plateNum = plateNum;
 	}
-	public int getGrade() {
+	public Integer getGrade() {
 		return grade;
 	}
-	public void setGrade(int grade) {
+	public void setGrade(Integer grade) {
 		this.grade = grade;
 	}
-	public int getStatus() {
+	public Integer getStatus() {
 		return status;
 	}
-	public void setStatus(int status) {
+	public void setStatus(Integer status) {
 		this.status = status;
 	}
 	public Date getAccidentTimeStart() {

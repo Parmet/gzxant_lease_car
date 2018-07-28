@@ -2,6 +2,7 @@ package com.gzxant.service.accident.impl;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.gzxant.controller.vo.AccidentVo;
@@ -12,6 +13,7 @@ import com.gzxant.service.accident.AccidentService;
 @Service
 public class AccidentServiceImpl implements AccidentService{
 
+	@Autowired
 	private AccidentMapper aMapper;
 	
 	@Override
@@ -27,6 +29,9 @@ public class AccidentServiceImpl implements AccidentService{
 	@Override
 	public Accident getAccidentById(Integer id) {
 		List<Accident> aList = aMapper.getAccidentById(id);
+		if(aList.isEmpty()){
+			return null;
+		}
 		return aList.get(0);
 	}
 
