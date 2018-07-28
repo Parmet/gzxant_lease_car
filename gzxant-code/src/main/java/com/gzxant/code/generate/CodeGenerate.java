@@ -141,7 +141,7 @@ public class CodeGenerate {
 
 		// 页面 生成
 		List<FileOutConfig> focList = new ArrayList<FileOutConfig>();
-		// focList.add(new FileOutConfig("/template/list.ftl.vm") {
+		// focList.add(new FileOutConfig("/templates/list.ftl.vm") {
 		// @Override
 		// public String outputFile(TableInfo tableInfo) {
 		// // 自定义输入文件名称
@@ -149,7 +149,7 @@ public class CodeGenerate {
 		// }
 		// });
 		//
-		// focList.add(new FileOutConfig("/template/detail.ftl.vm") {
+		// focList.add(new FileOutConfig("/templates/detail.ftl.vm") {
 		// @Override
 		// public String outputFile(TableInfo tableInfo) {
 		// // 自定义输入文件名称

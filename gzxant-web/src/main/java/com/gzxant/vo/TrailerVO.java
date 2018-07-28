@@ -8,6 +8,8 @@ package com.gzxant.vo;
  */
 public class TrailerVO {
 
+    private Long id;
+
     /** 车牌号 */
     private String carNumber;
 
@@ -28,6 +30,14 @@ public class TrailerVO {
 
     /** 状态 字典 未处理 已拖车 已缴费 */
     private String status;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCarNumber() {
         return carNumber;

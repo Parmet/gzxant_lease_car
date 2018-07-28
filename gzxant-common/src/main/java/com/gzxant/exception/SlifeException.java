@@ -1,7 +1,6 @@
 package com.gzxant.exception;
 
 
-import com.gzxant.enums.SlifeEnum;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -70,10 +69,4 @@ public class SlifeException extends RuntimeException {
         this.returnDTO = new ReturnDTO(code, error);
     }
 
-    public SlifeException(SlifeEnum slifeEnum) {
-        super(slifeEnum.getMessage());
-        this.code = slifeEnum.getCode();
-        this.error = slifeEnum.getMessage();
-        this.returnDTO = new ReturnDTO(code, error);
-    }
 }

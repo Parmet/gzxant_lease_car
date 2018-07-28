@@ -7,7 +7,7 @@ layer.config({
 
 layer.ready(function () {
 
-    var html = $('#welcome-template').html();
+    var html = $('#welcome-templates').html();
     $('a.viewlog').click(function () {
         logs();
         return false;
