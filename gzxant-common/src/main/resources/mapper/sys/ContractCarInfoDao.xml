@@ -4,7 +4,7 @@
 <mapper namespace="com.gzxant.dao.ContractCarInfoDao">
 
     <sql id="base_select">
-        SELECT * FROM contractcarinfo c
+        SELECT * FROM contract_car_info c
     </sql>
     
 	<!-- 根据id查找对应的汽车信息 -->

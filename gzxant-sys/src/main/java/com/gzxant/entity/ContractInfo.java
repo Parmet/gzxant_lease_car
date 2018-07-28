@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
 import com.gzxant.base.entity.DataEntity;
 
-@TableName("contractInfo")
+@TableName("contract_info")
 public class ContractInfo extends DataEntity<ContractInfo>{
 
 	private static final long serialVersionUID = 1L;

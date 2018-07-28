@@ -4,7 +4,7 @@
 <mapper namespace="com.gzxant.dao.ContractInfoDao">
 
     <sql id="base_select">
-        SELECT * FROM contractInfo c
+        SELECT * FROM contract_info c
     </sql>
     
 	<!-- 根据id查找对应的汽车信息 -->
@@ -20,7 +20,7 @@
     
 	<!-- 根据合同编号查询合同对象的id -->
 	<select id="queryIdByContractNo" parameterType="string"  resultType="java.lang.Long">
-		SELECT c.id FROM contractInfo c where c.contract_no = #{contractNo}
+		SELECT c.id FROM contract_info c where c.contract_no = #{contractNo}
     </select>
     
     <resultMap id="selectAllContractInfo" type="contractInfo">

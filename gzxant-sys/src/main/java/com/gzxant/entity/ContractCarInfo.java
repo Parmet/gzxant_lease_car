@@ -12,7 +12,7 @@ import com.gzxant.base.entity.DataEntity;
  * @author hxdn
  *
  */
-@TableName("contractcarinfo")
+@TableName("contract_car_info")
 public class ContractCarInfo extends DataEntity<ContractCarInfo>{
 
 	private static final long serialVersionUID = 1L;
