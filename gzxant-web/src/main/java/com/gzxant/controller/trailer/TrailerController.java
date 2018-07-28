@@ -1,5 +1,6 @@
 package com.gzxant.controller.trailer;
 
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.gzxant.annotation.SLog;
 import com.gzxant.base.entity.ReturnDTO;
 import com.gzxant.base.vo.DataTable;
@@ -131,6 +132,7 @@ public class TrailerController {
     public String toUpdatePage(@PathVariable("id") Long id, Model model) {
         model.addAttribute("action","insert");
         echo(id, model);
+
         return "trailer/insert";
     }
 
@@ -211,6 +213,12 @@ public class TrailerController {
      * 回显
      */
     public void echo(Long id, Model model) {
+        EntityWrapper<Enclosure> ew = new EntityWrapper<>();
+        ew.where("entity_id={0}",id);
+        List<Enclosure> enclosures = enclosureService.selectList(ew);
+        if (enclosures != null) {
+            model.addAttribute("enclosure", enclosures.get(0));
+        }
         Trailer trailer = trailerService.selectById(id);
         TrailerDTO trailerDTO = TrailerDTO.convertBackEntity(trailer);
         TrailerFormDTO trailerFormDTO = new TrailerFormDTO();

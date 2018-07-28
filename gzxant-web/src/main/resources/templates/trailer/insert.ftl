@@ -203,9 +203,9 @@
                                 <div class="form-group">
                                     <label class="col-sm-3 control-label">证件图片：<span class="required">*</span></label>
                                     <form id="enclosureForm">
-                                        <input type="hidden" name="url" id="drive_photo"
+                                        <input type="hidden" name="url" id="photo"
                                                value="${enclosure.url}"/>
-                                        <input type="hidden" name="thumbnail" id="s_drive_photo"
+                                        <input type="hidden" name="thumbnail" id="s_photo"
                                                value="${enclosure.thumbnail}"/><!-- 缩略图 -->
                                         <input type="hidden" name="entityId" id="entityId"
                                                value="${enclosure.entityId}"/>
@@ -213,7 +213,7 @@
                                         <div class="col-sm-3">
                                         <div id="localImag" style="margin-left:15px;">
                                             <div class="img_box" id="imgBox">
-                                                <img id="driveImgshowdiv" style="width: 120px" src="${enclosure.thumbnail}"
+                                                <img id="imgShowdiv" style="width: 120px" src="${enclosure.thumbnail}"
                                                      onerror="javascript:errimg()" class="img_file img-rounded"/>
                                             </div>
                                         </div>
@@ -300,13 +300,13 @@
     }
 
     //回显图片
-    $("#driveImgshowdiv").attr("src","${rc.contextPath}/file/image?path="+encodeURIComponent("${customer.sDriveImageUrl?replace('\\', '\\\\')}"));
+    $("#imgShowdiv").attr("src","${rc.contextPath}/file/image?path="+encodeURIComponent("${enclosure.thumbnail?replace('\\', '\\\\')}"));
 
     /**
      * 错误图片的默认处理
      */
     function errimg() {
-        $("#driveImgshowdiv").attr('src', "${rc.contextPath}/img/log9.png");
+        $("#imgShowdiv").attr('src', "${rc.contextPath}/img/log9.png");
     }
 
     // 手机号码验证
@@ -330,7 +330,7 @@
     //  ---------------------   通过点击下一步来判断，如果校验成功，则用js去触发a标签的点击事件（a标签用来跳转标签页的）    ---------------------
     function checkDrive() {
         <#if action != "detail">
-        var img = $("#drive_photo").val();
+        var img = $("#photo").val();
         if (img == "") {
             layer.alert("请上传你的附件！");
         } else {
@@ -463,7 +463,7 @@
     Dropzone.autoDiscover = false;
     //  id
     <#if action != "detail">
-        var myDropzone = createDropzone("mydropzone2","drive_photo","driveImgshowdiv");
+        var myDropzone = createDropzone("mydropzone2","photo","imgShowdiv");
     </#if>
     function createDropzone(mydropzone,id,imgdivid) {
         var myDropzone = new Dropzone("div#"+mydropzone, {
