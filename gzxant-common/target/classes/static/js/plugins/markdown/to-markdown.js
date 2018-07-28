@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 /*
- * to-markdown - an HTML to Markdown converter
+ * to-markdown - an HTML to Markdown util
  *
  * Copyright 2011, Dom Christie
  * Licenced under the MIT licence

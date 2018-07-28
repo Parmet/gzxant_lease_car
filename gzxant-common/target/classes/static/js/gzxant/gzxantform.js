@@ -16,7 +16,8 @@ function saveForm(form_id) {
     } else {
     	form = $('#gzxantForm');
     }
-    
+    // alert("url:"+ url);
+    // alert("action:" + action);
     $.ajax({
         cache: true,
         type: "POST",

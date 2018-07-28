@@ -30,6 +30,7 @@ spring:
       max-wait: -1
       max-idle: 18
       min-idle: 0
+<<<<<<< HEAD
 =======
 attach_path: /gzxant/attach/
 
@@ -62,4 +63,6 @@ spring:
       max-wait: -1
       max-idle: 18
       min-idle: 0
+>>>>>>> CustomerInfo
+=======
 >>>>>>> CustomerInfo
