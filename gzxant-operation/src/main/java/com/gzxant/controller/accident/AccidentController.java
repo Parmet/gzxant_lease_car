@@ -131,7 +131,7 @@ public class AccidentController {
  	
  	// 导出
  	@ResponseBody
- 	@RequestMapping(value = "/output", method = RequestMethod.GET)
+ 	@RequestMapping(value = "/output", method = RequestMethod.POST)
  	public ResponseEntity<Void> output(HttpServletRequest request, HttpServletResponse response,
  			@RequestParam(value="aVo",required=false) AccidentVo aVo) {
 
