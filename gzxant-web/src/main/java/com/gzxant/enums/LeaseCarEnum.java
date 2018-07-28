@@ -13,6 +13,11 @@ public enum LeaseCarEnum {
     CONTACT_SHOW_FAIL_WITH_ID_IS_NULL(14, "客户管理--联系人页面显示失败    id为空"),
     CONTACT_SHOW_FAIL_WITH_CONVERT_FAIL(15, "客户管理--联系人页面显示失败    数据转换失败"),
     CONTACT_OR_UPDATE_ADD_FAIL(16, "客户管理--联系人添加或更新失败"),
+    REQUEST_PARAMETER_ERROR(17,"请求参数有误"),
+    TRAILER_ADD_FAIL(18,"拖车信息添加失败"),
+    TRAILER_DELETE_FAIL(19,"拖车信息删除失败"),
+    TRAILER_COST_ADD_FAIL(20,"拖车花费信息添加失败"),
+    TRAILER_COST_DELETE_FAIL(21,"拖车花费信息删除失败"),
     ;
 
     private Integer code;

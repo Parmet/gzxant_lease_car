@@ -1,11 +1,13 @@
 package com.gzxant.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.gzxant.converter.Converter;
 import com.gzxant.entity.trailer.Trailer;
 import com.gzxant.vo.TrailerVO;
-import org.apache.poi.ss.formula.functions.T;
+import org.hibernate.validator.constraints.Length;
 import org.springframework.beans.BeanUtils;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -15,30 +17,45 @@ import java.util.Date;
  */
 public class TrailerDTO {
 
+    private Long id;
+
     /** 车牌号 */
+    @NotNull(message = "车牌号 不能为空")
+    @Length(min = 0, max = 18, message = "车牌号长度必须介于1和18之间")
     private String carNumber;
 
     /** 类型 */
+    @NotNull(message = "类型不能为空")
     private String type;
 
     /** 车辆所属 引用 */
+    @NotNull(message = "车辆所属引用不能为空")
     private Long belongstoId;
 
     /** 执行人 */
+    @NotNull(message = "执行人 不能为空")
+    @Length(min = 0, max = 4, message = "执行人姓名必须介于1和4之间")
     private String executor;
 
     /** 地址 */
+    @NotNull(message = "地址 不能为空")
     private String place;
 
     /** 执行时间 */
+    @NotNull(message = "时间 不能为空")
     private Date date;
 
     /** 状态 字典 未处理 已拖车 已缴费 */
+    @NotNull(message = "状态 不能为空")
     private String status;
 
-    private static Convert4Entity convert4Entity = new Convert4Entity();
+    public Long getId() {
+        return id;
+    }
 
-    private static Convert4VO convert4VO = new Convert4VO();
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getCarNumber() {
         return carNumber;
@@ -80,6 +97,7 @@ public class TrailerDTO {
         this.place = place;
     }
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "GMT+8")
     public Date getDate() {
         return date;
     }
@@ -98,6 +116,10 @@ public class TrailerDTO {
 
 
     /*---------------------------------     工具类    -------------------------------*/
+
+    private static Convert4Entity convert4Entity = new Convert4Entity();
+
+    private static Convert4VO convert4VO = new Convert4VO();
 
     /**
      *  TrailerDTO   ->   TrailerVO
@@ -154,16 +176,22 @@ public class TrailerDTO {
 
         @Override
         protected Trailer doForward(TrailerDTO trailerDTO) {
+            TrailerFormDTO formDTO = null;
             Trailer trailer = new Trailer();
-            BeanUtils.copyProperties(trailerDTO, trailer);
+            if (trailerDTO instanceof TrailerFormDTO) {
+                formDTO = (TrailerFormDTO) trailerDTO;
+                BeanUtils.copyProperties(formDTO, trailer);
+            } else {
+                BeanUtils.copyProperties(trailerDTO, trailer);
+            }
             return trailer;
         }
 
         @Override
         protected TrailerDTO doBackward(Trailer trailer) {
-            TrailerDTO trailerDTO = new TrailerDTO();
-            BeanUtils.copyProperties(trailer, trailerDTO);
-            return trailerDTO;
+            TrailerFormDTO formDTO = new TrailerFormDTO();
+            BeanUtils.copyProperties(trailer, formDTO);
+            return formDTO;
         }
     }
 }
