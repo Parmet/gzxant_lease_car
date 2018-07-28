@@ -127,10 +127,23 @@
         return editO;
     }
 
+    /**
+     * 详情按钮
+     * @returns {*}
+     */
+    function dt_detail_button(row) {
+        var detailO = '<a class="btn btn-success btn-sm" href="#" title="详情"  mce_href="#" onclick="dt_detail(\''
+                + row.id + '\')"><i class="fa fa-info-circle"></i></a> ';
+        return detailO;
+    }
+
     function dt_update(id) {
         window.location.href = url + "tupdate/" + id;
     }
 
+    function dt_detail(id) {
+        window.location.href = url + "tdetail/" + id;
+    }
 
     function getcolumns() {
         var c = [

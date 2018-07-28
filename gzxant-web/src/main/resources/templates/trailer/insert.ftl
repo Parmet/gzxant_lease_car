@@ -107,7 +107,7 @@
                                     <div class="form-group">
                                         <label class="col-sm-3 control-label">执行人：<span class="required">*</span></label>
                                         <div class="col-sm-8">
-                                            <input type="text" class="form-control" name="executor"
+                                            <input type="text" class="form-control" name="executor" maxlength="4"
                                                    value="${trailer.executor}" placeholder="输入执行人"/>
                                         </div>
                                     </div>
@@ -164,18 +164,19 @@
                         <!-- identity tab -->
                         <div class="tab-pane fade" id="identity">
                             <div class="form-horizontal form-bordered">
-
-                                <div id="exampleToolbar" role="group">
-                                    <button type="button" class="btn btn-danger" onclick="batch_remove()">
-                                        <i class="fa fa-trash" aria-hidden="true"></i> 删除
-                                    </button>
-                                    <button type="button" class="btn btn-info" onclick="dt_insert()">
-                                        <i class="fa fa-plus-square" aria-hidden="true"></i> 添加
-                                    </button>
-                                    <button type="button" class="btn btn-success" onclick="re_load()">
-                                        <i class="fa fa-plus-square" aria-hidden="true"></i> 刷新
-                                    </button>
-                                </div>
+                                <#if action != "detail">
+                                    <div id="exampleToolbar" role="group">
+                                        <button type="button" class="btn btn-danger" onclick="batch_remove()">
+                                            <i class="fa fa-trash" aria-hidden="true"></i> 删除
+                                        </button>
+                                        <button type="button" class="btn btn-info" onclick="dt_insert()">
+                                            <i class="fa fa-plus-square" aria-hidden="true"></i> 添加
+                                        </button>
+                                        <button type="button" class="btn btn-success" onclick="re_load()">
+                                            <i class="fa fa-plus-square" aria-hidden="true"></i> 刷新
+                                        </button>
+                                    </div>
+                                </#if>
 
                                 <table class="table" id="exampleTable" data-mobile-responsive="true">
                                 </table>
@@ -228,7 +229,7 @@
                                         <#if action != "detail">
                                             完成
                                         <#else>
-                                            下一页
+                                            回到列表
                                         </#if>
                                     </button>
                                     <!-- nextIsSave -->
@@ -328,33 +329,42 @@
 
     //  ---------------------   通过点击下一步来判断，如果校验成功，则用js去触发a标签的点击事件（a标签用来跳转标签页的）    ---------------------
     function checkDrive() {
-        var theUrl = "/gzxant/web/trailer/enclosure/insert";
-        $.ajax({
-            cache: true,
-            type: "POST",
-            url: theUrl,
-            data: $('#enclosureForm').serialize(),// 你的formid
-            async: false,
-            dataType : "json",
-            error: function (XMLHttpRequest, textStatus, errorThrown) {
-                layer.alert(XMLHttpRequest.responseJSON.error);
-            },
-            beforeSend: function () {
-                start_request_load();
-            }, complete: function () {
-                stop_request_load();
-            },
-            success: function (data) {
-                if (data.code == 200) {
-                    layer.msg("操作成功");
-                    window.location.href = "http://localhost:8081/gzxant/web/trailer";
-                } else {
-                    layer.alert(data.error);
-                }
+        <#if action != "detail">
+        var img = $("#drive_photo").val();
+        if (img == "") {
+            layer.alert("请上传你的附件！");
+        } else {
+            var theUrl = "/gzxant/web/trailer/enclosure/insert";
+            $.ajax({
+                cache: true,
+                type: "POST",
+                url: theUrl,
+                data: $('#enclosureForm').serialize(),// 你的formid
+                async: false,
+                dataType : "json",
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                    layer.alert(XMLHttpRequest.responseJSON.error);
+                },
+                beforeSend: function () {
+                    start_request_load();
+                }, complete: function () {
+                    stop_request_load();
+                },
+                success: function (data) {
+                    if (data.code == 200) {
+                        layer.msg("操作成功");
+                        window.location.href = "http://localhost:8081/gzxant/web/trailer";
+                    } else {
+                        layer.alert(data.error);
+                    }
 
-            }
-        });
-        document.getElementById("nextIsSave").click();
+                }
+            });
+        }
+
+        <#else>
+            window.location.href = "http://localhost:8081/gzxant/web/trailer";
+        </#if>
     }
     function checkIdentity() {
         <#if action != "detail">
@@ -402,7 +412,15 @@
                     }
                 });
             }
+        <#else>
+            document.getElementById("nextIsIdentity").click();
+            if (url.endsWith("tdetail/")) {
+                url = clearUrl(url);
+            }
+            load_data( getcolumns(), {"createDate": "desc"}, $("input[name='id']").val());
         </#if>
+
+
     }
 
 
@@ -562,11 +580,20 @@
                 title: '操作',
                 field: 'id',
                 align: 'center',
-                width: 140,
+                width: 140
+                /*,
                 formatter: function (value, row, index) {
-
                     return dt_edit_button(row)+dt_detail_button(row)+dt_delete_button(row);
-                }
+                }*/
+                <#if action != "detail">
+                    ,formatter: function (value, row, index) {
+                        return dt_edit_button(row)+dt_detail_button(row)+dt_delete_button(row);
+                    }
+                <#else>
+                    ,formatter: function (value, row, index) {
+                        return dt_detail_button(row);
+                    }
+                </#if>
             }];
 
         return c;

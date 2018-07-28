@@ -23,6 +23,7 @@ import com.gzxant.service.trailer.ITrailerService;
 import com.gzxant.util.DateUtils;
 import com.gzxant.util.ReturnDTOUtil;
 import com.gzxant.vo.TrailerVO;
+import com.sun.org.apache.xpath.internal.operations.Mod;
 import io.swagger.annotations.ApiOperation;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.BeanUtils;
@@ -129,14 +130,15 @@ public class TrailerController {
     @GetMapping(value = "/tupdate/{id}")
     public String toUpdatePage(@PathVariable("id") Long id, Model model) {
         model.addAttribute("action","insert");
-        Trailer trailer = trailerService.selectById(id);
-        TrailerDTO trailerDTO = TrailerDTO.convertBackEntity(trailer);
-        TrailerFormDTO trailerFormDTO = new TrailerFormDTO();
-        BeanUtils.copyProperties(trailerDTO, trailerFormDTO);
-        trailerFormDTO.setTime(DateUtils.getDateTime(trailerDTO.getDate()));
-        model.addAttribute("trailer", trailerFormDTO);
-        setBaseModel(model);
+        echo(id, model);
+        return "trailer/insert";
+    }
 
+    @ApiOperation(value = "进入拖车信息详情页面", notes = "进入拖车信息详情页面")
+    @GetMapping(value = "/tdetail/{id}")
+    public String toDetailPage(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("action","detail");
+        echo(id, model);
         return "trailer/insert";
     }
 
@@ -203,6 +205,19 @@ public class TrailerController {
         model.addAttribute("statusList", sysDictService.getDictTree("TRAILER_STATE"));
         model.addAttribute("typeList", sysDictService.getDictTree("TRAILER_TYPE"));
         model.addAttribute("companyList", sysCompanyService.selectList(null));
+    }
+
+    /**
+     * 回显
+     */
+    public void echo(Long id, Model model) {
+        Trailer trailer = trailerService.selectById(id);
+        TrailerDTO trailerDTO = TrailerDTO.convertBackEntity(trailer);
+        TrailerFormDTO trailerFormDTO = new TrailerFormDTO();
+        BeanUtils.copyProperties(trailerDTO, trailerFormDTO);
+        trailerFormDTO.setTime(DateUtils.getDateTime(trailerDTO.getDate()));
+        model.addAttribute("trailer", trailerFormDTO);
+        setBaseModel(model);
     }
 
 }

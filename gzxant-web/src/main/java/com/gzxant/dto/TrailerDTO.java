@@ -34,7 +34,7 @@ public class TrailerDTO {
 
     /** 执行人 */
     @NotNull
-    @Length(min = 0, max = 5, message = "执行人姓名必须介于1和18之间")
+    @Length(min = 0, max = 4, message = "执行人姓名必须介于1和4之间")
     private String executor;
 
     /** 地址 */
