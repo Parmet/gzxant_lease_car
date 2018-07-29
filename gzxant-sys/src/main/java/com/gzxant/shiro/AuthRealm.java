@@ -66,7 +66,7 @@ public class AuthRealm extends AuthorizingRealm {
                 throw new DisabledAccountException();
             }
             byte[] salt = Encodes.decodeHex(sysUser.getPassword().substring(0, 16));
-            return new SimpleAuthenticationInfo(new ShiroUser(sysUser.getId(),loginName, sysUser.getName(),sysUser.getPhoto()),
+            return new SimpleAuthenticationInfo(new ShiroUser(sysUser.getId(),loginName, sysUser.getName(),sysUser.getPhoto(),sysUser.getSysCompanyId()),
                     sysUser.getPassword().substring(16), ByteSource.Util.bytes(salt),
                     getName());
         } else {

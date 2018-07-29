@@ -2,11 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ade73155-e223-4db0-abb0-b185ac37b48d" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/trailer/TrailerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/trailer/TrailerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/CostInfoDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/CostInfoDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerFormDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerFormDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/trailer/insert.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/trailer/insert.ftl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/controller/count/CountController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/entity/insurance/InsuranceCondition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/ShiroUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/ShiroUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/src/main/resources/mapper/operation/insurance/InsuranceInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/src/main/resources/mapper/operation/insurance/InsuranceInfoDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/controller/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/service/IBaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/service/IBaseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/plus/SysMetaObjectHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/plus/SysMetaObjectHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/shiro/GzxantSysUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/shiro/GzxantSysUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/shiro/ShiroUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/shiro/ShiroUser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/FileUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/PathUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/PathUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/mapper/operation/insurance/InsuranceInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/mapper/operation/insurance/InsuranceInfoDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/accident/AccidentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/accident/AccidentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/insurance/InsuranceInfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/insurance/InsuranceInfoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/transgress/TransgressMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/transgress/TransgressMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/accident/AccidentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/accident/AccidentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/accident/impl/AccidentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/accident/impl/AccidentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/insurance/InsuranceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/insurance/InsuranceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/insurance/impl/InsuranceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/insurance/impl/InsuranceServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/transgress/TransgressService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/transgress/TransgressService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/transgress/impl/TransgressServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/transgress/impl/TransgressServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/shiro/AuthRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/shiro/AuthRealm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/shiro/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/shiro/ShiroConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysDictService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysDictService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/shiro/AuthRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/shiro/AuthRealm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-web/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-web/src/main/resources/application.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/gzxant-sys/target/" />
     <ignored path="$PROJECT_DIR$/gzxant-web/target/" />
@@ -14,6 +40,7 @@
     <ignored path="$PROJECT_DIR$/gzxant-log/target/" />
     <ignored path="$PROJECT_DIR$/gzxant-common/target/" />
     <ignored path="$PROJECT_DIR$/gzxant-code/target/" />
+    <ignored path="$PROJECT_DIR$/gzxant-operation/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,88 +62,37 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="gzxant_lease_car" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="insert.ftl" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/trailer/insert.ftl">
+      <file leaf-file-name="GzxantSysUser.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrailerDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CostInfoController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/trailer/CostInfoController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="87" selection-start-line="87" selection-end-line="87" />
+            <state relative-caret-position="557">
+              <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#390#391#0" expanded="true" />
+                <element signature="e#425#426#0" expanded="true" />
+                <element signature="e#470#471#0" expanded="true" />
+                <element signature="e#501#502#0" expanded="true" />
+                <element signature="e#543#544#0" expanded="true" />
+                <element signature="e#583#584#0" expanded="true" />
+                <element signature="e#631#632#0" expanded="true" />
+                <element signature="e#669#670#0" expanded="true" />
+                <element signature="e#718#719#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TrailerController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/trailer/TrailerController.java">
+      <file leaf-file-name="AuthRealm.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/shiro/AuthRealm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="217" selection-start-line="217" selection-end-line="217" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CostInfoDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/CostInfoDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="239">
-              <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1186#1187#0" expanded="true" />
-                <element signature="e#1213#1214#0" expanded="true" />
-                <element signature="e#1253#1254#0" expanded="true" />
-                <element signature="e#1285#1286#0" expanded="true" />
-                <element signature="e#1722#1723#0" expanded="true" />
-                <element signature="e#1778#1779#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrailerFormDTO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerFormDTO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.ftl" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/trailer/list.ftl">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="140" column="53" lean-forward="true" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datatable.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/datatable.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="181" selection-start-line="181" selection-end-line="187" selection-end-column="1" />
+            <state relative-caret-position="247">
+              <caret line="69" column="85" lean-forward="true" selection-start-line="69" selection-start-column="85" selection-end-line="69" selection-end-column="85" />
             </state>
           </provider>
         </entry>
@@ -134,8 +110,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>1MetaObjectHandler</find>
-      <find>JsonF</find>
       <find>date</find>
       <find>clear</find>
       <find>load_data</find>
@@ -164,6 +138,8 @@
       <find>customer</find>
       <find>identity</find>
       <find>drive</find>
+      <find>id()</find>
+      <find>InsuranceInfoDao</find>
     </findStrings>
     <dirStrings>
       <dir>E:\Documents\GitHub\gzxant_lease_car\gzxant-common</dir>
@@ -175,14 +151,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/enums/SlifeEnum.java" />
-        <option value="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/converter/Converter.java" />
-        <option value="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/converter/TrailerDTO2VOConvert.java" />
-        <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/converter/Converter.java" />
         <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/TrailerVo.java" />
         <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/converter/TrailerDTO2VOConvert.java" />
         <option value="$PROJECT_DIR$/gzxant-common/src/main/resources/application-local.yml" />
-        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/TrailerVO.java" />
         <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/TrailerTypeEnum.java" />
         <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/TrailerStatusEnum.java" />
@@ -215,6 +186,22 @@
         <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerDTO.java" />
         <option value="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/trailer/TrailerController.java" />
         <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/trailer/insert.ftl" />
+        <option value="$PROJECT_DIR$/gzxant-web/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/shiro/AuthRealm.java" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/ShiroUser.java" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/transgress/TransgressService.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/accident/AccidentService.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/accident/impl/AccidentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/transgress/impl/TransgressServiceImpl.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/insurance/InsuranceInfoDao.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/insurance/impl/InsuranceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/insurance/InsuranceService.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/entity/insurance/InsuranceCondition.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/transgress/TransgressMapper.java" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/accident/AccidentMapper.java" />
+        <option value="$PROJECT_DIR$/gzxant-common/src/main/resources/mapper/operation/insurance/InsuranceInfoDao.xml" />
+        <option value="$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/controller/count/CountController.java" />
       </list>
     </option>
   </component>
@@ -237,11 +224,16 @@
         <option name="userSettingsFile" value="D:\specialized software\Maven\apache-maven-3.3.9\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
   </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1366" />
     <option name="height" value="768" />
   </component>
@@ -251,8 +243,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -260,175 +252,11 @@
               <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
               <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-              <item name="trailer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="enclosure" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="enclosure" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant" type="462c0819:PsiDirectoryNode" />
-              <item name="vo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="trailer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gzxant_lease_car" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gzxant_lease_car" type="462c0819:PsiDirectoryNode" />
-              <item name="gzxant-web" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="trailer" type="462c0819:PsiDirectoryNode" />
-              <item name="cost" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -438,7 +266,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RequestMappingsPanelWidth2" value="75" />
-    <property name="SearchEverywhereHistoryKey" value="webmesh&#9;PSI&#9;JAVA://com.gzxant.config.sitemesh.WebSiteMeshFilter" />
+    <property name="SearchEverywhereHistoryKey" value="appl&#9;FILE&#9;file://E:/Documents/GitHub/gzxant_lease_car/gzxant-common/src/main/resources/application-local.yml&#10;webmesh&#9;PSI&#9;JAVA://com.gzxant.config.sitemesh.WebSiteMeshFilter" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
@@ -541,12 +369,13 @@
       <workItem from="1532750450288" duration="525000" />
       <workItem from="1532751039734" duration="927000" />
       <workItem from="1532752032818" duration="1149000" />
-      <workItem from="1532753559616" duration="21020000" />
+      <workItem from="1532753559616" duration="21621000" />
+      <workItem from="1532850347533" duration="11125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="98113000" />
+    <option name="totallyTimeSpent" value="109839000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -571,7 +400,7 @@
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info active="true" anchor="bottom" id="Debug" order="4" sideWeight="0.49924356" visible="true" weight="0.39116204" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.49924356" weight="0.31260228" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.3289689" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.3289689" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
@@ -582,12 +411,12 @@
       <window_info anchor="bottom" id="Run" order="3" weight="0.3289689" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20801815" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49761903" visible="true" weight="0.2730711" />
       <window_info anchor="right" id="Bean Validation" order="8" />
       <window_info id="Web" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.3289689" />
       <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Favorites" order="5" sideWeight="0.50238097" side_tool="true" weight="0.2730711" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
@@ -606,268 +435,14 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="63" />
+      <option name="time" value="85" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/enums/SlifeEnum.java" />
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/exception/SlifeException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/exception/LeaseCatException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="36" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/exception/SlifeExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="61" column="44" lean-forward="true" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/entity/ReturnDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="12" column="26" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dao/trailer/CostInformationDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="70" selection-start-line="10" selection-start-column="70" selection-end-line="10" selection-end-column="70" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/service/IBaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/specialized software/Maven/repository/com/baomidou/mybatis-plus/2.1.0/mybatis-plus-2.1.0.jar!/com/baomidou/mybatisplus/mapper/BaseMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/service/impl/BaseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="115" column="24" selection-start-line="115" selection-start-column="24" selection-end-line="115" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/specialized software/Maven/repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="117" selection-start-line="117" selection-end-line="117" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/trailer/ITrailerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="17" column="27" lean-forward="true" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/LeaseCarEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/config/plus/MybatisPlusConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="19" column="14" lean-forward="true" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/config/plus/SysMetaObjectHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="34" column="57" selection-start-line="34" selection-start-column="44" selection-end-line="34" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/utils/Data2StringSerializer.java" />
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/vo/DataTable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="65" column="31" selection-start-line="65" selection-start-column="31" selection-end-line="65" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/config/sitemesh/WebSiteMeshFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/static/trailer/need/laydate.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/plugins/iTable/iTable.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="37" lean-forward="true" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/trailer/CostInformation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/WebApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/gzxant.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/gzxantform.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/plugins/bootstrap-table/bootstrap-table.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="7" column="14850" selection-start-line="7" selection-start-column="14850" selection-end-line="7" selection-end-column="14850" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/trailer/ICostInformationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/CostInfoVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="28" column="25" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/specialized software/Maven/repository/com/baomidou/mybatis-plus/2.1.0/mybatis-plus-2.1.0.jar!/com/baomidou/mybatisplus/service/impl/ServiceImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="117" column="19" selection-start-line="117" selection-start-column="19" selection-end-line="117" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/TrailerTypeEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/enums/TrailerStatusEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/specialized software/Maven/repository/org/springframework/spring-core/4.3.9.RELEASE/spring-core-4.3.9.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="105" selection-start-line="105" selection-end-line="105" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://D:/specialized software/Maven/repository/com/baomidou/mybatis-plus/2.1.0/mybatis-plus-2.1.0.jar!/com/baomidou/mybatisplus/activerecord/Model.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2467">
-          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/entity/BaseEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/base/entity/DataEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1190">
-          <caret line="21" column="62" lean-forward="true" selection-start-line="21" selection-start-column="62" selection-end-line="21" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/entity/trailer/Trailer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/enclosure/IEnclosureService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="55" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dao/enclosure/EnclosureDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="29" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/enclosure/impl/EnclosureServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="62" selection-start-line="14" selection-start-column="62" selection-end-line="14" selection-end-column="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/service/trailer/impl/CostInformationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-481">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -889,9 +464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="14" column="21" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -904,51 +476,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/CostInfoDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="31" column="13" lean-forward="true" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        <state relative-caret-position="456">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1186#1187#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
+            <element signature="e#1221#1222#0" expanded="true" />
             <element signature="e#1253#1254#0" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1722#1723#0" expanded="true" />
-            <element signature="e#1778#1779#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerFormDTO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="285">
           <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/trailer/list.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="140" column="53" lean-forward="true" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
+        <state relative-caret-position="2660">
+          <caret line="140" column="53" selection-start-line="140" selection-start-column="53" selection-end-line="140" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/static/js/gzxant/datatable.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="3439">
           <caret line="181" selection-start-line="181" selection-end-line="187" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/trailer/CostInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
+        <state relative-caret-position="1140">
           <caret line="87" selection-start-line="87" selection-end-line="87" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -958,15 +519,328 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/trailer/TrailerController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
+        <state relative-caret-position="3287">
           <caret line="217" selection-start-line="217" selection-end-line="217" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/templates/trailer/insert.ftl">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="57" column="36" lean-forward="true" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+        <state relative-caret-position="203">
+          <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/EntityDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/TrailerDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/vo/EntityVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/service/IContractInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/service/IContractCarInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/service/ICarSetService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/service/ICarService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/service/ICarExchangeInfoService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/service/ICarAreaService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/entity/insurance/InsuranceFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/entity/transgress/Transgress.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/entity/accident/Accident.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-114">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/application-local.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/constant/Global.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-369">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/config/plus/SysMetaObjectHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-212">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/entity/CompanyLinkEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+          <folding>
+            <element signature="e#1064#1065#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/specialized software/Maven/repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/authc/SimpleAuthenticationInfo.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="28" column="11" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/specialized software/Maven/repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/transgress/TransgressService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/application-pro.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/accident/AccidentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/transgress/impl/TransgressServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="31" column="32" lean-forward="true" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="e#769#770#0" expanded="true" />
+            <element signature="e#827#828#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/entity/insurance/InsuranceInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/entity/insurance/InsuranceCondition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="43" column="70" selection-start-line="43" selection-start-column="70" selection-end-line="43" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/insurance/InsuranceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="44" column="46" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/accident/impl/AccidentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1091#1092#0" expanded="true" />
+            <element signature="e#1148#1149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/accident/AccidentMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="124" column="20" lean-forward="true" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/transgress/TransgressMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="84" column="25" lean-forward="true" selection-start-line="84" selection-start-column="25" selection-end-line="84" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/dao/insurance/InsuranceInfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="785">
+          <caret line="42" column="36" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/service/insurance/impl/InsuranceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="122" column="36" selection-start-line="122" selection-start-column="36" selection-end-line="122" selection-end-column="36" />
+          <folding>
+            <element signature="e#3578#3579#0" expanded="true" />
+            <element signature="e#3625#3626#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/resources/mapper/operation/insurance/InsuranceInfoDao.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="195" column="33" selection-start-line="195" selection-start-column="33" selection-end-line="195" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/controller/customer/info/customer/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="110" column="6" selection-start-line="110" selection-start-column="6" selection-end-line="115" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/specialized software/Maven/repository/org/springframework/spring-web/4.3.9.RELEASE/spring-web-4.3.9.RELEASE.jar!/org/springframework/web/bind/WebDataBinder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-operation/src/main/java/com/gzxant/controller/count/CountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="42" column="25" lean-forward="true" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/ShiroUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-950">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://D:/specialized software/Maven/repository/org/apache/shiro/shiro-core/1.4.0/shiro-core-1.4.0.jar!/org/apache/shiro/SecurityUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="557">
+          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
+          <folding>
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#501#502#0" expanded="true" />
+            <element signature="e#543#544#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#631#632#0" expanded="true" />
+            <element signature="e#669#670#0" expanded="true" />
+            <element signature="e#718#719#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/shiro/AuthRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="69" column="85" lean-forward="true" selection-start-line="69" selection-start-column="85" selection-end-line="69" selection-end-column="85" />
         </state>
       </provider>
     </entry>

@@ -1,10 +1,12 @@
 package com.gzxant.service.insurance;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 import com.gzxant.dto.InsuranceEO;
 import com.gzxant.dto.PageBean;
+import com.gzxant.entity.insurance.InsuranceCondition;
 import com.gzxant.entity.insurance.InsuranceFile;
 import com.gzxant.entity.insurance.InsuranceInfo;
 import com.gzxant.entity.insurance.InsuranceSpecies;
@@ -36,4 +38,9 @@ public interface InsuranceService {
 	List<InsuranceVo> queryInsuranceList(InsuranceEO insuranceEO);
 	
 	List<Map<String, String>> queryDict(Long parent_id);
+
+	/**
+	 * 统计
+	 */
+	Integer count(InsuranceCondition condition);
 }

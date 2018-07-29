@@ -1,5 +1,6 @@
 package com.gzxant.service.transgress.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,10 @@ public class TransgressServiceImpl implements TransgressService{
 	public void add(Transgress tg) {
 		tgMapper.add(tg);
 	}
-	
+
+	@Override
+	public Integer count(Long id, Date beginDate, Date endDate) {
+		return tgMapper.selectCount(id, beginDate, endDate);
+	}
+
 }

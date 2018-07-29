@@ -1,5 +1,6 @@
 package com.gzxant.dao.accident;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Delete;
@@ -115,5 +116,15 @@ public interface AccidentMapper {
 
 	@Delete("delete from oper_accident where id = #{id}")
 	void delete(Integer id);
+
+	@Select({"<script>",
+			"select count(1) from oper_accident where 1=1 ",
+			/*  所属组织|使用单位  */
+			"<if test=' id != null and id != \"\" '>",
+			" and user_unit = #{id} ",
+			"</if>",
+			" and accident_time between #{beginDate} and #{endDate}",
+			"</script>"})
+	int selectCount(Long id, Date beginDate, Date endDate);
 
 }

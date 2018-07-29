@@ -1,5 +1,6 @@
 package com.gzxant.service.accident.impl;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,11 @@ public class AccidentServiceImpl implements AccidentService{
 	@Override
 	public void delete(Integer id) {
 		aMapper.delete(id);
+	}
+
+	@Override
+	public Integer count(Long id, Date beginDate, Date endDate) {
+		return aMapper.selectCount(id, beginDate, endDate);
 	}
 
 }
