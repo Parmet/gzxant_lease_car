@@ -99,16 +99,16 @@ public class InsuranceController {
 		if (StringUtils.isEmpty(info.getCarNo())){
 			return new WebJsonBean(CODE.FAIL, "请输入车牌号");
 		}
-		if (StringUtils.isEmpty(info.getBuyOrganization())){
+		if (info.getBuyOrganizationId() == null || StringUtils.isEmpty(info.getBuyOrganization())){
 			return new WebJsonBean(CODE.FAIL, "请选择购买组织");
 		}
 		if (StringUtils.isEmpty(info.getInsuranceNo())){
 			return new WebJsonBean(CODE.FAIL, "请输入保险单号");
 		}
-		if (StringUtils.isEmpty(info.getInsuranceType())){
+		if (info.getInsuranceTypeId() == null || StringUtils.isEmpty(info.getInsuranceType())){
 			return new WebJsonBean(CODE.FAIL, "请选择保单类型");
 		}
-		if (StringUtils.isEmpty(info.getInsuranceCompany())){
+		if (info.getInsuranceCompanyId() == null || StringUtils.isEmpty(info.getInsuranceCompany())){
 			return new WebJsonBean(CODE.FAIL, "请选择保险公司");
 		}
 		if (StringUtils.isEmpty(info.getInsuranceCommissioner())){
@@ -191,16 +191,16 @@ public class InsuranceController {
 		if (StringUtils.isEmpty(info.getCarNo())){
 			return new WebJsonBean(CODE.FAIL, "请输入车牌号");
 		}
-		if (StringUtils.isEmpty(info.getBuyOrganization())){
+		if (info.getBuyOrganizationId() == null || StringUtils.isEmpty(info.getBuyOrganization())){
 			return new WebJsonBean(CODE.FAIL, "请选择购买组织");
 		}
 		if (StringUtils.isEmpty(info.getInsuranceNo())){
 			return new WebJsonBean(CODE.FAIL, "请输入保险单号");
 		}
-		if (StringUtils.isEmpty(info.getInsuranceType())){
+		if (info.getInsuranceTypeId() == null || StringUtils.isEmpty(info.getInsuranceType())){
 			return new WebJsonBean(CODE.FAIL, "请选择保单类型");
 		}
-		if (StringUtils.isEmpty(info.getInsuranceCompany())){
+		if (info.getInsuranceCompanyId() == null || StringUtils.isEmpty(info.getInsuranceCompany())){
 			return new WebJsonBean(CODE.FAIL, "请选择保险公司");
 		}
 		if (StringUtils.isEmpty(info.getInsuranceCommissioner())){
