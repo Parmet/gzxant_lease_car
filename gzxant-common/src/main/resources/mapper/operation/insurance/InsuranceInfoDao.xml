@@ -95,10 +95,10 @@
 	</select>
 	
 	<insert id="insertInsuranceInfo" parameterType="com.gzxant.entity.insurance.InsuranceInfo">
-		insert into operation_insurance_info (code,carNo,buyOrganization,insuranceNo,insuranceType,insuranceCompany,carAgeLimit,
+		insert into operation_insurance_info (code,carNo,buyOrganizationId,buyOrganization,insuranceNo,insuranceTypeId,insuranceType,insuranceCompanyId,insuranceCompany,carAgeLimit,
 		insuranceCommissioner,insuranceTotalAmount,workDate,expiryDate,claimsTel,agentName,createTime,updateTime)
 		values 
-		(#{code},#{carNo},#{buyOrganization},#{insuranceNo},#{insuranceType},#{insuranceCompany},#{carAgeLimit},
+		(#{code},#{carNo},#{buyOrganizationId},#{buyOrganization},#{insuranceNo},#{insuranceTypeId},#{insuranceType},#{insuranceCompanyId},#{insuranceCompany},#{carAgeLimit},
 		#{insuranceCommissioner},#{insuranceTotalAmount},#{workDate},#{expiryDate},#{claimsTel},#{agentName},#{createTime},#{updateTime})
 	</insert>
 	
@@ -120,14 +120,23 @@
 			<if test="carNo != null">
 				carNo=#{carNo},
 			</if>
+			<if test="buyOrganizationId != null">
+				buyOrganizationId=#{buyOrganizationId},
+			</if>
 			<if test="buyOrganization != null">
 				buyOrganization=#{buyOrganization},
 			</if>
 			<if test="insuranceNo != null">
 				insuranceNo=#{insuranceNo},
 			</if>
+			<if test="insuranceTypeId != null">
+				insuranceTypeId=#{insuranceTypeId},
+			</if>
 			<if test="insuranceType != null">
 				insuranceType=#{insuranceType},
+			</if>
+			<if test="insuranceCompanyId != null">
+				insuranceCompanyId=#{insuranceCompanyId},
 			</if>
 			<if test="insuranceCompany != null">
 				insuranceCompany=#{insuranceCompany},
