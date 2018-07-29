@@ -1,6 +1,7 @@
 package com.gzxant.dao.insurance;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -34,4 +35,6 @@ public interface InsuranceInfoDao {
 	int deleteInsuranceSpecies(@Param("code")String code);
 	
 	int deleteInsuranceFile(@Param("code")String code);
+	
+	List<Map<String, String>> queryDict(Long parent_id);
 }

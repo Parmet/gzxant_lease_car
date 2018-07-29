@@ -515,4 +515,11 @@ public class InsuranceController {
         log.info("上传的文件地址为 fileName={}", savePath);
         return rt;
     }
+    
+    // 获取字典列表
+ 	@ResponseBody
+ 	@RequestMapping(value = "/queryDict")
+ 	public WebJsonBean queryDict(Long parent_id) {
+ 		return new WebJsonBean(CODE.SUCCESS, insuranceService.queryDict(parent_id));
+ 	}
 }

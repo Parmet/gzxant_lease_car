@@ -2,6 +2,7 @@ package com.gzxant.service.insurance.impl;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -109,6 +110,11 @@ public class InsuranceServiceImpl implements InsuranceService{
 	public List<InsuranceVo> queryInsuranceList(InsuranceEO insuranceEO) {
 		List<InsuranceVo> list = insuranceInfoDao.queryInsuranceListPage(insuranceEO);
 		return list;
+	}
+
+	@Override
+	public List<Map<String, String>> queryDict(Long parent_id) {
+		return insuranceInfoDao.queryDict(parent_id);
 	}
 
 }
