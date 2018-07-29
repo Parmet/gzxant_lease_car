@@ -1,7 +1,5 @@
 package com.gzxant.controller.trailer;
 
-import com.google.common.collect.Maps;
-import com.gzxant.annotation.SLog;
 import com.gzxant.base.entity.ReturnDTO;
 import com.gzxant.base.vo.DataTable;
 import com.gzxant.constant.Global;
@@ -25,7 +23,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletRequest;
 import javax.validation.Valid;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 

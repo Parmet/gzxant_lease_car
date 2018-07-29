@@ -33,14 +33,14 @@ public class CodeGenerate {
 
 	// --------------变动参数区 start------------------------------------------
 	/* === 表名 === */
-	private static String[] tableNames = {"customer_info_company_contact"}; //, "shop_order_goods", "shop_order_pay"
+	private static String[] tableNames = {"car_accident"}; //, "shop_order_goods", "shop_order_pay"
 	/* === 开发者 === */
-	public static String author = "tecty";
+	public static String author = "ycxiao";
 	/* === 输出目标项目，为空则生成在当前项目中 === */
 	public static String targetProject = "gzxant-web";
-	/* === 准备生成文件["controller", "service", "dao", "entity", "xml"] === */
+	/* === 准备生成文件["controller", "service", "dao", "entity", "xml", "ftl"] === */
 	public static List<String> beGenerateFile = new ArrayList<>(
-			Arrays.asList("controller", "service", "dao", "entity", "xml"));
+			Arrays.asList("controller", "service", "dao", "entity", "xml", "ftl"));
 	// --------------变动参数区 end------------------------------------------
 
 	// --------------数据源配置区 start------------------------------------------
@@ -58,7 +58,10 @@ public class CodeGenerate {
 		// mpg.setTemplateEngine(new FreemarkerTemplateEngine());
 
 		CodeGenerate cg = new CodeGenerate();
-		output = cg.getPath(targetProject) + "\\src\\main\\java";
+		output = cg.getPath(targetProject)
+				+ File.separator + "src"
+				+ File.separator + "main"
+				+ File.separator + "java";
 
 		// 全局配置
 		GlobalConfig gc = new GlobalConfig();
@@ -141,21 +144,84 @@ public class CodeGenerate {
 
 		// 页面 生成
 		List<FileOutConfig> focList = new ArrayList<FileOutConfig>();
-		// focList.add(new FileOutConfig("/templates/list.ftl.vm") {
-		// @Override
-		// public String outputFile(TableInfo tableInfo) {
-		// // 自定义输入文件名称
-		// return output + "\\html\\" + tableInfo.getEntityName() + "\\list.ftl";
-		// }
-		// });
-		//
-		// focList.add(new FileOutConfig("/templates/detail.ftl.vm") {
-		// @Override
-		// public String outputFile(TableInfo tableInfo) {
-		// // 自定义输入文件名称
-		// return output + "\\html\\" + tableInfo.getEntityName() + "\\detail.ftl";
-		// }
-		// });
+        if (!beGenerateFile.isEmpty() && beGenerateFile.contains("ftl")) {
+            focList.add(new FileOutConfig("/list.ftl.vm") {
+                @Override
+                public String outputFile(TableInfo tableInfo) {
+                    // 自定义输入文件名称
+                    CodeGenerate cg = new CodeGenerate();
+                    String path = cg.getPath(targetProject)
+                            + File.separator + "src"
+                            + File.separator + "main"
+                            + File.separator + "resources"
+                            + File.separator + "templates";
+
+                    String[] names = tableInfo.getName().split("_");
+                    for (int i = 0; i < names.length; i++) {
+                        path = path + File.separator + names[i];
+                    }
+
+                    return path + File.separator + "list.ftl";
+                }
+            });
+            focList.add(new FileOutConfig("/detail.ftl.vm") {
+                @Override
+                public String outputFile(TableInfo tableInfo) {
+                    // 自定义输入文件名称
+                    CodeGenerate cg = new CodeGenerate();
+                    String path = cg.getPath(targetProject)
+                            + File.separator + "src"
+                            + File.separator + "main"
+                            + File.separator + "resources"
+                            + File.separator + "templates";
+
+                    String[] names = tableInfo.getName().split("_");
+                    for (int i = 0; i < names.length; i++) {
+                        path = path + File.separator + names[i];
+                    }
+
+                    return path + File.separator + "detail.ftl";
+                }
+            });
+            focList.add(new FileOutConfig("/insert.ftl.vm") {
+                @Override
+                public String outputFile(TableInfo tableInfo) {
+                    // 自定义输入文件名称
+                    CodeGenerate cg = new CodeGenerate();
+                    String path = cg.getPath(targetProject)
+                            + File.separator + "src"
+                            + File.separator + "main"
+                            + File.separator + "resources"
+                            + File.separator + "templates";
+
+                    String[] names = tableInfo.getName().split("_");
+                    for (int i = 0; i < names.length; i++) {
+                        path = path + File.separator + names[i];
+                    }
+
+                    return path + File.separator + "insert.ftl";
+                }
+            });
+            focList.add(new FileOutConfig("/update.ftl.vm") {
+                @Override
+                public String outputFile(TableInfo tableInfo) {
+                    // 自定义输入文件名称
+                    CodeGenerate cg = new CodeGenerate();
+                    String path = cg.getPath(targetProject)
+                            + File.separator + "src"
+                            + File.separator + "main"
+                            + File.separator + "resources"
+                            + File.separator + "templates";
+
+                    String[] names = tableInfo.getName().split("_");
+                    for (int i = 0; i < names.length; i++) {
+                        path = path + File.separator + names[i];
+                    }
+
+                    return path + File.separator + "update.ftl";
+                }
+            });
+        }
 
 		cfg.setFileOutConfigList(focList);
 		mpg.setCfg(cfg);
@@ -166,13 +232,17 @@ public class CodeGenerate {
 				@Override
 				public String outputFile(TableInfo tableInfo) {
 					CodeGenerate cg = new CodeGenerate();
-					String path = cg.getPath("gzxant-common") + "\\src\\main\\resources\\mapper";
+					String path = cg.getPath("gzxant-common")
+							+ File.separator + "src"
+							+ File.separator + "main"
+							+ File.separator + "resources"
+							+ File.separator + "mapper";
 					String[] names = tableInfo.getName().split("_");
 					for (int i = 0; i < names.length; i++) {
-						path = path + "\\" + names[i];
+						path = path + File.separator + names[i];
 					}
 
-					path = path + "\\" + tableInfo.getEntityName() + "Dao.xml";
+					path = path + File.separator + tableInfo.getEntityName() + "Dao.xml";
 					System.out.println("dao path : " + path);
 					return path;
 				}
@@ -230,7 +300,7 @@ public class CodeGenerate {
 	 */
 	public String getPath(String targetProject) {
 		String path = (new File(this.getClass().getResource("/").getPath())).getAbsolutePath();
-		path = path.replace("\\target\\classes", "");
+		path = path.replace( File.separator + "target" + File.separator + "classes", "");
 		if (targetProject != null && !targetProject.equals("")) {
 			path = path.replace("gzxant-code", targetProject);
 		}
