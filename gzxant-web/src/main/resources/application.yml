@@ -30,10 +30,10 @@ management:
 logging.level.project.user.UserClient: DEBUG
 
 mybatis:
-  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml
+  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml, classpath:mapper/operation/**/*.xml
   type-aliases-package: com.gzxant.entity
 mybatis-plus:
-  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml
+  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml, classpath:mapper/operation/**/*.xml
   type-aliases-package: com.gzxant.entity
   global-config:
     id-type: 2
