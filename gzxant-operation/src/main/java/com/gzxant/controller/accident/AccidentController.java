@@ -16,6 +16,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -31,7 +32,6 @@ import com.gzxant.base.entity.ReturnDTO;
 import com.gzxant.constant.Setting;
 import com.gzxant.controller.util.ExcelUtil;
 import com.gzxant.controller.vo.AccidentVo;
-import com.gzxant.controller.vo.TransgressVo;
 import com.gzxant.entity.accident.Accident;
 import com.gzxant.entity.transgress.Transgress;
 import com.gzxant.enums.AccidentGrade;
@@ -50,6 +50,8 @@ import com.gzxant.util.ReturnDTOUtil;
 public class AccidentController {
 	
 	protected Logger logger = LoggerFactory.getLogger(getClass());
+	
+	@Autowired
 	private AccidentService aService;
 	
 	/**
@@ -87,12 +89,6 @@ public class AccidentController {
         String savePath = fileName + File.separator + type + File.separator + GzxantSysUser.id() + File.separator + uuid + "." + fileExt;//附件路径+类型（头像、附件等）+名称+扩展名
         File localFile = FileUtils.saveFileToDisk(file, savePath); //保存到磁盘
 
-        String thumbnailName = "";
-        if (FileUtils.getImageFormat(fileExt)) {
-            //创建缩略图
-            thumbnailName = fileName + File.separator + type + File.separator + GzxantSysUser.id() + File.separator + "s" + File.separator + uuid + "." + fileExt;//附件路径+类型（头像、附件等）+s(文件夹)+名称+扩展名
-            FileUtils.createThumbnail(localFile, thumbnailName);
-        }
 
         Map<String, String> rt = new HashMap<String, String>();
 
@@ -100,7 +96,6 @@ public class AccidentController {
         rt.put("path", Setting.BASEFLODER);
         rt.put("ext", fileExt);
         rt.put("url", savePath);
-        rt.put("s_url", thumbnailName);
         rt.put("date", DateUtils.getCurDateTime());
 
         logger.info("上传的文件地址为 fileName={}", savePath);
@@ -110,8 +105,7 @@ public class AccidentController {
     //添加
     @ResponseBody
 	@RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public ResponseEntity<List<Accident>> query(@RequestParam("accident")Accident accident) {
-		List<Transgress> tgList;
+    public ResponseEntity<List<Accident>> insert(@RequestParam(value="accident")Accident accident) {
 		try {
 			aService.insert(accident);
 			return ResponseEntity.ok(null);
@@ -150,7 +144,7 @@ public class AccidentController {
  				"我方经济损失", "我方医疗费用", "三者经济损失","三者医疗费用","已赔付金额","事故等级",
  				"处理状态","事故处理进度","备注" };
  		// excel文件名
- 		String fileName = "违章管理表" + System.currentTimeMillis() + ".xls";
+ 		String fileName = "违章管理表" + format.format(System.currentTimeMillis()) + ".xls";
  		// sheet名
  		String sheetName = "违章管理表";
  		String[][] content = new String[aList.size()][title.length];
@@ -200,10 +194,12 @@ public class AccidentController {
  	//根据id查询
  	@ResponseBody
  	@RequestMapping(value="getAccidentById",method=RequestMethod.POST)
- 	public ResponseEntity<Accident> getAccidentById(@RequestParam("id")Integer id){
+ 	public ResponseEntity<Accident> getAccidentById(@RequestParam(value="id")Integer id){
  		try {
 			Accident accident = aService.getAccidentById(id);
-			return ResponseEntity.ok(accident);
+			if(accident != null){
+				return ResponseEntity.ok(accident);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -213,7 +209,7 @@ public class AccidentController {
  	//修改
  	@ResponseBody
  	@RequestMapping(value="update",method=RequestMethod.POST)
- 	public ResponseEntity<Void> update(@RequestParam("accident")Accident accident){
+ 	public ResponseEntity<Void> update(@RequestParam(value="accident")Accident accident){
  			aService.update(accident);
  			return ResponseEntity.ok(null);
  	}
@@ -221,7 +217,7 @@ public class AccidentController {
  	//删除
  	@ResponseBody
  	@RequestMapping(value="delete",method=RequestMethod.POST)
- 	public ResponseEntity<Void> delete(@RequestParam("id")Integer id){
+ 	public ResponseEntity<Void> delete(@RequestParam(value="id")Integer id){
  		aService.delete(id);
  		return ResponseEntity.ok(null);
  	}

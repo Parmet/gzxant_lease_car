@@ -6,9 +6,12 @@ import java.util.Date;
 public class InsuranceInfo {
 	private String code;
 	private String carNo;
+	private Long buyOrganizationId;
 	private String buyOrganization;
 	private String insuranceNo;
+	private Long insuranceTypeId;
 	private String insuranceType;
+	private Long insuranceCompanyId;
 	private String insuranceCompany;
 	private String carAgeLimit;
 	private String insuranceCommissioner;
@@ -21,6 +24,24 @@ public class InsuranceInfo {
 	private Date updateTime;
 	private String operator;
 	
+	public Long getBuyOrganizationId() {
+		return buyOrganizationId;
+	}
+	public void setBuyOrganizationId(Long buyOrganizationId) {
+		this.buyOrganizationId = buyOrganizationId;
+	}
+	public Long getInsuranceTypeId() {
+		return insuranceTypeId;
+	}
+	public void setInsuranceTypeId(Long insuranceTypeId) {
+		this.insuranceTypeId = insuranceTypeId;
+	}
+	public Long getInsuranceCompanyId() {
+		return insuranceCompanyId;
+	}
+	public void setInsuranceCompanyId(Long insuranceCompanyId) {
+		this.insuranceCompanyId = insuranceCompanyId;
+	}
 	public String getCode() {
 		return code;
 	}

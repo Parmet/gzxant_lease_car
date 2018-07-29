@@ -107,13 +107,14 @@ public class TransgressController {
 			@RequestParam(value="tgVo",required=false) TransgressVo tgVo) {
 
 		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
 
 		List<Transgress> tgList = tgService.query(tgVo);
 		// excel标题
 		String[] title = { "车牌号", "车牌类型", "品牌", "扣分", "罚款", "资产公司", "经营公司", "客户", "违章时间", "违章地点", "违章原因", "违章采集机关",
 				"是否可以代办", "违章代码", "违章项文书编号", "状态", "数据查询时间", "更新为已处理时间" };
 		// excel文件名
-		String fileName = "违章管理表" + System.currentTimeMillis() + ".xls";
+		String fileName = "违章管理表" + format1.format(System.currentTimeMillis()) + ".xls";
 		// sheet名
 		String sheetName = "违章管理表";
 		String[][] content = new String[tgList.size()][title.length];

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class TransgressVo {
 	
-	private int id;                    		   //id
+	private Integer id;                    	   //id
 	private String plateNum;           	       //车牌号
 	private String assetCompany;        	   //资产公司
 	private String operateCompany;        	   //经营公司
@@ -16,10 +16,10 @@ public class TransgressVo {
 	private Date updateTimeEnd;                //处理时间结束
 	
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getPlateNum() {

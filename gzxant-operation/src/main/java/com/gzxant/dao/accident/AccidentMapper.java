@@ -59,7 +59,7 @@ public interface AccidentMapper {
 		"<if test=' accidentTimeEnd != null and accidentTimeEnd != \"\" '>",
 		" and accident_time &lt;= #{accidentTimeEnd} ",
 		"</if>",
-		"order by query_time",
+		"order by accident_time desc",
 		"</script>"})
 	@Results({
 		@Result(property = "plateNum", column = "plate_num"),

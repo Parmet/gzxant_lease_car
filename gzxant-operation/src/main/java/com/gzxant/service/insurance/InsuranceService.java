@@ -1,6 +1,7 @@
 package com.gzxant.service.insurance;
 
 import java.util.List;
+import java.util.Map;
 
 import com.gzxant.dto.InsuranceEO;
 import com.gzxant.dto.PageBean;
@@ -31,4 +32,8 @@ public interface InsuranceService {
 	void modifyInsuranceFile(String code, List<InsuranceFile> fileList);
 	
 	void deleteInsurance(String code);
+	
+	List<InsuranceVo> queryInsuranceList(InsuranceEO insuranceEO);
+	
+	List<Map<String, String>> queryDict(Long parent_id);
 }

@@ -18,13 +18,6 @@ spring:
     request-context-attribute: rc
     charset: UTF-8
 
-  #定义图片上传的最大限制
-  http:
-    multipart:
-      max-file-size: 100Mb
-      max-request-size: 1000Mb
-
-
 sitemesh:
   contentPath: /*
   decoratorPath: classpath:/layouts/default.jsp
@@ -37,10 +30,10 @@ management:
 logging.level.project.user.UserClient: DEBUG
 
 mybatis:
-  mapper-locations: classpath:mapper/**/*.xml
+  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml, classpath:mapper/operation/**/*.xml
   type-aliases-package: com.gzxant.entity
 mybatis-plus:
-  mapper-locations: classpath:mapper/**/*.xml
+  mapper-locations: classpath:mapper/sys/**/*.xml, classpath:mapper/log/**/*.xml, classpath:mapper/operation/**/*.xml
   type-aliases-package: com.gzxant.entity
   global-config:
     id-type: 2
