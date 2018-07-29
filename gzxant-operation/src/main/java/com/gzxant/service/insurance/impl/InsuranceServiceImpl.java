@@ -105,4 +105,10 @@ public class InsuranceServiceImpl implements InsuranceService{
 		insuranceInfoDao.deleteInsuranceFile(code);
 	}
 
+	@Override
+	public List<InsuranceVo> queryInsuranceList(InsuranceEO insuranceEO) {
+		List<InsuranceVo> list = insuranceInfoDao.queryInsuranceListPage(insuranceEO);
+		return list;
+	}
+
 }

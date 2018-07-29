@@ -31,4 +31,6 @@ public interface InsuranceService {
 	void modifyInsuranceFile(String code, List<InsuranceFile> fileList);
 	
 	void deleteInsurance(String code);
+	
+	List<InsuranceVo> queryInsuranceList(InsuranceEO insuranceEO);
 }

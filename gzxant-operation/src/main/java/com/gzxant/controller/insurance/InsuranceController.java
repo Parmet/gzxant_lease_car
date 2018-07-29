@@ -1,7 +1,10 @@
 package com.gzxant.controller.insurance;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -11,6 +14,10 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,6 +45,7 @@ import com.gzxant.util.DateUtils;
 import com.gzxant.util.FileUtils;
 import com.gzxant.util.PathUtils;
 import com.gzxant.util.ReturnDTOUtil;
+import com.gzxant.vo.InsuranceVo;
 
 @Controller
 @RequestMapping(value="/insurance")
@@ -275,6 +283,178 @@ public class InsuranceController {
 			return new WebJsonBean(CODE.FAIL, "请选择保险单");
 		}
 		insuranceService.deleteInsurance(code);
+		return new WebJsonBean(CODE.SUCCESS);
+	}
+	
+	// 导出保险信息
+	@ResponseBody
+	@RequestMapping(value = "/exportInsurance")
+	public WebJsonBean exportInsurance(InsuranceEO insuranceEO, HttpServletRequest request, 
+			HttpServletResponse response) {
+		HSSFWorkbook wb = new HSSFWorkbook();
+		// sheet 对应一个工作页
+		Sheet sheet = wb.createSheet("保险信息");
+		// 创建第一行为标题行
+		Row hssfRow = sheet.createRow(0);
+		Cell hssfCell = hssfRow.createCell(0);
+		String[] titleArr = {"编号","车牌号","车辆所属","保险单号","保单类型","资产状态","车型","车辆年限","保险公司",
+				"起效日期","失效日期","有效/失效","总保费用"};
+		int i = 0;
+		/* for循环生成列名 */
+		for (String key : titleArr) {
+			hssfCell = hssfRow.createCell(i);
+			hssfCell.setCellValue(key);
+			i++;
+		}
+		
+		List<InsuranceVo> resultList = insuranceService.queryInsuranceList(insuranceEO);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		// 填充数据
+		for (int j = 1; j <= resultList.size(); j++) {
+			InsuranceVo vo = resultList.get(j-1);
+			hssfRow = sheet.createRow(j);
+			
+			hssfCell = hssfRow.createCell(0);
+			hssfCell.setCellValue(vo.getCode());
+			hssfCell = hssfRow.createCell(1);
+			hssfCell.setCellValue(vo.getCarNo());
+			hssfCell = hssfRow.createCell(2);
+			hssfCell.setCellValue(vo.getAssets_belong());
+			hssfCell = hssfRow.createCell(3);
+			hssfCell.setCellValue(vo.getInsuranceNo());
+			hssfCell = hssfRow.createCell(4);
+			hssfCell.setCellValue(vo.getInsuranceType());
+			hssfCell = hssfRow.createCell(5);
+			hssfCell.setCellValue(vo.getAssets_state());
+			hssfCell = hssfRow.createCell(6);
+			hssfCell.setCellValue(vo.getVehicle_type());
+			hssfCell = hssfRow.createCell(7);
+			hssfCell.setCellValue(vo.getCarAgeLimit());
+			hssfCell = hssfRow.createCell(8);
+			hssfCell.setCellValue(vo.getInsuranceCompany());
+			hssfCell = hssfRow.createCell(9);
+			hssfCell.setCellValue(format.format(vo.getWorkDate()));
+			hssfCell = hssfRow.createCell(10);
+			hssfCell.setCellValue(format.format(vo.getExpiryDate()));
+			hssfCell = hssfRow.createCell(11);
+			hssfCell.setCellValue(vo.getStatus());
+			hssfCell = hssfRow.createCell(12);
+			hssfCell.setCellValue(vo.getInsuranceTotalAmount() == null ? "0.00" : vo.getInsuranceTotalAmount().toString());
+		}
+		for (int a = 0; a <= i; a++) {
+			sheet.autoSizeColumn(a);// 設置自動列寬
+		}
+		
+		// 创建文件输出流，准备输出电子表格
+		try {
+			String fileName = "保险信息-"+System.currentTimeMillis()+".xls";
+			String agent = request.getHeader("User-Agent");
+            boolean isMSIE = (agent != null && agent.indexOf("MSIE") != -1);
+            if( isMSIE ){
+            	fileName = java.net.URLEncoder.encode(fileName,"UTF8");
+            }else{
+            	//兼容火狐，否则中文乱码
+            	fileName = new String(fileName.getBytes("UTF-8"), "ISO-8859-1");
+            }
+			response.reset();
+			response.setContentType("application/vnd.ms-excel");
+			response.setCharacterEncoding("UTF-8");
+			response.setHeader("content-Disposition", "attachment;filename=" + fileName);
+			OutputStream os = response.getOutputStream();
+			wb.write(os);
+			os.flush();
+			os.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return new WebJsonBean(CODE.SUCCESS);
+	}
+	 
+	// 导出保险到期12311111
+	@ResponseBody
+	@RequestMapping(value = "/exportExpiryInsurance")
+	public WebJsonBean exportExpiryInsurance(InsuranceEO insuranceEO, HttpServletRequest request, 
+			HttpServletResponse response) {
+		HSSFWorkbook wb = new HSSFWorkbook();
+		// sheet 对应一个工作页
+		Sheet sheet = wb.createSheet("保险信息");
+		// 创建第一行为标题行
+		Row hssfRow = sheet.createRow(0);
+		Cell hssfCell = hssfRow.createCell(0);
+		String[] titleArr = {"编号","车牌号","车辆所属","保险单号","保单类型","资产状态","车型","车辆年限","保险公司",
+				"起效日期","失效日期","有效/失效","总保费用"};
+		int i = 0;
+		/* for循环生成列名 */
+		for (String key : titleArr) {
+			hssfCell = hssfRow.createCell(i);
+			hssfCell.setCellValue(key);
+			i++;
+		}
+		insuranceEO.setStatus(0);//失效
+		List<InsuranceVo> resultList = insuranceService.queryInsuranceList(insuranceEO);
+		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+		// 填充数据
+		for (int j = 1; j <= resultList.size(); j++) {
+			InsuranceVo vo = resultList.get(j-1);
+			hssfRow = sheet.createRow(j);
+			
+			hssfCell = hssfRow.createCell(0);
+			hssfCell.setCellValue(vo.getCode());
+			hssfCell = hssfRow.createCell(1);
+			hssfCell.setCellValue(vo.getCarNo());
+			hssfCell = hssfRow.createCell(2);
+			hssfCell.setCellValue(vo.getAssets_belong());
+			hssfCell = hssfRow.createCell(3);
+			hssfCell.setCellValue(vo.getInsuranceNo());
+			hssfCell = hssfRow.createCell(4);
+			hssfCell.setCellValue(vo.getInsuranceType());
+			hssfCell = hssfRow.createCell(5);
+			hssfCell.setCellValue(vo.getAssets_state());
+			hssfCell = hssfRow.createCell(6);
+			hssfCell.setCellValue(vo.getVehicle_type());
+			hssfCell = hssfRow.createCell(7);
+			hssfCell.setCellValue(vo.getCarAgeLimit());
+			hssfCell = hssfRow.createCell(8);
+			hssfCell.setCellValue(vo.getInsuranceCompany());
+			hssfCell = hssfRow.createCell(9);
+			hssfCell.setCellValue(format.format(vo.getWorkDate()));
+			hssfCell = hssfRow.createCell(10);
+			hssfCell.setCellValue(format.format(vo.getExpiryDate()));
+			hssfCell = hssfRow.createCell(11);
+			hssfCell.setCellValue(vo.getStatus());
+			hssfCell = hssfRow.createCell(12);
+			hssfCell.setCellValue(vo.getInsuranceTotalAmount() == null ? "0.00" : vo.getInsuranceTotalAmount().toString());
+		}
+		for (int a = 0; a <= i; a++) {
+			sheet.autoSizeColumn(a);// 設置自動列寬
+		}
+		
+		// 创建文件输出流，准备输出电子表格
+		try {
+			String fileName = "保险信息-"+System.currentTimeMillis()+".xls";
+			String agent = request.getHeader("User-Agent");
+			boolean isMSIE = (agent != null && agent.indexOf("MSIE") != -1);
+			if( isMSIE ){
+				fileName = java.net.URLEncoder.encode(fileName,"UTF8");
+			}else{
+				//兼容火狐，否则中文乱码
+				fileName = new String(fileName.getBytes("UTF-8"), "ISO-8859-1");
+			}
+			response.reset();
+			response.setContentType("application/vnd.ms-excel");
+			response.setCharacterEncoding("UTF-8");
+			response.setHeader("content-Disposition", "attachment;filename=" + fileName);
+			OutputStream os = response.getOutputStream();
+			wb.write(os);
+			os.flush();
+			os.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 		return new WebJsonBean(CODE.SUCCESS);
 	}
 	
