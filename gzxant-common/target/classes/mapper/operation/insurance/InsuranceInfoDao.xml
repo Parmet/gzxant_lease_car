@@ -195,7 +195,9 @@
 		<if test=' id != null and id != "" '>
 			and buyOrganizationId = #{id}
 		</if>
-		and createTime between #{beginDate} and #{endDate}
+		<if test=' beginDate != null and endDate != null'>
+			and createTime between #{beginDate} and #{endDate}
+		</if>
 	</select>
 
 	<select id="queryInsuranceList" parameterType="com.gzxant.dto.InsuranceEO" resultType="com.gzxant.vo.InsuranceVo">

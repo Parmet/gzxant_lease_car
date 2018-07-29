@@ -123,7 +123,9 @@ public interface AccidentMapper {
 			"<if test=' id != null and id != \"\" '>",
 			" and user_unit = #{id} ",
 			"</if>",
+			"<if test=' beginDate != null and endDate != null '>",
 			" and accident_time between #{beginDate} and #{endDate}",
+			"</if>",
 			"</script>"})
 	int selectCount(Long id, Date beginDate, Date endDate);
 

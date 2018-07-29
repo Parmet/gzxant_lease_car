@@ -81,7 +81,9 @@ public interface TransgressMapper {
 			"<if test=' id != null and id != \"\" '>",
 			" and asset_company = #{id} ",
 			"</if>",
+			"<if test=' beginDate != null and endDate != null '>",
 			" and tg_time between #{beginDate} and #{endDate}",
+			"</if>",
 			"</script>"})
 	int selectCount(Long id, Date beginDate, Date endDate);
 
