@@ -233,4 +233,8 @@
 		</if>
 		order by i.createTime
 	</select>
+	
+	<select id="queryDict" resultType="map">
+		select id,jvalue from sys_dict where parent_id=#{parent_id} and del_flag != 'N' and invalid='Y'
+	</select>
 </mapper>
