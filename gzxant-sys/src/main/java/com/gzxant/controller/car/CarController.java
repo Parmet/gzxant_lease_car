@@ -34,6 +34,8 @@ import com.gzxant.enums.HttpCodeEnum;
 import com.gzxant.exception.SlifeException;
 import com.gzxant.service.ICarAreaService;
 import com.gzxant.service.ICarService;
+import com.gzxant.shiro.GzxantSysUser;
+import com.gzxant.shiro.ShiroUser;
 import com.gzxant.util.ReturnDTOUtil;
 
 import io.swagger.annotations.ApiOperation;
@@ -159,6 +161,8 @@ public class CarController extends BaseController {
     @PostMapping(value = "/insert")
     @ResponseBody
     public ReturnDTO create(Car car) {
+    	Long companyId = GzxantSysUser.companyId();
+    	car.setCompanyId(companyId);
         return carService.insertCar(car) == true ? ReturnDTOUtil.success() : ReturnDTOUtil.fail();
     }
     

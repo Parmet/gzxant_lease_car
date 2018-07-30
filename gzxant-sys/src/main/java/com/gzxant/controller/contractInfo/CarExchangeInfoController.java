@@ -125,7 +125,7 @@ public class CarExchangeInfoController extends BaseController{
         CarExchangeInfo carExchangeInfo = carExchangeInfoService.selectCarExchangeInfoAllInfoById(id);
         logger.info(JSON.toJSONString(carExchangeInfo));
         model.addAttribute("carExchangeInfo",carExchangeInfo);
-        model.addAttribute("contractInfo",contractInfoService.pageSearch(dt).getRows());
+        model.addAttribute("contractInfoNews",contractInfoService.selectContractListByIsOver("new"));
         return "carExchangeInfo/detail";
     }
     
@@ -146,7 +146,7 @@ public class CarExchangeInfoController extends BaseController{
         CarExchangeInfo carExchangeInfo = carExchangeInfoService.selectCarExchangeInfoAllInfoById(id);
         model.addAttribute("carExchangeInfo", carExchangeInfo);
         model.addAttribute("url", request.getContextPath() + "/carExchangeInfo/manager/");
-        model.addAttribute("contractInfo",contractInfoService.pageSearch(dt).getRows());
+        model.addAttribute("contractInfoNews",contractInfoService.selectContractListByIsOver("new"));
         return "carExchangeInfo/detail";
     }
     
@@ -170,7 +170,7 @@ public class CarExchangeInfoController extends BaseController{
         carExchangeInfo.setId(0L);
         model.addAttribute("carExchangeInfo", carExchangeInfo);
         model.addAttribute("url", request.getContextPath() + "/carExchangeInfo/manager/");
-        model.addAttribute("contractInfos",contractInfoService.pageSearch(dt).getRows());
+        model.addAttribute("contractInfoNews",contractInfoService.selectContractListByIsOver("new"));
         return "carExchangeInfo/detail";
     }
     

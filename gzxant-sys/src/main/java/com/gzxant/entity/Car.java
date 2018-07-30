@@ -12,6 +12,12 @@ public class Car extends DataEntity<Car>{
 	private static final long serialVersionUID = 1L;
 	
 	/**
+	 * 公司ID
+	 */
+	@TableField(value ="company_id")
+	private Long companyId;
+	
+	/**
 	 * 车牌号码 
 	 */
 	@TableField(value ="car_number")
@@ -558,7 +564,7 @@ public class Car extends DataEntity<Car>{
 
 
 	public void setDLRDate(String DLRDate) {
-		DLRDate = DLRDate;
+		this.DLRDate = DLRDate;
 	}
 
 
@@ -570,7 +576,7 @@ public class Car extends DataEntity<Car>{
 
 
 	public void setDLCDate(String DLCDate) {
-		DLCDate = DLCDate;
+		this.DLCDate = DLCDate;
 	}
 
 
@@ -585,7 +591,13 @@ public class Car extends DataEntity<Car>{
 		this.drivingLicenseNumber = drivingLicenseNumber;
 	}
 
+	public Long getCompanyId() {
+		return companyId;
+	}
 
+	public void setCompanyId(Long companyId) {
+		this.companyId = companyId;
+	}
 
 	@Override
 	protected Serializable pkVal() {

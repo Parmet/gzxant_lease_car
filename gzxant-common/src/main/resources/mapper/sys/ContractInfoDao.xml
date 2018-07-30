@@ -17,10 +17,64 @@
         <include refid="base_select"></include>
     </select>
     
+    <!-- 将合同对象设置为过期合同,设置is_over为old -->
+    <update id="updateContractGroupId" parameterType="map">
+    	UPDATE contract_info
+		SET is_over = #{old} 
+		WHERE
+			contract_no = #{ contractNoOld }
+    </update>
+    
+    <!-- 将旧合同以及其下的涉及的合同的groupId设置为新合同的groupId -->
+    <update id="setNewGroupId" parameterType="map">
+		UPDATE contract_info
+		SET group_id = #{groupIdNew}
+		WHERE
+			group_id IN (
+				SELECT
+					c.group_id
+				FROM
+					(
+						SELECT
+							ci.group_id
+						FROM
+							contract_info ci
+						WHERE
+							contract_no = #{contractNoOld}
+					) c
+			)
+    </update>
+    
+	<!-- 查询所有汽车信息列表 -->
+	<select id="selectContractListByIsOver" parameterType="string" resultType="contractInfo">
+        <include refid="base_select"></include>
+        <where>
+        	1 = 1 
+        	<if test="isOver !=null and isOver != ''">
+        		and c.is_over = #{isOver}
+        	</if>
+        </where>
+    </select>
+    
     
 	<!-- 根据合同编号查询合同对象的id -->
 	<select id="queryIdByContractNo" parameterType="string"  resultType="java.lang.Long">
-		SELECT c.id FROM contract_info c where c.contract_no = #{contractNo}
+		SELECT
+			c.id
+		FROM
+			contract_info c
+		WHERE
+			c.contract_no = #{contractNo}
+    </select>
+    
+	<!-- 根据合同编号查询合同对象 -->
+	<select id="queryContractByContractNo" parameterType="string"  resultType="contractInfo">
+		SELECT
+			*
+		FROM
+			contract_info c
+		WHERE
+			c.contract_no = #{contractNo}
     </select>
     
     <resultMap id="selectAllContractInfo" type="contractInfo">
@@ -55,6 +109,9 @@
         <result property="paymentMethod" column="payment_method"></result>
         <result property="enclosure" column="enclosure"></result>
         <result property="carNumber" column="car_number"></result>
+        <result property="companyId" column="company_id"></result>
+        <result property="groupId" column="group_id"></result>
+        <result property="isOver" column="is_over"></result>
     </resultMap>
 
 </mapper>

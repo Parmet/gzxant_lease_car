@@ -27,6 +27,10 @@ public class GzxantSysUser {
     public static Long id() {
         return ShiroUser().getId();
     }
+    
+    public static Long companyId() {
+    	return ShiroUser().getCompanyId();
+    }
 
     public static String loginName() {
         return ShiroUser().getUsername();
@@ -45,7 +49,8 @@ public class GzxantSysUser {
     		String username = String.valueOf(map.get("username"));
     		String name = String.valueOf(map.get("name"));
     		String photo = String.valueOf(map.get("photo"));
-    		user = new ShiroUser(id, username, name, photo);
+    		Long companyId = Long.parseLong(String.valueOf(map.get("companyId")));
+    		user = new ShiroUser(id, username, name, photo,companyId);
     	}
     	
     	return user;

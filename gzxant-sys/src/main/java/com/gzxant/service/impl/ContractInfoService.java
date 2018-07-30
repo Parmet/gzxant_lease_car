@@ -1,6 +1,9 @@
 package com.gzxant.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +16,9 @@ import com.gzxant.entity.ContractCarInfo;
 import com.gzxant.entity.ContractInfo;
 import com.gzxant.service.IContractCarInfoService;
 import com.gzxant.service.IContractInfoService;
+import com.gzxant.shiro.GzxantSysUser;
 import com.gzxant.vo.ContractInfoVO;
+
 
 
 /**
@@ -36,6 +41,14 @@ public class ContractInfoService extends BaseService<ContractInfoDao,ContractInf
 	@Override
 	public ContractInfo selectContractInfoAllInfoById(Long id) {
 		return this.baseMapper.selectContractInfoById(id);
+	}
+	
+	/**
+	 * 查询合同对象详情
+	 */
+	@Override
+	public ContractInfo queryContractByContractNo(String contractNo) {
+		return this.baseMapper.queryContractByContractNo(contractNo);
 	}
 
 	/**
@@ -63,6 +76,23 @@ public class ContractInfoService extends BaseService<ContractInfoDao,ContractInf
 	public boolean updateContractInfo(ContractInfo contractInfoNew) {
 		return updateById(contractInfoNew);
 	}
+    
+    /**
+     * 更新合同对象的groupId为old，将合同设置为过期合同
+     */
+    @Transactional(readOnly = false)
+    @Override
+    public boolean updateContractGroupId(String old,String contractNoOld) {
+    	boolean flag = false;
+    	Map<String,Object> map = new HashMap<String,Object>();
+    	map.put("old", old);
+    	map.put("contractNoOld", contractNoOld);
+    	Integer num = this.baseMapper.updateContractGroupId(map);
+    	if(num > 0 ){
+    		flag = true;
+    	}
+    	return flag;
+    }
     
     @Transactional(readOnly = false)
     @Override
@@ -112,6 +142,11 @@ public class ContractInfoService extends BaseService<ContractInfoDao,ContractInf
 	}
 
 	private void vo2contractInfo(ContractInfoVO contractInfoVO, ContractInfo contractInfo) {
+		Long companyId = GzxantSysUser.companyId();
+		String uuid = UUID.randomUUID().toString().replaceAll("-", "");
+		contractInfo.setGroupId(uuid+uuid);
+		contractInfo.setIsOver("new");
+		contractInfo.setCompanyId(companyId);
 		contractInfo.setId(contractInfoVO.getContractInfoId());
 		contractInfo.setAgent(contractInfoVO.getAgent());
 		contractInfo.setBusinessNumber(contractInfoVO.getBusinessNumber());
@@ -191,6 +226,24 @@ public class ContractInfoService extends BaseService<ContractInfoDao,ContractInf
 				flag = false;
 				logger.debug("删除合同对象失败，其id为：{}",id);
 			}
+		}
+		return flag;
+	}
+
+	@Override
+	public List<ContractInfo> selectContractListByIsOver(String isOver) {
+		return this.baseMapper.selectContractListByIsOver(isOver);
+	}
+
+	@Override
+	public boolean setNewGroupId(String contractNoOld,String groupIdNew) {
+		boolean flag = false;
+		Map<String, Object> map = new HashMap<String,Object>();
+		map.put("contractNoOld", contractNoOld);
+		map.put("groupIdNew", groupIdNew);
+		Integer num = this.baseMapper.setNewGroupId(map);
+		if(num > 0){
+			flag = true;
 		}
 		return flag;
 	}

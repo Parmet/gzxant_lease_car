@@ -123,7 +123,10 @@ public class ContractInfoController extends BaseController{
         model.addAttribute("action", "update");
         model.addAttribute("url", request.getContextPath() + "/car/manager/");
         ContractInfo contractInfo = contractInfoService.selectContractInfoAllInfoById(id);
-        List<ContractCarInfo> ContractCarInfoList = contractCarInfoService.queryContractCarBycontractId(contractInfo.getId());
+        List<ContractCarInfo> ContractCarInfoList = contractCarInfoService.queryContractCarBycontractId(id);
+        if(ContractCarInfoList==null&&ContractCarInfoList.isEmpty()){
+        	 throw new SlifeException(HttpCodeEnum.INTERNAL_SERVER_ERROR);
+        }
         logger.info(JSON.toJSONString(contractInfo));
         model.addAttribute("contractInfo", contractInfo);
         model.addAttribute("contractCarInfo", ContractCarInfoList.get(0));

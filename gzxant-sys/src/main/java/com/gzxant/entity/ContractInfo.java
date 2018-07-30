@@ -12,6 +12,25 @@ public class ContractInfo extends DataEntity<ContractInfo>{
 
 	private static final long serialVersionUID = 1L;
 
+	
+	/**
+	 * 合同分组ID(查询一个合同历史变更记录所需)(UUID+UUID 降低重复的概率)
+	 */
+	@TableField(value ="group_id")
+	public String groupId;
+	
+	/**
+	 * 判断是否是过期(旧)合同，选择的时候就不展示
+	 */
+	@TableField(value ="is_over")
+	public String isOver;
+	
+	/**
+	 * 公司id
+	 */
+	@TableField(value ="company_id")
+	public Long companyId;
+	
 	/**
 	 * 公司名
 	 */
@@ -405,6 +424,30 @@ public class ContractInfo extends DataEntity<ContractInfo>{
 
 	public void setCarNumber(String carNumber) {
 		this.carNumber = carNumber;
+	}
+
+	public Long getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(Long companyId) {
+		this.companyId = companyId;
+	}
+
+	public String getGroupId() {
+		return groupId;
+	}
+
+	public void setGroupId(String groupId) {
+		this.groupId = groupId;
+	}
+
+	public String getIsOver() {
+		return isOver;
+	}
+
+	public void setIsOver(String isOver) {
+		this.isOver = isOver;
 	}
 	
 }

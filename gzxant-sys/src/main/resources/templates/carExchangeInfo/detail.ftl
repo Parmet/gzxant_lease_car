@@ -8,19 +8,27 @@
                         <input type="hidden" name="id" value="${carExchangeInfo.id}"/>
                         <font size="6">车辆申请更换信息</font>
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">合同号<span class="required">*</span></label>
+                            <label class="col-sm-3 control-label">原合同号<span class="required">*</span></label>
                             <div class="col-sm-3">
-					             <select class=" form-control _search" id="nameInput" name="contractNo" value="${carExchangeInfo.contractNo} >
+					             <select class=" form-control _search" id="contractNoOld" name="contractNoOld" value="${carExchangeInfo.contractNoOld}"  onchange="gradeChangeOld()">
 						          <option value = "">请选择</option>
-					             	<#list contractInfos as contractInfo>
-						              <option value="${contractInfo.contractNo}">${contractInfo.contractNo}</option>
+					             	<#list contractInfoNews as contractInfoNew>
+						              <option value="${contractInfoNew.contractNo}">${contractInfoNew.contractNo}</option>
 						          </#list>
 					             </select>                                  
                             </div>
-                            <label class="col-sm-3 control-label">车牌号<span class="required">*</span></label>
-                            <div class="col-sm-3">
-                                <input name="carNumber" type="text" class="form-control" value="${carExchangeInfo.carNumber}">                           	
-                            </div>
+                            <#if action =='insert'>
+	                            <label class="col-sm-3 control-label">新合同号<span class="required">*</span></label>
+	                            <div class="col-sm-3">
+						             <select class=" form-control _search" id="contractNoNew" name="contractNoNew" value="${carExchangeInfo.contractNoNew}" onchange="gradeChangeNew()" >
+							          <option value = " ">请选择</option>
+						             	<#list contractInfoNews as contractInfoNew>
+							              <option value="${contractInfoNew.contractNo}">${contractInfoNew.contractNo}</option>
+							          </#list>
+						             </select>                                  
+	                            </div>
+                            </#if>
+   
                         </div>
                         
                         <div class="form-group">
@@ -29,9 +37,9 @@
                                 <input name="applyCarNumber" type="text" class="form-control" value="${carExchangeInfo.applyCarNumber}">                         	
                             </div>
                             
-                            <label class="col-sm-3 control-label">申请日期</label>
+                            <label class="col-sm-3 control-label">原车牌号<span class="required">*</span></label>
                             <div class="col-sm-3">
-                                <input name="applyDate" type="date" class="form-control" value="${carExchangeInfo.applyDate}">                         	
+                                <input name="carNumber" type="text" class="form-control" value="${carExchangeInfo.carNumber}">                           	
                             </div>
                         </div>
                         
@@ -58,6 +66,13 @@
                                 <input name="applyReason" type="text" class="form-control" value="${carExchangeInfo.applyReason}">                   	
                             </div>
                         </div>
+                        
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">申请日期</label>
+                            <div class="col-sm-3">
+                                <input name="applyDate" type="date" class="form-control" value="${carExchangeInfo.applyDate}">                         	
+                            </div>
+                        </div>
 
 	                    <#if action !='detail'>
 	                        <div class="form-actions fluid">
@@ -76,6 +91,33 @@
 
 
 <script type="text/javascript">
+
+	
+		
+	function gradeChangeOld(){
+		var contractNoOld=$("#contractNoOld option:selected").val();
+		console.log(contractNoOld)
+		$("#contractNoNew option").each(function(i,no){
+			if($(no).val() === contractNoOld){
+				$(no).attr("hidden","hidden")
+			}else{
+				$(no).removeAttr("hidden")
+			}
+		})
+	}
+	
+	function gradeChangeNew(){
+		var contractNoNew=$("#contractNoNew option:selected").val();	
+		console.log(contractNoNew)
+		$("#contractNoOld option").each(function(i,no){
+			if($(no).val() === contractNoNew){
+				$(no).attr("hidden","hidden")
+			}else{
+				$(no).removeAttr("hidden")
+			}
+		})
+	}
+
 	action = "${action}";
     function  cusFunction() {
         console.info("提交之前，最后执行自定义的函数");
@@ -83,13 +125,15 @@
 
     var select = $(".select").select2();
     <#if action !='insert'>
-    $("select[name=assetsState] option[value='${car.assetsState}']").attr("selected", "selected");
-    
-    var data = [];
-        <#list car.sysRoles as r>
-        data.push({id:${r.id}, text: '${r.name}'});
-        </#list>
-    select.select2("data", data);
+	    $("select[name=contractNoOld] option[value='${carExchangeInfo.contractNoOld}']").attr("selected", "selected");
+	    $("select[name=contractNoNew] option[value='${carExchangeInfo.contractNoNew}']").attr("selected", "selected");
+	    
+	    var data = [];
+	        <#list car.sysRoles as r>
+	        data.push({id:${r.id}, text: '${r.name}'});
+	        </#list>
+	    select.select2("data", data);
+    	$("#contractNoOld").attr("disabled","disabled");
     </#if>
 
     var form = $('#gzxantForm');
