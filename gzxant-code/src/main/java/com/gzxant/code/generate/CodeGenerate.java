@@ -33,9 +33,9 @@ public class CodeGenerate {
 
 	// --------------变动参数区 start------------------------------------------
 	/* === 表名 === */
-	private static String[] tableNames = {"car_accident"}; //, "shop_order_goods", "shop_order_pay"
+	private static String[] tableNames = {"car_repair"}; //, "shop_order_goods", "shop_order_pay"
 	/* === 开发者 === */
-	public static String author = "ycxiao";
+	public static String author = "Fatal";
 	/* === 输出目标项目，为空则生成在当前项目中 === */
 	public static String targetProject = "gzxant-web";
 	/* === 准备生成文件["controller", "service", "dao", "entity", "xml", "ftl"] === */

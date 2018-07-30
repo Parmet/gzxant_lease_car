@@ -1,153 +1,174 @@
 <div class="wrapper wrapper-content animated fadeInRight">
-    <form class="form-horizontal form-bordered" id="gzxantForm" >
-                <div class="form-group">
+    <form class="form-horizontal form-bordered" id="gzxantForm">
+        <div class="form-group">
             <label class="col-sm-3 control-label">车牌号：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="carNumber" id="carNumber"
                        placeholder="请输入车牌号"/>
             </div>
         </div>
-                <div class="form-group">
-            <label class="col-sm-3 control-label">车辆所属 引用：</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="belongstoId" id="belongstoId"
-                       placeholder="请输入车辆所属 引用"/>
-            </div>
-        </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">事故日期：</label>
             <div class="col-sm-8">
                 <input type="date" class="form-control" name="date" id="date"
                        placeholder="请输入事故日期"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">驾驶员：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="driver" id="driver"
                        placeholder="请输入驾驶员"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">事故地址：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="place" id="place"
                        placeholder="请输入事故地址"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">事故详情：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="detail" id="detail"
                        placeholder="请输入事故详情"/>
             </div>
         </div>
-                <div class="form-group">
-            <label class="col-sm-3 control-label">使用性质 引用：</label>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">使用性质</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="usePropertyId" id="usePropertyId"
-                       placeholder="请输入使用性质 引用"/>
+                <select name="usePropertyId" class="form-control">
+                    <option value="usePropertyId">请选择</option>
+                    <#list usePropertyList as u>
+                        <option value="${u.jkey}">${u.jvalue}</option>
+                    </#list>
+                </select>
             </div>
         </div>
-                <div class="form-group">
-            <label class="col-sm-3 control-label">事故性质 字典 单方事故、双方事故、多方事故：</label>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">事故性质</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="nature" id="nature"
-                       placeholder="请输入事故性质 字典 单方事故、双方事故、多方事故"/>
+                <select class="form-control" name="nature" id="nature">
+                    <option value="">请选择</option>
+                    <#list accidentNatureList as a>
+                        <option value="${a.jkey}">${a.jvalue}</option>
+                    </#list>
+                </select>
             </div>
         </div>
-                <div class="form-group">
-            <label class="col-sm-3 control-label">责任划分 字典 全责、无责、次责、不详、同等、主责：</label>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">责任划分</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="responsibility" id="responsibility"
-                       placeholder="请输入责任划分 字典 全责、无责、次责、不详、同等、主责"/>
+                <select type="text" class="form-control" name="responsibility" id="responsibility">
+                    <option value="">请选择</option>
+                    <#list responsibilityList as r>
+                        <option value="${r.jkey}">${r.jvalue}</option>
+                    </#list>
+                </select>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
+            <label class="col-sm-3 control-label">车辆类型</label>
+            <div class="col-sm-8">
+                <select type="text" class="form-control" name="carType" id="carType">
+                    <option value="">请选择</option>
+                    <#list carTypeList as c>
+                        <option value="${c.jkey}">${c.jvalue}</option>
+                    </#list>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
             <label class="col-sm-3 control-label">轻伤（人）：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="minorWound" id="minorWound"
                        placeholder="请输入轻伤（人）"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">重伤（人）：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="seriousInjury" id="seriousInjury"
                        placeholder="请输入重伤（人）"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">死亡（人）：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="death" id="death"
                        placeholder="请输入死亡（人）"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">我方经济损失：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="ourLosses" id="ourLosses"
                        placeholder="请输入我方经济损失"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">我方医疗费用：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="ourExpenses" id="ourExpenses"
                        placeholder="请输入我方医疗费用"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">三者经济损失：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="threeLosses" id="threeLosses"
                        placeholder="请输入三者经济损失"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">三者医疗费用：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="threeExpenses" id="threeExpenses"
                        placeholder="请输入三者医疗费用"/>
             </div>
         </div>
-                <div class="form-group">
+        <div class="form-group">
             <label class="col-sm-3 control-label">已赔付金额：</label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" name="amountPaid" id="amountPaid"
                        placeholder="请输入已赔付金额"/>
             </div>
         </div>
-                <div class="form-group">
-            <label class="col-sm-3 control-label">事故等级 字典 轻微事故、一般事故、重大事故、特大事故：</label>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">事故等级</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="grade" id="grade"
-                       placeholder="请输入事故等级 字典 轻微事故、一般事故、重大事故、特大事故"/>
+                <select type="text" class="form-control" name="grade" id="grade">
+                    <option value="">请选择</option>
+                    <#list accidentGradeList as a>
+                        <option value="${a.jkey}">${a.jvalue}</option>
+                    </#list>
+                </select>
             </div>
         </div>
-                <div class="form-group">
-            <label class="col-sm-3 control-label">处理状态 字典 未处理 处理中 已处理：</label>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">处理状态</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="processingState" id="processingState"
-                       placeholder="请输入处理状态 字典 未处理 处理中 已处理"/>
+                <select type="text" class="form-control" name="processingState" id="processingState">
+                    <option value="">请选择</option>
+                    <#list processingStateList as p>
+                        <option value="${p.jkey}">${p.jvalue}</option>
+                    </#list>
+                </select>
             </div>
         </div>
-                <div class="form-group">
-            <label class="col-sm-3 control-label">事故处理进度 Y：已结案 N：待定损：</label>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">事故处理进度</label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" name="handlingProgress" id="handlingProgress"
-                       placeholder="请输入事故处理进度 Y：已结案 N：待定损"/>
+                <select type="text" class="form-control" name="handlingProgress" id="handlingProgress">
+                    <option value="">请选择</option>
+                    <#list accidentHandlingProgressList as a>
+                        <option value="${a.jkey}">${a.jvalue}</option>
+                    </#list>
+                </select>
             </div>
         </div>
-                <div class="form-group">
-            <label class="col-sm-3 control-label">修改者id：</label>
-            <div class="col-sm-8">
-                <input type="text" class="form-control" name="updateId" id="updateId"
-                       placeholder="请输入修改者id"/>
-            </div>
-        </div>
-                <div class="form-actions fluid">
+        <div class="form-actions fluid">
             <div class="col-md-offset-3 col-md-9">
                 <button type="submit" class="btn btn-success">保存</button>
             </div>
@@ -156,105 +177,105 @@
 </div>
 
 <script type="text/javascript">
-	action = "${action}";
+    action = "${action}";
 
     function cusFunction() {
         console.info("提交之前，最后执行自定义的函数");
     }
 
-	var info_validate = $('#gzxantForm');
+    var info_validate = $('#gzxantForm');
     var error = $('.alert-danger', info_validate);
     info_validate.validate({
         errorElement: 'span',
         errorClass: 'error',
         focusInvalid: true,
         rules: {
-                        carNumber: {
+            carNumber: {
                 required: true
             },
-                        belongstoId: {
+            belongstoId: {
                 required: true
             },
-                        date: {
+            date: {
                 required: true
             },
-                        driver: {
+            driver: {
                 required: true
             },
-                        place: {
+            place: {
                 required: true
             },
-                        detail: {
+            detail: {
                 required: true
             },
-                        usePropertyId: {
+            usePropertyId: {
                 required: true
             },
-                        nature: {
+            nature: {
                 required: true
             },
-                        responsibility: {
+            responsibility: {
                 required: true
             },
-                        minorWound: {
+            minorWound: {
                 required: true
             },
-                        seriousInjury: {
+            seriousInjury: {
                 required: true
             },
-                        death: {
+            death: {
                 required: true
             },
-                        ourLosses: {
+            ourLosses: {
                 required: true
             },
-                        ourExpenses: {
+            ourExpenses: {
                 required: true
             },
-                        threeLosses: {
+            threeLosses: {
                 required: true
             },
-                        threeExpenses: {
+            threeExpenses: {
                 required: true
             },
-                        amountPaid: {
+            amountPaid: {
                 required: true
             },
-                        grade: {
+            grade: {
                 required: true
             },
-                        processingState: {
+            processingState: {
                 required: true
             },
-                        handlingProgress: {
+            handlingProgress: {
                 required: true
             },
-                        updateId: {
+            updateId: {
                 required: true
             },
-                    },
+        },
         messages: {
-                        carNumber: "请输入车牌号",
-                        belongstoId: "请输入车辆所属 引用",
-                        date: "请输入事故日期",
-                        driver: "请输入驾驶员",
-                        place: "请输入事故地址",
-                        detail: "请输入事故详情",
-                        usePropertyId: "请输入使用性质 引用",
-                        nature: "请输入事故性质 字典 单方事故、双方事故、多方事故",
-                        responsibility: "请输入责任划分 字典 全责、无责、次责、不详、同等、主责",
-                        minorWound: "请输入轻伤（人）",
-                        seriousInjury: "请输入重伤（人）",
-                        death: "请输入死亡（人）",
-                        ourLosses: "请输入我方经济损失",
-                        ourExpenses: "请输入我方医疗费用",
-                        threeLosses: "请输入三者经济损失",
-                        threeExpenses: "请输入三者医疗费用",
-                        amountPaid: "请输入已赔付金额",
-                        grade: "请输入事故等级 字典 轻微事故、一般事故、重大事故、特大事故",
-                        processingState: "请输入处理状态 字典 未处理 处理中 已处理",
-                        handlingProgress: "请输入事故处理进度 Y：已结案 N：待定损",
-                        updateId: "请输入修改者id",
-                    }
+            carNumber: "请输入车牌号",
+            belongstoId: "请输入车辆所属 引用",
+            date: "请输入事故日期",
+            driver: "请输入驾驶员",
+            place: "请输入事故地址",
+            detail: "请输入事故详情",
+            usePropertyId: "请输入使用性质 引用",
+            nature: "请输入事故性质 字典 单方事故、双方事故、多方事故",
+            responsibility: "请输入责任划分 字典 全责、无责、次责、不详、同等、主责",
+            minorWound: "请输入轻伤（人）",
+            seriousInjury: "请输入重伤（人）",
+            death: "请输入死亡（人）",
+            ourLosses: "请输入我方经济损失",
+            ourExpenses: "请输入我方医疗费用",
+            threeLosses: "请输入三者经济损失",
+            threeExpenses: "请输入三者医疗费用",
+            amountPaid: "请输入已赔付金额",
+            grade: "请输入事故等级 字典 轻微事故、一般事故、重大事故、特大事故",
+            processingState: "请输入处理状态 字典 未处理 处理中 已处理",
+            handlingProgress: "请输入事故处理进度 Y：已结案 N：待定损",
+            updateId: "请输入修改者id",
+        }
     });
 </script>

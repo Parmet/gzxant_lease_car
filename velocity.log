@@ -1,0 +1,12 @@
+2018-07-30 10:21:30,319 - ResourceManager : found /serviceImpl.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2018-07-30 10:21:30,357 - ResourceManager : found /controller.java.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2018-07-30 10:21:30,384 - ResourceManager : found /list.ftl.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2018-07-30 10:21:30,387 - Null reference [template '/list.ftl.vm', line 1, column 46] : ${rc.contextPath} cannot be resolved.
+2018-07-30 10:21:30,388 - Null reference [template '/list.ftl.vm', line 41, column 14] : ${rc.contextPath} cannot be resolved.
+2018-07-30 10:21:30,392 - ResourceManager : found /detail.ftl.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2018-07-30 10:21:30,393 - Null reference [template '/detail.ftl.vm', line 13, column 19] : ${action} cannot be resolved.
+2018-07-30 10:21:30,398 - ResourceManager : found /insert.ftl.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2018-07-30 10:21:30,401 - Null reference [template '/insert.ftl.vm', line 21, column 19] : ${action} cannot be resolved.
+2018-07-30 10:21:30,406 - ResourceManager : found /update.ftl.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
+2018-07-30 10:21:30,409 - Null reference [template '/update.ftl.vm', line 23, column 19] : ${action} cannot be resolved.
+2018-07-30 10:21:30,418 - ResourceManager : found /templates/mapper.xml.vm with loader org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader
