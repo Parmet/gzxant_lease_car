@@ -19,7 +19,7 @@ import io.swagger.annotations.ApiOperation;
  */
 @Controller
 @RequestMapping(value = "/numCount/manager")
-public class CountCarNumController {
+public class CountCarNumController {  
 	
 	@Autowired
 	ICountCarNumService carNumCountService;
