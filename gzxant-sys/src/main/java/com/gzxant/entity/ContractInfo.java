@@ -11,7 +11,12 @@ import com.gzxant.base.entity.DataEntity;
 public class ContractInfo extends DataEntity<ContractInfo>{
 
 	private static final long serialVersionUID = 1L;
-
+	
+	/**
+	 * 合同名称
+	 */
+	@TableField(value ="enclosure_name")
+	public String enclosureName;
 	
 	/**
 	 * 合同分组ID(查询一个合同历史变更记录所需)(UUID+UUID 降低重复的概率)
@@ -448,6 +453,14 @@ public class ContractInfo extends DataEntity<ContractInfo>{
 
 	public void setIsOver(String isOver) {
 		this.isOver = isOver;
+	}
+
+	public String getEnclosureName() {
+		return enclosureName;
+	}
+
+	public void setEnclosureName(String enclosureName) {
+		this.enclosureName = enclosureName;
 	}
 	
 }

@@ -116,7 +116,7 @@ public class FileController {
         String uuid = FileUtils.createFileName();//创建文件名称
 
         String fileExt = file.getOriginalFilename().substring(file.getOriginalFilename().lastIndexOf(".") + 1).toLowerCase();//扩展名
-
+        String docName = file.getOriginalFilename().substring(0,file.getOriginalFilename().lastIndexOf(".")).toLowerCase();//文件名
         String fileName = PathUtils.getUploadPath();
         if (StringUtils.isNotBlank(path)) {
         	fileName = fileName.replace("/", File.separator);
@@ -142,6 +142,7 @@ public class FileController {
         rt.put("url", savePath);
         rt.put("s_url", thumbnailName);
         rt.put("date", DateUtils.getCurDateTime());
+        rt.put("docName", docName);
 
         logger.info("上传的文件地址为 fileName={}", savePath);
         return rt;

@@ -44,7 +44,7 @@ public interface IContractInfoService extends IBaseService<ContractInfo> {
        List<ContractInfo> selectAllContractInfoList();
        
        /**
-        * 查询所有合同对象信息列表
+        * 查找未过期的合同对象
         * @return
         */
        List<ContractInfo> selectContractListByIsOver(String isOver);

@@ -1,5 +1,6 @@
 package com.gzxant.controller.contractInfo;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,6 +8,7 @@ import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,6 +34,7 @@ import com.gzxant.enums.HttpCodeEnum;
 import com.gzxant.exception.SlifeException;
 import com.gzxant.service.IContractCarInfoService;
 import com.gzxant.service.IContractInfoService;
+import com.gzxant.util.FileUtils;
 import com.gzxant.util.ReturnDTOUtil;
 import com.gzxant.vo.ContractInfoVO;
 
@@ -60,6 +63,25 @@ public class ContractInfoController extends BaseController{
         model.addAttribute("url", request.getContextPath() + "/contractInfo/list/");
         model.addAttribute("contractInfoList", contractInfoService.selectList(null));
         return "contractInfo/list";
+    }
+    
+    /**
+     * 文件下载
+     * @param response
+     * @param pdfUrl
+     * @param name
+     */
+    @GetMapping(value = "/download")
+    public void download(HttpServletResponse response, String docUrl, String name) {
+       if (StringUtils.isBlank(docUrl)) {
+          return;
+       }
+
+       if (docUrl.contains("|")) {
+    	   docUrl = docUrl.replace("|", File.separator);
+       }
+
+       FileUtils.downLoadFile(response, docUrl, name, false);
     }
     
     /**
@@ -121,7 +143,8 @@ public class ContractInfoController extends BaseController{
     @GetMapping(value = "update/{id}")
     public String update(@PathVariable("id") Long id, Model model,HttpServletRequest request) {
         model.addAttribute("action", "update");
-        model.addAttribute("url", request.getContextPath() + "/car/manager/");
+        model.addAttribute("step", "upload");
+        model.addAttribute("url", request.getContextPath() + "/contractInfo/manager/");
         ContractInfo contractInfo = contractInfoService.selectContractInfoAllInfoById(id);
         List<ContractCarInfo> ContractCarInfoList = contractCarInfoService.queryContractCarBycontractId(id);
         if(ContractCarInfoList==null&&ContractCarInfoList.isEmpty()){
@@ -145,6 +168,7 @@ public class ContractInfoController extends BaseController{
     @GetMapping(value = "/detail/{id}")
     public String detail(@PathVariable("id") Long id, Model model, HttpServletRequest request) {
         model.addAttribute("action", "detail");
+        model.addAttribute("step", "download");
         ContractInfo contractInfo = contractInfoService.selectContractInfoAllInfoById(id);
         List<ContractCarInfo> ContractCarInfoList = contractCarInfoService.queryContractCarBycontractId(contractInfo.getId());
         model.addAttribute("contractInfo", contractInfo);
@@ -167,6 +191,7 @@ public class ContractInfoController extends BaseController{
     @GetMapping(value = "/insert")
     public String create(Model model, HttpServletRequest request) {
         model.addAttribute("action", "insert");
+        model.addAttribute("step", "upload");
         ContractInfo contractInfo = new ContractInfo();
         contractInfo.setId(0L);
         model.addAttribute("contractInfo", contractInfo);

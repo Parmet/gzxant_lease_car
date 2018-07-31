@@ -144,6 +144,7 @@ public class ContractInfoService extends BaseService<ContractInfoDao,ContractInf
 	private void vo2contractInfo(ContractInfoVO contractInfoVO, ContractInfo contractInfo) {
 		Long companyId = GzxantSysUser.companyId();
 		String uuid = UUID.randomUUID().toString().replaceAll("-", "");
+		contractInfo.setEnclosureName(contractInfoVO.getEnclosureName());
 		contractInfo.setGroupId(uuid+uuid);
 		contractInfo.setIsOver("new");
 		contractInfo.setCompanyId(companyId);

@@ -108,6 +108,7 @@
         <result property="leaseEndDate" column="lease_endDate"></result>
         <result property="paymentMethod" column="payment_method"></result>
         <result property="enclosure" column="enclosure"></result>
+        <result property="enclosureName" column="enclosure_name"></result>
         <result property="carNumber" column="car_number"></result>
         <result property="companyId" column="company_id"></result>
         <result property="groupId" column="group_id"></result>
