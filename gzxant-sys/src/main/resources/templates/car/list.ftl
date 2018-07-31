@@ -129,12 +129,12 @@
                 title: 'id' // 列标题
             },
             {
-                field: 'leaseType',
-                title: '租赁类型'
-            },
-            {
                 field: 'assetsState',
                 title: '资产状态 '
+            },
+           {
+                field: 'eMNumber',
+                title: '机电编号'
             },
             {
                 field: 'carNumber',
@@ -144,25 +144,21 @@
                 field: 'assetsBelong',
                 title: '资产所属'
             },
-            {
-                field: 'usedOrganization',
-                title: '使用组织'
+          	{
+                field: 'color',
+                title: '颜色'
             },
             {
-                field: 'whereCarArea',
-                title: '所属车区'
+                field: 'frameNumber',
+                title: '车架号'
             },
             {
                 field: 'vehicleType',
                 title: '车辆型号'
             },
             {
-                field: 'email',
-                title: '邮箱地址'
-            },
-            {
-                field: 'customerState',
-                title: '客户状态'
+                field: 'registrationNumber',
+                title: '登记证号'
             },
             {
                 field: 'remark',

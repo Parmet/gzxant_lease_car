@@ -51,7 +51,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">发动机号<span class="required">*</span></label>
                             <div class="col-sm-3">
-                                <input name="engine_number" type="text" class="form-control" value="${car.engine_number}"
+                                <input name="engineNumber" type="text" class="form-control" value="${car.engineNumber}"
                                        placeholder="请输入发动机号">                         	
                             </div>
                         </div>
@@ -108,7 +108,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">登记证登记日期</label>
                             <div class="col-sm-3">
-                                <input name="registrationDeta" type="date" class="form-control" value="${car.registrationDeta}">                         	
+                                <input name="registrationDate" type="date" class="form-control" value="${car.registrationDate}">                         	
                             </div>
                             
                             <label class="col-sm-3 control-label">上牌日期<span class="required">*</span></label>
@@ -160,13 +160,9 @@
                                 <input name="documentType" type="text" class="form-control" value="${car.documentType}">            	
                             </div>
                             
-                            <label class="col-sm-3 control-label">备注</label>
-                            <div class="col-sm-3">
-                                <input name="remark" type="text" class="form-control" value="${car.remark}">            	
-                            </div>
                             <!-- 上传照片 -->
                             
-                            <div class="tab-pane fade" id="contractInfo-enclosure">
+                            <div class="tab-pane" id="contractInfo-enclosure">
 							    
 					                    <script src="${rc.contextPath}/js/plugins/dropzone/dropzone.min.js"></script>
 					                    <link href="${rc.contextPath}/css/plugins/dropzone/dropzone.css" rel="stylesheet">
@@ -177,61 +173,63 @@
 					                        		</div>
 					                        	</div>
 					                        	<div id="mydropzone" name="mydropzone" class="dropzone"></div>
+    
 					                    </div>
 					                    <script type="text/javascript">
-						                    // --------------------------文件上传--------------00------------------------------------ //
 						                    
 						                    
-						                <#if step =='upload'>
-						                	$('#zone').attr("hidden","hidden")
-						                    Dropzone.autoDiscover = false;
-										    var myDropzone = new Dropzone("div#mydropzone", {
-										        url: base_url+"/file/upload/avatar",
-										        filesizeBase: 1024,//定义字节算法 默认1000
-										        maxFiles: 2,//最大文件数量
-										        maxFilesize: 100, //MB
-										        fallback: function () {
-										            layer.alert('暂不支持您的浏览器上传!');
-										        },
-										        uploadMultiple: false,
-										        addRemoveLinks: true,
-										        dictFileTooBig: '您的文件超过' + 100 + 'MB!',
-										        dictInvalidInputType: '不支持您上传的类型',
-										        dictMaxFilesExceeded: '您的文件超过1个!',
-										        init: function () {
-										            this.on('queuecomplete', function (files) {
-										                // layer.alert('上传成功');
-										            });
-										            this.on('success', function (uploadimfo, result) {
-										                console.info(result);
-										                $("#enclosure").val(result.message[0].url);
-										                $("#enclosureName").val(result.message[0].docName);
-										                layer.alert('上传成功');
-										                
-										            });
-										            this.on('error', function (a, errorMessage, result) {
-										                if (!result) {
-										                    layer.alert(result.error || '上传失败');
-										                }
-										            });
-										            this.on('maxfilesreached', function () {
-										                this.removeAllFiles(true);
-										                layer.alert('文件数量超出限制');
-										            });
-										            this.on('removedfile', function () {
-										                layer.alert('删除成功');
-										            });
-										
-										        }
-										    });
-				               	</#if>
-				               	<#if step =='download'>
-				               		$('#mydropzone').attr("hidden","hidden")
-				               	</#if>
-				               	
+							                <#if step =='upload'>
+							                	$('#zone').attr("hidden","hidden")
+							                    Dropzone.autoDiscover = false;
+											    var myDropzone = new Dropzone("div#mydropzone", {
+											        url: base_url+"/file/upload/avatar",
+											        filesizeBase: 1024,//定义字节算法 默认1000
+											        maxFiles: 2,//最大文件数量
+											        maxFilesize: 100, //MB
+											        fallback: function () {
+											            layer.alert('暂不支持您的浏览器上传!');
+											        },
+											        uploadMultiple: false,
+											        addRemoveLinks: true,
+											        dictFileTooBig: '您的文件超过' + 100 + 'MB!',
+											        dictInvalidInputType: '不支持您上传的类型',
+											        dictMaxFilesExceeded: '您的文件超过1个!',
+											        init: function () {
+											            this.on('queuecomplete', function (files) {
+											                // layer.alert('上传成功');
+											            });
+											            this.on('success', function (uploadimfo, result) {
+											                console.info(result);
+											                $("#enclosure").val(result.message[0].url);
+											                $("#enclosureName").val(result.message[0].docName);
+											                layer.alert('上传成功');
+											                
+											            });
+											            this.on('error', function (a, errorMessage, result) {
+											                if (!result) {
+											                    layer.alert(result.error || '上传失败');
+											                }
+											            });
+											            this.on('maxfilesreached', function () {
+											                this.removeAllFiles(true);
+											                layer.alert('文件数量超出限制');
+											            });
+											            this.on('removedfile', function () {
+											                layer.alert('删除成功');
+											            });
+											
+											        }
+											    });
+					               			</#if>
+							               	<#if step =='download'>
+							               		$('#mydropzone').attr("hidden","hidden")
+							               	</#if>
 					                	</script>
-							</div>
-                        </div>
+								</div>
+                       	 </div>
+
+
+
 
 
 	                    <#if action !='detail'>

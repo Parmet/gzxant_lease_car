@@ -157,7 +157,7 @@ public class Car extends DataEntity<Car>{
 	 * 登记证登记日期
 	 */
 	@TableField(value ="registration_date")
-	private String registrationDeta;
+	private String registrationDate;
 	
 	/**
 	 * 登记证发证日期
@@ -478,14 +478,14 @@ public class Car extends DataEntity<Car>{
 
 
 
-	public String getRegistrationDeta() {
-		return registrationDeta;
+	public String getRegistrationDate() {
+		return registrationDate;
 	}
 
 
 
-	public void setRegistrationDeta(String registrationDeta) {
-		this.registrationDeta = registrationDeta;
+	public void setRegistrationDate(String registrationDate) {
+		this.registrationDate = registrationDate;
 	}
 
 
