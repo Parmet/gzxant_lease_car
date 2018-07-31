@@ -72,9 +72,9 @@
                                 <button type="button" class="btn btn-info" onclick="dt_insert()">
                                     <i class="fa fa-plus-square" aria-hidden="true"></i> 添加
                                 </button>
-                                <button type="button" class="btn btn-info" onclick="leading_out()">
+                                <!--<button type="button" class="btn btn-info" onclick="export_data()">
                                     <i class="fa fa-file-excel-o" aria-hidden="true"></i> 导出数据
-                                </button>
+                                </button>-->
                             </div>
                         </div>
                     </div>
@@ -87,6 +87,35 @@
 </div>
 
 <script type="text/javascript">
+
+	//导出数据到excel
+	function export_data(columns, sorts) {
+	    var searchParams = {};
+	    $("#exampleToolbar ._search").each(function () {
+	        searchParams[$(this).attr('name')] = $(this).val();
+	    });
+	
+	    var  d={
+	        "pageNumber": 1,
+	        "pageSize": 99999,
+	        "searchParams": searchParams,
+	        "sorts": sorts
+	
+	    }
+	  //  JSON.stringify(GetJsonData())
+	    $.ajax({
+	        type: "GET",  //提交方式
+	        url: url + "leadingOut", // 服务器数据的加载地址
+	        dataType: "json",
+	        contentType: "application/json; charset=utf-8",//(可以)
+	        //data:JSON.stringify(d) ,//数据，这里使用的是Json格式进行传输
+	        success: function (result) {//返回数据根据结果进行相应的处理
+	        	alert("导出成功");
+	        }
+	    });
+	}
+
+
 
 	<!--$("select[name=serviceCity] option[value='${car.serviceCity}']").attr("selected", "selected");-->
 	

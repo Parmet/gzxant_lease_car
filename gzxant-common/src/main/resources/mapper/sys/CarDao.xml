@@ -54,6 +54,7 @@
         <result property="documentType" column="document_type"></result>
         <result property="enclosure" column="enclosure"></result>
         <result property="companyId" column="company_id"></result>
+        <result property="enclosureName" column="enclosure_name"></result>
     </resultMap>
 
 </mapper>

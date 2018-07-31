@@ -11,6 +11,14 @@ public class Car extends DataEntity<Car>{
 
 	private static final long serialVersionUID = 1L;
 	
+	
+	
+	/**
+	 * 附件姓名
+	 */
+	@TableField(value ="enclosure_name")
+	private String enclosureName;
+	
 	/**
 	 * 公司ID
 	 */
@@ -598,6 +606,16 @@ public class Car extends DataEntity<Car>{
 	public void setCompanyId(Long companyId) {
 		this.companyId = companyId;
 	}
+	
+	public String getEnclosureName() {
+		return enclosureName;
+	}
+	
+	public void setEnclosureName(String enclosureName) {
+		this.enclosureName = enclosureName;
+	}
+
+
 
 	@Override
 	protected Serializable pkVal() {

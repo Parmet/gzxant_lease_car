@@ -1,12 +1,12 @@
 package com.gzxant.controller.car;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletRequest;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +26,6 @@ import com.gzxant.base.controller.BaseController;
 import com.gzxant.base.entity.ReturnDTO;
 import com.gzxant.base.vo.DataTable;
 import com.gzxant.entity.Car;
-import com.gzxant.entity.SysUser;
 import com.gzxant.enums.CarSizeNameEnums;
 import com.gzxant.enums.CarTrainNameEnums;
 import com.gzxant.enums.CityNameEnums;
@@ -35,7 +34,6 @@ import com.gzxant.exception.SlifeException;
 import com.gzxant.service.ICarAreaService;
 import com.gzxant.service.ICarService;
 import com.gzxant.shiro.GzxantSysUser;
-import com.gzxant.shiro.ShiroUser;
 import com.gzxant.util.ReturnDTOUtil;
 
 import io.swagger.annotations.ApiOperation;
@@ -76,30 +74,16 @@ public class CarController extends BaseController {
     @SLog("车辆管理导出数据")
     @ApiOperation(value = "导出数据")
     @GetMapping(value = "/leadingOut")
-    public void leadingOut(HttpServletResponse response) throws Exception  {
+    public ReturnDTO leadingOut(HttpServletResponse response) throws Exception  {
     	 List<Car> cars = carService.selectList(null);
-
-         //导出数据
-         String excelTitle = "车辆管理列表";
-         String[] headerTitle = new String[]{"id", "年审日期", "资产所属", "资产编号", "资产状态", "购买日期", "车牌号", "颜色"};
-         List<String[]> arrayList = new ArrayList<>();
-         arrayList.add(headerTitle); //列头
-         if (null != cars && cars.size() > 0) {
-             for (Car car : cars) {
-                 arrayList.add(
-                         new String[]{
-                        		 car.getId().toString(),
-                        		 car.getAnnualTrialDate(),
-                        		 car.getAssetsBelong(),
-                        		 car.getAssetsNumber(),
-                                 car.getAssetsState(),
-                                 car.getBuyDate(),
-                                 car.getCarNumber(),
-                                 car.getColor()
-                         });
-             }
-         }
-         ExceptInfo(response, excelTitle, arrayList);
+         response.setContentType("application/vnd.ms-excel;charset=utf-8");
+         String[] fields = {"订单号","押金应收流水ID", "应收金额"};
+         ExcelExport excelExport = new ExcelExport();
+         HSSFWorkbook wb = excelExport.generateExcel();
+         wb = excelExport.generateOrderDepositVOSheet(wb, "押金订单信息", fields, cars);
+         excelExport.export("押金订单信息", wb, response);
+         
+         return ReturnDTOUtil.success();
     }
     
     /**
@@ -126,6 +110,7 @@ public class CarController extends BaseController {
     @GetMapping(value = "update/{id}")
     public String update(@PathVariable("id") Long id, Model model,HttpServletRequest request) {
         model.addAttribute("action", "update");
+        model.addAttribute("step", "upload");
         model.addAttribute("url", request.getContextPath() + "/car/manager/");
         Car car = carService.selectCarAllInfoById(id);
         logger.info(JSON.toJSONString(car));
@@ -147,6 +132,7 @@ public class CarController extends BaseController {
     @GetMapping(value = "/detail/{id}")
     public String detail(@PathVariable("id") Long id, Model model, HttpServletRequest request) {
         model.addAttribute("action", "detail");
+        model.addAttribute("step", "download");
         Car car = carService.selectCarAllInfoById(id);
         model.addAttribute("car", car);
         model.addAttribute("url", request.getContextPath() + "/car/manager/");
@@ -171,6 +157,7 @@ public class CarController extends BaseController {
     @GetMapping(value = "/insert")
     public String create(Model model, HttpServletRequest request) {
         model.addAttribute("action", "insert");
+        model.addAttribute("step", "upload");
         Car car = new Car();
         car.setId(0L);
         model.addAttribute("car", car);
