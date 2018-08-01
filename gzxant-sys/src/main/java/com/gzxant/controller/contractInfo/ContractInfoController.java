@@ -178,12 +178,34 @@ public class ContractInfoController extends BaseController{
         return "contractInfo/detail";
     }
     
+    
+    
+    @SLog("根据合同编号查询车牌号")
+    @ApiOperation(value = "根据合同编号查询车牌号", notes = "根据合同编号查询车牌号")
+    @PostMapping(value = "/queryCarNumByContractNo")
+    @ResponseBody
+    public ReturnDTO queryCarNumByContractNo(@RequestParam("contractNo") String contractNo) {
+    	ReturnDTO returnDTO = new ReturnDTO();
+    	ContractInfo contractInfo = contractInfoService.queryContractByContractNo(contractNo);
+    	
+    	if(com.gzxant.util.StringUtils.isEmpty(contractInfo.getCarNumber())){
+    		logger.error("该合同异常，没有绑定车牌号，合同编号为：{}",contractInfo.getCarNumber());
+    		returnDTO.setCode(HttpCodeEnum.DATA_ERROR.getCode());
+    		returnDTO.setError(HttpCodeEnum.DATA_ERROR.getMessage());
+    	}else{
+    		returnDTO.setCode(HttpCodeEnum.OK.getCode());
+    		returnDTO.setData(contractInfo.getCarNumber());
+    		returnDTO.setMessage(HttpCodeEnum.OK.getMessage());
+    	}
+        return returnDTO;
+    }
+    
     @SLog("创建合同对象操作")
     @ApiOperation(value = "创建合同对象操作", notes = "创建合同对象操作")
     @PostMapping(value = "/insert")
     @ResponseBody
     public ReturnDTO create(ContractInfoVO contractInfoVO) {
-        return contractInfoService.insertContractAndCar(contractInfoVO) == true ? ReturnDTOUtil.success() : ReturnDTOUtil.fail();
+    	return contractInfoService.insertContractAndCar(contractInfoVO) == true ? ReturnDTOUtil.success() : ReturnDTOUtil.fail();
     }
     
     @SLog("进入创建合同对象界面")

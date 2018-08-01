@@ -95,4 +95,5 @@ public interface IContractInfoService extends IBaseService<ContractInfo> {
        boolean setNewGroupId(String contractNo,String groupIdNew);
        
        
+       
 }

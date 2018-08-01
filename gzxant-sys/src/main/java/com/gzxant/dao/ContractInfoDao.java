@@ -62,5 +62,5 @@ public interface ContractInfoDao extends CrudDao<ContractInfo> {
      * @return
      */
     Integer setNewGroupId(Map<String,Object> map);
-	
+    
 }

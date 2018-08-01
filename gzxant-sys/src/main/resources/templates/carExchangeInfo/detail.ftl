@@ -32,15 +32,16 @@
                         </div>
                         
                         <div class="form-group">
-                            <label class="col-sm-3 control-label">预申请车牌号<span class="required">*</span></label>
-                            <div class="col-sm-3">
-                                <input name="applyCarNumber" type="text" class="form-control" value="${carExchangeInfo.applyCarNumber}">                         	
+                            <label class="col-sm-3 control-label">原车牌号<span class="required">*</span></label>
+                            <div class="col-sm-3" readonly="readonly" >
+                                <input name="carNumber" id="carNumber" readonly="readonly" type="text" class="form-control" value="${carExchangeInfo.carNumber}">                         	
                             </div>
                             
-                            <label class="col-sm-3 control-label">原车牌号<span class="required">*</span></label>
-                            <div class="col-sm-3">
-                                <input name="carNumber" type="text" class="form-control" value="${carExchangeInfo.carNumber}">                           	
+                            <label class="col-sm-3 control-label">预申请车牌号<span class="required">*</span></label>
+                            <div class="col-sm-3"  >
+                                <input name="applyCarNumber" id="applyCarNumber" readonly="readonly"   type="text" class="form-control" value="${carExchangeInfo.applyCarNumber}">                         	
                             </div>
+                            
                         </div>
                         
                         <div class="form-group">
@@ -104,6 +105,33 @@
 				$(no).removeAttr("hidden")
 			}
 		})
+		$.ajax({
+                url: base_url +"/contractInfo/manager/queryCarNumByContractNo",
+                type: "POST",
+                data: {
+                    'contractNo': contractNoOld
+                },
+                success: function (r) {
+                	//查询的到车牌号就填充进输入框
+                    if (r.code == 200) {
+                    	$("#carNumber").val(r.data);
+                    } else if(r.code == 1001) {
+                    	//如果没查找到就隐藏掉这个合同号
+                    	$("#contractNoOld option:selected").attr("hidden","hidden");
+                    	$("#contractNoOld option:selected").text("");
+                    	$("#carNumber").val(r.data);
+                    	$("#contractNoNew option").each(function(i,no){
+							if($(no).val() === contractNoOld){
+								$(no).attr("hidden","hidden")
+								$(no).text("")
+							}
+						})
+                    }
+                    
+                    
+                }
+            });
+		
 	}
 	
 	function gradeChangeNew(){
@@ -116,6 +144,33 @@
 				$(no).removeAttr("hidden")
 			}
 		})
+		$.ajax({
+                url: base_url +"/contractInfo/manager/queryCarNumByContractNo",
+                type: "POST",
+                data: {
+                    'contractNo': contractNoNew
+                },
+                success: function (r) {
+                	//查询的到车牌号就填充进输入框
+                    if (r.code == 200) {
+                    	$("#applyCarNumber").val(r.data);
+                    } else if(r.code == 1001) {
+                    	//如果没查找到就隐藏掉这个合同号
+                    	$("#contractNoNew option:selected").attr("hidden","hidden");
+                    	$("#contractNoNew option:selected").text("");
+                    	$("#applyCarNumber").val("");
+                    	$("#contractNoOld option").each(function(i,no){
+							if($(no).val() === contractNoNew){
+								$(no).attr("hidden","hidden")
+								$(no).text("")
+							}
+						})
+                    }
+                    
+                    
+                }
+            });
+		
 	}
 
 	action = "${action}";
