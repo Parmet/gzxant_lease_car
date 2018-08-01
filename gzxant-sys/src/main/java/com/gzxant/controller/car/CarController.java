@@ -44,7 +44,7 @@ import io.swagger.annotations.ApiOperation;
  *   
  */
 @Controller
-@RequestMapping(value = "/car/manager")
+@RequestMapping(value = "/cars/manager")
 public class CarController extends BaseController {
 	
     @Autowired
@@ -53,7 +53,7 @@ public class CarController extends BaseController {
     @Autowired
     private ICarAreaService carAreaService;
 	
-    @RequiresPermissions("car:list")
+    @RequiresPermissions("cars:list")
     @SLog("进入汽车列表界面")
     @ApiOperation(value = "进入用户列表界面", notes = "进入用户列表界面")
     @GetMapping(value = "")

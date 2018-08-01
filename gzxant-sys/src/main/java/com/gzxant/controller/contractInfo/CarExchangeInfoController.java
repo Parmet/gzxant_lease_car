@@ -41,7 +41,7 @@ import io.swagger.annotations.ApiOperation;
  *   
  */
 @Controller
-@RequestMapping(value = "/carExchangeInfo/manager")
+@RequestMapping(value = "/contractInfo/carExchangeInfo/manager")
 public class CarExchangeInfoController extends BaseController{
 	@Autowired
     private ICarExchangeInfoService carExchangeInfoService;
