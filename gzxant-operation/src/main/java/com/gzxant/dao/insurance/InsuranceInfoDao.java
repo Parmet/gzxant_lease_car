@@ -1,8 +1,10 @@
 package com.gzxant.dao.insurance;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import com.gzxant.entity.insurance.InsuranceCondition;
 import org.apache.ibatis.annotations.Param;
 
 import com.gzxant.dto.InsuranceEO;
@@ -37,4 +39,6 @@ public interface InsuranceInfoDao {
 	int deleteInsuranceFile(@Param("code")String code);
 	
 	List<Map<String, String>> queryDict(Long parent_id);
+
+	Integer count(InsuranceCondition condition);
 }

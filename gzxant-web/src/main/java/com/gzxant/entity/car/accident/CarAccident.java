@@ -35,6 +35,11 @@ public class CarAccident extends DataEntity<CarAccident> {
      * 事故日期
      */
 	private String date;
+	/**
+	 * 车辆型号
+	 */
+	@TableField("car_type")
+	private String carType;
     /**
      * 驾驶员
      */
@@ -119,6 +124,13 @@ public class CarAccident extends DataEntity<CarAccident> {
 	@TableField("update_id")
 	private Long updateId;
 
+	public String getCarType() {
+		return carType;
+	}
+
+	public void setCarType(String carType) {
+		this.carType = carType;
+	}
 
 	public String getCarNumber() {
 		return carNumber;
@@ -302,6 +314,7 @@ public class CarAccident extends DataEntity<CarAccident> {
 			", driver=" + driver +
 			", place=" + place +
 			", detail=" + detail +
+			", carType=" + carType +
 			", usePropertyId=" + usePropertyId +
 			", nature=" + nature +
 			", responsibility=" + responsibility +

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gzxant.dao.ContractInfoDao">
+
+    <sql id="base_select">
+        SELECT * FROM contract_info c
+    </sql>
+    
+	<!-- 根据id查找对应的汽车信息 -->
+	<select id="selectContractInfoById" parameterType="long" resultType="contractInfo">
+        <include refid="base_select"></include> where c.id = #{id}
+    </select>
+
+	<!-- 查询所有汽车信息列表 -->
+	<select id="selectAllCarInfo" resultType="contractInfo">
+        <include refid="base_select"></include>
+    </select>
+    
+    
+	<!-- 根据合同编号查询合同对象的id -->
+	<select id="queryIdByContractNo" parameterType="string"  resultType="java.lang.Long">
+		SELECT c.id FROM contract_info c where c.contract_no = #{contractNo}
+    </select>
+    
+    <resultMap id="selectAllContractInfo" type="contractInfo">
+        <id property="id" column="id"></id>
+        <result property="remark" column="su_remark"></result>
+        <result property="delFlag" column="del_flag"></result>      
+        <result property="companyName" column="company_name"></result>
+        <result property="contractNo" column="contract_no"></result>
+        <result property="agent" column="agent"></result>
+        <result property="contractType" column="contract_type"></result>
+        <result property="businessNumber" column="business_number"></result>
+        <result property="contractStatus" column="contract_status"></result>
+        <result property="customerTypeB" column="customer_type_B"></result>
+        <result property="refundsAccountB" column="refunds_account_B"></result>
+        <result property="customerNameB" column="customer_name_B"></result>
+        <result property="refundsNameB" column="refunds_name_B"></result>
+        <result property="refundsBankB" column="refunds_bank_B"></result>
+        <result property="customerPhoneB" column="customer_phone_B"></result>
+        <result property="customerTypeC" column="customer_type_C"></result>
+        <result property="refundsAccountC" column="refunds_account_C"></result>
+        <result property="customerNameC" column="customer_name_C"></result>
+        <result property="refundsNameC" column="refunds_name_C"></result>
+        <result property="refundsBankC" column="refunds_bank_C"></result>
+        <result property="carRentalDeposit" column="car_rental_deposit"></result>
+        <result property="receivableAccount" column="receivable_account"></result>
+        <result property="violationDeposit" column="violation_deposit"></result>
+        <result property="receivableName" column="receivable_name"></result>
+        <result property="contractAmount" column="contract_amount"></result>
+        <result property="contractBank" column="contract_bank"></result>
+        <result property="leaseBeginDate" column="lease_beginDate"></result>
+        <result property="leaseEndDate" column="lease_endDate"></result>
+        <result property="paymentMethod" column="payment_method"></result>
+        <result property="enclosure" column="enclosure"></result>
+        <result property="carNumber" column="car_number"></result>
+    </resultMap>
+
+</mapper>

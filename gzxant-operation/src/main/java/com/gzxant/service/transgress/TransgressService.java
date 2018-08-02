@@ -1,5 +1,6 @@
 package com.gzxant.service.transgress;
 
+import java.util.Date;
 import java.util.List;
 
 import com.gzxant.controller.vo.TransgressVo;
@@ -17,5 +18,9 @@ public interface TransgressService {
 	*/
 	void add(Transgress tg);
 
+	/**
+	 * 统计
+	 */
+	Integer count(Long userUnit, Date beginDate, Date endDate);
 
 }

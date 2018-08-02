@@ -189,7 +189,17 @@
 	<update id="deleteInsuranceFile">
 		update operation_insurance_file set isDelete=1 where code=#{code}
 	</update>
-	
+
+	<select id="count" parameterType="com.gzxant.entity.insurance.InsuranceCondition" resultType="Integer">
+		select count(1) from operation_insurance_info where 1=1
+		<if test=' id != null and id != "" '>
+			and buyOrganizationId = #{id}
+		</if>
+		<if test=' beginDate != null and endDate != null'>
+			and createTime between #{beginDate} and #{endDate}
+		</if>
+	</select>
+
 	<select id="queryInsuranceList" parameterType="com.gzxant.dto.InsuranceEO" resultType="com.gzxant.vo.InsuranceVo">
 		select 
 		i.*, 

@@ -1,5 +1,6 @@
 package com.gzxant.service.accident;
 
+import java.util.Date;
 import java.util.List;
 
 import com.gzxant.controller.vo.AccidentVo;
@@ -31,5 +32,10 @@ public interface AccidentService {
 	 * 删除
 	 */
 	void delete(Integer id);
+
+	/**
+	 * 统计
+	 */
+	Integer count(Long id, Date beginDate, Date endDate);
 
 }
