@@ -40,7 +40,7 @@ import io.swagger.annotations.ApiOperation;
 
 @Controller
 @RequestMapping(value = "/file")
-public class FileController {
+public class  FileController {
     protected Logger logger = LoggerFactory.getLogger(getClass());
 
     @ApiOperation(value = "查看上传的图片", notes = "查看上传的图片")

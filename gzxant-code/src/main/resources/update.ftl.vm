@@ -1,5 +1,6 @@
 <div class="wrapper wrapper-content animated fadeInRight">
     <form class="form-horizontal form-bordered" id="gzxantForm" >
+        <input id="id" name="id" type="hidden" value="${entity.id}" />
         #set( $d = "." )
         #set( $s = "${" )
         #foreach($field in ${table.fields})

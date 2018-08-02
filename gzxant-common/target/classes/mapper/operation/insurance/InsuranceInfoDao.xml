@@ -43,7 +43,7 @@
 				<![CDATA[ and i.workDate <= DATE_FORMAT(NOW(),'%Y-%m-%d') and DATE_FORMAT(NOW(),'%Y-%m-%d') <= i.expiryDate ]]> 
 			</if>
 		</if>
-		order by i.createTime
+		order by i.createTime desc
 		limit #{start},#{pageSize}
 	</select>
 	
@@ -95,10 +95,10 @@
 	</select>
 	
 	<insert id="insertInsuranceInfo" parameterType="com.gzxant.entity.insurance.InsuranceInfo">
-		insert into operation_insurance_info (code,carNo,buyOrganization,insuranceNo,insuranceType,insuranceCompany,carAgeLimit,
+		insert into operation_insurance_info (code,carNo,buyOrganizationId,buyOrganization,insuranceNo,insuranceTypeId,insuranceType,insuranceCompanyId,insuranceCompany,carAgeLimit,
 		insuranceCommissioner,insuranceTotalAmount,workDate,expiryDate,claimsTel,agentName,createTime,updateTime)
 		values 
-		(#{code},#{carNo},#{buyOrganization},#{insuranceNo},#{insuranceType},#{insuranceCompany},#{carAgeLimit},
+		(#{code},#{carNo},#{buyOrganizationId},#{buyOrganization},#{insuranceNo},#{insuranceTypeId},#{insuranceType},#{insuranceCompanyId},#{insuranceCompany},#{carAgeLimit},
 		#{insuranceCommissioner},#{insuranceTotalAmount},#{workDate},#{expiryDate},#{claimsTel},#{agentName},#{createTime},#{updateTime})
 	</insert>
 	
@@ -120,14 +120,23 @@
 			<if test="carNo != null">
 				carNo=#{carNo},
 			</if>
+			<if test="buyOrganizationId != null">
+				buyOrganizationId=#{buyOrganizationId},
+			</if>
 			<if test="buyOrganization != null">
 				buyOrganization=#{buyOrganization},
 			</if>
 			<if test="insuranceNo != null">
 				insuranceNo=#{insuranceNo},
 			</if>
+			<if test="insuranceTypeId != null">
+				insuranceTypeId=#{insuranceTypeId},
+			</if>
 			<if test="insuranceType != null">
 				insuranceType=#{insuranceType},
+			</if>
+			<if test="insuranceCompanyId != null">
+				insuranceCompanyId=#{insuranceCompanyId},
 			</if>
 			<if test="insuranceCompany != null">
 				insuranceCompany=#{insuranceCompany},
@@ -180,4 +189,52 @@
 	<update id="deleteInsuranceFile">
 		update operation_insurance_file set isDelete=1 where code=#{code}
 	</update>
+	
+	<select id="queryInsuranceList" parameterType="com.gzxant.dto.InsuranceEO" resultType="com.gzxant.vo.InsuranceVo">
+		select 
+		i.*, 
+		c.assets_belong,
+		case
+		when c.assets_state=0 then '已租'
+		when c.assets_state=1 then '未租'
+		end as assets_state,
+		c.vehicle_type
+		from operation_insurance_info i
+		left join car c on i.carNo=c.car_number
+		where i.isDelete = 0
+		<if test="assets_belong != null and assets_belong != ''">
+			and c.assets_belong=#{assets_belong}
+		</if>
+		<if test="carType != null and carType != ''">
+			and c.vehicle_type=#{carType}
+		</if>
+		<if test="carNo != null and carNo != ''">
+			and i.carNo=#{carNo}
+		</if>
+		<if test="insuranceNo != null and insuranceNo != ''">
+			and i.insuranceNo=#{insuranceNo}
+		</if>
+		<if test="workDate != null">
+			<![CDATA[ and i.workDate >= #{workDate} ]]>
+		</if>
+		<if test="expiryDate != null">
+			<![CDATA[ and i.expiryDate <= #{expiryDate} ]]>
+		</if>
+		<if test="distanceExpiryDay != null">
+			<![CDATA[ and i.expiryDate=DATE_ADD(DATE_FORMAT(NOW(),'%Y-%m-%d'), INTERVAL ${distanceExpiryDay} DAY) ]]>
+		</if>
+		<if test="status != null">
+			<if test="status == 0">
+				<![CDATA[ and i.expiryDate < DATE_FORMAT(NOW(),'%Y-%m-%d') ]]> 
+			</if>
+			<if test="status == 1">
+				<![CDATA[ and i.workDate <= DATE_FORMAT(NOW(),'%Y-%m-%d') and DATE_FORMAT(NOW(),'%Y-%m-%d') <= i.expiryDate ]]> 
+			</if>
+		</if>
+		order by i.createTime
+	</select>
+	
+	<select id="queryDict" resultType="map">
+		select id,jvalue from sys_dict where parent_id=#{parent_id} and del_flag != 'N' and invalid='Y'
+	</select>
 </mapper>

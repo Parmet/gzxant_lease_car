@@ -24,6 +24,9 @@ public class GzxantSysUser {
         return ShiroUser().getPhoto();
     }
 
+    public static Long companyId() {
+        return ShiroUser().getId();
+    }
     public static Long id() {
         return ShiroUser().getId();
     }
