@@ -11,11 +11,19 @@ public class ReturnDTO {
     private int code;
     private String error;
     private Object message;
+    private Object data;
 
     public ReturnDTO(int code, String error, Object message) {
         this.code = code;
         this.error = error;
         this.message = message;
+    }
+    
+    public ReturnDTO(int code, String error, Object message,Object data) {
+    	this.code = code;
+    	this.error = error;
+    	this.message = message;
+    	this.data = data;
     }
     public ReturnDTO(int code, String error) {
         this.code = code;
@@ -49,5 +57,14 @@ public class ReturnDTO {
     public void setMessage(Object message) {
         this.message = message;
     }
+
+	public Object getData() {
+		return data;
+	}
+
+	public void setData(Object data) {
+		this.data = data;
+	}
+    
 }
 

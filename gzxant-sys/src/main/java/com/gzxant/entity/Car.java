@@ -11,6 +11,20 @@ public class Car extends DataEntity<Car>{
 
 	private static final long serialVersionUID = 1L;
 	
+	
+	
+	/**
+	 * 附件姓名
+	 */
+	@TableField(value ="enclosure_name")
+	private String enclosureName;
+	
+	/**
+	 * 公司ID
+	 */
+	@TableField(value ="company_id")
+	private Long companyId;
+	
 	/**
 	 * 车牌号码 
 	 */
@@ -143,7 +157,7 @@ public class Car extends DataEntity<Car>{
 	 * 登记证登记日期
 	 */
 	@TableField(value ="registration_date")
-	private String registrationDeta;
+	private String registrationDate;
 	
 	/**
 	 * 登记证发证日期
@@ -464,14 +478,14 @@ public class Car extends DataEntity<Car>{
 
 
 
-	public String getRegistrationDeta() {
-		return registrationDeta;
+	public String getRegistrationDate() {
+		return registrationDate;
 	}
 
 
 
-	public void setRegistrationDeta(String registrationDeta) {
-		this.registrationDeta = registrationDeta;
+	public void setRegistrationDate(String registrationDate) {
+		this.registrationDate = registrationDate;
 	}
 
 
@@ -558,7 +572,7 @@ public class Car extends DataEntity<Car>{
 
 
 	public void setDLRDate(String DLRDate) {
-		DLRDate = DLRDate;
+		this.DLRDate = DLRDate;
 	}
 
 
@@ -570,7 +584,7 @@ public class Car extends DataEntity<Car>{
 
 
 	public void setDLCDate(String DLCDate) {
-		DLCDate = DLCDate;
+		this.DLCDate = DLCDate;
 	}
 
 
@@ -583,6 +597,22 @@ public class Car extends DataEntity<Car>{
 
 	public void setDrivingLicenseNumber(String drivingLicenseNumber) {
 		this.drivingLicenseNumber = drivingLicenseNumber;
+	}
+
+	public Long getCompanyId() {
+		return companyId;
+	}
+
+	public void setCompanyId(Long companyId) {
+		this.companyId = companyId;
+	}
+	
+	public String getEnclosureName() {
+		return enclosureName;
+	}
+	
+	public void setEnclosureName(String enclosureName) {
+		this.enclosureName = enclosureName;
 	}
 
 

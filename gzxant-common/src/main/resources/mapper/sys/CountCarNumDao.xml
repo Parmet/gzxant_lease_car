@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gzxant.dao.CountCarNumDao">
+
+	<!-- 查找汽车数量 -->
+	<select id="getCarNumCount"  resultType="integer">
+		SELECT count(*) FROM car c 
+        <where>
+	        1 = 1 
+	    <!--    判断是否是admin ,admin查询所有数据，非admin查询当前公司的信息-->
+	        <if test="companyId != null">
+	        	and c.companyId = #{companyId}
+	        </if>
+	        <if test="beginDateStr == null and beginDateStr!=''">
+		        and c.create_date >= #{beginDateStr} 
+	        </if>
+	        
+	        <if test="endDateStr == null and endDateStr!=''">
+		        and c.create_date &lt;= #{endDateStr}
+	        </if>
+	        
+        </where>
+    </select>
+    
+</mapper>

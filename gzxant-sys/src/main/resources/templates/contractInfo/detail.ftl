@@ -4,10 +4,11 @@
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
    
-                    <form class="form-horizontal form-bordered" id="gzxantForm" >
+                    <form class="form-horizontal form-bordered" id="gzxantForm" enctype="multipart/form-data" method="post">
                         <input type="hidden" name="contractInfoId" value="${contractInfo.id}"/>
                         <input type="hidden" name="contractCarInfoId" value="${contractCarInfo.id}"/>
-                        
+                        <input type="hidden" name="enclosure" value="${contractInfo.enclosure}" id="enclosure"/>
+                        <input type="hidden" name="enclosureName" value="${contractInfo.enclosureName}" id="enclosureName"/>
                         <ul id="myTab" class="nav nav-tabs">
 							<li class="active">
 								<a href="#contractInfo" data-toggle="tab">合同基本信息</a>
@@ -235,16 +236,76 @@
 			                     <div class="form-group">
 			                         <label class="col-sm-2 control-label">备注</label>
 			                         <div class="col-sm-4">
-			                             <input name="remark1" type="text"  onkeyup="clearNoNum(this)" class="form-control" value="${contractCarInfo.remark1}">			                         
+			                             <input name="remark1" type="text"   class="form-control" value="${contractCarInfo.remark1}">			                         
 			                         </div>
 			                     </div>
 			                     							
 							</div>
-							
 							<div class="tab-pane fade" id="contractInfo-enclosure">
-								<p>合同附件信息</p>
+							    
+					                    <script src="${rc.contextPath}/js/plugins/dropzone/dropzone.min.js"></script>
+					                    <link href="${rc.contextPath}/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+					                    <div class="col-sm-4">
+					                        	<div id="zone" name="zone" class="dropzone" onclick="downLoadDoc()">
+					                        		<div class="dz-default dz-message">
+					                        			<span>请点击下载</span>
+					                        		</div>
+					                        	</div>
+					                        	<div id="mydropzone" name="mydropzone" class="dropzone"></div>
+					                    </div>
+					                    <script type="text/javascript">
+						                    // --------------------------文件上传--------------00------------------------------------ //
+						                    
+						                    
+						                <#if step =='upload'>
+						                	$('#zone').attr("hidden","hidden")
+						                    Dropzone.autoDiscover = false;
+										    var myDropzone = new Dropzone("div#mydropzone", {
+										        url: base_url+"/file/upload/avatar",
+										        filesizeBase: 1024,//定义字节算法 默认1000
+										        maxFiles: 2,//最大文件数量
+										        maxFilesize: 100, //MB
+										        fallback: function () {
+										            layer.alert('暂不支持您的浏览器上传!');
+										        },
+										        uploadMultiple: false,
+										        addRemoveLinks: true,
+										        dictFileTooBig: '您的文件超过' + 100 + 'MB!',
+										        dictInvalidInputType: '不支持您上传的类型',
+										        dictMaxFilesExceeded: '您的文件超过1个!',
+										        init: function () {
+										            this.on('queuecomplete', function (files) {
+										                // layer.alert('上传成功');
+										            });
+										            this.on('success', function (uploadimfo, result) {
+										                console.info(result);
+										                $("#enclosure").val(result.message[0].url);
+										                $("#enclosureName").val(result.message[0].docName);
+										                layer.alert('上传成功');
+										                
+										            });
+										            this.on('error', function (a, errorMessage, result) {
+										                if (!result) {
+										                    layer.alert(result.error || '上传失败');
+										                }
+										            });
+										            this.on('maxfilesreached', function () {
+										                this.removeAllFiles(true);
+										                layer.alert('文件数量超出限制');
+										            });
+										            this.on('removedfile', function () {
+										                layer.alert('删除成功');
+										            });
+										
+										        }
+										    });
+				               	</#if>
+				               	<#if step =='download'>
+				               		$('#mydropzone').attr("hidden","hidden")
+				               	</#if>
+				               	
+					                	</script>
 							</div>
-							
 						</div>
                         
 	                        
@@ -256,7 +317,6 @@
 	                        </div>
 	                    </#if>
                     </form>
-
                 </div>
             </div>
         </div>
@@ -266,6 +326,14 @@
 
 <script type="text/javascript">
 
+    <#if step =='download'>
+		function downLoadDoc(){
+			var docUrl = '${contractInfo.enclosure?replace("\\", "\\\\")?replace("/", "//")}';
+		    docUrl = url + "/download?docUrl=" + encodeURIComponent(docUrl) 
+		         + "&name=" + encodeURIComponent("${contractInfo.enclosureName}");
+		    window.open(docUrl);
+		}
+	</#if>
 	$(function () {
 		$('#contractInfo li:eq(1) a').tab('show');
 	});
@@ -300,6 +368,7 @@
 
 
 	action = "${action}";
+	step = "${step}";
     function  cusFunction() {
         console.info("提交之前，最后执行自定义的函数");
     }

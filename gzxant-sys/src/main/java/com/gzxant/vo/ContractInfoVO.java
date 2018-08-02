@@ -12,6 +12,11 @@ import com.baomidou.mybatisplus.annotations.TableField;
 public class ContractInfoVO {
 
 	/**
+	 * 合同附件名称
+	 */
+	public String enclosureName;
+	
+	/**
 	 * 合同对象的Id
 	 */
 	public Long contractInfoId;
@@ -479,6 +484,14 @@ public class ContractInfoVO {
 
 	public void setContractCarInfoId(Long contractCarInfoId) {
 		this.contractCarInfoId = contractCarInfoId;
+	}
+
+	public String getEnclosureName() {
+		return enclosureName;
+	}
+
+	public void setEnclosureName(String enclosureName) {
+		this.enclosureName = enclosureName;
 	}
 	
 	
