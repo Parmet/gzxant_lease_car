@@ -32,8 +32,8 @@ public enum HttpCodeEnum {
     INTERNAL_SERVER_ERROR(500,"服务器发生错误"),
     UN_KNOW_ERROR(500,"未知错误"),
     FAIL(501,"操作失败"),
-
     MODEL_NOT_EXIST(1000, "模型不存在"),
+    DATA_ERROR(1001, "数据异常"),
 
     USERNAME_OR_PASSWORD_ERR(2000,"用户名或密码错误"),
     DELETE_DEFAULT_PHOTO_ERR(2001,"默认头像不可删除"), TOKEN_ERR(200, "token无效");

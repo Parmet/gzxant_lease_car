@@ -1,6 +1,7 @@
 package com.gzxant.entity;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.annotations.TableName;
@@ -12,10 +13,22 @@ public class CarExchangeInfo extends DataEntity<CarExchangeInfo>{
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * 合同编号
+	 * 合同金额
 	 */
-	@TableField(value ="contract_no")
-	public String contractNo;
+	@TableField(value ="contract_amount")
+	public BigDecimal contractAmount;
+	
+	/**
+	 * 合同编号（旧）
+	 */
+	@TableField(value ="contract_no_old")
+	public String contractNoOld;
+	
+	/**
+	 * 合同编号（旧）
+	 */
+	@TableField(value ="contract_no_new")
+	public String contractNoNew;
 	
 	/**
 	 * 车牌号
@@ -58,103 +71,85 @@ public class CarExchangeInfo extends DataEntity<CarExchangeInfo>{
 	@TableField(value ="apply_reason")
 	public String applyReason;
 	
-	
-	
-	public String getContractNo() {
-		return contractNo;
+	public String getContractNoOld() {
+		return contractNoOld;
 	}
 
-
-
-	public void setContractNo(String contractNo) {
-		this.contractNo = contractNo;
+	public void setContractNoOld(String contractNoOld) {
+		this.contractNoOld = contractNoOld;
 	}
-
-
 
 	public String getCarNumber() {
 		return carNumber;
 	}
 
-
-
 	public void setCarNumber(String carNumber) {
 		this.carNumber = carNumber;
 	}
-
-
 
 	public String getApplyCarNumber() {
 		return applyCarNumber;
 	}
 
-
-
 	public void setApplyCarNumber(String applyCarNumber) {
 		this.applyCarNumber = applyCarNumber;
 	}
-
-
 
 	public String getApplyDate() {
 		return applyDate;
 	}
 
-
-
 	public void setApplyDate(String applyDate) {
 		this.applyDate = applyDate;
 	}
-
-
 
 	public String getApplicant() {
 		return applicant;
 	}
 
-
-
 	public void setApplicant(String applicant) {
 		this.applicant = applicant;
 	}
-
-
 
 	public String getApplicantIDNum() {
 		return applicantIDNum;
 	}
 
-
-
 	public void setApplicantIDNum(String applicantIDNum) {
 		this.applicantIDNum = applicantIDNum;
 	}
-
-
 
 	public String getApplicationUnit() {
 		return applicationUnit;
 	}
 
-
-
 	public void setApplicationUnit(String applicationUnit) {
 		this.applicationUnit = applicationUnit;
 	}
-
-
 
 	public String getApplyReason() {
 		return applyReason;
 	}
 
-
-
 	public void setApplyReason(String applyReason) {
 		this.applyReason = applyReason;
 	}
 
+	public String getContractNoNew() {
+		return contractNoNew;
+	}
 
+	public void setContractNoNew(String contractNoNew) {
+		this.contractNoNew = contractNoNew;
+	}
+
+	public BigDecimal getContractAmount() {
+		return contractAmount;
+	}
+
+	public void setContractAmount(BigDecimal contractAmount) {
+		this.contractAmount = contractAmount;
+	}
 
 	@Override
 	protected Serializable pkVal() {

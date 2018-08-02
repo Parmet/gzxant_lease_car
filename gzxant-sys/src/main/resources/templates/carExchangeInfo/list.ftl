@@ -16,7 +16,7 @@
                                     
                                     <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-group">
                                         <label for="nameInput" class="control-label">合同号：</label>
-                                        <input type="text" class="form-filter form-control _search" id="nameInput" name="search_like_contract_no"  />                                      
+                                        <input type="text" class="form-filter form-control _search" id="nameInput" name="search_like_contract_no_new"  />                                      
                                     </div>
                                     
                                     <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12 form-group">
@@ -58,7 +58,7 @@
                 checkbox: true
             },
             {
-                field: 'contractNo', // 列字段名
+                field: 'contractNoNew', // 列字段名
                 title: '合同编号' // 列标题
             },
             {

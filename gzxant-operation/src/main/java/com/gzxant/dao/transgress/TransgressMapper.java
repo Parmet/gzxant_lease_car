@@ -1,5 +1,6 @@
 package com.gzxant.dao.transgress;
 
+import java.util.Date;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Insert;
@@ -73,5 +74,17 @@ public interface TransgressMapper {
 			+"#{queryTime},#{updateTime})")
 	@Options(useGeneratedKeys = true, keyProperty = "id")
 	void add(Transgress tg);
+
+	@Select({"<script>",
+			"select count(1) from oper_transgress where 1=1 ",
+			/*  所属组织|使用单位  */
+			"<if test=' id != null and id != \"\" '>",
+			" and asset_company = #{id} ",
+			"</if>",
+			"<if test=' beginDate != null and endDate != null '>",
+			" and tg_time between #{beginDate} and #{endDate}",
+			"</if>",
+			"</script>"})
+	int selectCount(Long id, Date beginDate, Date endDate);
 
 }

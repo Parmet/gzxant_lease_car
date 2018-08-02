@@ -17,6 +17,14 @@ public class ReturnDTOUtil {
     public static ReturnDTO success() {
         return new ReturnDTO(HttpCodeEnum.OK.getCode(),null, HttpCodeEnum.OK.getMessage());
     }
+    
+    /**
+     * 请求成功,并返回数据
+     * @return
+     */
+    public static ReturnDTO success2Data(Object data) {
+    	return new ReturnDTO(HttpCodeEnum.OK.getCode(),null, HttpCodeEnum.OK.getMessage(),data);
+    }
 
     /**
      * 成功请求
