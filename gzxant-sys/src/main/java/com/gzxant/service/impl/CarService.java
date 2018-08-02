@@ -1,10 +1,7 @@
 package com.gzxant.service.impl;
 
-<<<<<<< HEAD
 import java.util.List;
 
-=======
->>>>>>> origin/features/yc
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

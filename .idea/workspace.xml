@@ -2,293 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ade73155-e223-4db0-abb0-b185ac37b48d" name="Default" comment="自動化生成通用曾刪改差代碼">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL$SQLCondition.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL$SQLCondition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL$SafeAppendable.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL$SafeAppendable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisDefaultParameterHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisDefaultParameterHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisMapperAnnotationBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisMapperAnnotationBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisMapperRegistry.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisMapperRegistry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisSessionFactoryBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisSessionFactoryBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisSqlSessionTemplate$SqlSessionInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisSqlSessionTemplate$SqlSessionInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisSqlSessionTemplate.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisSqlSessionTemplate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisXMLConfigBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisXMLConfigBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisXMLLanguageDriver.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisXMLLanguageDriver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/activerecord/Model.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/activerecord/Model.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/Column.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/Column.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/Columns.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/Columns.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/DefaultMetaObjectHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/DefaultMetaObjectHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/GlobalConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/GlobalConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/TableFieldInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/TableFieldInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/TableInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/entity/TableInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/DBType.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/DBType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/FieldFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/FieldFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/FieldStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/FieldStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/IdType.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/IdType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/SqlLike.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/SqlLike.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/SqlMethod.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/enums/SqlMethod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/exceptions/MybatisPlusException.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/exceptions/MybatisPlusException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/AutoGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/AutoGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/InjectionConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/InjectionConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/DataSourceConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/DataSourceConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/FileOutConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/FileOutConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/GlobalConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/GlobalConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/ITypeConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/ITypeConvert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/PackageConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/PackageConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/StrategyConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/StrategyConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/TemplateConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/TemplateConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/builder/ConfigBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/builder/ConfigBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/converts/MySqlTypeConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/converts/MySqlTypeConvert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/converts/OracleTypeConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/converts/OracleTypeConvert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/converts/PostgreSqlTypeConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/converts/PostgreSqlTypeConvert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/converts/SqlServerTypeConvert.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/converts/SqlServerTypeConvert.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/po/TableField.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/po/TableField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/po/TableFill.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/po/TableFill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/po/TableInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/po/TableInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/rules/DbColumnType.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/rules/DbColumnType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/rules/DbType.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/rules/DbType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/rules/NamingStrategy.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/rules/NamingStrategy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/rules/QuerySQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/generator/config/rules/QuerySQL.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/DB2KeyGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/DB2KeyGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/H2KeyGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/H2KeyGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/IKeyGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/IKeyGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/OracleKeyGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/OracleKeyGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/PostgreKeyGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/incrementer/PostgreKeyGenerator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/AutoSqlInjector$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/AutoSqlInjector$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/AutoSqlInjector$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/AutoSqlInjector$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/AutoSqlInjector.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/AutoSqlInjector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/BaseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/BaseMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/EntityWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/EntityWrapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/ISqlInjector.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/ISqlInjector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/LogicSqlInjector.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/LogicSqlInjector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/MetaObjectHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/MetaObjectHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/PostgreSqlInjector.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/PostgreSqlInjector.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/SqlHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/SqlHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/SqlPlus.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/SqlPlus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/SqlRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/SqlRunner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/Wrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/mapper/Wrapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/parser/AbstractSqlParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/parser/AbstractSqlParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/parser/SqlInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/parser/SqlInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/CachePaginationInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/CachePaginationInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/EntityField.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/EntityField.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/OptimisticLockerInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/OptimisticLockerInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/Page.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/Page.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/PaginationInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/PaginationInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/PerformanceInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/PerformanceInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/SqlExplainInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/SqlExplainInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/TenancyInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/TenancyInterceptor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/DialectFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/DialectFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/IDialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/IDialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/PageHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/PageHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/Pagination.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/Pagination.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/DB2Dialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/DB2Dialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/H2Dialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/H2Dialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/HSQLDialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/HSQLDialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/MySqlDialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/MySqlDialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/OracleDialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/OracleDialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/PostgreDialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/PostgreDialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/SQLServer2005Dialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/SQLServer2005Dialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/SQLServerDialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/SQLServerDialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/SQLiteDialect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/dialects/SQLiteDialect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/optimize/JsqlParserCountOptimize.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/pagination/optimize/JsqlParserCountOptimize.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/tenancy/TenancySqlParser.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/tenancy/TenancySqlParser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/tenancy/TenantInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/tenancy/TenantInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/tenancy/handler/RegxTenancyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/tenancy/handler/RegxTenancyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/tenancy/handler/TenancyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/plugins/tenancy/handler/TenancyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/service/IService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/service/IService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/service/impl/ServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/service/impl/ServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/spring/MybatisMapperRefresh$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/spring/MybatisMapperRefresh$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/spring/MybatisMapperRefresh.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/spring/MybatisMapperRefresh.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/spring/MybatisSqlSessionFactoryBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/spring/MybatisSqlSessionFactoryBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/ArrayUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/ArrayUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/ClassUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/ClassUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/CollectionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/CollectionUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/GlobalConfigUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/GlobalConfigUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/IOUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/IOUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/JdbcUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/JdbcUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/MapUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/MapUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/PackageHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/PackageHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/PluginUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/PluginUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/ReflectionKit.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/ReflectionKit.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/Sequence.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/Sequence.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SqlFormatter$FormatProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SqlFormatter$FormatProcess.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SqlFormatter.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SqlFormatter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SqlReservedWords.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SqlReservedWords.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SqlUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SqlUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/StringEscape.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/StringEscape.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/StringUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SystemClock$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SystemClock$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SystemClock$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SystemClock$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SystemClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/SystemClock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/TableInfoHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/TableInfoHelper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/VersionUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/toolkit/VersionUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/gzxant/code/generate/CodeGenerate$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/gzxant/code/generate/CodeGenerate$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/gzxant/code/generate/CodeGenerate$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/gzxant/code/generate/CodeGenerate$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/gzxant/code/generate/CodeGenerate$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/gzxant/code/generate/CodeGenerate$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/gzxant/code/generate/CodeGenerate.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/gzxant/code/generate/CodeGenerate.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/controller.java.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/detail.ftl.vm" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/detail.ftl.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/list.ftl.vm" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/list.ftl.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/BaseApiClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/BaseApiClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/BaseApiClientBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/BaseApiClientBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/HttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/HttpClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/enums/Method.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/enums/Method.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/enums/ParamPosition.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/enums/ParamPosition.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/enums/Scheme.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/enums/Scheme.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/exception/SdkClientException.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/exception/SdkClientException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheHttpClient$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheHttpClient$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheHttpClient$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheHttpClient$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheHttpClient$DeafultAsyncThreadFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheHttpClient$DeafultAsyncThreadFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheHttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheHttpClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheIdleConnectionCleaner.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/ApacheIdleConnectionCleaner.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/HttpClientFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/http/HttpClientFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/model/ApiCallBack.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/model/ApiCallBack.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/model/ApiRequest.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/model/ApiRequest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/model/ApiResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/model/ApiResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/model/BuilderParams.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/model/BuilderParams.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/util/SignUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/controller/BaseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/dao/BaseDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/dao/BaseDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/dao/TreeDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/dao/TreeDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/BaseEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/BaseEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/CarEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/CarEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/DataEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/DataEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/ReturnDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/ReturnDTO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/TreeEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/entity/TreeEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/service/IBaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/service/IBaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/service/impl/BaseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/service/impl/BaseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/BaseVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/BaseVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/DataTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/DataTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/JsTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/JsTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/JsTreeState.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/JsTreeState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/PCAjaxVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/base/vo/PCAjaxVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/cache/BaseCacheFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/cache/BaseCacheFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/cache/CacheUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/cache/CacheUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/cache/EhcacheFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/cache/EhcacheFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/cache/ICache.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/cache/ICache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/InstallBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/InstallBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/Setup.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/Setup.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/mvc/MvcConfiguration$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/mvc/MvcConfiguration$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/mvc/MvcConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/mvc/MvcConfiguration.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/plus/SysMetaObjectHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/plus/SysMetaObjectHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/sitemesh/ScriptTagRuleBundle.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/sitemesh/ScriptTagRuleBundle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/sitemesh/SiteMeshConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/sitemesh/SiteMeshConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/sitemesh/WebSiteMeshFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/sitemesh/WebSiteMeshFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/websocket/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/websocket/WebSocketConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/DataScopeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/DataScopeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/HttpCodeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/HttpCodeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/exception/SlifeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/exception/SlifeException.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/exception/SlifeExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/exception/SlifeExceptionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/filter/AuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/filter/AuthFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/rest/JwtProperties.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/rest/JwtProperties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/rest/JwtTokenUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/rest/JwtTokenUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/shiro/GzxantSysUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/shiro/GzxantSysUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/shiro/ShiroUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/shiro/ShiroUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/ApplicationContextRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/ApplicationContextRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/DateUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/DateUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/Digests.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/Digests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/Encodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/Encodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/ExcelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/Exceptions.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/Exceptions.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/FileUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/FileUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/IPUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/IPUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/PathUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/PathUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/PinyinUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/PinyinUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/RenderUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/RenderUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/ReturnDTOUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/ReturnDTOUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/StringUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/StringUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/data/JsonUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/data/JsonUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/AsyncApiClient$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/AsyncApiClient$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/AsyncApiClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/AsyncApiClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/ImageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/ImageUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/OcrAsyncApi$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/OcrAsyncApi$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/OcrAsyncApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/OcrAsyncApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/OcrSyncApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/OcrSyncApi.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/SyncApiClient$Builder.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/SyncApiClient$Builder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/SyncApiClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/SyncApiClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/baidu/ImageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/image/ocr/baidu/ImageUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/page/PageUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/page/PageUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/page/Pagination.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/page/Pagination.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/page/SimplePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/page/SimplePage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/pdf/PDFUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/util/pdf/PDFUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/mapper/operation/insurance/InsuranceInfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/mapper/operation/insurance/InsuranceInfoDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/static/js/plugins/iTable/iTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/static/js/plugins/iTable/iTable.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/aspect/SLogAspect.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/aspect/SLogAspect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/aspect/SaveLogTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/aspect/SaveLogTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/controller/GzxantLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/controller/GzxantLogController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/entity/GzxantLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/entity/GzxantLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/cache/ShiroRedisCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/cache/ShiroRedisCache.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/cache/ShiroRedisCacheManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/cache/ShiroRedisCacheManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/shiro/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/shiro/ShiroConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/AttachmentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/AttachmentController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SignController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SignController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SiteMeshController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SiteMeshController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysConfigController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysConfigController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysDictController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysDictController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysMenuController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysMenuController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysOfficeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysOfficeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysRoleController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysRoleController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysUserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/SysUserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/car/CarAreaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/car/CarAreaController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/car/CarController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/car/CarController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/car/CarSetController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/controller/car/CarSetController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/CarAreaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/CarAreaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/CarDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/CarDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/CarSetDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/CarSetDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysConfigDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysConfigDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysDictDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysDictDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysMenuDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysMenuDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysRoleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysRoleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysUserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/dao/SysUserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/Car.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/CarArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/CarArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/CarSet.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/CarSet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/CompanyLinkEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/CompanyLinkEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysArea.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysArea.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysCompany.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysCompany.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysDict.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysDict.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysOffice.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysOffice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysRoleMenu.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysRoleMenu.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysUserOffice.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysUserOffice.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysUserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/entity/SysUserRole.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/enums/CarSizeNameEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/enums/CarSizeNameEnums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/enums/CarTrainNameEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/enums/CarTrainNameEnums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/enums/CityNameEnums.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/enums/CityNameEnums.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/enums/SysMenuType.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/enums/SysMenuType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ICarAreaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ICarAreaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ICarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ICarService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ICarSetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ICarSetService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysConfigService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysConfigService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysDictService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysMenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysMenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysOfficeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysOfficeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysUserOfficeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysUserOfficeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/ISysUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/CarAreaService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/CarAreaService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/CarService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/CarService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/CarSetService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/CarSetService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysConfigService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysConfigService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysDictService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysDictService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysMenuService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysMenuService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysOfficeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysOfficeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysRoleService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysUserOfficeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysUserOfficeService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/service/impl/SysUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/shiro/AuthRealm.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/shiro/AuthRealm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/util/PasswordUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/util/PasswordUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/vo/SysMenuVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/vo/SysMenuVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/vo/SysRoleVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/vo/SysRoleVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/vo/SysUserVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/vo/SysUserVO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/test-classes/PasswordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/test-classes/PasswordTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/target/test-classes/StreamTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/test-classes/StreamTest$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/service/accident/list.ftl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-code/gzxant-code.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/gzxant-common.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/ShiroUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/ShiroUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-common/src/main/resources/application-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/src/main/resources/application-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-log/gzxant-log.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/gzxant-sys.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/controller/FileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/controller/car/CarController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/controller/car/CarController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/service/impl/CarService.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/service/impl/CarService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/shiro/AuthRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/shiro/AuthRealm.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/gzxant-sys/target/" />
     <ignored path="$PROJECT_DIR$/gzxant-web/target/" />
@@ -384,7 +109,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -516,7 +241,17 @@
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
-      <expand />
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="gzxant_lease_car" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="gzxant_lease_car" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
       <select />
     </treeState>
   </component>
@@ -537,6 +272,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -566,9 +304,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -584,10 +319,13 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533189319512" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../cctv/gzxant_enroll" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pom.xml" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.ignored.files" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -658,6 +396,53 @@
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <module name="gzxant-web" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType" factoryName="Kotlin script">
+      <module name="gzxant-web" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -737,7 +522,7 @@
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27727273" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28636363" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -768,7 +553,7 @@
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info anchor="right" id="Database" order="7" weight="0.32980332" />
       <window_info anchor="right" id="Bean Validation" order="8" />
-      <window_info anchor="right" id="Maven Projects" order="9" visible="true" weight="0.24545455" />
+      <window_info active="true" anchor="right" id="Maven Projects" order="9" visible="true" weight="0.24545455" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.375" />
@@ -1193,10 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="75" column="5" lean-forward="true" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-          <folding>
-            <element signature="e#2329#2330#0" expanded="true" />
-            <element signature="e#2350#2351#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
