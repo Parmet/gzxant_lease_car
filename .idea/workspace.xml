@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ade73155-e223-4db0-abb0-b185ac37b48d" name="Default" comment="自動化生成通用曾刪改差代碼">
-      <change afterPath="$PROJECT_DIR$/gzxant-web/src/main/java/com/gzxant/dto/CarInsuranceDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gzxant_lease_car.ipr" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gzxant_lease_car.iws" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/src/main/java/com/gzxant/code/generate/CodeGenerate.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/src/main/java/com/gzxant/code/generate/CodeGenerate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-code/src/main/resources/update.ftl.vm" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/src/main/resources/update.ftl.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL$SQLCondition.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL$SQLCondition.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL$SafeAppendable.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL$SafeAppendable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/com/baomidou/mybatisplus/MybatisAbstractSQL.class" afterDir="false" />
@@ -136,7 +130,6 @@
       <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/controller.java.vm" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/controller.java.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/detail.ftl.vm" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/detail.ftl.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-code/target/classes/list.ftl.vm" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-code/target/classes/list.ftl.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/BaseApiClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/BaseApiClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/BaseApiClientBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/BaseApiClientBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/HttpClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/alibaba/cloudapi/sdk/core/HttpClient.class" afterDir="false" />
@@ -186,7 +179,6 @@
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/websocket/WebSocketConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/config/websocket/WebSocketConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/DataScopeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/DataScopeEnum.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/HttpCodeEnum.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/HttpCodeEnum.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/enums/SlifeEnum.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/exception/SlifeException.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/exception/SlifeException.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/exception/SlifeExceptionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/exception/SlifeExceptionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/filter/AuthFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-common/target/classes/com/gzxant/filter/AuthFilter.class" afterDir="false" />
@@ -227,8 +219,6 @@
       <change beforePath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/aspect/SaveLogTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/aspect/SaveLogTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/controller/GzxantLogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/controller/GzxantLogController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/entity/GzxantLog.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-log/target/classes/com/gzxant/entity/GzxantLog.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/controller/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/src/main/java/com/gzxant/controller/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-sys/src/main/resources/templates/user/detail.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/src/main/resources/templates/user/detail.ftl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/cache/ShiroRedisCache.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/cache/ShiroRedisCache.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/cache/ShiroRedisCacheManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/cache/ShiroRedisCacheManager.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/shiro/ShiroConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/config/shiro/ShiroConfig.class" afterDir="false" />
@@ -299,8 +289,6 @@
       <change beforePath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/vo/SysUserVO.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/classes/com/gzxant/vo/SysUserVO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-sys/target/test-classes/PasswordTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/test-classes/PasswordTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gzxant-sys/target/test-classes/StreamTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/gzxant-sys/target/test-classes/StreamTest$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/server/accident/insert.ftl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gzxant-web/src/main/resources/templates/server/accident/listPage.ftl" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/gzxant-sys/target/" />
     <ignored path="$PROJECT_DIR$/gzxant-web/target/" />
@@ -333,11 +321,12 @@
     <session id="872980582">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.14" value="3" />
+          <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="5" />
+          <entry key="project.opened" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -395,7 +384,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -577,12 +566,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelOrder2" value="2" />
@@ -592,7 +582,7 @@
     <property name="SearchEverywhereHistoryKey" value="file&#9;FILE&#9;file:///home/yc/IdeaProjects/car/gzxant_lease_car/gzxant-sys/src/main/java/com/gzxant/controller/FileController.java&#10;filecon&#9;FILE&#9;file:///home/yc/IdeaProjects/car/gzxant_lease_car/gzxant-sys/src/main/java/com/gzxant/controller/FileController.java&#10;Filecon&#9;PSI&#9;JAVA://com.gzxant.controller.FileController&#10;gzxa&#9;FILE&#9;file:///home/yc/IdeaProjects/car/gzxant_lease_car/gzxant-common/src/main/resources/static/js/gzxant/gzxantform.js&#10;Gzxa&#9;FILE&#9;file:///home/yc/IdeaProjects/car/gzxant_lease_car/gzxant-common/src/main/java/com/gzxant/shiro/GzxantSysUser.java&#10;gzxantsys&#9;PSI&#9;JAVA://com.gzxant.shiro.GzxantSysUser&#10;webs&#9;PSI&#9;JAVA://com.gzxant.config.sitemesh.WebSiteMeshFilter&#10;gzxantform&#9;FILE&#9;file:///home/yc/IdeaProjects/car/gzxant_lease_car/gzxant-common/src/main/resources/static/js/gzxant/gzxantform.js&#10;itable&#9;FILE&#9;file:///home/yc/IdeaProjects/car/gzxant_lease_car/gzxant-common/src/main/resources/static/js/plugins/iTable/iTable.js&#10;entity.java.v&#9;FILE&#9;jar:///home/yc/.m2/repository/com/baomidou/mybatis-plus/2.1.0/mybatis-plus-2.1.0.jar!/templates/entity.java.vm&#10;iTable&#9;FILE&#9;file:///home/yc/IdeaProjects/car/gzxant_lease_car/gzxant-common/src/main/resources/static/js/plugins/iTable/iTable.js&#10;iTable.js&#9;FILE&#9;file:///home/yc/IdeaProjects/car/gzxant_lease_car/gzxant-common/src/main/resources/static/js/plugins/iTable/iTable.js&#10;webmesh&#9;PSI&#9;JAVA://com.gzxant.config.sitemesh.WebSiteMeshFilter" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1532945851742" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533184850947" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../cctv/gzxant_enroll" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -722,7 +712,14 @@
       <option name="project" value="LOCAL" />
       <updated>1532875552232</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="自動化生成通用曾刪改差代碼">
+      <created>1533184872915</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1533184872915</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -738,9 +735,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
+    <frame x="-1" y="-11" width="1368" height="780" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27272728" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27727273" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
