@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.gzxant.constant.Global;
 import com.gzxant.constant.SearchParam;
+import com.gzxant.entity.SysCompany;
 import com.gzxant.service.ISysCompanyService;
 import com.gzxant.service.ISysDictService;
 import com.gzxant.shiro.GzxantSysUser;
@@ -41,6 +42,8 @@ import io.swagger.annotations.ApiOperation;
 @Controller
 @RequestMapping("/car/accident")
 public class CarAccidentController extends BaseController {
+
+
 
 	@Autowired
 	private ISysDictService sysDictService;
