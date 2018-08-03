@@ -3,8 +3,9 @@
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
                 <div class="ibox-content">
-   
                     <form class="form-horizontal form-bordered" id="gzxantForm" >
+					   <input type="hidden" name="enclosure" value="${car.enclosure}" id="enclosure"/>
+                        <input type="hidden" name="enclosureName" value="${car.enclosureName}" id="enclosureName"/>
                         <input type="hidden" name="id" value="${car.id}"/>
                         <font size="6">车辆基本信息</font>
                         <div class="form-group">
@@ -50,7 +51,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">发动机号<span class="required">*</span></label>
                             <div class="col-sm-3">
-                                <input name="engine_number" type="text" class="form-control" value="${car.engine_number}"
+                                <input name="engineNumber" type="text" class="form-control" value="${car.engineNumber}"
                                        placeholder="请输入发动机号">                         	
                             </div>
                         </div>
@@ -75,7 +76,7 @@
                             </div>
                         </div>
                         
-                        <div class="form-group">
+                        <!--<div class="form-group">
                         	<label class="col-sm-3 control-label">所在库</label>
                             <div class="col-sm-3">
                                 <select class="form-filter form-control _search" id="whereCarArea" name="whereCarArea" value="${car.whereCarArea}">
@@ -89,7 +90,7 @@
                                 	<option value = "">二级联动</option>
                                 </select>                    	
                             </div>
-                        </div>
+                        </div>-->
                         
                         <div class="form-group">
                             <label class="col-sm-3 control-label">登记证号<span class="required">*</span></label>
@@ -107,7 +108,7 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label">登记证登记日期</label>
                             <div class="col-sm-3">
-                                <input name="registrationDeta" type="date" class="form-control" value="${car.registrationDeta}">                         	
+                                <input name="registrationDate" type="date" class="form-control" value="${car.registrationDate}">                         	
                             </div>
                             
                             <label class="col-sm-3 control-label">上牌日期<span class="required">*</span></label>
@@ -159,20 +160,85 @@
                                 <input name="documentType" type="text" class="form-control" value="${car.documentType}">            	
                             </div>
                             
-                            <label class="col-sm-3 control-label">备注</label>
-                            <div class="col-sm-3">
-                                <input name="remark" type="text" class="form-control" value="${car.remark}">            	
-                            </div>
-                        </div>
+                            <!-- 上传照片 -->
+                            
+                            <div class="tab-pane" id="contractInfo-enclosure">
+							    
+					                    <script src="${rc.contextPath}/js/plugins/dropzone/dropzone.min.js"></script>
+					                    <link href="${rc.contextPath}/css/plugins/dropzone/dropzone.css" rel="stylesheet">
+					                    <div class="col-sm-4">
+					                        	<div id="zone" name="zone" class="dropzone" onclick="downLoadDoc()">
+					                        		<div class="dz-default dz-message">
+					                        			<span>请点击下载</span>
+					                        		</div>
+					                        	</div>
+					                        	<div id="mydropzone" name="mydropzone" class="dropzone"></div>
+    
+					                    </div>
+					                    <script type="text/javascript">
+						                    
+						                    
+							                <#if step =='upload'>
+							                	$('#zone').attr("hidden","hidden")
+							                    Dropzone.autoDiscover = false;
+											    var myDropzone = new Dropzone("div#mydropzone", {
+											        url: base_url+"/file/upload/avatar",
+											        filesizeBase: 1024,//定义字节算法 默认1000
+											        maxFiles: 2,//最大文件数量
+											        maxFilesize: 100, //MB
+											        fallback: function () {
+											            layer.alert('暂不支持您的浏览器上传!');
+											        },
+											        uploadMultiple: false,
+											        addRemoveLinks: true,
+											        dictFileTooBig: '您的文件超过' + 100 + 'MB!',
+											        dictInvalidInputType: '不支持您上传的类型',
+											        dictMaxFilesExceeded: '您的文件超过1个!',
+											        init: function () {
+											            this.on('queuecomplete', function (files) {
+											                // layer.alert('上传成功');
+											            });
+											            this.on('success', function (uploadimfo, result) {
+											                console.info(result);
+											                $("#enclosure").val(result.message[0].url);
+											                $("#enclosureName").val(result.message[0].docName);
+											                layer.alert('上传成功');
+											                
+											            });
+											            this.on('error', function (a, errorMessage, result) {
+											                if (!result) {
+											                    layer.alert(result.error || '上传失败');
+											                }
+											            });
+											            this.on('maxfilesreached', function () {
+											                this.removeAllFiles(true);
+											                layer.alert('文件数量超出限制');
+											            });
+											            this.on('removedfile', function () {
+											                layer.alert('删除成功');
+											            });
+											
+											        }
+											    });
+					               			</#if>
+							               	<#if step =='download'>
+							               		$('#mydropzone').attr("hidden","hidden")
+							               	</#if>
+					                	</script>
+								</div>
+                       	 </div>
 
 
-                    <#if action !='detail'>
-                        <div class="form-actions fluid">
-                            <div class="col-md-offset-3 col-md-9">
-                                <button type="submit" class="btn-green">保存</button>
-                            </div>
-                        </div>
-                    </#if>
+
+
+
+	                    <#if action !='detail'>
+	                        <div class="form-actions fluid">
+	                            <div class="col-md-offset-3 col-md-9">
+	                                <button type="submit" class="btn-green">保存</button>
+	                            </div>
+	                        </div>
+	                    </#if>
                     </form>
 
                 </div>
@@ -183,7 +249,20 @@
 
 
 <script type="text/javascript">
+
+    <#if step =='download'>
+		function downLoadDoc(){
+			var docUrl = '${car.enclosure?replace("\\", "\\\\")?replace("/", "//")}';
+		    docUrl = base_url+"/contractInfo/manager/download?docUrl=" + encodeURIComponent(docUrl) 
+		         + "&name=" + encodeURIComponent("${car.enclosureName}");
+		    window.open(docUrl);
+		}
+	</#if>
+
+
+
 	action = "${action}";
+	step = "${step}";
     function  cusFunction() {
         console.info("提交之前，最后执行自定义的函数");
     }

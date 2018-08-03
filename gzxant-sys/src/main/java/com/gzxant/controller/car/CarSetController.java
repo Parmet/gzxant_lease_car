@@ -41,13 +41,13 @@ import io.swagger.annotations.ApiOperation;
  *  
  */
 @Controller
-@RequestMapping(value = "/car/set")
+@RequestMapping(value = "/cars/set")
 public class CarSetController extends BaseController {
 	
     @Autowired
     private ICarSetService carSetService;
 	
-    @RequiresPermissions("car:set")
+    @RequiresPermissions("cars:set")
     @SLog("进入车辆设置列表界面")
     @ApiOperation(value = "进入车辆设置列表界面", notes = "进入车辆设置列表界面")
     @GetMapping(value = "")

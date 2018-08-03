@@ -41,7 +41,7 @@ import io.swagger.annotations.ApiOperation;
  *   
  */
 @Controller
-@RequestMapping(value = "/carExchangeInfo/manager")
+@RequestMapping(value = "/contractInfo/carExchangeInfo/manager")
 public class CarExchangeInfoController extends BaseController{
 	@Autowired
     private ICarExchangeInfoService carExchangeInfoService;
@@ -121,11 +121,11 @@ public class CarExchangeInfoController extends BaseController{
         dt.setPageNumber(0);
         dt.setPageSize(10);
         model.addAttribute("action", "update");
-        model.addAttribute("url", request.getContextPath() + "/car/manager/");
+        model.addAttribute("url", request.getContextPath() + "/carExchangeInfo/manager/");
         CarExchangeInfo carExchangeInfo = carExchangeInfoService.selectCarExchangeInfoAllInfoById(id);
         logger.info(JSON.toJSONString(carExchangeInfo));
         model.addAttribute("carExchangeInfo",carExchangeInfo);
-        model.addAttribute("contractInfo",contractInfoService.pageSearch(dt).getRows());
+        model.addAttribute("contractInfoNews",contractInfoService.selectContractListByIsOver("new"));
         return "carExchangeInfo/detail";
     }
     
@@ -146,7 +146,7 @@ public class CarExchangeInfoController extends BaseController{
         CarExchangeInfo carExchangeInfo = carExchangeInfoService.selectCarExchangeInfoAllInfoById(id);
         model.addAttribute("carExchangeInfo", carExchangeInfo);
         model.addAttribute("url", request.getContextPath() + "/carExchangeInfo/manager/");
-        model.addAttribute("contractInfo",contractInfoService.pageSearch(dt).getRows());
+        model.addAttribute("contractInfoNews",contractInfoService.selectContractListByIsOver("new"));
         return "carExchangeInfo/detail";
     }
     
@@ -169,8 +169,9 @@ public class CarExchangeInfoController extends BaseController{
         CarExchangeInfo carExchangeInfo = new CarExchangeInfo();
         carExchangeInfo.setId(0L);
         model.addAttribute("carExchangeInfo", carExchangeInfo);
+        model.addAttribute("contractInfoList", contractInfoService.selectAllContractInfoList());
         model.addAttribute("url", request.getContextPath() + "/carExchangeInfo/manager/");
-        model.addAttribute("contractInfos",contractInfoService.pageSearch(dt).getRows());
+        model.addAttribute("contractInfoNews",contractInfoService.selectContractListByIsOver("new"));
         return "carExchangeInfo/detail";
     }
     

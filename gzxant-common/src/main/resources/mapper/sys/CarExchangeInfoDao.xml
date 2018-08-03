@@ -21,7 +21,8 @@
         <id property="id" column="id"></id>
         <result property="remark" column="su_remark"></result>
         <result property="delFlag" column="del_flag"></result>      
-        <result property="contractNo" column="contract_no"></result>
+        <result property="contractNoOld" column="contract_no_old"></result>
+        <result property="contractNoNew" column="contract_no_new"></result>
         <result property="carNumber" column="car_number"></result>
         <result property="applyCarNumber" column="apply_car_number"></result>
         <result property="applyDate" column="apply_date"></result>
@@ -29,6 +30,7 @@
         <result property="applicantIDNum" column="applicant_IDNum"></result>
         <result property="applicationUnit" column="application_unit"></result>
         <result property="applyReason" column="apply_reason"></result>
+        <result property="contractAmount" column="contract_amount"></result>
     </resultMap>
 
 </mapper>
