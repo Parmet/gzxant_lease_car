@@ -27,7 +27,7 @@ public class WebSiteMeshFilter extends ConfigurableSiteMeshFilter {
     		+ "," + "/swagger-ui"
     		+ "," + "/login"
     		+ "," + "/**/detail/*"
-    		+ "," + "/**/insert"
+    		+ "," + "/**/insert/*"
     		+ "," + "/**/update/*"
     		+ "," + "/portals/*";
     

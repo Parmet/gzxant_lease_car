@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gzxant.dao.CarExchangeInfoDao">
+
+    <sql id="base_select">
+        SELECT * FROM car_exchange_info c
+    </sql>
+    
+	<!-- 根据id查找对应的汽车信息 -->
+	<select id="selectCarExchangeInfoById" parameterType="long" resultType="carexchangeinfo">
+        <include refid="base_select"></include> where c.id = #{id}
+    </select>
+
+	<!-- 查询所有汽车信息列表 -->
+	<select id="selectAllCarExchangeInfo" resultType="carexchangeinfo">
+        <include refid="base_select"></include>
+    </select>
+
+    <resultMap id="selectAllCarExchangeInfo" type="carexchangeinfo">
+        <id property="id" column="id"></id>
+        <result property="remark" column="su_remark"></result>
+        <result property="delFlag" column="del_flag"></result>      
+        <result property="contractNoOld" column="contract_no_old"></result>
+        <result property="contractNoNew" column="contract_no_new"></result>
+        <result property="carNumber" column="car_number"></result>
+        <result property="applyCarNumber" column="apply_car_number"></result>
+        <result property="applyDate" column="apply_date"></result>
+        <result property="applicant" column="applicant"></result>
+        <result property="applicantIDNum" column="applicant_IDNum"></result>
+        <result property="applicationUnit" column="application_unit"></result>
+        <result property="applyReason" column="apply_reason"></result>
+        <result property="contractAmount" column="contract_amount"></result>
+    </resultMap>
+
+</mapper>

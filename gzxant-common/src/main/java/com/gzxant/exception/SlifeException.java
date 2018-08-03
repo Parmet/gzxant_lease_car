@@ -68,4 +68,5 @@ public class SlifeException extends RuntimeException {
         this.error = httpCodeEnum.getMessage();
         this.returnDTO = new ReturnDTO(code, error);
     }
+
 }

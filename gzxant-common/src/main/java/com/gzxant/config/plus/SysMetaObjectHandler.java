@@ -47,10 +47,8 @@ public class SysMetaObjectHandler extends MetaObjectHandler {
     public void updateFill(MetaObject metaObject) {
         logger.debug("update set  updateTime updateBy param");
 
-        metaObject.setValue("updateDate", new Date());
-
-        metaObject.setValue("updateId", GzxantSysUser.id());
-
-
+        // inject the update invariant
+        setFieldValByName("updateDate", new Date(), metaObject);
+        setFieldValByName("updateId", GzxantSysUser.id(), metaObject);
     }
 }

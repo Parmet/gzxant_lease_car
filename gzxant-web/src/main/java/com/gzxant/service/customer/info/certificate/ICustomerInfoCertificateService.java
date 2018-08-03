@@ -12,5 +12,5 @@ import com.gzxant.base.service.IBaseService;
  * @since 2018-07-05
  */
 public interface ICustomerInfoCertificateService extends IBaseService<CustomerInfoCertificate> {
-	
+
 }
