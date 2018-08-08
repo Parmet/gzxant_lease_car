@@ -28,7 +28,7 @@
                                     // --------------------------图片上传-------------------------------------------------- //
                                     Dropzone.autoDiscover = false;
                                     var myDropzone = new Dropzone("div#mydropzone", {
-                                        url: "/gzxant/web/file/upload/avatar",
+                                        url: base_url + "/file/upload/avatar",
                                         filesizeBase: 1024,//定义字节算法 默认1000
                                         maxFiles: 2,//最大文件数量
                                         maxFilesize: 100, //MB
@@ -47,7 +47,7 @@
                                             this.on('success', function (uploadimfo, result) {
                                                 console.info(result);
                                                 $("#photo").val(result.message[0].s_url);
-                                                $("#imgshowdiv").attr('src', result.message[0].s_url);
+                                                $("#imgshowdiv").attr('src', base_url + "/file/image?path=" + encodeURIComponent(result.message[0].s_url));
                                                 layer.alert('上传成功');
                                             });
                                             this.on('error', function (a, errorMessage, result) {

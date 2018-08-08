@@ -47,34 +47,34 @@ public class FileController {
     @GetMapping(value = "/image")
     @ResponseBody
     public void getImageByPath(@RequestParam("path") String path,
-    		HttpServletRequest request, HttpServletResponse response) throws IOException {
-    	if (StringUtils.isEmpty(path)) {
-    		return ;
-    	}
-    	
-    	if (path.contains("|")) {
-    		path = path.replace("|", File.separator);
-    	}
-    	
-    	File file = new File(path);
-    	
-    	FileInputStream inputStream = new FileInputStream(file);
+                               HttpServletRequest request, HttpServletResponse response) throws IOException {
+        if (StringUtils.isEmpty(path)) {
+            return ;
+        }
+
+        if (path.contains("|")) {
+            path = path.replace("|", File.separator);
+        }
+
+        File file = new File(path);
+
+        FileInputStream inputStream = new FileInputStream(file);
         byte[] data = new byte[(int)file.length()];
         int length = inputStream.read(data);
         inputStream.close();
-        
+
         response.setContentType(getFileType(path));
         OutputStream stream = response.getOutputStream();
-        
+
         stream.write(data);
         stream.flush();
         stream.close();
     }
 
     public String getUploadPath() {
-		return null;
+        return null;
     }
-    
+
     @ApiOperation(value = "后台删除文件", notes = "后台删除文件")
     @PostMapping(value = "/delete")
     @ResponseBody
@@ -119,11 +119,11 @@ public class FileController {
         String docName = file.getOriginalFilename().substring(0,file.getOriginalFilename().lastIndexOf(".")).toLowerCase();//文件名
         String fileName = PathUtils.getUploadPath();
         if (StringUtils.isNotBlank(path)) {
-        	fileName = fileName.replace("/", File.separator);
-        	fileName = fileName.replace("\\", File.separator);
+            fileName = fileName.replace("/", File.separator);
+            fileName = fileName.replace("\\", File.separator);
             fileName = fileName + File.separator + path;
         }
-        
+
         String savePath = fileName + File.separator + type + File.separator + GzxantSysUser.id() + File.separator + uuid + "." + fileExt;//附件路径+类型（头像、附件等）+名称+扩展名
         File localFile = FileUtils.saveFileToDisk(file, savePath); //保存到磁盘
 
@@ -149,15 +149,15 @@ public class FileController {
     }
 
     private String getFileType(String filePath) {
-    	Path path = Paths.get(filePath);  
-        String contentType = null;  
-        try {  
-            contentType = Files.probeContentType(path);  
-        } catch (IOException e) {  
-            e.printStackTrace();  
+        Path path = Paths.get(filePath);
+        String contentType = null;
+        try {
+            contentType = Files.probeContentType(path);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        
+
         return contentType;
     }
-    
+
 }

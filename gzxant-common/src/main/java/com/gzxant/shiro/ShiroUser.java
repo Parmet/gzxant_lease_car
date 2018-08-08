@@ -16,24 +16,23 @@ public class ShiroUser implements Serializable{
     public String name;
     public String photo;
     public Long companyId;
-    public ShiroUser(Long id, String username, String name,String photo,Long companyId){
+    public ShiroUser(Long id, String username, String name,String photo, Long companyId){
         this.id=id;
         this.username=username;
         this.name=name;
         this.photo=photo;
-        this.companyId=companyId;
+        this.companyId = companyId;
     }
 
-    
     public Long getCompanyId() {
-		return companyId;
-	}
+        return companyId;
+    }
 
-	public void setCompanyId(Long companyId) {
-		this.companyId = companyId;
-	}
+    public void setCompanyId(Long companyId) {
+        this.companyId = companyId;
+    }
 
-	public Long getId() {
+    public Long getId() {
         return id;
     }
 

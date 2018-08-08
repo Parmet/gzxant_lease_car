@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gzxant.dao.car.accident.CarAccidentDao">
+
+	<!-- 通用查询映射结果 -->
+	<resultMap id="BaseResultMap" type="com.gzxant.entity.car.accident.CarAccident">
+		<result column="car_number" property="carNumber" />
+		<result column="belongsto_id" property="belongstoId" />
+		<result column="date" property="date" />
+		<result column="driver" property="driver" />
+		<result column="place" property="place" />
+		<result column="detail" property="detail" />
+		<result column="use_property_id" property="usePropertyId" />
+		<result column="nature" property="nature" />
+		<result column="responsibility" property="responsibility" />
+		<result column="minor_wound" property="minorWound" />
+		<result column="serious_injury" property="seriousInjury" />
+		<result column="death" property="death" />
+		<result column="our_losses" property="ourLosses" />
+		<result column="our_expenses" property="ourExpenses" />
+		<result column="three_losses" property="threeLosses" />
+		<result column="three_expenses" property="threeExpenses" />
+		<result column="amount_paid" property="amountPaid" />
+		<result column="grade" property="grade" />
+		<result column="processing_state" property="processingState" />
+		<result column="handling_progress" property="handlingProgress" />
+		<result column="update_id" property="updateId" />
+	</resultMap>
+
+</mapper>

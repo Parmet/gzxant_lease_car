@@ -27,32 +27,32 @@ public class GzxantSysUser {
     public static Long id() {
         return ShiroUser().getId();
     }
-    
-    public static Long companyId() {
-    	return ShiroUser().getCompanyId();
-    }
 
     public static String loginName() {
         return ShiroUser().getUsername();
     }
 
+    public static Long companyId() {
+        return ShiroUser().getCompanyId();
+    }
+
     public static ShiroUser ShiroUser() {
-    	Object obj = SecurityUtils.getSubject().getPrincipal();
-    	ShiroUser user = null;
-    	if (obj instanceof com.gzxant.shiro.ShiroUser) {
-    		user = (ShiroUser) SecurityUtils.getSubject().getPrincipal();
-    	} else {
-    		// 为什么会不能强转，因为不同类加载器，还是session不同导致的
-    		@SuppressWarnings("unchecked")
-			Map<String, Object> map = JsonUtil.stringToCollect(JsonUtil.toJSONString(obj));
-    		Long id = Long.parseLong(String.valueOf(map.get("id")));
-    		String username = String.valueOf(map.get("username"));
-    		String name = String.valueOf(map.get("name"));
-    		String photo = String.valueOf(map.get("photo"));
-    		Long companyId = Long.parseLong(String.valueOf(map.get("companyId")));
-    		user = new ShiroUser(id, username, name, photo,companyId);
-    	}
-    	
-    	return user;
+        Object obj = SecurityUtils.getSubject().getPrincipal();
+        ShiroUser user = null;
+        if (obj instanceof com.gzxant.shiro.ShiroUser) {
+            user = (ShiroUser) SecurityUtils.getSubject().getPrincipal();
+        } else {
+            // 为什么会不能强转，因为不同类加载器，还是session不同导致的
+            @SuppressWarnings("unchecked")
+            Map<String, Object> map = JsonUtil.stringToCollect(JsonUtil.toJSONString(obj));
+            Long id = Long.parseLong(String.valueOf(map.get("id")));
+            String username = String.valueOf(map.get("username"));
+            String name = String.valueOf(map.get("name"));
+            String photo = String.valueOf(map.get("photo"));
+            Long companyId = Long.parseLong(String.valueOf(map.get("companyId")));
+            user = new ShiroUser(id, username, name, photo, companyId);
+        }
+
+        return user;
     }
 }

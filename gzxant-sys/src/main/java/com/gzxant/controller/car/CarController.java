@@ -65,6 +65,28 @@ public class CarController extends BaseController {
     }
     
     /**
+     * 对车场数据分页显示
+     *
+     * @param dt
+     * @param request
+     * @return
+     */
+//    @SLog("车辆管理导出数据")
+//    @ApiOperation(value = "导出数据")
+//    @GetMapping(value = "/leadingOut")
+//    public ReturnDTO leadingOut(HttpServletResponse response) throws Exception  {
+//    	 List<Car> cars = carService.selectList(null);
+//         response.setContentType("application/vnd.ms-excel;charset=utf-8");
+//         String[] fields = {"订单号","押金应收流水ID", "应收金额"};
+//         ExcelExport excelExport = new ExcelExport();
+//         HSSFWorkbook wb = excelExport.generateExcel();
+//         wb = excelExport.generateOrderDepositVOSheet(wb, "押金订单信息", fields, cars);
+//         excelExport.export("押金订单信息", wb, response);
+//
+//         return ReturnDTOUtil.success();
+//    }
+//
+    /**
      * 对汽车数据分页显示
      *
      * @param dt

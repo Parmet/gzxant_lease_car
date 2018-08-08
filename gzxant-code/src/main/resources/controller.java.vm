@@ -6,6 +6,7 @@
 package ${package.Controller};
 
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 #if(${restControllerStyle})
@@ -63,10 +64,16 @@ public class ${table.controllerName} {
 	}
 
 	@ApiOperation(value = "进入$!{table.comment}编辑界面", notes = "进入$!{table.comment}编辑界面")
-	@GetMapping(value = "/detail/{action}")
-	public String detail(@PathVariable("action") String action, Model model) {
+	@GetMapping(value = {"/{action}", "/{action}/{id}"})
+	public String detail(@PathVariable("action") String action,
+	                     @PathVariable(value = "id" ,required = false) String id,
+	                     Model model) {
 		model.addAttribute("action", action);
-		return "${requestMapping}/detail";
+		if (StringUtils.isNotBlank(id)) {
+            model.addAttribute("entity", ${serviceAttr}.selectById(id));
+		}
+
+		return "${requestMapping}/" + action;
 	}
 
 	@ApiOperation(value = "获取$!{table.comment}列表数据", notes = "获取$!{table.comment}列表数据:使用约定的DataTable")
@@ -77,9 +84,9 @@ public class ${table.controllerName} {
 	}
 
 	@ApiOperation(value = "添加$!{table.comment}", notes = "添加$!{table.comment}")
-	@PostMapping(value = "/create")
+	@PostMapping(value = "/insert")
 	@ResponseBody
-	public ReturnDTO create(${table.entityName} param) {
+	public ReturnDTO insert(${table.entityName} param) {
 		${serviceAttr}.insert(param);
 		return ReturnDTOUtil.success();
 	}
